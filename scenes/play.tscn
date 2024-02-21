@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmea7t50ge8gr"]
+
+[ext_resource type="Texture2D" uid="uid://7opv4vo8tbsn" path="res://assets/game bg.png" id="1_jv4ig"]
+[ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
+[ext_resource type="Texture2D" uid="uid://c0vj0rnhmkdg7" path="res://assets/game top bar.png" id="3_dqwyt"]
+[ext_resource type="Texture2D" uid="uid://dkh48u7qg4oy2" path="res://assets/game top star1.png" id="4_tjntt"]
+
+[node name="play" type="Node2D"]
+position = Vector2(251, 218)
+scale = Vector2(0.4, 0.4)
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(-5, 17.5)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("1_jv4ig")
+
+[node name="top_moves" type="Sprite2D" parent="."]
+position = Vector2(-520, -467.5)
+texture = ExtResource("2_jpgjl")
+
+[node name="top_bar" type="Sprite2D" parent="."]
+position = Vector2(194.5, -480.5)
+texture = ExtResource("3_dqwyt")
+
+[node name="top_star_empty1" type="Sprite2D" parent="."]
+position = Vector2(47, -510.5)
+texture = ExtResource("4_tjntt")
+
+[node name="top_star_empty2" type="Sprite2D" parent="."]
+position = Vector2(197, -510.5)
+texture = ExtResource("4_tjntt")
+
+[node name="top_star_empty3" type="Sprite2D" parent="."]
+position = Vector2(344.5, -510.5)
+texture = ExtResource("4_tjntt")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=80 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -25,8 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://ct7h80a6ihx5y" path="res://assets/wheel title.png" id="16_l4mlr"]
 [ext_resource type="Texture2D" uid="uid://bpdqe7aldjjac" path="res://assets/wheel empty.png" id="17_0b32j"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="18_1xjgl"]
-[ext_resource type="Texture2D" uid="uid://b778x511p2quj" path="res://assets/wheel full.png" id="18_6hkb3"]
+[ext_resource type="Texture2D" uid="uid://dikq70x6c1cff" path="res://assets/wheel_full1.png" id="18_2i7tp"]
 [ext_resource type="Texture2D" uid="uid://ou0cp0hlre4h" path="res://assets/won2.png" id="18_34qmd"]
+[ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
 [ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
 [ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="22_iq15d"]
 [ext_resource type="Texture2D" uid="uid://ditjg452qvohn" path="res://assets/character1.png" id="22_mx33c"]
@@ -169,7 +170,6 @@ shape = SubResource("RectangleShape2D_8k4xr")
 action = "Coins"
 
 [node name="main" type="Node2D" parent="."]
-visible = false
 
 [node name="logo" type="Sprite2D" parent="main"]
 position = Vector2(520, 282.5)
@@ -288,19 +288,26 @@ shape = SubResource("RectangleShape2D_vibvt")
 action = "ToggleMusic"
 
 [node name="wheel" type="Node2D" parent="."]
+visible = false
 
 [node name="wheel_title" type="Sprite2D" parent="wheel"]
 position = Vector2(520, 260)
 texture = ExtResource("16_l4mlr")
 
 [node name="wheel_empty" type="Sprite2D" parent="wheel"]
+visible = false
 position = Vector2(517.5, 900)
+rotation = 0.139626
 texture = ExtResource("17_0b32j")
 
 [node name="wheel_full" type="Sprite2D" parent="wheel"]
 position = Vector2(517.5, 900)
-rotation = -6.28319
-texture = ExtResource("18_6hkb3")
+texture = ExtResource("18_2i7tp")
+
+[node name="wheel_needle" type="Sprite2D" parent="wheel"]
+position = Vector2(517.5, 875)
+scale = Vector2(1, 1)
+texture = ExtResource("19_adfi2")
 
 [node name="won2" type="Sprite2D" parent="wheel"]
 position = Vector2(315, 1727.5)
@@ -915,7 +922,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_s2rmg")
 
 [node name="menu" type="Node2D" parent="."]
-visible = false
 
 [node name="menu_background" type="Sprite2D" parent="menu"]
 position = Vector2(502.5, 1720)

@@ -186,11 +186,8 @@ func spin_wheel_start():
 func spin_wheel_stop():
 	wheel_spinning = false
 	# Calculate the current angle of the spinner
-	var spinner_rotation = $wheel/wheel_full.rotation
-	print("Spinner rotation: ", spinner_rotation)
+	var spinner_rotation = $wheel/wheel_full.rotation_degrees
 	var spinner_angle = int(spinner_rotation) % 360
-	# Print the spinner angle for debugging
-	print("Spinner angle: ", spinner_angle)
 	# Define the angles for each section (in degrees)
 	var section_angles = [0, 45, 90, 135, 180, 225, 270, 315]
 	# Determine the section based on the stopped angle
@@ -199,7 +196,19 @@ func spin_wheel_stop():
 		if spinner_angle >= section_angles[i]:
 			section_index = i
 	# Print the section
-	if section_index != -1:
-		print("Spinner stopped on section: ", section_index)
-	else:
-		print("Spinner stopped on an invalid section")
+	if section_index == 0:		# 0
+		print("Coins")
+	elif section_index == 1:	#45
+		print("Bomb")
+	elif section_index == 2:	#90
+		print("Coins")
+	elif section_index == 3:	#135
+		print("Switch")
+	elif section_index == 4:
+		print("Coins")
+	elif section_index == 5:
+		print("Sugar")
+	elif section_index == 6:
+		print("Coins")
+	elif section_index == 7:
+		print("Milk")

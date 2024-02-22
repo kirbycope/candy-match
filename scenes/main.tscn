@@ -232,7 +232,6 @@ label_settings = SubResource("LabelSettings_rkec7")
 
 [node name="settings" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="won3" type="Sprite2D" parent="settings"]
 position = Vector2(485, 452.5)
@@ -289,7 +288,6 @@ action = "ToggleMusic"
 
 [node name="wheel" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="wheel_title" type="Sprite2D" parent="wheel"]
 position = Vector2(520, 260)
@@ -327,7 +325,6 @@ action = "Spin"
 
 [node name="character" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="character_label" type="Label" parent="character"]
 offset_left = 360.0
@@ -476,7 +473,6 @@ action = "Character6"
 
 [node name="shop" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="shop_label" type="Label" parent="shop"]
 offset_left = 160.0
@@ -655,7 +651,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="boosters" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="boosters_label" type="Label" parent="boosters"]
 offset_left = 160.0
@@ -859,7 +854,6 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="scores" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="title" type="Sprite2D" parent="scores"]
 position = Vector2(505, 260)

@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 window/size/viewport_width=412
 window/size/viewport_height=732
+window/stretch/mode="viewport"
 
 [input_devices]
 

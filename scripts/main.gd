@@ -9,12 +9,12 @@ var spins_left = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	preload("res://assets/punchy-taps-ui-1-183897.mp3")
 	reset_to_main()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	pass # Replace with function body.
 
 
 func _input(event):
@@ -72,7 +72,7 @@ func _input(event):
 		elif event.action == "Close":
 			reset_to_main()
 		elif event.action == "Coins":
-			pass
+			open_shop()
 		elif event.action == "Friends":
 			pass
 		elif event.action == "Map":
@@ -91,11 +91,7 @@ func _input(event):
 			$top_close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Shop":
-			$main.visible = false
-			$menu.visible = false
-			$shop.visible = true
-			$top_close.visible = true
-			$top_settings.visible = false
+			open_shop()
 		elif event.action == "Spin":
 			if spins_left > 0:
 				print("You have " + str(spins_left) + " spins left.")
@@ -141,7 +137,16 @@ func clear_character_selection():
 	$character/character6/checkmark.visible = false
 
 
-# Resets the scene to the "main" view.
+# Opens the scene's "shop" view.
+func open_shop():
+	$main.visible = false
+	$menu.visible = false
+	$shop.visible = true
+	$top_close.visible = true
+	$top_settings.visible = false
+
+
+# Resets the scene's "main" view.
 func reset_to_main():
 	$boosters.visible = false
 	$character.visible = false

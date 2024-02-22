@@ -169,6 +169,7 @@ shape = SubResource("RectangleShape2D_8k4xr")
 action = "Coins"
 
 [node name="main" type="Node2D" parent="."]
+visible = false
 
 [node name="logo" type="Sprite2D" parent="main"]
 position = Vector2(520, 282.5)
@@ -287,7 +288,6 @@ shape = SubResource("RectangleShape2D_vibvt")
 action = "ToggleMusic"
 
 [node name="wheel" type="Node2D" parent="."]
-visible = false
 
 [node name="wheel_title" type="Sprite2D" parent="wheel"]
 position = Vector2(520, 260)
@@ -299,6 +299,7 @@ texture = ExtResource("17_0b32j")
 
 [node name="wheel_full" type="Sprite2D" parent="wheel"]
 position = Vector2(517.5, 900)
+rotation = -6.28319
 texture = ExtResource("18_6hkb3")
 
 [node name="won2" type="Sprite2D" parent="wheel"]
@@ -914,6 +915,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_s2rmg")
 
 [node name="menu" type="Node2D" parent="."]
+visible = false
 
 [node name="menu_background" type="Sprite2D" parent="menu"]
 position = Vector2(502.5, 1720)

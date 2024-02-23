@@ -68,12 +68,34 @@ func clear_matches():
 			# Check match permutations
 			if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
 				print("Match 7!")
+				highlight_match(index+1)
+				highlight_match(index+2)
+				highlight_match(index+3)
+				highlight_match(index+4)
+				highlight_match(index+5)
+				highlight_match(index+6)
+				highlight_match(index+7)
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
 				print("Match 6!")
+				highlight_match(index+1)
+				highlight_match(index+2)
+				highlight_match(index+3)
+				highlight_match(index+4)
+				highlight_match(index+5)
+				highlight_match(index+6)
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
 				print("Match 5!")
+				highlight_match(index+1)
+				highlight_match(index+2)
+				highlight_match(index+3)
+				highlight_match(index+4)
+				highlight_match(index+5)
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
 				print("Match 4!")
+				highlight_match(index+1)
+				highlight_match(index+2)
+				highlight_match(index+3)
+				highlight_match(index+4)
 			elif piece1 == piece2 && piece2 == piece3:
 				print("Match 3!")
 				highlight_match(index+1)

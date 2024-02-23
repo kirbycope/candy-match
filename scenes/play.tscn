@@ -262,199 +262,199 @@ label_settings = SubResource("LabelSettings_g1d25")
 position = Vector2(-110, 635)
 texture = ExtResource("8_uhd27")
 
-[node name="slot1" type="Sprite2D" parent="board"]
+[node name="slot0" type="Sprite2D" parent="board"]
 position = Vector2(-317.5, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot2" type="Sprite2D" parent="board"]
+[node name="slot1" type="Sprite2D" parent="board"]
 position = Vector2(-210, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot3" type="Sprite2D" parent="board"]
+[node name="slot2" type="Sprite2D" parent="board"]
 position = Vector2(-105, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot4" type="Sprite2D" parent="board"]
+[node name="slot3" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot5" type="Sprite2D" parent="board"]
+[node name="slot4" type="Sprite2D" parent="board"]
 position = Vector2(102.5, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot6" type="Sprite2D" parent="board"]
+[node name="slot5" type="Sprite2D" parent="board"]
 position = Vector2(207.5, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot7" type="Sprite2D" parent="board"]
+[node name="slot6" type="Sprite2D" parent="board"]
 position = Vector2(312.5, -320)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot8" type="Sprite2D" parent="board"]
+[node name="slot7" type="Sprite2D" parent="board"]
 position = Vector2(-315, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot9" type="Sprite2D" parent="board"]
+[node name="slot8" type="Sprite2D" parent="board"]
 position = Vector2(-210, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot10" type="Sprite2D" parent="board"]
+[node name="slot9" type="Sprite2D" parent="board"]
 position = Vector2(-105, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot11" type="Sprite2D" parent="board"]
+[node name="slot10" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot12" type="Sprite2D" parent="board"]
+[node name="slot11" type="Sprite2D" parent="board"]
 position = Vector2(102.5, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot13" type="Sprite2D" parent="board"]
+[node name="slot12" type="Sprite2D" parent="board"]
 position = Vector2(207.5, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot14" type="Sprite2D" parent="board"]
+[node name="slot13" type="Sprite2D" parent="board"]
 position = Vector2(312.5, -215)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot15" type="Sprite2D" parent="board"]
+[node name="slot14" type="Sprite2D" parent="board"]
 position = Vector2(-315, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot16" type="Sprite2D" parent="board"]
+[node name="slot15" type="Sprite2D" parent="board"]
 position = Vector2(-210, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot17" type="Sprite2D" parent="board"]
+[node name="slot16" type="Sprite2D" parent="board"]
 position = Vector2(-105, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot18" type="Sprite2D" parent="board"]
+[node name="slot17" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot19" type="Sprite2D" parent="board"]
+[node name="slot18" type="Sprite2D" parent="board"]
 position = Vector2(102.5, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot20" type="Sprite2D" parent="board"]
+[node name="slot19" type="Sprite2D" parent="board"]
 position = Vector2(207.5, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot21" type="Sprite2D" parent="board"]
+[node name="slot20" type="Sprite2D" parent="board"]
 position = Vector2(312.5, -110)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot22" type="Sprite2D" parent="board"]
+[node name="slot21" type="Sprite2D" parent="board"]
 position = Vector2(-315, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot23" type="Sprite2D" parent="board"]
+[node name="slot22" type="Sprite2D" parent="board"]
 position = Vector2(-210, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot24" type="Sprite2D" parent="board"]
+[node name="slot23" type="Sprite2D" parent="board"]
 position = Vector2(-105, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot25" type="Sprite2D" parent="board"]
+[node name="slot24" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot26" type="Sprite2D" parent="board"]
+[node name="slot25" type="Sprite2D" parent="board"]
 position = Vector2(102.5, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot27" type="Sprite2D" parent="board"]
+[node name="slot26" type="Sprite2D" parent="board"]
 position = Vector2(207.5, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot28" type="Sprite2D" parent="board"]
+[node name="slot27" type="Sprite2D" parent="board"]
 position = Vector2(312.5, -5)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot29" type="Sprite2D" parent="board"]
+[node name="slot28" type="Sprite2D" parent="board"]
 position = Vector2(-315, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot30" type="Sprite2D" parent="board"]
+[node name="slot29" type="Sprite2D" parent="board"]
 position = Vector2(-210, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot31" type="Sprite2D" parent="board"]
+[node name="slot30" type="Sprite2D" parent="board"]
 position = Vector2(-105, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot32" type="Sprite2D" parent="board"]
+[node name="slot31" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot33" type="Sprite2D" parent="board"]
+[node name="slot32" type="Sprite2D" parent="board"]
 position = Vector2(102.5, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot34" type="Sprite2D" parent="board"]
+[node name="slot33" type="Sprite2D" parent="board"]
 position = Vector2(207.5, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot35" type="Sprite2D" parent="board"]
+[node name="slot34" type="Sprite2D" parent="board"]
 position = Vector2(312.5, 100)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot36" type="Sprite2D" parent="board"]
+[node name="slot35" type="Sprite2D" parent="board"]
 position = Vector2(-315, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot37" type="Sprite2D" parent="board"]
+[node name="slot36" type="Sprite2D" parent="board"]
 position = Vector2(-210, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot38" type="Sprite2D" parent="board"]
+[node name="slot37" type="Sprite2D" parent="board"]
 position = Vector2(-105, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot39" type="Sprite2D" parent="board"]
+[node name="slot38" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot40" type="Sprite2D" parent="board"]
+[node name="slot39" type="Sprite2D" parent="board"]
 position = Vector2(102.5, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot41" type="Sprite2D" parent="board"]
+[node name="slot40" type="Sprite2D" parent="board"]
 position = Vector2(207.5, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot42" type="Sprite2D" parent="board"]
+[node name="slot41" type="Sprite2D" parent="board"]
 position = Vector2(312.5, 205)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot43" type="Sprite2D" parent="board"]
+[node name="slot42" type="Sprite2D" parent="board"]
 position = Vector2(-315, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot44" type="Sprite2D" parent="board"]
+[node name="slot43" type="Sprite2D" parent="board"]
 position = Vector2(-210, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot45" type="Sprite2D" parent="board"]
+[node name="slot44" type="Sprite2D" parent="board"]
 position = Vector2(-105, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot46" type="Sprite2D" parent="board"]
+[node name="slot45" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot47" type="Sprite2D" parent="board"]
+[node name="slot46" type="Sprite2D" parent="board"]
 position = Vector2(102.5, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot48" type="Sprite2D" parent="board"]
+[node name="slot47" type="Sprite2D" parent="board"]
 position = Vector2(207.5, 310)
 scale = Vector2(0.2, 0.2)
 
-[node name="slot49" type="Sprite2D" parent="board"]
+[node name="slot48" type="Sprite2D" parent="board"]
 position = Vector2(312.5, 310)
 scale = Vector2(0.2, 0.2)
 

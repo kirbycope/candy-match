@@ -17,4 +17,4 @@ func _process(delta):
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Try":
-			print("Try Again!")
+			get_tree().change_scene_to_file("res://scenes/play.tscn")

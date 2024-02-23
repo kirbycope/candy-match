@@ -306,7 +306,6 @@ texture = ExtResource("18_2i7tp")
 
 [node name="wheel_needle" type="Sprite2D" parent="wheel"]
 position = Vector2(517.5, 875)
-scale = Vector2(1, 1)
 texture = ExtResource("19_adfi2")
 
 [node name="won2" type="Sprite2D" parent="wheel"]

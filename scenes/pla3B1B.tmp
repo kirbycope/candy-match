@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=29 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -36,9 +36,6 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_3kv83"]
 font_size = 32
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qloq"]
-size = Vector2(560, 560)
 
 [node name="play" type="Node2D"]
 position = Vector2(251, 218)
@@ -461,10 +458,6 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(-527.5, 1195)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_8j2i1")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="pause"]
-shape = SubResource("RectangleShape2D_6qloq")
-action = "Main"
 
 [node name="bomb" type="Sprite2D" parent="."]
 position = Vector2(-195, 1190)

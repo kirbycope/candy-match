@@ -1,0 +1,168 @@
+[gd_scene load_steps=22 format=3 uid="uid://bvk1gu4wui65q"]
+
+[ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_an2mo"]
+[ext_resource type="Script" path="res://scripts/lose.gd" id="1_yas1p"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="2_lyu4j"]
+[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="3_nnhvo"]
+[ext_resource type="Texture2D" uid="uid://b5vcdrpdvh6ph" path="res://assets/lose stars.png" id="4_6a1bh"]
+[ext_resource type="Texture2D" uid="uid://bqam0pbujhd2w" path="res://assets/lose title.png" id="6_jqgeh"]
+[ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="7_2usnr"]
+[ext_resource type="Texture2D" uid="uid://dyos8tpae8tuw" path="res://assets/lose checkmark2.png" id="8_pqar0"]
+[ext_resource type="Texture2D" uid="uid://bgafpapcxkgo6" path="res://assets/lose checkmark1.png" id="9_atyuy"]
+[ext_resource type="Texture2D" uid="uid://cqk4n01qg7rjq" path="res://assets/candy4.png" id="10_vl1p7"]
+[ext_resource type="Texture2D" uid="uid://cx4tm4irj0rxh" path="res://assets/candy3.png" id="11_7jb4p"]
+[ext_resource type="Texture2D" uid="uid://cfablhcdjcfqc" path="res://assets/candy2.png" id="12_gwb05"]
+[ext_resource type="Texture2D" uid="uid://v21xq6er4bk4" path="res://assets/button try again.png" id="13_kdbo8"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="14_hr7xs"]
+[ext_resource type="AudioStream" uid="uid://cuym6lqbkhb5h" path="res://assets/a-passing-interest-aaron-paul-low-main-version-21222-01-05.mp3" id="15_26bfl"]
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="15_wjd6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkk5w"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl65r"]
+size = Vector2(200, 200)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rb4uv"]
+font_size = 56
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fllfb"]
+size = Vector2(480, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jfqq"]
+size = Vector2(480, 180)
+
+[node name="lose" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_yas1p")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(472.5, 755)
+texture = ExtResource("1_an2mo")
+
+[node name="top_close" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("2_lyu4j")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_dkk5w")
+action = "Close"
+
+[node name="top_coins" type="Sprite2D" parent="."]
+position = Vector2(952.5, 70)
+texture = ExtResource("3_nnhvo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_wl65r")
+action = "Coins"
+
+[node name="effect" type="Sprite2D" parent="."]
+position = Vector2(515, 367.5)
+texture = ExtResource("4_6a1bh")
+
+[node name="character" type="Sprite2D" parent="."]
+position = Vector2(525, 702.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(515, 1192.5)
+texture = ExtResource("6_jqgeh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 158.0
+offset_top = 1265.0
+offset_right = 868.0
+offset_bottom = 1342.0
+text = "score: 0"
+label_settings = SubResource("LabelSettings_rb4uv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mashmallows" type="Sprite2D" parent="."]
+position = Vector2(142.5, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2usnr")
+
+[node name="fail" type="Sprite2D" parent="mashmallows"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_pqar0")
+
+[node name="pass" type="Sprite2D" parent="mashmallows"]
+visible = false
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_atyuy")
+
+[node name="peppermint" type="Sprite2D" parent="."]
+position = Vector2(380, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_vl1p7")
+
+[node name="fail" type="Sprite2D" parent="peppermint"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_pqar0")
+
+[node name="pass" type="Sprite2D" parent="peppermint"]
+visible = false
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_atyuy")
+
+[node name="hard" type="Sprite2D" parent="."]
+position = Vector2(640, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_7jb4p")
+
+[node name="fail" type="Sprite2D" parent="hard"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_pqar0")
+
+[node name="pass" type="Sprite2D" parent="hard"]
+visible = false
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_atyuy")
+
+[node name="jellies" type="Sprite2D" parent="."]
+position = Vector2(892.5, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_gwb05")
+
+[node name="fail" type="Sprite2D" parent="jellies"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_pqar0")
+
+[node name="pass" type="Sprite2D" parent="jellies"]
+visible = false
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_atyuy")
+
+[node name="try" type="Sprite2D" parent="."]
+position = Vector2(260, 1720)
+texture = ExtResource("13_kdbo8")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="try"]
+shape = SubResource("RectangleShape2D_fllfb")
+action = "Try"
+
+[node name="quit" type="Sprite2D" parent="."]
+position = Vector2(765, 1720)
+texture = ExtResource("14_hr7xs")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="quit"]
+shape = SubResource("RectangleShape2D_4jfqq")
+action = "Main"
+
+[node name="a_passing_interest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_26bfl")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_wjd6v")

@@ -1,9 +1,6 @@
 extends Node2D
 
 
-var character = 1
-var enabled_music = true
-var enabled_sound = true
 var spins_left = 1
 var spin_rotation_speed = 0.0
 var spin_slow_down_time = 5.0
@@ -13,6 +10,8 @@ var wheel_spinning = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_to_main()
+	if Global.enabled_music:
+		$open_fields.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,37 +51,37 @@ func _input(event):
 			$top_close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Character1":
-			character = 1
+			Global.character = 1
 			$character/name_label.text = "Foxy!"
 			clear_character_selection()
 			$character/won1.visible = true
 			$character/character1/checkmark.visible = true
 		elif event.action == "Character2":
-			character = 2
+			Global.character = 2
 			$character/name_label.text = "George"
 			clear_character_selection()
 			$character/won6.visible = true
 			$character/character2/checkmark.visible = true
 		elif event.action == "Character3":
-			character = 3
+			Global.character = 3
 			$character/name_label.text = "Kow!"
 			clear_character_selection()
 			$character/won5.visible = true
 			$character/character3/checkmark.visible = true
 		elif event.action == "Character4":
-			character = 4
+			Global.character = 4
 			$character/name_label.text = "Bob!"
 			clear_character_selection()
 			$character/won2.visible = true
 			$character/character4/checkmark.visible = true
 		elif event.action == "Character5":
-			character = 5
+			Global.character = 5
 			$character/name_label.text = "Rickon"
 			clear_character_selection()
 			$character/won4.visible = true
 			$character/character5/checkmark.visible = true
 		elif event.action == "Character6":
-			character = 6
+			Global.character = 6
 			$character/name_label.text = "Beav!"
 			clear_character_selection()
 			$character/won3.visible = true
@@ -113,25 +112,23 @@ func _input(event):
 		elif event.action == "Spin":
 			spin_wheel_start()
 		elif event.action == "ToggleMusic":
-			enabled_music = not enabled_music
-			$settings/music_off.visible = not enabled_music
-			$settings/music_on.visible = enabled_music
-			if enabled_music:
+			Global.enabled_music = not Global.enabled_music
+			$settings/music_off.visible = not Global.enabled_music
+			$settings/music_on.visible = Global.enabled_music
+			if Global.enabled_music:
 				$open_fields.set_volume_db(0)
 			else:
 				$open_fields.set_volume_db(-100)
 		elif event.action == "ToggleSound":
-			enabled_sound = not enabled_sound
-			$settings/sound_off.visible = not enabled_sound
-			$settings/sound_on.visible = enabled_sound
+			Global.enabled_sound = not Global.enabled_sound
+			$settings/sound_off.visible = not Global.enabled_sound
+			$settings/sound_on.visible = Global.enabled_sound
 		elif event.action == "Wheel":
 			$main.visible = false
 			$menu.visible = false
 			$top_close.visible = true
 			$top_settings.visible = false
 			$wheel.visible = true
-		if enabled_sound:
-			$taps_1.play()
 
 
 # Clears the characters on the Character Select screen.

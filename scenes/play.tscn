@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=31 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="26_tyxfa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1d25"]
 font_size = 72
@@ -500,4 +501,6 @@ texture = ExtResource("11_wadvv")
 
 [node name="simple_pleasures" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n0lt7")
-autoplay = true
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_tyxfa")

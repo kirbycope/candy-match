@@ -1,0 +1,143 @@
+[gd_scene load_steps=21 format=3 uid="uid://dx8nt7jc8hbow"]
+
+[ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_6fvuv"]
+[ext_resource type="Script" path="res://scripts/won.gd" id="1_gun5a"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="2_c7hld"]
+[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="3_vlj8s"]
+[ext_resource type="Texture2D" uid="uid://bcjeyjo2e47ot" path="res://assets/won stars.png" id="4_cmju7"]
+[ext_resource type="Texture2D" uid="uid://cxh5f5dmedvh7" path="res://assets/won title.png" id="6_sgtsm"]
+[ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="7_2xor8"]
+[ext_resource type="Texture2D" uid="uid://bgafpapcxkgo6" path="res://assets/lose checkmark1.png" id="8_ahimn"]
+[ext_resource type="Texture2D" uid="uid://cqk4n01qg7rjq" path="res://assets/candy4.png" id="9_wdd50"]
+[ext_resource type="Texture2D" uid="uid://cx4tm4irj0rxh" path="res://assets/candy3.png" id="10_8i3e0"]
+[ext_resource type="Texture2D" uid="uid://cfablhcdjcfqc" path="res://assets/candy2.png" id="11_xwr40"]
+[ext_resource type="Texture2D" uid="uid://bydl4ykg45083" path="res://assets/buton next.png" id="12_8dw4e"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="13_8es5l"]
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="14_7abuy"]
+[ext_resource type="AudioStream" uid="uid://tkfe0kjvtp4e" path="res://assets/race-to-the-finish-aaron-paul-low-main-version-21280-01-00.mp3" id="15_ditdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2fg3"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16psx"]
+size = Vector2(200, 200)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1glns"]
+font_size = 56
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkirf"]
+size = Vector2(480, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwnj4"]
+size = Vector2(480, 180)
+
+[node name="won" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_gun5a")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(472.5, 755)
+texture = ExtResource("1_6fvuv")
+
+[node name="top_close" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("2_c7hld")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_u2fg3")
+action = "Close"
+
+[node name="top_coins" type="Sprite2D" parent="."]
+position = Vector2(952.5, 70)
+texture = ExtResource("3_vlj8s")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_16psx")
+action = "Coins"
+
+[node name="effect" type="Sprite2D" parent="."]
+position = Vector2(515, 367.5)
+texture = ExtResource("4_cmju7")
+
+[node name="character" type="Sprite2D" parent="."]
+position = Vector2(525, 702.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(515, 1192.5)
+texture = ExtResource("6_sgtsm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 158.0
+offset_top = 1265.0
+offset_right = 868.0
+offset_bottom = 1342.0
+text = "score: 0"
+label_settings = SubResource("LabelSettings_1glns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mashmallows" type="Sprite2D" parent="."]
+position = Vector2(142.5, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2xor8")
+
+[node name="pass" type="Sprite2D" parent="mashmallows"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_ahimn")
+
+[node name="peppermint" type="Sprite2D" parent="."]
+position = Vector2(380, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_wdd50")
+
+[node name="pass" type="Sprite2D" parent="peppermint"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_ahimn")
+
+[node name="hard" type="Sprite2D" parent="."]
+position = Vector2(640, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_8i3e0")
+
+[node name="pass" type="Sprite2D" parent="hard"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_ahimn")
+
+[node name="jellies" type="Sprite2D" parent="."]
+position = Vector2(892.5, 1485)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_xwr40")
+
+[node name="pass" type="Sprite2D" parent="jellies"]
+position = Vector2(155, -170)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_ahimn")
+
+[node name="next" type="Sprite2D" parent="."]
+position = Vector2(260, 1720)
+texture = ExtResource("12_8dw4e")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="next"]
+shape = SubResource("RectangleShape2D_dkirf")
+action = "Next"
+
+[node name="quit" type="Sprite2D" parent="."]
+position = Vector2(765, 1720)
+texture = ExtResource("13_8es5l")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="quit"]
+shape = SubResource("RectangleShape2D_qwnj4")
+action = "Main"
+
+[node name="race_to_the_finish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ditdv")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_7abuy")

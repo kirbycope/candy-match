@@ -15,19 +15,23 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
+	Global.start_timer()
 	populate_board()
+	if Global.enabled_music:
+		$simple_pleasures.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass # Replace with function body.
-
-
-func _input(event):
-	if event is InputEventAction and event.pressed:
-		if event.action == "Main":
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+	# Update timer label
+	var minutes = int(Global.timer_time / 60)
+	var seconds = int(Global.timer_time) % 60
+	var format_string = "%01d:%02d"
+	var actual_string = format_string % [minutes, seconds]
+	$time/timer.text = actual_string
+	# Handle timeout
+	if Global.timer_time == 0:
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 
 
 # Populates the board, randomly.

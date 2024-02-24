@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=81 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -82,9 +82,6 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vibvt"]
 size = Vector2(260, 150)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dveva"]
-load_path = "res://.godot/imported/won22.png-40bbaf0bf39576c1016d1b0a91f217fa.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hljq0"]
 radius = 240.0
@@ -313,10 +310,10 @@ texture = ExtResource("18_2i7tp")
 position = Vector2(517.5, 875)
 texture = ExtResource("19_adfi2")
 
-[node name="won2" type="Sprite2D" parent="wheel"]
+[node name="won4" type="Sprite2D" parent="wheel"]
 position = Vector2(315, 1727.5)
 scale = Vector2(1.25, 1.25)
-texture = SubResource("CompressedTexture2D_dveva")
+texture = ExtResource("23_6tbsw")
 
 [node name="wheel_sign" type="Sprite2D" parent="wheel"]
 position = Vector2(770, 1557.5)

@@ -49,6 +49,7 @@ func _physics_process(delta):
 	pass
 
 
+# Returns a path to a random candy texture.
 func get_random_candy():
 	# Assign a random candy (1-6)
 	var randomNumber = randi() % 6 + 1
@@ -72,6 +73,7 @@ func check_matches():
 	check_matches_vertical()
 
 
+# Checks each row for matches.
 func check_matches_horizontal():
 	var index = 0
 	for x in range(7):
@@ -171,6 +173,7 @@ func check_matches_horizontal():
 			index += 1
 
 
+# Checks each column for matches.
 func check_matches_vertical():
 	for index in range(49):
 		# Get the Piece ID for the given index of the board array
@@ -268,6 +271,23 @@ func check_matches_vertical():
 					candy6_matches += 3
 
 
+# Drop pieces into empty positions.
+func drop_pieces():
+	# Count down from 48 to 0
+	for i in range(48, -1, -1):
+		var node_path = "board/slot" + str(i)
+		var current_node = get_node(node_path)
+		if current_node.texture == null:
+			var above_index = i - 7
+			while above_index >= 0:
+				var above_node_path = "board/slot" + str(above_index)
+				var above_node = get_node(above_node_path)
+				if above_node.texture != null:
+					current_node.texture = above_node.texture
+					above_node.texture = null  # Clear the above node
+					break
+				above_index -= 7  # Move to the node above
+
 # Returns the Piece ID for the piece at the given index of the board array.
 func get_piece_id(index):
 	if index < len(board):
@@ -279,6 +299,7 @@ func get_piece_id(index):
 		return "0"
 
 
+# Remove matching pieces from the board using a tween.
 func remove_matches():
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
@@ -302,10 +323,13 @@ func remove_matches_callback():
 	# Clear so this only happens once
 	horizontal_matches = []
 	vertical_matches = []
+	# DEBUGGING
 	if matches:
-		print(candy1_matches)
-		print(candy2_matches)
-		print(candy3_matches)
-		print(candy4_matches)
-		print(candy5_matches)
-		print(candy6_matches)
+		print("--------------")
+		print("Gummy Bears: " + str(candy1_matches))
+		print("Jelly Beans: " + str(candy2_matches))
+		print("Hard Candy: " + str(candy3_matches))
+		print("Peppermint: " + str(candy4_matches))
+		print("Gummy Worms: " + str(candy5_matches))
+		print("Marshmallows: " + str(candy6_matches))
+		drop_pieces()

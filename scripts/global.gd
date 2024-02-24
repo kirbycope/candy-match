@@ -16,6 +16,7 @@ func _ready():
 	randomize()
 
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if timer_running:
 		timer_time -= delta
@@ -24,6 +25,7 @@ func _process(delta):
 			timer_time = 0
 
 
+# Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Main":

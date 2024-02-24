@@ -37,11 +37,64 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 
 
+# Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
-	for i in range(len(board)):
-		pass
-		# iterate through the "board" and if there is a null texture... or ID ==0 i guess...
-		# indicate the column and drop it
+	if(board[0].texture == null
+	or board[7].texture == null
+	or board[14].texture == null
+	or board[21].texture == null
+	or board[28].texture == null
+	or board[35].texture == null
+	or board[42].texture == null):
+		print("Column 0")
+	if(board[1].texture == null
+	or board[8].texture == null
+	or board[15].texture == null
+	or board[22].texture == null
+	or board[29].texture == null
+	or board[36].texture == null
+	or board[43].texture == null):
+		print("Column 1")
+	if(board[2].texture == null
+	or board[9].texture == null
+	or board[16].texture == null
+	or board[23].texture == null
+	or board[30].texture == null
+	or board[37].texture == null
+	or board[44].texture == null):
+		print("Column 2")
+	if(board[3].texture == null
+	or board[10].texture == null
+	or board[17].texture == null
+	or board[24].texture == null
+	or board[31].texture == null
+	or board[38].texture == null
+	or board[45].texture == null):
+		print("Column 3")
+	if(board[4].texture == null
+	or board[11].texture == null
+	or board[18].texture == null
+	or board[25].texture == null
+	or board[32].texture == null
+	or board[39].texture == null
+	or board[46].texture == null):
+		print("Column 4")
+	if(board[5].texture == null
+	or board[12].texture == null
+	or board[19].texture == null
+	or board[26].texture == null
+	or board[33].texture == null
+	or board[40].texture == null
+	or board[47].texture == null):
+		print("Column 5")
+	if(board[6].texture == null
+	or board[13].texture == null
+	or board[20].texture == null
+	or board[27].texture == null
+	or board[34].texture == null
+	or board[41].texture == null
+	or board[48].texture == null):
+		print("Column 6")
 
 
 # The callback function for the remove_matches() animation.

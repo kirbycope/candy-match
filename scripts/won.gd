@@ -14,6 +14,7 @@ func _process(delta):
 	pass
 
 
+# Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Next":

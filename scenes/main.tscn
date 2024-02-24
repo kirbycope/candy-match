@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=82 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bavuujef1cfin" path="res://assets/menu bg.png" id="10_xr2ln"]
 [ext_resource type="Texture2D" uid="uid://bnmy1pbatougc" path="res://assets/menu map.png" id="11_4mdxq"]
 [ext_resource type="Texture2D" uid="uid://by6ln0i8uoixi" path="res://assets/menu shop.png" id="12_dee8e"]
-[ext_resource type="Texture2D" uid="uid://csekqhrwegfsd" path="res://assets/won3.png" id="12_gyer7"]
 [ext_resource type="Texture2D" uid="uid://dpn7yr7adc3of" path="res://assets/menu boosters.png" id="13_k3y0i"]
 [ext_resource type="Texture2D" uid="uid://fmwuvismriqm" path="res://assets/profile box.png" id="13_w8m5d"]
 [ext_resource type="Texture2D" uid="uid://bykc4tt0nvcua" path="res://assets/profile sound off.png" id="14_eiucw"]
@@ -26,17 +25,18 @@
 [ext_resource type="Texture2D" uid="uid://bpdqe7aldjjac" path="res://assets/wheel empty.png" id="17_0b32j"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="18_1xjgl"]
 [ext_resource type="Texture2D" uid="uid://dikq70x6c1cff" path="res://assets/wheel_full1.png" id="18_2i7tp"]
-[ext_resource type="Texture2D" uid="uid://ou0cp0hlre4h" path="res://assets/won2.png" id="18_34qmd"]
 [ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
 [ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
+[ext_resource type="Texture2D" uid="uid://cckumw878ckpu" path="res://assets/won2.png" id="21_bho1w"]
+[ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="22_7mnru"]
 [ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="22_iq15d"]
 [ext_resource type="Texture2D" uid="uid://ditjg452qvohn" path="res://assets/character1.png" id="22_mx33c"]
+[ext_resource type="Texture2D" uid="uid://cshpti5566xnv" path="res://assets/won4.png" id="23_6tbsw"]
 [ext_resource type="Texture2D" uid="uid://b5ynkke3incdx" path="res://assets/character2.png" id="23_ah5vk"]
 [ext_resource type="Texture2D" uid="uid://3tdjaqn4gm2b" path="res://assets/profile checkmark.png" id="23_vu7b1"]
-[ext_resource type="Texture2D" uid="uid://kmhrbwocb54b" path="res://assets/won4.png" id="23_y4avm"]
-[ext_resource type="Texture2D" uid="uid://bqtmonyr2hajw" path="res://assets/won5.png" id="24_afhdg"]
+[ext_resource type="Texture2D" uid="uid://bova6s57qe5yh" path="res://assets/won5.png" id="24_8wfcv"]
 [ext_resource type="Texture2D" uid="uid://chon6opwy7jwe" path="res://assets/character3.png" id="24_p0g74"]
-[ext_resource type="Texture2D" uid="uid://bg0coid54ovw0" path="res://assets/won6.png" id="25_bx2pg"]
+[ext_resource type="Texture2D" uid="uid://dxopbur6se2f2" path="res://assets/won6.png" id="25_j0wb1"]
 [ext_resource type="Texture2D" uid="uid://n2qo3fo2wiog" path="res://assets/character4.png" id="25_ndeb1"]
 [ext_resource type="Texture2D" uid="uid://b73ihffkf6tnv" path="res://assets/character5.png" id="26_ox0pj"]
 [ext_resource type="Texture2D" uid="uid://rnmyy2oq4mdo" path="res://assets/character6.png" id="27_s2rmg"]
@@ -73,12 +73,18 @@ size = Vector2(480, 340)
 [sub_resource type="LabelSettings" id="LabelSettings_rkec7"]
 font_size = 42
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a25oq"]
+load_path = "res://.godot/imported/won33.png-04d45d920cb5515d196358b0bee3a956.ctex"
+
 [sub_resource type="LabelSettings" id="LabelSettings_h0flw"]
 font_size = 82
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vibvt"]
 size = Vector2(260, 150)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dveva"]
+load_path = "res://.godot/imported/won22.png-40bbaf0bf39576c1016d1b0a91f217fa.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hljq0"]
 radius = 240.0
@@ -236,7 +242,7 @@ visible = false
 [node name="won3" type="Sprite2D" parent="settings"]
 position = Vector2(485, 452.5)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_gyer7")
+texture = SubResource("CompressedTexture2D_a25oq")
 
 [node name="profile_box" type="Sprite2D" parent="settings"]
 position = Vector2(517.5, 920)
@@ -310,7 +316,7 @@ texture = ExtResource("19_adfi2")
 [node name="won2" type="Sprite2D" parent="wheel"]
 position = Vector2(315, 1727.5)
 scale = Vector2(1.25, 1.25)
-texture = ExtResource("18_34qmd")
+texture = SubResource("CompressedTexture2D_dveva")
 
 [node name="wheel_sign" type="Sprite2D" parent="wheel"]
 position = Vector2(770, 1557.5)
@@ -358,31 +364,31 @@ texture = ExtResource("22_iq15d")
 visible = false
 position = Vector2(525, 865)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("18_34qmd")
+texture = ExtResource("21_bho1w")
 
 [node name="won3" type="Sprite2D" parent="character"]
 visible = false
 position = Vector2(525, 865)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_gyer7")
+texture = ExtResource("22_7mnru")
 
 [node name="won4" type="Sprite2D" parent="character"]
 visible = false
 position = Vector2(525, 865)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_y4avm")
+texture = ExtResource("23_6tbsw")
 
 [node name="won5" type="Sprite2D" parent="character"]
 visible = false
 position = Vector2(525, 865)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("24_afhdg")
+texture = ExtResource("24_8wfcv")
 
 [node name="won6" type="Sprite2D" parent="character"]
 visible = false
 position = Vector2(525, 865)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("25_bx2pg")
+texture = ExtResource("25_j0wb1")
 
 [node name="menu_background" type="Sprite2D" parent="character"]
 position = Vector2(502.5, 1720)

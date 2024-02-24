@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="5_bbyw7"]
 [ext_resource type="Texture2D" uid="uid://bq52ury5vc2q5" path="res://assets/character4_1.png" id="5_kwfga"]
 [ext_resource type="Texture2D" uid="uid://s4ahfsh1ii2" path="res://assets/game boost count.png" id="6_0k2pw"]
-[ext_resource type="Texture2D" uid="uid://bqtmonyr2hajw" path="res://assets/won5.png" id="6_a68lo"]
 [ext_resource type="Texture2D" uid="uid://bxen0mydcdwdv" path="res://assets/game top star2.png" id="6_jq1to"]
 [ext_resource type="AudioStream" uid="uid://b5aaxnlfvd3pe" path="res://assets/simple-pleasures-aaron-paul-low-main-version-25191-02-06.mp3" id="6_n0lt7"]
 [ext_resource type="Texture2D" uid="uid://cqk4n01qg7rjq" path="res://assets/candy4.png" id="7_eomf2"]
@@ -33,6 +32,9 @@ font_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jritl"]
 font_size = 32
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j67k8"]
+load_path = "res://.godot/imported/won5.png-d3561127ee760c27c9796f191d1530b1.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_3kv83"]
 font_size = 32
@@ -164,7 +166,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer3"]
 position = Vector2(205, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_a68lo")
+texture = SubResource("CompressedTexture2D_j67k8")
 
 [node name="bubble3" type="Sprite2D" parent="customer3"]
 position = Vector2(314.9, -349.6)

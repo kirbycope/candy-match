@@ -34,6 +34,7 @@ func _process(delta):
 			$wheel/wheel_full.rotation += spin_rotation_speed * delta
 
 
+# Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Ads":
@@ -60,31 +61,31 @@ func _input(event):
 			Global.character = 2
 			$character/name_label.text = "George"
 			clear_character_selection()
-			$character/won6.visible = true
+			$character/won2.visible = true
 			$character/character2/checkmark.visible = true
 		elif event.action == "Character3":
 			Global.character = 3
 			$character/name_label.text = "Kow!"
 			clear_character_selection()
-			$character/won5.visible = true
+			$character/won3.visible = true
 			$character/character3/checkmark.visible = true
 		elif event.action == "Character4":
 			Global.character = 4
 			$character/name_label.text = "Bob!"
 			clear_character_selection()
-			$character/won2.visible = true
+			$character/won4.visible = true
 			$character/character4/checkmark.visible = true
 		elif event.action == "Character5":
 			Global.character = 5
 			$character/name_label.text = "Rickon"
 			clear_character_selection()
-			$character/won4.visible = true
+			$character/won5.visible = true
 			$character/character5/checkmark.visible = true
 		elif event.action == "Character6":
 			Global.character = 6
 			$character/name_label.text = "Beav!"
 			clear_character_selection()
-			$character/won3.visible = true
+			$character/won6.visible = true
 			$character/character6/checkmark.visible = true
 		elif event.action == "Close":
 			reset_to_main()

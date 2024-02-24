@@ -7,6 +7,15 @@ var candy3_matches = 0
 var candy4_matches = 0
 var candy5_matches = 0
 var candy6_matches = 0
+var customer1_desires_candy = 6 # marshmallows
+var customer1_desires_quantity = 6
+var customer1_fulfilled = false
+var customer2_desires_candy = 4 # peppermints
+var customer2_desires_quantity = 4
+var customer2_fulfilled = false
+var customer3_desires_candy = 5 # gummy worms
+var customer3_desires_quantity = 3
+var customer3_fulfilled = false
 @onready var board = [$board/slot0, $board/slot1, $board/slot2, $board/slot3,
 	$board/slot4,$board/slot5, $board/slot6, $board/slot7, $board/slot8,
 	$board/slot9,$board/slot10, $board/slot11, $board/slot12, $board/slot13,
@@ -18,7 +27,9 @@ var candy6_matches = 0
 	$board/slot39, $board/slot40, $board/slot41, $board/slot42, $board/slot43,
 	$board/slot44, $board/slot45, $board/slot46, $board/slot47, $board/slot48]
 var horizontal_matches = []
+var level_complete = false
 var matches_left_to_remove = 0
+var moves = 20
 var touch_start_position
 var vertical_matches = []
 
@@ -47,21 +58,26 @@ func _process(delta):
 
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
+	if level_complete and matches_left_to_remove == 0:
+		get_tree().change_scene_to_file("res://scenes/won.tscn")
+	if moves <= 0:
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 	swap_pieces()
 	drop_pieces()
-	# Only check for matches if there are 0 null textures
 	if check_for_empty_positions() == false:
 		check_matches()
 		remove_matches()
-
+	customer_order_updates()
 
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
 	# Set the last touched piece
 	if event is InputEventAction and event.pressed == false:
-		var action = event.action.replace("slot","")
+		var action = str(event.action)
 		Global.piece_selected = int(action)
-
+		# Handle `moves` count
+		moves -= 1
+		$top_moves/moves.text = str(moves)
 
 # Returns a path to a random candy texture.
 func get_random_candy():
@@ -293,6 +309,81 @@ func check_matches_vertical():
 					candy6_matches += 3
 
 
+func customer_order_requests():
+	var desired1_texture = "res://assets/candy" + str(customer1_desires_candy) + ".png"
+	$customer1/desired.texture = load("desired1_texture")
+
+
+func customer_order_updates():
+	# Customer 1
+	var customer1_remaining = customer1_desires_quantity
+	if customer1_desires_candy == 1:
+		customer1_remaining -= candy1_matches
+	if customer1_desires_candy == 2:
+		customer1_remaining -= candy2_matches
+	if customer1_desires_candy == 3:
+		customer1_remaining -= candy3_matches
+	if customer1_desires_candy == 4:
+		customer1_remaining -= candy4_matches
+	if customer1_desires_candy == 5:
+		customer1_remaining -= candy5_matches
+	if customer1_desires_candy == 6:
+		customer1_remaining -= candy6_matches
+	if customer1_remaining > 0:
+		$customer1/count.text = str(customer1_remaining)
+	else:
+		$customer1/count.text = "0"
+	# Customer 2
+	var customer2_remaining = customer2_desires_quantity
+	if customer2_desires_candy == 1:
+		customer2_remaining -= candy1_matches
+	if customer2_desires_candy == 2:
+		customer2_remaining -= candy2_matches
+	if customer2_desires_candy == 3:
+		customer2_remaining -= candy3_matches
+	if customer2_desires_candy == 4:
+		customer2_remaining -= candy4_matches
+	if customer2_desires_candy == 5:
+		customer2_remaining -= candy5_matches
+	if customer2_desires_candy == 6:
+		customer2_remaining -= candy6_matches
+	if customer2_remaining > 0:
+		$customer2/count.text = str(customer2_remaining)
+	else:
+		$customer2/count.text = "0"
+	# Cusommer 3
+	var customer3_remaining = customer3_desires_quantity
+	if customer3_desires_candy == 1:
+		customer3_remaining -= candy1_matches
+	if customer3_desires_candy == 2:
+		customer3_remaining -= candy2_matches
+	if customer3_desires_candy == 3:
+		customer3_remaining -= candy3_matches
+	if customer3_desires_candy == 4:
+		customer3_remaining -= candy4_matches
+	if customer3_desires_candy == 5:
+		customer3_remaining -= candy5_matches
+	if customer3_desires_candy == 6:
+		customer3_remaining -= candy6_matches
+	if customer3_remaining > 0:
+		$customer3/count.text = str(customer3_remaining)
+	else:
+		$customer3/count.text = "0"
+	if customer1_fulfilled == false and customer1_remaining <= 0:
+		customer1_fulfilled = true
+		$marimba_bloop_3.play()
+	if customer2_fulfilled == false and customer2_remaining <= 0:
+		customer2_fulfilled = true
+		$marimba_bloop_3.play()
+	if customer3_fulfilled == false and customer3_remaining <= 0:
+		customer3_fulfilled = true
+		$marimba_bloop_3.play()
+	if (customer1_fulfilled
+	and customer2_fulfilled
+	and customer3_fulfilled):
+		level_complete = true
+
+
 # Drop pieces into empty positions.
 func drop_pieces():
 	if matches_left_to_remove == 0:
@@ -329,20 +420,21 @@ func get_piece_id(index):
 
 # Remove matching pieces from the board using a tween.
 func remove_matches():
-	if matches_left_to_remove == 0:
-		var matches = horizontal_matches + vertical_matches
-		for i in range(len(matches)):
-			if matches[i] < len(board):
-				var node_path = "board/slot" + str(matches[i])
-				var node = get_node(node_path)
-				if node:
-					var tween = get_tree().create_tween()
+	var matches = horizontal_matches + vertical_matches
+	for i in range(len(matches)):
+		if matches[i] < len(board):
+			var node_path = "board/slot" + str(matches[i])
+			var node = get_node(node_path)
+			if node:
+				var tree = get_tree()
+				if tree:
+					var tween = tree.create_tween()
 					tween.tween_property(node, "modulate", Color.RED, 0.75)
 					tween.tween_property(node, "scale", Vector2(), 0.75)
 					tween.tween_callback(remove_matches_callback)
 					matches_left_to_remove += 1
-		if matches_left_to_remove > 0:
-			$multi_pop_6.play()
+	if matches_left_to_remove > 0:
+		$multi_pop_6.play()
 
 
 # The callback function for the remove_matches() tween.
@@ -390,6 +482,6 @@ func swap_pieces():
 				selected_node.texture = next_node.texture
 				# Set the adjecent piece's texture as the original one
 				next_node.texture = swap_node_texture
-				# Clear so this only runs once
+		# Clear so this only runs once
 		Global.piece_selected = null
 		Global.swipe_direction = null

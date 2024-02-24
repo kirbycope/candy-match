@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=35 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
 [ext_resource type="AudioStream" uid="uid://b05v3mn134hg8" path="res://assets/multi-pop-6-188170.mp3" id="26_7lrum"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="26_tyxfa"]
+[ext_resource type="AudioStream" uid="uid://cn5cxy6veyb6g" path="res://assets/marimba-bloop-3-188151.mp3" id="28_k8jwo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1d25"]
 font_size = 72
@@ -714,3 +715,6 @@ stream = ExtResource("26_tyxfa")
 
 [node name="multi_pop_6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_7lrum")
+
+[node name="marimba_bloop_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_k8jwo")

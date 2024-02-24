@@ -46,11 +46,7 @@ func _input(event):
 			$top_close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Character":
-			$character.visible = true
-			$main.visible = false
-			$menu.visible = false
-			$top_close.visible = true
-			$top_settings.visible = false
+			open_character_selection()
 		elif event.action == "Character1":
 			Global.character = 1
 			$character/name_label.text = "Foxy!"
@@ -146,6 +142,17 @@ func clear_character_selection():
 	$character/character5/checkmark.visible = false
 	$character/won6.visible = false
 	$character/character6/checkmark.visible = false
+
+
+func open_character_selection():
+	$character.visible = true
+	$main.visible = false
+	$menu.visible = false
+	$top_close.visible = true
+	$top_settings.visible = false
+	var node_path = "character/character" + str(Global.character) + "/checkmark"
+	var node = get_node(node_path)
+	node.visible = true
 
 
 # Opens the scene's "shop" view.

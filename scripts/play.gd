@@ -1,6 +1,12 @@
 extends Node2D
 
 
+var candy1_matches = 0
+var candy2_matches = 0
+var candy3_matches = 0
+var candy4_matches = 0
+var candy5_matches = 0
+var candy6_matches = 0
 @onready var board = [$board/slot0, $board/slot1, $board/slot2, $board/slot3,
 	$board/slot4,$board/slot5, $board/slot6, $board/slot7, $board/slot8,
 	$board/slot9,$board/slot10, $board/slot11, $board/slot12, $board/slot13,
@@ -11,7 +17,8 @@ extends Node2D
 	$board/slot34, $board/slot35, $board/slot36, $board/slot37, $board/slot38,
 	$board/slot39, $board/slot40, $board/slot41, $board/slot42, $board/slot43,
 	$board/slot44, $board/slot45, $board/slot46, $board/slot47, $board/slot48]
-var matches = []
+var horizontal_matches = []
+var vertical_matches = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,99 +46,43 @@ func _process(delta):
 
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
-	if(board[0].texture == null
-	or board[7].texture == null
-	or board[14].texture == null
-	or board[21].texture == null
-	or board[28].texture == null
-	or board[35].texture == null
-	or board[42].texture == null):
-		print("Column 0")
-	if(board[1].texture == null
-	or board[8].texture == null
-	or board[15].texture == null
-	or board[22].texture == null
-	or board[29].texture == null
-	or board[36].texture == null
-	or board[43].texture == null):
-		print("Column 1")
-	if(board[2].texture == null
-	or board[9].texture == null
-	or board[16].texture == null
-	or board[23].texture == null
-	or board[30].texture == null
-	or board[37].texture == null
-	or board[44].texture == null):
-		print("Column 2")
-	if(board[3].texture == null
-	or board[10].texture == null
-	or board[17].texture == null
-	or board[24].texture == null
-	or board[31].texture == null
-	or board[38].texture == null
-	or board[45].texture == null):
-		print("Column 3")
-	if(board[4].texture == null
-	or board[11].texture == null
-	or board[18].texture == null
-	or board[25].texture == null
-	or board[32].texture == null
-	or board[39].texture == null
-	or board[46].texture == null):
-		print("Column 4")
-	if(board[5].texture == null
-	or board[12].texture == null
-	or board[19].texture == null
-	or board[26].texture == null
-	or board[33].texture == null
-	or board[40].texture == null
-	or board[47].texture == null):
-		print("Column 5")
-	if(board[6].texture == null
-	or board[13].texture == null
-	or board[20].texture == null
-	or board[27].texture == null
-	or board[34].texture == null
-	or board[41].texture == null
-	or board[48].texture == null):
-		print("Column 6")
+	pass
 
 
-# The callback function for the remove_matches() animation.
-func clear_callback():
-	for i in range(len(matches)):
-		board[matches[i]].texture = null
-		board[matches[i]].modulate = $background1.modulate
-		board[matches[i]].scale = Vector2(0.2, 0.2)
-	matches = []
+func get_random_candy():
+	# Assign a random candy (1-6)
+	var randomNumber = randi() % 6 + 1
+	# Set the texture for the candy at the current index of the board array.
+	return "res://assets/candy" + str(randomNumber) + ".png"
 
 
 # Populates the board, randomly.
 func populate_board():
 	for i in range(49): # (slot0-slot48)
-		# Assign a random candy (1-6)
-		var randomNumber = randi() % 6 + 1
-		# Set the texture for the candy at the current index of the board array.
-		board[i].texture = load("res://assets/candy" + str(randomNumber) + ".png")
+		# Assign a random candy
+		var texture_path = get_random_candy()
+		board[i].texture = load(texture_path)
 
 
 # Resets the `matches` array and adds any/all new matches.
 func check_matches():
-	matches = []
-	# Index for slot0-slot48
+	horizontal_matches = []
+	vertical_matches = []
+	check_matches_horizontal()
+	check_matches_vertical()
+
+
+func check_matches_horizontal():
 	var index = 0
-	# Scan horizontally (Rows 1-7)
 	for x in range(7):
-		# Scan horizontally (Positions 1-7)
 		for y in range(7):
-			# Reset pieces (Reece's pieces...yum)
 			var piece1 = "0"; var piece2 = "0"; var piece3 = "0"; var piece4 = "0"; var piece5 = "0"; var piece6 = "0"; var piece7 = "0"
 			# Get the Piece ID for the given index of the board array
 			piece1 = get_piece_id(index)
 			# Get more IDs based on starting position
 			if y < 6:
 				piece2 = get_piece_id(index+1)
-			if y < 5 :
+			if y < 5:
 				piece3 = get_piece_id(index+2)
 			if y < 4:
 				piece4 = get_piece_id(index+3)
@@ -143,20 +94,178 @@ func check_matches():
 				piece7 = get_piece_id(index+6)
 			# Check match permutations
 			if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
-				matches += [index, index+1, index+2, index+3, index+4, index+5, index+6]
+				if index not in horizontal_matches:
+					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5, index+6]
+					if piece1 == "1":
+						candy1_matches += 7
+					if piece1 == "2":
+						candy2_matches += 7
+					if piece1 == "3":
+						candy3_matches += 7
+					if piece1 == "4":
+						candy4_matches += 7
+					if piece1 == "5":
+						candy5_matches += 7
+					if piece1 == "6":
+						candy6_matches += 7
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
-				if index not in matches:
-					matches += [index, index+1, index+2, index+3, index+4, index+5]
+				if index not in horizontal_matches:
+					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5]
+					if piece1 == "1":
+						candy1_matches += 6
+					if piece1 == "2":
+						candy2_matches += 6
+					if piece1 == "3":
+						candy3_matches += 6
+					if piece1 == "4":
+						candy4_matches += 6
+					if piece1 == "5":
+						candy5_matches += 6
+					if piece1 == "6":
+						candy6_matches += 6
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
-				if index not in matches:
-					matches += [index, index+1, index+2, index+3, index+4]
+				if index not in horizontal_matches:
+					horizontal_matches += [index, index+1, index+2, index+3, index+4]
+					if piece1 == "1":
+						candy1_matches += 5
+					if piece1 == "2":
+						candy2_matches += 5
+					if piece1 == "3":
+						candy3_matches += 5
+					if piece1 == "4":
+						candy4_matches += 5
+					if piece1 == "5":
+						candy5_matches += 5
+					if piece1 == "6":
+						candy6_matches += 5
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
-				if index not in matches:
-					matches += [index, index+1, index+2, index+3]
+				if index not in horizontal_matches:
+					horizontal_matches += [index, index+1, index+2, index+3]
+					if piece1 == "1":
+						candy1_matches += 4
+					if piece1 == "2":
+						candy2_matches += 4
+					if piece1 == "3":
+						candy3_matches += 4
+					if piece1 == "4":
+						candy4_matches += 4
+					if piece1 == "5":
+						candy5_matches += 4
+					if piece1 == "6":
+						candy6_matches += 4
 			elif piece1 == piece2 && piece2 == piece3:
-				if index not in matches:
-					matches += [index, index+1, index+2]
+				if index not in horizontal_matches:
+					horizontal_matches += [index, index+1, index+2]
+					if piece1 == "1":
+						candy1_matches += 3
+					if piece1 == "2":
+						candy2_matches += 3
+					if piece1 == "3":
+						candy3_matches += 3
+					if piece1 == "4":
+						candy4_matches += 3
+					if piece1 == "5":
+						candy5_matches += 3
+					if piece1 == "6":
+						candy6_matches += 3
 			index += 1
+
+
+func check_matches_vertical():
+	for index in range(49):
+		# Get the Piece ID for the given index of the board array
+		var piece1 = "0"; var piece2 = "0"; var piece3 = "0"; var piece4 = "0"; var piece5 = "0"; var piece6 = "0"; var piece7 = "0"
+		# Get the Piece ID for the given index of the board array
+		piece1 = get_piece_id(index)
+		# Get more IDs based on starting position
+		if index + 7 < 49:
+			piece2 = get_piece_id(index+7)
+		if index + 14 < 49:
+			piece3 = get_piece_id(index+14)
+		if index + 21 < 49:
+			piece4 = get_piece_id(index+21)
+		if index + 28 < 49:
+			piece5 = get_piece_id(index+28)
+		if index + 35 < 49:
+			piece6 = get_piece_id(index+35)
+		if index + 42 < 49:
+			piece7 = get_piece_id(index+42)
+		# Check match permutations
+		if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
+			if index not in vertical_matches:
+				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35, index+42]
+				if piece1 == "1":
+					candy1_matches += 7
+				if piece1 == "2":
+					candy2_matches += 7
+				if piece1 == "3":
+					candy3_matches += 7
+				if piece1 == "4":
+					candy4_matches += 7
+				if piece1 == "5":
+					candy5_matches += 7
+				if piece1 == "6":
+					candy6_matches += 7
+		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
+			if index not in vertical_matches:
+				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35]
+				if piece1 == "1":
+					candy1_matches += 6
+				if piece1 == "2":
+					candy2_matches += 6
+				if piece1 == "3":
+					candy3_matches += 6
+				if piece1 == "4":
+					candy4_matches += 6
+				if piece1 == "5":
+					candy5_matches += 6
+				if piece1 == "6":
+					candy6_matches += 6
+		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
+			if index not in vertical_matches:
+				vertical_matches += [index, index+7, index+14, index+21, index+28]
+				if piece1 == "1":
+					candy1_matches += 5
+				if piece1 == "2":
+					candy2_matches += 5
+				if piece1 == "3":
+					candy3_matches += 5
+				if piece1 == "4":
+					candy4_matches += 5
+				if piece1 == "5":
+					candy5_matches += 5
+				if piece1 == "6":
+					candy6_matches += 5
+		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
+			if index not in vertical_matches:
+				vertical_matches += [index, index+7, index+14, index+21]
+				if piece1 == "1":
+					candy1_matches += 4
+				if piece1 == "2":
+					candy2_matches += 4
+				if piece1 == "3":
+					candy3_matches += 4
+				if piece1 == "4":
+					candy4_matches += 4
+				if piece1 == "5":
+					candy5_matches += 4
+				if piece1 == "6":
+					candy6_matches += 4
+		elif piece1 == piece2 && piece2 == piece3:
+			if index not in vertical_matches:
+				vertical_matches += [index, index+7, index+14]
+				if piece1 == "1":
+					candy1_matches += 3
+				if piece1 == "2":
+					candy2_matches += 3
+				if piece1 == "3":
+					candy3_matches += 3
+				if piece1 == "4":
+					candy4_matches += 3
+				if piece1 == "5":
+					candy5_matches += 3
+				if piece1 == "6":
+					candy6_matches += 3
 
 
 # Returns the Piece ID for the piece at the given index of the board array.
@@ -170,22 +279,33 @@ func get_piece_id(index):
 		return "0"
 
 
-func print_candy_name(id):
-	if (id == "1"): print("Gummy Bears")
-	elif (id == "2"): print("Jelly Beans")
-	elif (id == "3"): print("Hard Candy")
-	elif (id == "4"): print("Peppermint")
-	elif (id == "5"): print("Gummy Worms")
-	elif (id == "6"): print("Marshmallows")
-
-
 func remove_matches():
+	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
 		var node_path = "board/slot" + str(matches[i])
 		var node = get_node(node_path)
 		if node:
 			var tween = get_tree().create_tween()
-			tween.tween_property(node, "modulate", Color.RED, 1)
-			tween.tween_property(node, "scale", Vector2(), 1)
+			tween.tween_property(node, "modulate", Color.RED, 0.75)
+			tween.tween_property(node, "scale", Vector2(), 0.75)
 			#tween.tween_callback(node.queue_free)
-			tween.tween_callback(clear_callback)
+			tween.tween_callback(remove_matches_callback)
+
+
+# The callback function for the remove_matches() tween.
+func remove_matches_callback():
+	var matches = horizontal_matches + vertical_matches
+	for i in range(len(matches)):
+		board[matches[i]].texture = null
+		board[matches[i]].modulate = $background1.modulate
+		board[matches[i]].scale = Vector2(0.2, 0.2)
+	# Clear so this only happens once
+	horizontal_matches = []
+	vertical_matches = []
+	if matches:
+		print(candy1_matches)
+		print(candy2_matches)
+		print(candy3_matches)
+		print(candy4_matches)
+		print(candy5_matches)
+		print(candy6_matches)

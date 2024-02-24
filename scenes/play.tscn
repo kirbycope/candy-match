@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=34 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
+[ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
+[ext_resource type="AudioStream" uid="uid://b05v3mn134hg8" path="res://assets/multi-pop-6-188170.mp3" id="26_7lrum"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="26_tyxfa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1d25"]
@@ -39,6 +41,9 @@ load_path = "res://.godot/imported/won5.png-d3561127ee760c27c9796f191d1530b1.cte
 [sub_resource type="LabelSettings" id="LabelSettings_3kv83"]
 font_size = 32
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abln1"]
+size = Vector2(500, 500)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qloq"]
 size = Vector2(560, 560)
@@ -264,13 +269,25 @@ label_settings = SubResource("LabelSettings_g1d25")
 position = Vector2(-110, 635)
 texture = ExtResource("8_uhd27")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board"]
+position = Vector2(110, -635)
+script = ExtResource("18_25ybd")
+
 [node name="slot0" type="Sprite2D" parent="board"]
 position = Vector2(-317.5, -320)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot0"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "slot0"
+
 [node name="slot1" type="Sprite2D" parent="board"]
 position = Vector2(-210, -320)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot1"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "slot1"
 
 [node name="slot2" type="Sprite2D" parent="board"]
 position = Vector2(-105, -320)
@@ -506,3 +523,6 @@ stream = ExtResource("6_n0lt7")
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_tyxfa")
+
+[node name="multi_pop_6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_7lrum")

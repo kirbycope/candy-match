@@ -18,11 +18,14 @@ var candy6_matches = 0
 	$board/slot39, $board/slot40, $board/slot41, $board/slot42, $board/slot43,
 	$board/slot44, $board/slot45, $board/slot46, $board/slot47, $board/slot48]
 var horizontal_matches = []
+var matches_left_to_remove = 0
+var touch_start_position
 var vertical_matches = []
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process_input(true)
 	Global.start_timer()
 	populate_board()
 	check_matches()
@@ -46,7 +49,16 @@ func _process(delta):
 
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
-	pass
+	swap_pieces()
+	drop_pieces()
+
+
+# Called once for every event before _unhandled_input(), allowing you to consume some events.
+func _input(event):
+	# Set the last touched piece
+	if event is InputEventAction and event.pressed == false:
+		var action = event.action.replace("slot","")
+		Global.piece_selected = int(action)
 
 
 # Returns a path to a random candy texture.
@@ -273,20 +285,24 @@ func check_matches_vertical():
 
 # Drop pieces into empty positions.
 func drop_pieces():
-	# Count down from 48 to 0
-	for i in range(48, -1, -1):
-		var node_path = "board/slot" + str(i)
-		var current_node = get_node(node_path)
-		if current_node.texture == null:
-			var above_index = i - 7
-			while above_index >= 0:
-				var above_node_path = "board/slot" + str(above_index)
-				var above_node = get_node(above_node_path)
-				if above_node.texture != null:
-					current_node.texture = above_node.texture
-					above_node.texture = null  # Clear the above node
-					break
-				above_index -= 7  # Move to the node above
+	if matches_left_to_remove == 0:
+		horizontal_matches = []
+		vertical_matches = []
+		for i in range(48, -1, -1):
+			var node_path = "board/slot" + str(i)
+			var current_node = get_node(node_path)
+			if current_node.texture == null:
+				if i < 7:
+					var texture_path = get_random_candy()
+					current_node.texture = load(texture_path)
+				else:
+					var above_index = i - 7
+					var above_node_path = "board/slot" + str(above_index)
+					var above_node = get_node(above_node_path)
+					if above_node.texture != null:
+						current_node.texture = above_node.texture
+						above_node.texture = null
+
 
 # Returns the Piece ID for the piece at the given index of the board array.
 func get_piece_id(index):
@@ -311,6 +327,9 @@ func remove_matches():
 			tween.tween_property(node, "scale", Vector2(), 0.75)
 			#tween.tween_callback(node.queue_free)
 			tween.tween_callback(remove_matches_callback)
+			matches_left_to_remove += 1
+	if matches_left_to_remove > 0:
+		$multi_pop_6.play()
 
 
 # The callback function for the remove_matches() tween.
@@ -320,16 +339,18 @@ func remove_matches_callback():
 		board[matches[i]].texture = null
 		board[matches[i]].modulate = $background1.modulate
 		board[matches[i]].scale = Vector2(0.2, 0.2)
-	# Clear so this only happens once
-	horizontal_matches = []
-	vertical_matches = []
-	# DEBUGGING
-	if matches:
-		print("--------------")
-		print("Gummy Bears: " + str(candy1_matches))
-		print("Jelly Beans: " + str(candy2_matches))
-		print("Hard Candy: " + str(candy3_matches))
-		print("Peppermint: " + str(candy4_matches))
-		print("Gummy Worms: " + str(candy5_matches))
-		print("Marshmallows: " + str(candy6_matches))
-		drop_pieces()
+	matches_left_to_remove -= 1
+
+
+func swap_pieces():
+	if Global.piece_selected != null and Global.swipe_direction != null:
+		if Global.piece_selected == 0 and Global.swipe_direction == Vector2.RIGHT:
+			var current_node_path = "board/slot" + str(Global.piece_selected)
+			var current_node = get_node(current_node_path)
+			var next_node_path = "board/slot" + str(Global.piece_selected+1)
+			var next_node = get_node(next_node_path)
+			var swap_node_texture = current_node.texture
+			current_node.texture = next_node.texture
+			next_node.texture = swap_node_texture
+			Global.piece_selected = null
+			Global.swipe_direction = null

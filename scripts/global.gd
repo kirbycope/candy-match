@@ -6,6 +6,8 @@ extends Node
 var character = 1
 var enabled_music = true
 var enabled_sound = true
+var piece_selected = null
+var swipe_direction = null
 var timer_duration = 0
 var timer_running = false
 var timer_time = timer_duration

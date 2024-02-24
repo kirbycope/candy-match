@@ -274,12 +274,12 @@ position = Vector2(110, -635)
 script = ExtResource("18_25ybd")
 
 [node name="slot0" type="Sprite2D" parent="board"]
-position = Vector2(-317.5, -320)
+position = Vector2(-315, -320)
 scale = Vector2(0.2, 0.2)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot0"]
 shape = SubResource("RectangleShape2D_abln1")
-action = "slot0"
+action = "0"
 
 [node name="slot1" type="Sprite2D" parent="board"]
 position = Vector2(-210, -320)
@@ -287,195 +287,383 @@ scale = Vector2(0.2, 0.2)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot1"]
 shape = SubResource("RectangleShape2D_abln1")
-action = "slot1"
+action = "1"
 
 [node name="slot2" type="Sprite2D" parent="board"]
 position = Vector2(-105, -320)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot2"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "2"
+
 [node name="slot3" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -320)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot3"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "3"
+
 [node name="slot4" type="Sprite2D" parent="board"]
-position = Vector2(102.5, -320)
+position = Vector2(105, -320)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot4"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "4"
 
 [node name="slot5" type="Sprite2D" parent="board"]
-position = Vector2(207.5, -320)
+position = Vector2(210, -320)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot5"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "5"
+
 [node name="slot6" type="Sprite2D" parent="board"]
-position = Vector2(312.5, -320)
+position = Vector2(315, -320)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot6"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "6"
 
 [node name="slot7" type="Sprite2D" parent="board"]
 position = Vector2(-315, -215)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot7"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "7"
+
 [node name="slot8" type="Sprite2D" parent="board"]
 position = Vector2(-210, -215)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot8"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "8"
 
 [node name="slot9" type="Sprite2D" parent="board"]
 position = Vector2(-105, -215)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot9"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "9"
+
 [node name="slot10" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -215)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot10"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "10"
+
 [node name="slot11" type="Sprite2D" parent="board"]
-position = Vector2(102.5, -215)
+position = Vector2(105, -215)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot11"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "11"
 
 [node name="slot12" type="Sprite2D" parent="board"]
-position = Vector2(207.5, -215)
+position = Vector2(210, -215)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot12"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "12"
+
 [node name="slot13" type="Sprite2D" parent="board"]
-position = Vector2(312.5, -215)
+position = Vector2(315, -215)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot13"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "13"
 
 [node name="slot14" type="Sprite2D" parent="board"]
 position = Vector2(-315, -110)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot14"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "14"
+
 [node name="slot15" type="Sprite2D" parent="board"]
 position = Vector2(-210, -110)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot15"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "15"
 
 [node name="slot16" type="Sprite2D" parent="board"]
 position = Vector2(-105, -110)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot16"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "16"
+
 [node name="slot17" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -110)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot17"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "17"
+
 [node name="slot18" type="Sprite2D" parent="board"]
-position = Vector2(102.5, -110)
+position = Vector2(105, -110)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot18"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "18"
 
 [node name="slot19" type="Sprite2D" parent="board"]
-position = Vector2(207.5, -110)
+position = Vector2(210, -110)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot19"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "19"
+
 [node name="slot20" type="Sprite2D" parent="board"]
-position = Vector2(312.5, -110)
+position = Vector2(315, -110)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot20"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "20"
 
 [node name="slot21" type="Sprite2D" parent="board"]
 position = Vector2(-315, -5)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot21"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "21"
+
 [node name="slot22" type="Sprite2D" parent="board"]
 position = Vector2(-210, -5)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot22"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "22"
 
 [node name="slot23" type="Sprite2D" parent="board"]
 position = Vector2(-105, -5)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot23"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "23"
+
 [node name="slot24" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, -5)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot24"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "24"
+
 [node name="slot25" type="Sprite2D" parent="board"]
-position = Vector2(102.5, -5)
+position = Vector2(105, -5)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot25"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "25"
 
 [node name="slot26" type="Sprite2D" parent="board"]
-position = Vector2(207.5, -5)
+position = Vector2(210, -5)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot26"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "26"
+
 [node name="slot27" type="Sprite2D" parent="board"]
-position = Vector2(312.5, -5)
+position = Vector2(315, -5)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot27"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "27"
 
 [node name="slot28" type="Sprite2D" parent="board"]
 position = Vector2(-315, 100)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot28"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "28"
+
 [node name="slot29" type="Sprite2D" parent="board"]
 position = Vector2(-210, 100)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot29"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "29"
 
 [node name="slot30" type="Sprite2D" parent="board"]
 position = Vector2(-105, 100)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot30"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "30"
+
 [node name="slot31" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 100)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot31"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "31"
+
 [node name="slot32" type="Sprite2D" parent="board"]
-position = Vector2(102.5, 100)
+position = Vector2(105, 100)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot32"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "32"
 
 [node name="slot33" type="Sprite2D" parent="board"]
-position = Vector2(207.5, 100)
+position = Vector2(210, 100)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot33"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "33"
+
 [node name="slot34" type="Sprite2D" parent="board"]
-position = Vector2(312.5, 100)
+position = Vector2(315, 100)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot34"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "34"
 
 [node name="slot35" type="Sprite2D" parent="board"]
 position = Vector2(-315, 205)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot35"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "35"
+
 [node name="slot36" type="Sprite2D" parent="board"]
 position = Vector2(-210, 205)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot36"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "36"
 
 [node name="slot37" type="Sprite2D" parent="board"]
 position = Vector2(-105, 205)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot37"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "37"
+
 [node name="slot38" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 205)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot38"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "38"
+
 [node name="slot39" type="Sprite2D" parent="board"]
-position = Vector2(102.5, 205)
+position = Vector2(105, 205)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot39"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "39"
 
 [node name="slot40" type="Sprite2D" parent="board"]
-position = Vector2(207.5, 205)
+position = Vector2(210, 205)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot40"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "40"
+
 [node name="slot41" type="Sprite2D" parent="board"]
-position = Vector2(312.5, 205)
+position = Vector2(315, 205)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot41"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "41"
 
 [node name="slot42" type="Sprite2D" parent="board"]
 position = Vector2(-315, 310)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot42"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "42"
+
 [node name="slot43" type="Sprite2D" parent="board"]
 position = Vector2(-210, 310)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot43"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "43"
 
 [node name="slot44" type="Sprite2D" parent="board"]
 position = Vector2(-105, 310)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot44"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "44"
+
 [node name="slot45" type="Sprite2D" parent="board"]
 position = Vector2(3.8147e-05, 310)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot45"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "45"
+
 [node name="slot46" type="Sprite2D" parent="board"]
-position = Vector2(102.5, 310)
+position = Vector2(105, 310)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot46"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "46"
 
 [node name="slot47" type="Sprite2D" parent="board"]
-position = Vector2(207.5, 310)
+position = Vector2(210, 310)
 scale = Vector2(0.2, 0.2)
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot47"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "47"
+
 [node name="slot48" type="Sprite2D" parent="board"]
-position = Vector2(312.5, 310)
+position = Vector2(315, 310)
 scale = Vector2(0.2, 0.2)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="board/slot48"]
+shape = SubResource("RectangleShape2D_abln1")
+action = "48"
 
 [node name="pause" type="Sprite2D" parent="."]
 position = Vector2(-527.5, 1195)

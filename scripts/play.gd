@@ -26,10 +26,8 @@ var vertical_matches = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_input(true)
-	Global.start_timer()
 	populate_board()
-	check_matches()
-	remove_matches()
+	Global.start_timer()
 	if Global.enabled_music:
 		$simple_pleasures.play()
 
@@ -51,6 +49,10 @@ func _process(delta):
 func _physics_process(delta):
 	swap_pieces()
 	drop_pieces()
+	# Only check for matches if there are 0 null textures
+	if check_for_empty_positions() == false:
+		check_matches()
+		remove_matches()
 
 
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
@@ -77,10 +79,18 @@ func populate_board():
 		board[i].texture = load(texture_path)
 
 
-# Resets the `matches` array and adds any/all new matches.
+# Returns true if there are empty board positions.
+func check_for_empty_positions():
+	for i in len(board):
+		var node_path = "board/slot" + str(i)
+		var node = get_node(node_path)
+		if node.texture == null:
+			return true
+	return false
+
+
+# Adds any/all new matches to the `matches` array.
 func check_matches():
-	horizontal_matches = []
-	vertical_matches = []
 	check_matches_horizontal()
 	check_matches_vertical()
 
@@ -90,7 +100,7 @@ func check_matches_horizontal():
 	var index = 0
 	for x in range(7):
 		for y in range(7):
-			var piece1 = "0"; var piece2 = "0"; var piece3 = "0"; var piece4 = "0"; var piece5 = "0"; var piece6 = "0"; var piece7 = "0"
+			var piece1 = 0; var piece2 = 0; var piece3 = 0; var piece4 = 0; var piece5 = 0; var piece6 = 0; var piece7 = 0
 			# Get the Piece ID for the given index of the board array
 			piece1 = get_piece_id(index)
 			# Get more IDs based on starting position
@@ -110,77 +120,77 @@ func check_matches_horizontal():
 			if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5, index+6]
-					if piece1 == "1":
+					if piece1 == 1:
 						candy1_matches += 7
-					if piece1 == "2":
+					if piece1 == 2:
 						candy2_matches += 7
-					if piece1 == "3":
+					if piece1 == 3:
 						candy3_matches += 7
-					if piece1 == "4":
+					if piece1 == 4:
 						candy4_matches += 7
-					if piece1 == "5":
+					if piece1 == 5:
 						candy5_matches += 7
-					if piece1 == "6":
+					if piece1 == 6:
 						candy6_matches += 7
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5]
-					if piece1 == "1":
+					if piece1 == 1:
 						candy1_matches += 6
-					if piece1 == "2":
+					if piece1 == 2:
 						candy2_matches += 6
-					if piece1 == "3":
+					if piece1 == 3:
 						candy3_matches += 6
-					if piece1 == "4":
+					if piece1 == 4:
 						candy4_matches += 6
-					if piece1 == "5":
+					if piece1 == 5:
 						candy5_matches += 6
-					if piece1 == "6":
+					if piece1 == 6:
 						candy6_matches += 6
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4]
-					if piece1 == "1":
+					if piece1 == 1:
 						candy1_matches += 5
-					if piece1 == "2":
+					if piece1 == 2:
 						candy2_matches += 5
-					if piece1 == "3":
+					if piece1 == 3:
 						candy3_matches += 5
-					if piece1 == "4":
+					if piece1 == 4:
 						candy4_matches += 5
-					if piece1 == "5":
+					if piece1 == 5:
 						candy5_matches += 5
-					if piece1 == "6":
+					if piece1 == 6:
 						candy6_matches += 5
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3]
-					if piece1 == "1":
+					if piece1 == 1:
 						candy1_matches += 4
-					if piece1 == "2":
+					if piece1 == 2:
 						candy2_matches += 4
-					if piece1 == "3":
+					if piece1 == 3:
 						candy3_matches += 4
-					if piece1 == "4":
+					if piece1 == 4:
 						candy4_matches += 4
-					if piece1 == "5":
+					if piece1 == 5:
 						candy5_matches += 4
-					if piece1 == "6":
+					if piece1 == 6:
 						candy6_matches += 4
 			elif piece1 == piece2 && piece2 == piece3:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2]
-					if piece1 == "1":
+					if piece1 == 1:
 						candy1_matches += 3
-					if piece1 == "2":
+					if piece1 == 2:
 						candy2_matches += 3
-					if piece1 == "3":
+					if piece1 == 3:
 						candy3_matches += 3
-					if piece1 == "4":
+					if piece1 == 4:
 						candy4_matches += 3
-					if piece1 == "5":
+					if piece1 == 5:
 						candy5_matches += 3
-					if piece1 == "6":
+					if piece1 == 6:
 						candy6_matches += 3
 			index += 1
 
@@ -189,7 +199,7 @@ func check_matches_horizontal():
 func check_matches_vertical():
 	for index in range(49):
 		# Get the Piece ID for the given index of the board array
-		var piece1 = "0"; var piece2 = "0"; var piece3 = "0"; var piece4 = "0"; var piece5 = "0"; var piece6 = "0"; var piece7 = "0"
+		var piece1 = 0; var piece2 = 0; var piece3 = 0; var piece4 = 0; var piece5 = 0; var piece6 = 0; var piece7 = 0
 		# Get the Piece ID for the given index of the board array
 		piece1 = get_piece_id(index)
 		# Get more IDs based on starting position
@@ -209,77 +219,77 @@ func check_matches_vertical():
 		if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35, index+42]
-				if piece1 == "1":
+				if piece1 == 1:
 					candy1_matches += 7
-				if piece1 == "2":
+				if piece1 == 2:
 					candy2_matches += 7
-				if piece1 == "3":
+				if piece1 == 3:
 					candy3_matches += 7
-				if piece1 == "4":
+				if piece1 == 4:
 					candy4_matches += 7
-				if piece1 == "5":
+				if piece1 == 5:
 					candy5_matches += 7
-				if piece1 == "6":
+				if piece1 == 6:
 					candy6_matches += 7
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35]
-				if piece1 == "1":
+				if piece1 == 1:
 					candy1_matches += 6
-				if piece1 == "2":
+				if piece1 == 2:
 					candy2_matches += 6
-				if piece1 == "3":
+				if piece1 == 3:
 					candy3_matches += 6
-				if piece1 == "4":
+				if piece1 == 4:
 					candy4_matches += 6
-				if piece1 == "5":
+				if piece1 == 5:
 					candy5_matches += 6
-				if piece1 == "6":
+				if piece1 == 6:
 					candy6_matches += 6
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28]
-				if piece1 == "1":
+				if piece1 == 1:
 					candy1_matches += 5
-				if piece1 == "2":
+				if piece1 == 2:
 					candy2_matches += 5
-				if piece1 == "3":
+				if piece1 == 3:
 					candy3_matches += 5
-				if piece1 == "4":
+				if piece1 == 4:
 					candy4_matches += 5
-				if piece1 == "5":
+				if piece1 == 5:
 					candy5_matches += 5
-				if piece1 == "6":
+				if piece1 == 6:
 					candy6_matches += 5
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21]
-				if piece1 == "1":
+				if piece1 == 1:
 					candy1_matches += 4
-				if piece1 == "2":
+				if piece1 == 2:
 					candy2_matches += 4
-				if piece1 == "3":
+				if piece1 == 3:
 					candy3_matches += 4
-				if piece1 == "4":
+				if piece1 == 4:
 					candy4_matches += 4
-				if piece1 == "5":
+				if piece1 == 5:
 					candy5_matches += 4
-				if piece1 == "6":
+				if piece1 == 6:
 					candy6_matches += 4
 		elif piece1 == piece2 && piece2 == piece3:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14]
-				if piece1 == "1":
+				if piece1 == 1:
 					candy1_matches += 3
-				if piece1 == "2":
+				if piece1 == 2:
 					candy2_matches += 3
-				if piece1 == "3":
+				if piece1 == 3:
 					candy3_matches += 3
-				if piece1 == "4":
+				if piece1 == 4:
 					candy4_matches += 3
-				if piece1 == "5":
+				if piece1 == 5:
 					candy5_matches += 3
-				if piece1 == "6":
+				if piece1 == 6:
 					candy6_matches += 3
 
 
@@ -306,51 +316,80 @@ func drop_pieces():
 
 # Returns the Piece ID for the piece at the given index of the board array.
 func get_piece_id(index):
+	var id = 0
 	if index < len(board):
-		var path = board[index].texture.get_path()
-		path = path.replace("res://assets/candy", "")
-		path = path.replace(".png", "")
-		return path
-	else:
-		return "0"
+		var piece_texture = board[index].texture
+		if piece_texture:
+			var path = piece_texture.get_path()
+			path = path.replace("res://assets/candy", "")
+			path = path.replace(".png", "")
+			id = int(path)
+	return id
 
 
 # Remove matching pieces from the board using a tween.
 func remove_matches():
-	var matches = horizontal_matches + vertical_matches
-	for i in range(len(matches)):
-		var node_path = "board/slot" + str(matches[i])
-		var node = get_node(node_path)
-		if node:
-			var tween = get_tree().create_tween()
-			tween.tween_property(node, "modulate", Color.RED, 0.75)
-			tween.tween_property(node, "scale", Vector2(), 0.75)
-			#tween.tween_callback(node.queue_free)
-			tween.tween_callback(remove_matches_callback)
-			matches_left_to_remove += 1
-	if matches_left_to_remove > 0:
-		$multi_pop_6.play()
+	if matches_left_to_remove == 0:
+		var matches = horizontal_matches + vertical_matches
+		for i in range(len(matches)):
+			if matches[i] < len(board):
+				var node_path = "board/slot" + str(matches[i])
+				var node = get_node(node_path)
+				if node:
+					var tween = get_tree().create_tween()
+					tween.tween_property(node, "modulate", Color.RED, 0.75)
+					tween.tween_property(node, "scale", Vector2(), 0.75)
+					tween.tween_callback(remove_matches_callback)
+					matches_left_to_remove += 1
+		if matches_left_to_remove > 0:
+			$multi_pop_6.play()
 
 
 # The callback function for the remove_matches() tween.
 func remove_matches_callback():
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
-		board[matches[i]].texture = null
-		board[matches[i]].modulate = $background1.modulate
-		board[matches[i]].scale = Vector2(0.2, 0.2)
+		if matches[i] < len(board):
+			board[matches[i]].texture = null
+			board[matches[i]].modulate = $background1.modulate
+			board[matches[i]].scale = Vector2(0.2, 0.2)
 	matches_left_to_remove -= 1
 
 
+# Swap the selected piece with the adjacent one basedon swipe direction.
 func swap_pieces():
+	# Ensure a piece has been swiped on
 	if Global.piece_selected != null and Global.swipe_direction != null:
-		if Global.piece_selected == 0 and Global.swipe_direction == Vector2.RIGHT:
-			var current_node_path = "board/slot" + str(Global.piece_selected)
-			var current_node = get_node(current_node_path)
-			var next_node_path = "board/slot" + str(Global.piece_selected+1)
-			var next_node = get_node(next_node_path)
-			var swap_node_texture = current_node.texture
-			current_node.texture = next_node.texture
-			next_node.texture = swap_node_texture
-			Global.piece_selected = null
-			Global.swipe_direction = null
+		var next_node_path = null
+		var next_node = null
+		var swap_node = null
+		# Get the swiped on piece
+		var selected_node_path = "board/slot" + str(Global.piece_selected)
+		var selected_node = get_node(selected_node_path)
+		# Check swipe direction
+		if (Global.swipe_direction == Vector2.DOWN
+		and Global.piece_selected + 7 < len(board)):
+			next_node_path = "board/slot" + str(Global.piece_selected+7)
+		if (Global.swipe_direction == Vector2.LEFT
+		and Global.piece_selected - 1 >= 0):
+			next_node_path = "board/slot" + str(Global.piece_selected-1)
+		elif (Global.swipe_direction == Vector2.RIGHT
+		and Global.piece_selected + 1 <len(board)):
+			next_node_path = "board/slot" + str(Global.piece_selected+1)
+		elif (Global.swipe_direction == Vector2.UP
+		and Global.piece_selected - 7 >= 0):
+			next_node_path = "board/slot" + str(Global.piece_selected-7)
+		# Get adjacent piece
+		if next_node_path:
+			next_node = get_node(next_node_path)
+			# Continue if a piece was found
+			if next_node:
+				# Store the original texture
+				var swap_node_texture = selected_node.texture
+				# Set the selected piece's texture as the adjacent one's
+				selected_node.texture = next_node.texture
+				# Set the adjecent piece's texture as the original one
+				next_node.texture = swap_node_texture
+				# Clear so this only runs once
+		Global.piece_selected = null
+		Global.swipe_direction = null

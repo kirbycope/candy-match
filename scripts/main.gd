@@ -90,7 +90,7 @@ func _input(event):
 		elif event.action == "Friends":
 			pass
 		elif event.action == "Map":
-			pass
+			get_tree().change_scene_to_file("res://scenes/map.tscn")
 		elif event.action == "Play":
 			get_tree().change_scene_to_file("res://scenes/play.tscn")
 		elif event.action == "Scores":

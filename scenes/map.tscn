@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8g1sgfmh00qc"]
+
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_dylxf"]
+[ext_resource type="Texture2D" uid="uid://dujvk7c3l7tky" path="res://assets/Map_Full_1.png" id="2_embme"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="3_rvva0"]
+[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="4_kdkag"]
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="5_xben3"]
+[ext_resource type="Texture2D" uid="uid://dqtbymcsjfc88" path="res://assets/map level grey.png" id="6_pef42"]
+[ext_resource type="Texture2D" uid="uid://brhgmh3g4ke8p" path="res://assets/map level blue.png" id="7_bgc2c"]
+[ext_resource type="Texture2D" uid="uid://dhiylgc37jgqp" path="res://assets/map level pink.png" id="8_qt4qj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gq0ni"]
+font_size = 64
+font_color = Color(0.545098, 0.552941, 0.564706, 1)
+shadow_size = 8
+shadow_color = Color(0.545098, 0.552941, 0.564706, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw67y"]
+size = Vector2(200, 200)
+
+[node name="map" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_dylxf")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(515, -1850)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_embme")
+
+[node name="level1" type="Node2D" parent="background"]
+position = Vector2(543.477, 14869.6)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/level1"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/level1"]
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/level1"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/level1"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "1"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="Node2D" parent="background"]
+position = Vector2(-275, 14445.7)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/level2"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/level2"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/level2"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/level2"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "2"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level3" type="Node2D" parent="background"]
+position = Vector2(-795, 13717.4)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/level3"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/level3"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/level3"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/level3"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "3"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level4" type="Node2D" parent="background"]
+position = Vector2(57, 13250)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/level4"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/level4"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/level4"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/level4"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "4"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="top_close" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("3_rvva0")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_sw67y")
+action = "Close"
+
+[node name="top_coins" type="Sprite2D" parent="."]
+position = Vector2(952.5, 70)
+texture = ExtResource("4_kdkag")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_sw67y")
+action = "Coins"
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xben3")

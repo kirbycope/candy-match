@@ -928,7 +928,6 @@ position = Vector2(502.5, 1720)
 texture = ExtResource("10_xr2ln")
 
 [node name="game_map" type="Sprite2D" parent="menu"]
-self_modulate = Color(1, 1, 1, 0.470588)
 position = Vector2(170, 1707.5)
 texture = ExtResource("11_4mdxq")
 

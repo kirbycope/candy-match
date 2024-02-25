@@ -31,7 +31,7 @@ func _process(delta):
 			if spin_slow_down_time <= 0.0 or spin_rotation_speed <= 0.0:
 				spin_wheel_stop()
 			# Rotate the spinner
-			$wheel/wheel_full.rotation += spin_rotation_speed * delta
+			$wheel/spinner/wheel_full.rotation += spin_rotation_speed * delta
 
 
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
@@ -191,7 +191,7 @@ func spin_wheel_start():
 func spin_wheel_stop():
 	wheel_spinning = false
 	# Calculate the current angle of the spinner
-	var spinner_rotation = $wheel/wheel_full.rotation_degrees
+	var spinner_rotation = $wheel/spinner/wheel_full.rotation_degrees
 	var spinner_angle = int(spinner_rotation) % 360
 	# Define the angles for each section (in degrees)
 	var section_angles = [0, 45, 90, 135, 180, 225, 270, 315]

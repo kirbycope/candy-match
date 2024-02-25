@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=86 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -27,7 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://dikq70x6c1cff" path="res://assets/wheel_full1.png" id="18_2i7tp"]
 [ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
 [ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
+[ext_resource type="Texture2D" uid="uid://djhgsdmce3y3d" path="res://assets/wheel prize1.png" id="19_ln7ug"]
+[ext_resource type="Texture2D" uid="uid://bydl4ykg45083" path="res://assets/buton next.png" id="20_2djr6"]
 [ext_resource type="Texture2D" uid="uid://cckumw878ckpu" path="res://assets/won2.png" id="21_bho1w"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="21_rnm3e"]
 [ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="22_7mnru"]
 [ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="22_iq15d"]
 [ext_resource type="Texture2D" uid="uid://ditjg452qvohn" path="res://assets/character1.png" id="22_mx33c"]
@@ -84,6 +87,17 @@ size = Vector2(260, 150)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hljq0"]
 radius = 240.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_js7c8"]
+font_size = 48
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+shadow_size = 3
+shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_37mr2"]
+font_size = 96
+outline_size = 32
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uqbhl"]
 font_size = 64
@@ -171,6 +185,7 @@ shape = SubResource("RectangleShape2D_8k4xr")
 action = "Coins"
 
 [node name="main" type="Node2D" parent="."]
+visible = false
 
 [node name="logo" type="Sprite2D" parent="main"]
 position = Vector2(520, 282.5)
@@ -289,25 +304,73 @@ shape = SubResource("RectangleShape2D_vibvt")
 action = "ToggleMusic"
 
 [node name="wheel" type="Node2D" parent="."]
-visible = false
 
-[node name="wheel_title" type="Sprite2D" parent="wheel"]
+[node name="spinner" type="Node2D" parent="wheel"]
+scale = Vector2(1, 1)
+
+[node name="wheel_title" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(520, 260)
+scale = Vector2(1, 1)
 texture = ExtResource("16_l4mlr")
 
-[node name="wheel_empty" type="Sprite2D" parent="wheel"]
+[node name="wheel_empty" type="Sprite2D" parent="wheel/spinner"]
 visible = false
 position = Vector2(517.5, 900)
 rotation = 0.139626
+scale = Vector2(1, 1)
 texture = ExtResource("17_0b32j")
 
-[node name="wheel_full" type="Sprite2D" parent="wheel"]
+[node name="wheel_full" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(517.5, 900)
+scale = Vector2(1, 1)
 texture = ExtResource("18_2i7tp")
 
-[node name="wheel_needle" type="Sprite2D" parent="wheel"]
+[node name="wheel_needle" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(517.5, 875)
+scale = Vector2(1, 1)
 texture = ExtResource("19_adfi2")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="wheel/spinner"]
+position = Vector2(517.5, 900)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_hljq0")
+action = "Spin"
+
+[node name="reward" type="Node2D" parent="wheel"]
+visible = false
+scale = Vector2(1, 1)
+
+[node name="item" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(515, 460)
+texture = ExtResource("19_ln7ug")
+
+[node name="next" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(257.5, 1197.5)
+texture = ExtResource("20_2djr6")
+
+[node name="quit" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(770, 1200)
+texture = ExtResource("21_rnm3e")
+
+[node name="you_got" type="Label" parent="wheel/reward"]
+offset_left = 400.0
+offset_top = 862.5
+offset_right = 631.0
+offset_bottom = 950.5
+text = "you got"
+label_settings = SubResource("LabelSettings_js7c8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="wheel/reward"]
+offset_left = -5.0
+offset_top = 938.0
+offset_right = 1033.0
+offset_bottom = 1070.0
+text = "5 bombs"
+label_settings = SubResource("LabelSettings_37mr2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="won4" type="Sprite2D" parent="wheel"]
 position = Vector2(315, 1727.5)
@@ -325,11 +388,6 @@ offset_right = 797.0
 offset_bottom = 1618.0
 text = "1"
 label_settings = SubResource("LabelSettings_h0flw")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="wheel"]
-position = Vector2(517.5, 900)
-shape = SubResource("CircleShape2D_hljq0")
-action = "Spin"
 
 [node name="character" type="Node2D" parent="."]
 visible = false
@@ -922,6 +980,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_s2rmg")
 
 [node name="menu" type="Node2D" parent="."]
+visible = false
 
 [node name="menu_background" type="Sprite2D" parent="menu"]
 position = Vector2(502.5, 1720)

@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlnm17r22j2wo"]
+
+[ext_resource type="Texture2D" uid="uid://dnb1xkav1rqig" path="res://assets/shop.png" id="1_kmvj0"]
+[ext_resource type="Texture2D" uid="uid://cs1l8my1csubo" path="res://assets/shop coins1.png" id="2_6fvm7"]
+[ext_resource type="Texture2D" uid="uid://b2lq6axvqpt1o" path="res://assets/shop price box.png" id="3_bmxka"]
+[ext_resource type="Texture2D" uid="uid://vi4d2m5g5d2c" path="res://assets/shop coins2.png" id="4_v1ljm"]
+[ext_resource type="Texture2D" uid="uid://cpwtjnnovpi4q" path="res://assets/shop coins3.png" id="5_at253"]
+[ext_resource type="Texture2D" uid="uid://tqw4x1bhkenq" path="res://assets/shop video.png" id="6_6qt27"]
+[ext_resource type="Texture2D" uid="uid://b2gpbtg0kb4dr" path="res://assets/shop play video.png" id="7_ddqtn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqihv"]
+font_size = 96
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxlb5"]
+font_size = 72
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6c468"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_5euk0"]
+font_size = 52
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[node name="shoppette" type="Node2D"]
+position = Vector2(0, 150)
+scale = Vector2(0.4, 0.4)
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(515.5, 556)
+texture = ExtResource("1_kmvj0")
+
+[node name="coins1" type="Sprite2D" parent="."]
+position = Vector2(166, 393.5)
+texture = ExtResource("2_6fvm7")
+
+[node name="250" type="Label" parent="."]
+z_index = 1
+offset_left = 386.0
+offset_top = 308.5
+offset_right = 551.0
+offset_bottom = 440.5
+text = "250"
+label_settings = SubResource("LabelSettings_pqihv")
+
+[node name="coins1_label" type="Label" parent="."]
+offset_left = 373.5
+offset_top = 383.5
+offset_right = 554.5
+offset_bottom = 482.5
+text = "coins"
+label_settings = SubResource("LabelSettings_jxlb5")
+
+[node name="price1" type="Sprite2D" parent="."]
+position = Vector2(853.5, 398.5)
+texture = ExtResource("3_bmxka")
+
+[node name="price1_label" type="Label" parent="."]
+offset_left = 768.5
+offset_top = 346.0
+offset_right = 934.5
+offset_bottom = 434.0
+text = "$0.99"
+label_settings = SubResource("LabelSettings_6c468")
+
+[node name="coins2" type="Sprite2D" parent="."]
+position = Vector2(163.5, 598.5)
+texture = ExtResource("4_v1ljm")
+
+[node name="500" type="Label" parent="."]
+z_index = 1
+offset_left = 386.0
+offset_top = 513.5
+offset_right = 551.0
+offset_bottom = 645.5
+text = "500"
+label_settings = SubResource("LabelSettings_pqihv")
+
+[node name="coins2_label" type="Label" parent="."]
+offset_left = 378.5
+offset_top = 591.0
+offset_right = 559.5
+offset_bottom = 690.0
+text = "coins"
+label_settings = SubResource("LabelSettings_jxlb5")
+
+[node name="price2" type="Sprite2D" parent="."]
+position = Vector2(853.5, 601)
+texture = ExtResource("3_bmxka")
+
+[node name="price2_label" type="Label" parent="."]
+offset_left = 768.5
+offset_top = 546.0
+offset_right = 934.5
+offset_bottom = 634.0
+text = "$1.49"
+label_settings = SubResource("LabelSettings_6c468")
+
+[node name="coins3" type="Sprite2D" parent="."]
+position = Vector2(171, 801)
+texture = ExtResource("5_at253")
+
+[node name="700" type="Label" parent="."]
+z_index = 1
+offset_left = 386.0
+offset_top = 713.5
+offset_right = 551.0
+offset_bottom = 845.5
+text = "700"
+label_settings = SubResource("LabelSettings_pqihv")
+
+[node name="coins3_label" type="Label" parent="."]
+offset_left = 378.5
+offset_top = 791.0
+offset_right = 559.5
+offset_bottom = 890.0
+text = "coins"
+label_settings = SubResource("LabelSettings_jxlb5")
+
+[node name="price3" type="Sprite2D" parent="."]
+position = Vector2(853.5, 801)
+texture = ExtResource("3_bmxka")
+
+[node name="price3_label" type="Label" parent="."]
+offset_left = 768.5
+offset_top = 746.0
+offset_right = 934.5
+offset_bottom = 834.0
+text = "$1.99"
+label_settings = SubResource("LabelSettings_6c468")
+
+[node name="video" type="Sprite2D" parent="."]
+position = Vector2(176, 1001)
+texture = ExtResource("6_6qt27")
+
+[node name="play" type="Sprite2D" parent="."]
+position = Vector2(918.5, 1003.5)
+texture = ExtResource("7_ddqtn")
+
+[node name="watch" type="Label" parent="."]
+offset_left = 293.5
+offset_top = 933.5
+offset_right = 848.5
+offset_bottom = 1005.5
+text = "Watch a video and get"
+label_settings = SubResource("LabelSettings_5euk0")
+
+[node name="coins4_label" type="Label" parent="."]
+offset_left = 381.0
+offset_top = 976.0
+offset_right = 704.0
+offset_bottom = 1075.0
+text = "250 coins"
+label_settings = SubResource("LabelSettings_jxlb5")

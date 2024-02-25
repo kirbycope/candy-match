@@ -18,6 +18,8 @@ var initial_touch_position: Vector2
 var target_scroll_position: float = 0
 
 func _ready():
+	if Global.enabled_music:
+		$all_that_glitters.play()
 	# Initialize target_scroll_position to the initial position of the sprite
 	target_scroll_position = $background.position.y
 
@@ -26,7 +28,8 @@ func _input(event):
 		if event.action == "Coins":
 			pass
 		if event.action == "Close":
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			if not Global.shoppette_hide():
+				get_tree().change_scene_to_file("res://scenes/main.tscn")
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			# Store initial touch position
@@ -40,6 +43,7 @@ func _input(event):
 					target_scroll_position = min($background.position.y + scroll_distance, $background.texture.get_size().y - $background.get_viewport_rect().size.y)
 				else:
 					target_scroll_position = max($background.position.y - scroll_distance, -1850)
+
 
 func _process(delta):
 	if abs($background.position.y - target_scroll_position) > 1.0:

@@ -1,0 +1,1076 @@
+[gd_scene load_steps=87 format=3 uid="uid://dpoweh1wdh2pt"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
+[ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
+[ext_resource type="Texture2D" uid="uid://b2csrcac65rds" path="res://assets/main hi.png" id="2_kaunq"]
+[ext_resource type="Texture2D" uid="uid://bqx23545tcl4w" path="res://assets/main logo.png" id="3_vvo8y"]
+[ext_resource type="Texture2D" uid="uid://cq717tuamfq1a" path="res://assets/top settings.png" id="4_lo632"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="4_o3gmd"]
+[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="5_x6sy3"]
+[ext_resource type="Texture2D" uid="uid://cjv17ev7kh6qu" path="res://assets/main play button.png" id="6_isyfu"]
+[ext_resource type="Texture2D" uid="uid://cd87w6tqo3y8v" path="res://assets/main wheel.png" id="7_y6wj2"]
+[ext_resource type="Texture2D" uid="uid://22xwlamu37o2" path="res://assets/main characters.png" id="8_8y5o0"]
+[ext_resource type="Texture2D" uid="uid://dms841l1dpk5c" path="res://assets/main challenge.png" id="9_108u3"]
+[ext_resource type="Texture2D" uid="uid://bavuujef1cfin" path="res://assets/menu bg.png" id="10_xr2ln"]
+[ext_resource type="Texture2D" uid="uid://bnmy1pbatougc" path="res://assets/menu map.png" id="11_4mdxq"]
+[ext_resource type="Texture2D" uid="uid://by6ln0i8uoixi" path="res://assets/menu shop.png" id="12_dee8e"]
+[ext_resource type="Texture2D" uid="uid://dpn7yr7adc3of" path="res://assets/menu boosters.png" id="13_k3y0i"]
+[ext_resource type="Texture2D" uid="uid://fmwuvismriqm" path="res://assets/profile box.png" id="13_w8m5d"]
+[ext_resource type="Texture2D" uid="uid://bykc4tt0nvcua" path="res://assets/profile sound off.png" id="14_eiucw"]
+[ext_resource type="Texture2D" uid="uid://b0pv80yths72n" path="res://assets/menu scores.png" id="14_mqe4s"]
+[ext_resource type="Texture2D" uid="uid://74k4frnjlqt3" path="res://assets/profile sound on.png" id="15_358l0"]
+[ext_resource type="Texture2D" uid="uid://0xof25g08c45" path="res://assets/menu noads.png" id="15_dpgue"]
+[ext_resource type="AudioStream" uid="uid://bh5orob5eqj7m" path="res://assets/open-fields-aaron-paul-low-main-version-25198-02-16.mp3" id="16_i1dt1"]
+[ext_resource type="Texture2D" uid="uid://ct7h80a6ihx5y" path="res://assets/wheel title.png" id="16_l4mlr"]
+[ext_resource type="Texture2D" uid="uid://bpdqe7aldjjac" path="res://assets/wheel empty.png" id="17_0b32j"]
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="18_1xjgl"]
+[ext_resource type="Texture2D" uid="uid://dikq70x6c1cff" path="res://assets/wheel_full1.png" id="18_2i7tp"]
+[ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
+[ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
+[ext_resource type="Texture2D" uid="uid://djhgsdmce3y3d" path="res://assets/wheel prize1.png" id="19_ln7ug"]
+[ext_resource type="Texture2D" uid="uid://bydl4ykg45083" path="res://assets/buton next.png" id="20_2djr6"]
+[ext_resource type="Texture2D" uid="uid://cckumw878ckpu" path="res://assets/won2.png" id="21_bho1w"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="21_rnm3e"]
+[ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="22_7mnru"]
+[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="22_iq15d"]
+[ext_resource type="Texture2D" uid="uid://ditjg452qvohn" path="res://assets/character1.png" id="22_mx33c"]
+[ext_resource type="Texture2D" uid="uid://cshpti5566xnv" path="res://assets/won4.png" id="23_6tbsw"]
+[ext_resource type="Texture2D" uid="uid://b5ynkke3incdx" path="res://assets/character2.png" id="23_ah5vk"]
+[ext_resource type="Texture2D" uid="uid://3tdjaqn4gm2b" path="res://assets/profile checkmark.png" id="23_vu7b1"]
+[ext_resource type="Texture2D" uid="uid://bova6s57qe5yh" path="res://assets/won5.png" id="24_8wfcv"]
+[ext_resource type="Texture2D" uid="uid://chon6opwy7jwe" path="res://assets/character3.png" id="24_p0g74"]
+[ext_resource type="Texture2D" uid="uid://dxopbur6se2f2" path="res://assets/won6.png" id="25_j0wb1"]
+[ext_resource type="Texture2D" uid="uid://n2qo3fo2wiog" path="res://assets/character4.png" id="25_ndeb1"]
+[ext_resource type="Texture2D" uid="uid://b73ihffkf6tnv" path="res://assets/character5.png" id="26_ox0pj"]
+[ext_resource type="Texture2D" uid="uid://rnmyy2oq4mdo" path="res://assets/character6.png" id="27_s2rmg"]
+[ext_resource type="Texture2D" uid="uid://bfm7bplw4w8bb" path="res://assets/shop offer1.png" id="33_x54yh"]
+[ext_resource type="Texture2D" uid="uid://d0is1kiro3jms" path="res://assets/shop offer2.png" id="34_3dg33"]
+[ext_resource type="Texture2D" uid="uid://d18dgf5bgjsl7" path="res://assets/shop hot deal.png" id="34_6pbnv"]
+[ext_resource type="Texture2D" uid="uid://b2lq6axvqpt1o" path="res://assets/shop price box.png" id="35_b0cs0"]
+[ext_resource type="Texture2D" uid="uid://h3at6bpgp5hl" path="res://assets/shop best deal.png" id="37_upbtj"]
+[ext_resource type="Texture2D" uid="uid://dnb1xkav1rqig" path="res://assets/shop.png" id="38_hbuxt"]
+[ext_resource type="Texture2D" uid="uid://cs1l8my1csubo" path="res://assets/shop coins1.png" id="39_g354n"]
+[ext_resource type="Texture2D" uid="uid://vi4d2m5g5d2c" path="res://assets/shop coins2.png" id="40_kl4tx"]
+[ext_resource type="Texture2D" uid="uid://cpwtjnnovpi4q" path="res://assets/shop coins3.png" id="41_qm6mw"]
+[ext_resource type="Texture2D" uid="uid://tqw4x1bhkenq" path="res://assets/shop video.png" id="42_0fj4a"]
+[ext_resource type="Texture2D" uid="uid://b2gpbtg0kb4dr" path="res://assets/shop play video.png" id="43_hu6e3"]
+[ext_resource type="Texture2D" uid="uid://dfyotkra1l5ps" path="res://assets/shop boosters.png" id="44_gdne5"]
+[ext_resource type="Texture2D" uid="uid://b7mks0ij34rbl" path="res://assets/shop boosters1.png" id="45_r7ya2"]
+[ext_resource type="Texture2D" uid="uid://0kvcpcd2e45m" path="res://assets/shop boosters4.png" id="46_nbg2j"]
+[ext_resource type="Texture2D" uid="uid://lb4dym8rib8h" path="res://assets/shop boosters2.png" id="47_i4f4e"]
+[ext_resource type="Texture2D" uid="uid://xlqc5vfbyhhy" path="res://assets/shop boosters3.png" id="48_arbfl"]
+[ext_resource type="Texture2D" uid="uid://c2wgnxyhs6gcl" path="res://assets/shop boosters price.png" id="49_0atex"]
+[ext_resource type="Texture2D" uid="uid://vb4b76cdyfhn" path="res://assets/scores title.png" id="50_fmuuj"]
+[ext_resource type="Texture2D" uid="uid://dhveuqjrqr630" path="res://assets/scores box first.png" id="51_kuecd"]
+[ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="52_4645u"]
+[ext_resource type="AudioStream" uid="uid://d0ack68d8d4y1" path="res://assets/playful-casino-slot-machine-jackpot-1-183922.mp3" id="64_b5ucs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4xr"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8p43"]
+size = Vector2(740, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsbpc"]
+size = Vector2(480, 340)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkec7"]
+font_size = 42
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a25oq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0flw"]
+font_size = 82
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vibvt"]
+size = Vector2(260, 150)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hljq0"]
+radius = 240.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_js7c8"]
+font_size = 48
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+shadow_size = 3
+shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_37mr2"]
+font_size = 96
+outline_size = 32
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqbhl"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdrvr"]
+font_size = 180
+outline_size = 64
+outline_color = Color(0.196078, 0.196078, 0.196078, 1)
+shadow_size = 64
+shadow_color = Color(0.196078, 0.196078, 0.196078, 1)
+shadow_offset = Vector2(8, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkasc"]
+radius = 300.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0o5nr"]
+font_size = 64
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sq28q"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6cs6"]
+font_size = 96
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lksm3"]
+font_size = 72
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8gf2"]
+font_size = 52
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8cqfg"]
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_kebvf"]
+font_size = 64
+outline_size = 24
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_reliw"]
+font_size = 24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p41u5"]
+size = Vector2(150, 200)
+
+[node name="main" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_55csr")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(472.5, 755)
+texture = ExtResource("1_c48jg")
+
+[node name="top_settings" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("4_lo632")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_settings"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Settings"
+
+[node name="top_close" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("4_o3gmd")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Close"
+
+[node name="top_coins" type="Sprite2D" parent="."]
+position = Vector2(952.5, 70)
+texture = ExtResource("5_x6sy3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Coins"
+
+[node name="main" type="Node2D" parent="."]
+visible = false
+
+[node name="logo" type="Sprite2D" parent="main"]
+position = Vector2(520, 282.5)
+texture = ExtResource("3_vvo8y")
+
+[node name="hi" type="Sprite2D" parent="main"]
+position = Vector2(515, 835)
+texture = ExtResource("2_kaunq")
+
+[node name="play_button" type="Sprite2D" parent="main"]
+position = Vector2(400, 1120)
+texture = ExtResource("6_isyfu")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="main/play_button"]
+shape = SubResource("RectangleShape2D_g8p43")
+action = "Play"
+
+[node name="wheel" type="Sprite2D" parent="main"]
+position = Vector2(892.5, 1120)
+texture = ExtResource("7_y6wj2")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="main/wheel"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Wheel"
+
+[node name="choose_character" type="Sprite2D" parent="main"]
+position = Vector2(280, 1500)
+texture = ExtResource("8_8y5o0")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="main/choose_character"]
+position = Vector2(-15, -65)
+shape = SubResource("RectangleShape2D_gsbpc")
+action = "Character"
+
+[node name="choose_label" type="Label" parent="main/choose_character"]
+offset_left = -187.5
+offset_top = 40.0
+offset_right = 161.5
+offset_bottom = 98.0
+text = "choose character"
+label_settings = SubResource("LabelSettings_rkec7")
+
+[node name="challenge_friends" type="Sprite2D" parent="main"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(770, 1480)
+texture = ExtResource("9_108u3")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="main/challenge_friends"]
+position = Vector2(-15, -45)
+shape = SubResource("RectangleShape2D_gsbpc")
+action = "Friends"
+
+[node name="challenge_label" type="Label" parent="main/challenge_friends"]
+offset_left = -185.0
+offset_top = 60.0
+offset_right = 164.0
+offset_bottom = 118.0
+text = "challenge friends"
+label_settings = SubResource("LabelSettings_rkec7")
+
+[node name="settings" type="Node2D" parent="."]
+visible = false
+
+[node name="won3" type="Sprite2D" parent="settings"]
+position = Vector2(485, 452.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CompressedTexture2D_a25oq")
+
+[node name="profile_box" type="Sprite2D" parent="settings"]
+position = Vector2(517.5, 920)
+texture = ExtResource("13_w8m5d")
+
+[node name="sound_label" type="Label" parent="settings"]
+offset_left = 195.0
+offset_top = 882.5
+offset_right = 445.0
+offset_bottom = 995.5
+text = "Sound"
+label_settings = SubResource("LabelSettings_h0flw")
+
+[node name="sound_off" type="Sprite2D" parent="settings"]
+visible = false
+position = Vector2(685, 940)
+texture = ExtResource("14_eiucw")
+
+[node name="sound_on" type="Sprite2D" parent="settings"]
+position = Vector2(685, 940)
+texture = ExtResource("15_358l0")
+
+[node name="sound_toggle" type="TouchScreenButton" parent="settings"]
+position = Vector2(685, 940)
+shape = SubResource("RectangleShape2D_vibvt")
+action = "ToggleSound"
+
+[node name="music_label" type="Label" parent="settings"]
+offset_left = 195.0
+offset_top = 1062.5
+offset_right = 445.0
+offset_bottom = 1175.5
+text = "Music"
+label_settings = SubResource("LabelSettings_h0flw")
+
+[node name="music_off" type="Sprite2D" parent="settings"]
+visible = false
+position = Vector2(685, 1120)
+texture = ExtResource("14_eiucw")
+
+[node name="music_on" type="Sprite2D" parent="settings"]
+position = Vector2(685, 1120)
+texture = ExtResource("15_358l0")
+
+[node name="music_toggle" type="TouchScreenButton" parent="settings"]
+position = Vector2(685, 1120)
+shape = SubResource("RectangleShape2D_vibvt")
+action = "ToggleMusic"
+
+[node name="wheel" type="Node2D" parent="."]
+
+[node name="spinner" type="Node2D" parent="wheel"]
+
+[node name="wheel_title" type="Sprite2D" parent="wheel/spinner"]
+position = Vector2(520, 260)
+texture = ExtResource("16_l4mlr")
+
+[node name="wheel_empty" type="Sprite2D" parent="wheel/spinner"]
+visible = false
+position = Vector2(517.5, 900)
+rotation = 0.139626
+texture = ExtResource("17_0b32j")
+
+[node name="wheel_full" type="Sprite2D" parent="wheel/spinner"]
+position = Vector2(517.5, 900)
+texture = ExtResource("18_2i7tp")
+
+[node name="wheel_needle" type="Sprite2D" parent="wheel/spinner"]
+position = Vector2(517.5, 875)
+texture = ExtResource("19_adfi2")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="wheel/spinner"]
+position = Vector2(517.5, 900)
+shape = SubResource("CircleShape2D_hljq0")
+action = "Spin"
+
+[node name="reward" type="Node2D" parent="wheel"]
+visible = false
+
+[node name="item" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(515, 460)
+texture = ExtResource("19_ln7ug")
+
+[node name="next" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(257.5, 1197.5)
+texture = ExtResource("20_2djr6")
+
+[node name="quit" type="Sprite2D" parent="wheel/reward"]
+position = Vector2(770, 1200)
+texture = ExtResource("21_rnm3e")
+
+[node name="you_got" type="Label" parent="wheel/reward"]
+offset_left = 400.0
+offset_top = 862.5
+offset_right = 631.0
+offset_bottom = 950.5
+text = "you got"
+label_settings = SubResource("LabelSettings_js7c8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="wheel/reward"]
+offset_left = -5.0
+offset_top = 938.0
+offset_right = 1033.0
+offset_bottom = 1070.0
+text = "5 bombs"
+label_settings = SubResource("LabelSettings_37mr2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="won4" type="Sprite2D" parent="wheel"]
+position = Vector2(315, 1727.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("23_6tbsw")
+
+[node name="wheel_sign" type="Sprite2D" parent="wheel"]
+position = Vector2(770, 1557.5)
+texture = ExtResource("19_jac5e")
+
+[node name="spins_label" type="Label" parent="wheel"]
+offset_left = 750.0
+offset_top = 1505.0
+offset_right = 797.0
+offset_bottom = 1618.0
+text = "1"
+label_settings = SubResource("LabelSettings_h0flw")
+
+[node name="character" type="Node2D" parent="."]
+visible = false
+
+[node name="character_label" type="Label" parent="character"]
+offset_left = 360.0
+offset_top = 120.0
+offset_right = 675.0
+offset_bottom = 208.0
+text = "character:"
+label_settings = SubResource("LabelSettings_uqbhl")
+
+[node name="name_label" type="Label" parent="character"]
+offset_left = 3.0
+offset_top = 208.0
+offset_right = 1032.0
+offset_bottom = 454.0
+text = "Foxy!"
+label_settings = SubResource("LabelSettings_fdrvr")
+horizontal_alignment = 1
+
+[node name="won1" type="Sprite2D" parent="character"]
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_iq15d")
+
+[node name="won2" type="Sprite2D" parent="character"]
+visible = false
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_bho1w")
+
+[node name="won3" type="Sprite2D" parent="character"]
+visible = false
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_7mnru")
+
+[node name="won4" type="Sprite2D" parent="character"]
+visible = false
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_6tbsw")
+
+[node name="won5" type="Sprite2D" parent="character"]
+visible = false
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("24_8wfcv")
+
+[node name="won6" type="Sprite2D" parent="character"]
+visible = false
+position = Vector2(525, 865)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("25_j0wb1")
+
+[node name="menu_background" type="Sprite2D" parent="character"]
+position = Vector2(502.5, 1720)
+texture = ExtResource("10_xr2ln")
+
+[node name="character1" type="Sprite2D" parent="character"]
+position = Vector2(102.25, 1722.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("22_mx33c")
+
+[node name="checkmark" type="Sprite2D" parent="character/character1"]
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character1"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character1"
+
+[node name="character2" type="Sprite2D" parent="character"]
+position = Vector2(264.75, 1722.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("23_ah5vk")
+
+[node name="checkmark" type="Sprite2D" parent="character/character2"]
+visible = false
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character2"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character2"
+
+[node name="character3" type="Sprite2D" parent="character"]
+position = Vector2(427.25, 1722.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("24_p0g74")
+
+[node name="checkmark" type="Sprite2D" parent="character/character3"]
+visible = false
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character3"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character3"
+
+[node name="character4" type="Sprite2D" parent="character"]
+position = Vector2(589.5, 1722)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("25_ndeb1")
+
+[node name="checkmark" type="Sprite2D" parent="character/character4"]
+visible = false
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character4"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character4"
+
+[node name="character5" type="Sprite2D" parent="character"]
+position = Vector2(752, 1722)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("26_ox0pj")
+
+[node name="checkmark" type="Sprite2D" parent="character/character5"]
+visible = false
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character5"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character5"
+
+[node name="character6" type="Sprite2D" parent="character"]
+position = Vector2(914.5, 1722)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("27_s2rmg")
+
+[node name="checkmark" type="Sprite2D" parent="character/character6"]
+visible = false
+position = Vector2(160, -240.001)
+scale = Vector2(2, 2)
+texture = ExtResource("23_vu7b1")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="character/character6"]
+shape = SubResource("CircleShape2D_dkasc")
+action = "Character6"
+
+[node name="shop" type="Node2D" parent="."]
+visible = false
+
+[node name="shop_label" type="Label" parent="shop"]
+offset_left = 160.0
+offset_top = 20.0
+offset_right = 311.0
+offset_bottom = 108.0
+text = "shop"
+label_settings = SubResource("LabelSettings_0o5nr")
+
+[node name="offer1" type="Sprite2D" parent="shop"]
+position = Vector2(237.5, 410)
+texture = ExtResource("33_x54yh")
+
+[node name="hot" type="Sprite2D" parent="shop"]
+position = Vector2(115, 252.5)
+texture = ExtResource("34_6pbnv")
+
+[node name="offer1_price" type="Sprite2D" parent="shop"]
+position = Vector2(272.5, 607.5)
+texture = ExtResource("35_b0cs0")
+
+[node name="offer1_label" type="Label" parent="shop"]
+offset_left = 190.0
+offset_top = 552.5
+offset_right = 356.0
+offset_bottom = 640.5
+text = "$2.49"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="offer2" type="Sprite2D" parent="shop"]
+position = Vector2(775, 410)
+texture = ExtResource("34_3dg33")
+
+[node name="best" type="Sprite2D" parent="shop"]
+position = Vector2(615, 252.5)
+texture = ExtResource("37_upbtj")
+
+[node name="offer2_price" type="Sprite2D" parent="shop"]
+position = Vector2(782.5, 607.5)
+texture = ExtResource("35_b0cs0")
+
+[node name="offer2_label" type="Label" parent="shop"]
+offset_left = 697.5
+offset_top = 552.5
+offset_right = 863.5
+offset_bottom = 640.5
+text = "$2.99"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="background" type="Sprite2D" parent="shop"]
+position = Vector2(515, 1272.5)
+texture = ExtResource("38_hbuxt")
+
+[node name="coins1" type="Sprite2D" parent="shop"]
+position = Vector2(162.5, 1110)
+texture = ExtResource("39_g354n")
+
+[node name="250" type="Label" parent="shop"]
+z_index = 1
+offset_left = 382.5
+offset_top = 1025.0
+offset_right = 547.5
+offset_bottom = 1157.0
+text = "250"
+label_settings = SubResource("LabelSettings_p6cs6")
+
+[node name="coins1_label" type="Label" parent="shop"]
+offset_left = 370.0
+offset_top = 1100.0
+offset_right = 551.0
+offset_bottom = 1199.0
+text = "coins"
+label_settings = SubResource("LabelSettings_lksm3")
+
+[node name="price1" type="Sprite2D" parent="shop"]
+position = Vector2(850, 1115)
+texture = ExtResource("35_b0cs0")
+
+[node name="price1_label" type="Label" parent="shop"]
+offset_left = 765.0
+offset_top = 1062.5
+offset_right = 931.0
+offset_bottom = 1150.5
+text = "$0.99"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="coins2" type="Sprite2D" parent="shop"]
+position = Vector2(160, 1315)
+texture = ExtResource("40_kl4tx")
+
+[node name="500" type="Label" parent="shop"]
+z_index = 1
+offset_left = 382.5
+offset_top = 1230.0
+offset_right = 547.5
+offset_bottom = 1362.0
+text = "500"
+label_settings = SubResource("LabelSettings_p6cs6")
+
+[node name="coins2_label" type="Label" parent="shop"]
+offset_left = 375.0
+offset_top = 1307.5
+offset_right = 556.0
+offset_bottom = 1406.5
+text = "coins"
+label_settings = SubResource("LabelSettings_lksm3")
+
+[node name="price2" type="Sprite2D" parent="shop"]
+position = Vector2(850, 1317.5)
+texture = ExtResource("35_b0cs0")
+
+[node name="price2_label" type="Label" parent="shop"]
+offset_left = 765.0
+offset_top = 1262.5
+offset_right = 931.0
+offset_bottom = 1350.5
+text = "$1.49"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="coins3" type="Sprite2D" parent="shop"]
+position = Vector2(167.5, 1517.5)
+texture = ExtResource("41_qm6mw")
+
+[node name="700" type="Label" parent="shop"]
+z_index = 1
+offset_left = 382.5
+offset_top = 1430.0
+offset_right = 547.5
+offset_bottom = 1562.0
+text = "700"
+label_settings = SubResource("LabelSettings_p6cs6")
+
+[node name="coins3_label" type="Label" parent="shop"]
+offset_left = 375.0
+offset_top = 1507.5
+offset_right = 556.0
+offset_bottom = 1606.5
+text = "coins"
+label_settings = SubResource("LabelSettings_lksm3")
+
+[node name="price3" type="Sprite2D" parent="shop"]
+position = Vector2(850, 1517.5)
+texture = ExtResource("35_b0cs0")
+
+[node name="price3_label" type="Label" parent="shop"]
+offset_left = 765.0
+offset_top = 1462.5
+offset_right = 931.0
+offset_bottom = 1550.5
+text = "$1.99"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="video" type="Sprite2D" parent="shop"]
+position = Vector2(172.5, 1717.5)
+texture = ExtResource("42_0fj4a")
+
+[node name="play" type="Sprite2D" parent="shop"]
+position = Vector2(915, 1720)
+texture = ExtResource("43_hu6e3")
+
+[node name="watch" type="Label" parent="shop"]
+offset_left = 290.0
+offset_top = 1650.0
+offset_right = 845.0
+offset_bottom = 1722.0
+text = "Watch a video and get"
+label_settings = SubResource("LabelSettings_i8gf2")
+
+[node name="coins4_label" type="Label" parent="shop"]
+offset_left = 377.5
+offset_top = 1692.5
+offset_right = 700.5
+offset_bottom = 1791.5
+text = "250 coins"
+label_settings = SubResource("LabelSettings_lksm3")
+
+[node name="boosters" type="Node2D" parent="."]
+visible = false
+
+[node name="boosters_label" type="Label" parent="boosters"]
+offset_left = 160.0
+offset_top = 20.0
+offset_right = 430.0
+offset_bottom = 108.0
+text = "boosters"
+label_settings = SubResource("LabelSettings_0o5nr")
+
+[node name="shop_boosters" type="Sprite2D" parent="boosters"]
+position = Vector2(515, 997.5)
+texture = ExtResource("44_gdne5")
+
+[node name="5_pack" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/5_pack"]
+offset_left = 117.5
+offset_top = 590.0
+offset_right = 431.5
+offset_bottom = 689.0
+text = "5 of each"
+label_settings = SubResource("LabelSettings_8cqfg")
+
+[node name="bomb" type="Sprite2D" parent="boosters/5_pack"]
+position = Vector2(138, 754.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("45_r7ya2")
+
+[node name="milk" type="Sprite2D" parent="boosters/5_pack"]
+position = Vector2(220.5, 757.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("46_nbg2j")
+
+[node name="sugar" type="Sprite2D" parent="boosters/5_pack"]
+position = Vector2(315.5, 754.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("47_i4f4e")
+
+[node name="switch" type="Sprite2D" parent="boosters/5_pack"]
+position = Vector2(410.5, 754.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("48_arbfl")
+
+[node name="price" type="Sprite2D" parent="boosters/5_pack"]
+position = Vector2(285, 897.5)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/5_pack"]
+offset_left = 257.5
+offset_top = 837.5
+offset_right = 368.5
+offset_bottom = 925.5
+text = "350"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="10_pack" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/10_pack"]
+offset_left = 605.0
+offset_top = 590.0
+offset_right = 960.0
+offset_bottom = 689.0
+text = "10 of each"
+label_settings = SubResource("LabelSettings_8cqfg")
+
+[node name="bomb" type="Sprite2D" parent="boosters/10_pack"]
+position = Vector2(840, 757.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("45_r7ya2")
+
+[node name="sugar" type="Sprite2D" parent="boosters/10_pack"]
+position = Vector2(648, 754.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("47_i4f4e")
+
+[node name="switch" type="Sprite2D" parent="boosters/10_pack"]
+position = Vector2(747.5, 755)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("48_arbfl")
+
+[node name="milk" type="Sprite2D" parent="boosters/10_pack"]
+position = Vector2(928, 757.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("46_nbg2j")
+
+[node name="price" type="Sprite2D" parent="boosters/10_pack"]
+position = Vector2(790, 895)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/10_pack"]
+offset_left = 762.5
+offset_top = 837.5
+offset_right = 873.5
+offset_bottom = 925.5
+text = "500"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="5_bombs" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/5_bombs"]
+offset_left = 382.5
+offset_top = 1060.0
+offset_right = 647.5
+offset_bottom = 1148.0
+text = "5 bombs"
+label_settings = SubResource("LabelSettings_kebvf")
+
+[node name="bomb" type="Sprite2D" parent="boosters/5_bombs"]
+position = Vector2(200, 1072.5)
+texture = ExtResource("45_r7ya2")
+
+[node name="price" type="Sprite2D" parent="boosters/5_bombs"]
+position = Vector2(860, 1100)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/5_bombs"]
+offset_left = 832.5
+offset_top = 1042.5
+offset_right = 943.5
+offset_bottom = 1130.5
+text = "200"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="5_sugars" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/5_sugars"]
+offset_left = 382.5
+offset_top = 1257.5
+offset_right = 647.5
+offset_bottom = 1345.5
+text = "5 sugars"
+label_settings = SubResource("LabelSettings_kebvf")
+
+[node name="sugar" type="Sprite2D" parent="boosters/5_sugars"]
+position = Vector2(200, 1305)
+texture = ExtResource("47_i4f4e")
+
+[node name="price" type="Sprite2D" parent="boosters/5_sugars"]
+position = Vector2(860, 1307.5)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/5_sugars"]
+offset_left = 832.5
+offset_top = 1250.0
+offset_right = 943.5
+offset_bottom = 1338.0
+text = "150"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="5_switches" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/5_switches"]
+offset_left = 382.5
+offset_top = 1457.5
+offset_right = 647.5
+offset_bottom = 1545.5
+text = "5 switches"
+label_settings = SubResource("LabelSettings_kebvf")
+
+[node name="switch" type="Sprite2D" parent="boosters/5_switches"]
+position = Vector2(212.5, 1507.5)
+texture = ExtResource("48_arbfl")
+
+[node name="price" type="Sprite2D" parent="boosters/5_switches"]
+position = Vector2(860, 1507.5)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/5_switches"]
+offset_left = 832.5
+offset_top = 1450.0
+offset_right = 943.5
+offset_bottom = 1538.0
+text = "200"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="5_milks" type="Node2D" parent="boosters"]
+
+[node name="label" type="Label" parent="boosters/5_milks"]
+offset_left = 382.5
+offset_top = 1662.5
+offset_right = 647.5
+offset_bottom = 1750.5
+text = "5 milks"
+label_settings = SubResource("LabelSettings_kebvf")
+
+[node name="milk" type="Sprite2D" parent="boosters/5_milks"]
+position = Vector2(217.5, 1710)
+texture = ExtResource("46_nbg2j")
+
+[node name="price" type="Sprite2D" parent="boosters/5_milks"]
+position = Vector2(860, 1710)
+texture = ExtResource("49_0atex")
+
+[node name="price_label" type="Label" parent="boosters/5_milks"]
+offset_left = 832.5
+offset_top = 1652.5
+offset_right = 943.5
+offset_bottom = 1740.5
+text = "250"
+label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="scores" type="Node2D" parent="."]
+visible = false
+
+[node name="title" type="Sprite2D" parent="scores"]
+position = Vector2(505, 260)
+texture = ExtResource("50_fmuuj")
+
+[node name="1" type="Sprite2D" parent="scores"]
+position = Vector2(250.5, 662.5)
+texture = ExtResource("51_kuecd")
+
+[node name="character" type="Sprite2D" parent="scores/1"]
+position = Vector2(29.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_mx33c")
+
+[node name="2" type="Sprite2D" parent="scores"]
+position = Vector2(750.5, 677.5)
+texture = ExtResource("52_4645u")
+
+[node name="character" type="Sprite2D" parent="scores/2"]
+position = Vector2(19.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_ah5vk")
+
+[node name="3" type="Sprite2D" parent="scores"]
+position = Vector2(278, 1125)
+texture = ExtResource("52_4645u")
+
+[node name="character" type="Sprite2D" parent="scores/3"]
+position = Vector2(19.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_p0g74")
+
+[node name="4" type="Sprite2D" parent="scores"]
+position = Vector2(750.5, 1125)
+texture = ExtResource("52_4645u")
+
+[node name="character" type="Sprite2D" parent="scores/4"]
+position = Vector2(19.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_ndeb1")
+
+[node name="5" type="Sprite2D" parent="scores"]
+position = Vector2(268, 1572.5)
+texture = ExtResource("52_4645u")
+
+[node name="character" type="Sprite2D" parent="scores/5"]
+position = Vector2(29.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_ox0pj")
+
+[node name="6" type="Sprite2D" parent="scores"]
+position = Vector2(750.5, 1572.5)
+texture = ExtResource("52_4645u")
+
+[node name="character" type="Sprite2D" parent="scores/6"]
+position = Vector2(19.5, -107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_s2rmg")
+
+[node name="menu" type="Node2D" parent="."]
+visible = false
+
+[node name="menu_background" type="Sprite2D" parent="menu"]
+position = Vector2(502.5, 1720)
+texture = ExtResource("10_xr2ln")
+
+[node name="game_map" type="Sprite2D" parent="menu"]
+position = Vector2(170, 1707.5)
+texture = ExtResource("11_4mdxq")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="menu/game_map"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Map"
+
+[node name="map_label" type="Label" parent="menu/game_map"]
+offset_left = -55.0
+offset_top = 60.0
+offset_right = 67.0
+offset_bottom = 94.0
+text = "game map"
+label_settings = SubResource("LabelSettings_reliw")
+
+[node name="menu_shop" type="Sprite2D" parent="menu"]
+position = Vector2(382.5, 1707.5)
+texture = ExtResource("12_dee8e")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="menu/menu_shop"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8k4xr")
+action = "Shop"
+
+[node name="shop_label" type="Label" parent="menu/menu_shop"]
+offset_left = -27.5
+offset_top = 57.5
+offset_right = 29.5
+offset_bottom = 91.5
+text = "shop"
+label_settings = SubResource("LabelSettings_reliw")
+
+[node name="menu_boosters" type="Sprite2D" parent="menu"]
+position = Vector2(570, 1707.5)
+texture = ExtResource("13_k3y0i")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="menu/menu_boosters"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_p41u5")
+action = "Boosters"
+
+[node name="boosters_label" type="Label" parent="menu/menu_boosters"]
+offset_left = -52.5
+offset_top = 62.5
+offset_right = 49.5
+offset_bottom = 96.5
+text = "boosters"
+label_settings = SubResource("LabelSettings_reliw")
+
+[node name="menu_scores" type="Sprite2D" parent="menu"]
+position = Vector2(727.5, 1707.5)
+texture = ExtResource("14_mqe4s")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="menu/menu_scores"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_p41u5")
+action = "Scores"
+
+[node name="scores_label" type="Label" parent="menu/menu_scores"]
+offset_left = -35.0
+offset_top = 60.0
+offset_right = 40.0
+offset_bottom = 94.0
+text = "scores"
+label_settings = SubResource("LabelSettings_reliw")
+
+[node name="menu_no_ads" type="Sprite2D" parent="menu"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(887.5, 1707.5)
+texture = ExtResource("15_dpgue")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="menu/menu_no_ads"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_p41u5")
+action = "Ads"
+
+[node name="no_ads_label" type="Label" parent="menu/menu_no_ads"]
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 37.0
+offset_bottom = 94.0
+text = "no ads"
+label_settings = SubResource("LabelSettings_reliw")
+
+[node name="open_fields" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_i1dt1")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_1xjgl")
+
+[node name="playful_casino_slot_machine_jackpot_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("64_b5ucs")

@@ -32,11 +32,36 @@ func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Main":
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
+		if event.action == "Shoppette":
+			shoppette_display()
 		if Global.enabled_sound:
 			var current_scene = get_tree().get_current_scene()
 			if current_scene:
 				var taps_1 = current_scene.get_node("taps_1")
 				taps_1.play()
+
+
+func shoppette_display():
+	var node_path = "../shoppette"
+	var node = get_node(node_path)
+	if node == null:
+		var scene_instance = load("res://scenes/shoppette.tscn")
+		scene_instance = scene_instance.instantiate()
+		var root_node = get_tree().get_root()
+		root_node.add_child(scene_instance)
+	else:
+		shoppette_hide()
+
+
+# Returns true if the shoppette scene is removed as a result of running this function.
+func shoppette_hide():
+	var node_path = "../shoppette"
+	var node = get_node(node_path)
+	if node:
+		var root_node = get_tree().get_root()
+		root_node.remove_child(node)
+		return true
+	return false
 
 
 func start_timer():

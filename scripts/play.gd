@@ -69,6 +69,7 @@ func _physics_process(delta):
 		remove_matches()
 	customer_order_updates()
 
+
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
 	# Set the last touched piece
@@ -78,6 +79,7 @@ func _input(event):
 		# Handle `moves` count
 		moves -= 1
 		$top_moves/moves.text = str(moves)
+
 
 # Returns a path to a random candy texture.
 func get_random_candy():
@@ -433,8 +435,12 @@ func remove_matches():
 					tween.tween_property(node, "scale", Vector2(), 0.75)
 					tween.tween_callback(remove_matches_callback)
 					matches_left_to_remove += 1
-	if matches_left_to_remove > 0:
-		$multi_pop_6.play()
+	# Play sound only on first match
+	if (matches_left_to_remove == 9
+	or matches_left_to_remove == 12
+	or matches_left_to_remove == 15):
+		if not $multi_pop_6.is_playing():
+			$multi_pop_6.play()
 
 
 # The callback function for the remove_matches() tween.

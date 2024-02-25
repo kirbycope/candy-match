@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=87 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://dikq70x6c1cff" path="res://assets/wheel_full1.png" id="18_2i7tp"]
 [ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
 [ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
-[ext_resource type="Texture2D" uid="uid://djhgsdmce3y3d" path="res://assets/wheel prize1.png" id="19_ln7ug"]
 [ext_resource type="Texture2D" uid="uid://bydl4ykg45083" path="res://assets/buton next.png" id="20_2djr6"]
 [ext_resource type="Texture2D" uid="uid://cckumw878ckpu" path="res://assets/won2.png" id="21_bho1w"]
 [ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="21_rnm3e"]
@@ -63,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://vb4b76cdyfhn" path="res://assets/scores title.png" id="50_fmuuj"]
 [ext_resource type="Texture2D" uid="uid://dhveuqjrqr630" path="res://assets/scores box first.png" id="51_kuecd"]
 [ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="52_4645u"]
+[ext_resource type="AudioStream" uid="uid://d0ack68d8d4y1" path="res://assets/playful-casino-slot-machine-jackpot-1-183922.mp3" id="64_b5ucs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4xr"]
 size = Vector2(200, 200)
@@ -87,6 +87,9 @@ size = Vector2(260, 150)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hljq0"]
 radius = 240.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0333"]
+size = Vector2(480, 160)
 
 [sub_resource type="LabelSettings" id="LabelSettings_js7c8"]
 font_size = 48
@@ -153,6 +156,15 @@ size = Vector2(150, 200)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_55csr")
 
+[node name="open_fields" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_i1dt1")
+
+[node name="playful_casino_slot_machine_jackpot_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("64_b5ucs")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_1xjgl")
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(472.5, 755)
 texture = ExtResource("1_c48jg")
@@ -167,6 +179,7 @@ shape = SubResource("RectangleShape2D_8k4xr")
 action = "Settings"
 
 [node name="top_close" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(60, 60)
 texture = ExtResource("4_o3gmd")
 
@@ -185,7 +198,6 @@ shape = SubResource("RectangleShape2D_8k4xr")
 action = "Coins"
 
 [node name="main" type="Node2D" parent="."]
-visible = false
 
 [node name="logo" type="Sprite2D" parent="main"]
 position = Vector2(520, 282.5)
@@ -304,53 +316,54 @@ shape = SubResource("RectangleShape2D_vibvt")
 action = "ToggleMusic"
 
 [node name="wheel" type="Node2D" parent="."]
+visible = false
 
 [node name="spinner" type="Node2D" parent="wheel"]
-scale = Vector2(1, 1)
 
 [node name="wheel_title" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(520, 260)
-scale = Vector2(1, 1)
 texture = ExtResource("16_l4mlr")
 
 [node name="wheel_empty" type="Sprite2D" parent="wheel/spinner"]
 visible = false
 position = Vector2(517.5, 900)
 rotation = 0.139626
-scale = Vector2(1, 1)
 texture = ExtResource("17_0b32j")
 
 [node name="wheel_full" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(517.5, 900)
-scale = Vector2(1, 1)
 texture = ExtResource("18_2i7tp")
 
 [node name="wheel_needle" type="Sprite2D" parent="wheel/spinner"]
 position = Vector2(517.5, 875)
-scale = Vector2(1, 1)
 texture = ExtResource("19_adfi2")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="wheel/spinner"]
 position = Vector2(517.5, 900)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_hljq0")
 action = "Spin"
 
 [node name="reward" type="Node2D" parent="wheel"]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="item" type="Sprite2D" parent="wheel/reward"]
 position = Vector2(515, 460)
-texture = ExtResource("19_ln7ug")
 
 [node name="next" type="Sprite2D" parent="wheel/reward"]
 position = Vector2(257.5, 1197.5)
 texture = ExtResource("20_2djr6")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="wheel/reward/next"]
+shape = SubResource("RectangleShape2D_b0333")
+action = "Reward_Back"
+
 [node name="quit" type="Sprite2D" parent="wheel/reward"]
 position = Vector2(770, 1200)
 texture = ExtResource("21_rnm3e")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="wheel/reward/quit"]
+shape = SubResource("RectangleShape2D_b0333")
+action = "Close"
 
 [node name="you_got" type="Label" parent="wheel/reward"]
 offset_left = 400.0
@@ -367,7 +380,7 @@ offset_left = -5.0
 offset_top = 938.0
 offset_right = 1033.0
 offset_bottom = 1070.0
-text = "5 bombs"
+text = "# of items"
 label_settings = SubResource("LabelSettings_37mr2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -386,7 +399,7 @@ offset_left = 750.0
 offset_top = 1505.0
 offset_right = 797.0
 offset_bottom = 1618.0
-text = "1"
+text = "#"
 label_settings = SubResource("LabelSettings_h0flw")
 
 [node name="character" type="Node2D" parent="."]
@@ -548,19 +561,25 @@ offset_bottom = 108.0
 text = "shop"
 label_settings = SubResource("LabelSettings_0o5nr")
 
-[node name="offer1" type="Sprite2D" parent="shop"]
+[node name="promos" type="Node2D" parent="shop"]
+scale = Vector2(1, 1)
+
+[node name="offer1" type="Sprite2D" parent="shop/promos"]
 position = Vector2(237.5, 410)
+scale = Vector2(1, 1)
 texture = ExtResource("33_x54yh")
 
-[node name="hot" type="Sprite2D" parent="shop"]
+[node name="hot" type="Sprite2D" parent="shop/promos"]
 position = Vector2(115, 252.5)
+scale = Vector2(1, 1)
 texture = ExtResource("34_6pbnv")
 
-[node name="offer1_price" type="Sprite2D" parent="shop"]
+[node name="offer1_price" type="Sprite2D" parent="shop/promos"]
 position = Vector2(272.5, 607.5)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="offer1_label" type="Label" parent="shop"]
+[node name="offer1_label" type="Label" parent="shop/promos"]
 offset_left = 190.0
 offset_top = 552.5
 offset_right = 356.0
@@ -568,19 +587,22 @@ offset_bottom = 640.5
 text = "$2.49"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="offer2" type="Sprite2D" parent="shop"]
+[node name="offer2" type="Sprite2D" parent="shop/promos"]
 position = Vector2(775, 410)
+scale = Vector2(1, 1)
 texture = ExtResource("34_3dg33")
 
-[node name="best" type="Sprite2D" parent="shop"]
+[node name="best" type="Sprite2D" parent="shop/promos"]
 position = Vector2(615, 252.5)
+scale = Vector2(1, 1)
 texture = ExtResource("37_upbtj")
 
-[node name="offer2_price" type="Sprite2D" parent="shop"]
+[node name="offer2_price" type="Sprite2D" parent="shop/promos"]
 position = Vector2(782.5, 607.5)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="offer2_label" type="Label" parent="shop"]
+[node name="offer2_label" type="Label" parent="shop/promos"]
 offset_left = 697.5
 offset_top = 552.5
 offset_right = 863.5
@@ -588,130 +610,142 @@ offset_bottom = 640.5
 text = "$2.99"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="background" type="Sprite2D" parent="shop"]
+[node name="shoppette" type="Node2D" parent="shop"]
 position = Vector2(515, 1272.5)
+scale = Vector2(1, 1)
+
+[node name="background" type="Sprite2D" parent="shop/shoppette"]
+scale = Vector2(1, 1)
 texture = ExtResource("38_hbuxt")
 
-[node name="coins1" type="Sprite2D" parent="shop"]
-position = Vector2(162.5, 1110)
+[node name="coins1" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(-349.5, -162.5)
+scale = Vector2(1, 1)
 texture = ExtResource("39_g354n")
 
-[node name="250" type="Label" parent="shop"]
+[node name="250" type="Label" parent="shop/shoppette"]
 z_index = 1
-offset_left = 382.5
-offset_top = 1025.0
-offset_right = 547.5
-offset_bottom = 1157.0
+offset_left = -129.5
+offset_top = -247.5
+offset_right = 35.4999
+offset_bottom = -115.5
 text = "250"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins1_label" type="Label" parent="shop"]
-offset_left = 370.0
-offset_top = 1100.0
-offset_right = 551.0
-offset_bottom = 1199.0
+[node name="coins1_label" type="Label" parent="shop/shoppette"]
+offset_left = -142.0
+offset_top = -172.5
+offset_right = 38.9999
+offset_bottom = -73.5002
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price1" type="Sprite2D" parent="shop"]
-position = Vector2(850, 1115)
+[node name="price1" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(338, -157.5)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price1_label" type="Label" parent="shop"]
-offset_left = 765.0
-offset_top = 1062.5
-offset_right = 931.0
-offset_bottom = 1150.5
+[node name="price1_label" type="Label" parent="shop/shoppette"]
+offset_left = 253.0
+offset_top = -210.0
+offset_right = 419.0
+offset_bottom = -122.0
 text = "$0.99"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="coins2" type="Sprite2D" parent="shop"]
-position = Vector2(160, 1315)
+[node name="coins2" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(-352, 42.4999)
+scale = Vector2(1, 1)
 texture = ExtResource("40_kl4tx")
 
-[node name="500" type="Label" parent="shop"]
+[node name="500" type="Label" parent="shop/shoppette"]
 z_index = 1
-offset_left = 382.5
-offset_top = 1230.0
-offset_right = 547.5
-offset_bottom = 1362.0
+offset_left = -129.5
+offset_top = -42.5002
+offset_right = 35.4999
+offset_bottom = 89.4998
 text = "500"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins2_label" type="Label" parent="shop"]
-offset_left = 375.0
-offset_top = 1307.5
-offset_right = 556.0
-offset_bottom = 1406.5
+[node name="coins2_label" type="Label" parent="shop/shoppette"]
+offset_left = -137.0
+offset_top = 34.9998
+offset_right = 43.9999
+offset_bottom = 134.0
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price2" type="Sprite2D" parent="shop"]
-position = Vector2(850, 1317.5)
+[node name="price2" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(338, 44.9999)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price2_label" type="Label" parent="shop"]
-offset_left = 765.0
-offset_top = 1262.5
-offset_right = 931.0
-offset_bottom = 1350.5
+[node name="price2_label" type="Label" parent="shop/shoppette"]
+offset_left = 253.0
+offset_top = -10.0002
+offset_right = 419.0
+offset_bottom = 77.9998
 text = "$1.49"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="coins3" type="Sprite2D" parent="shop"]
-position = Vector2(167.5, 1517.5)
+[node name="coins3" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(-344.5, 245)
+scale = Vector2(1, 1)
 texture = ExtResource("41_qm6mw")
 
-[node name="700" type="Label" parent="shop"]
+[node name="700" type="Label" parent="shop/shoppette"]
 z_index = 1
-offset_left = 382.5
-offset_top = 1430.0
-offset_right = 547.5
-offset_bottom = 1562.0
+offset_left = -129.5
+offset_top = 157.5
+offset_right = 35.4999
+offset_bottom = 289.5
 text = "700"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins3_label" type="Label" parent="shop"]
-offset_left = 375.0
-offset_top = 1507.5
-offset_right = 556.0
-offset_bottom = 1606.5
+[node name="coins3_label" type="Label" parent="shop/shoppette"]
+offset_left = -137.0
+offset_top = 235.0
+offset_right = 43.9999
+offset_bottom = 334.0
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price3" type="Sprite2D" parent="shop"]
-position = Vector2(850, 1517.5)
+[node name="price3" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(338, 245)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price3_label" type="Label" parent="shop"]
-offset_left = 765.0
-offset_top = 1462.5
-offset_right = 931.0
-offset_bottom = 1550.5
+[node name="price3_label" type="Label" parent="shop/shoppette"]
+offset_left = 253.0
+offset_top = 190.0
+offset_right = 419.0
+offset_bottom = 278.0
 text = "$1.99"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="video" type="Sprite2D" parent="shop"]
-position = Vector2(172.5, 1717.5)
+[node name="video" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(-339.5, 445)
+scale = Vector2(1, 1)
 texture = ExtResource("42_0fj4a")
 
-[node name="play" type="Sprite2D" parent="shop"]
-position = Vector2(915, 1720)
+[node name="play" type="Sprite2D" parent="shop/shoppette"]
+position = Vector2(403, 447.5)
+scale = Vector2(1, 1)
 texture = ExtResource("43_hu6e3")
 
-[node name="watch" type="Label" parent="shop"]
-offset_left = 290.0
-offset_top = 1650.0
-offset_right = 845.0
-offset_bottom = 1722.0
+[node name="watch" type="Label" parent="shop/shoppette"]
+offset_left = -222.0
+offset_top = 377.5
+offset_right = 333.0
+offset_bottom = 449.5
 text = "Watch a video and get"
 label_settings = SubResource("LabelSettings_i8gf2")
 
-[node name="coins4_label" type="Label" parent="shop"]
-offset_left = 377.5
-offset_top = 1692.5
-offset_right = 700.5
-offset_bottom = 1791.5
+[node name="coins4_label" type="Label" parent="shop/shoppette"]
+offset_left = -134.5
+offset_top = 420.0
+offset_right = 188.5
+offset_bottom = 519.0
 text = "250 coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
@@ -980,7 +1014,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_s2rmg")
 
 [node name="menu" type="Node2D" parent="."]
-visible = false
 
 [node name="menu_background" type="Sprite2D" parent="menu"]
 position = Vector2(502.5, 1720)
@@ -1071,9 +1104,3 @@ offset_right = 37.0
 offset_bottom = 94.0
 text = "no ads"
 label_settings = SubResource("LabelSettings_reliw")
-
-[node name="open_fields" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_i1dt1")
-
-[node name="taps_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_1xjgl")

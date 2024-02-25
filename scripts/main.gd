@@ -1,9 +1,9 @@
 extends Node2D
 
 
-var spins_left = 1
+var spins_left = 7
 var spin_rotation_speed = 0.0
-var spin_slow_down_time = 5.0
+var spin_slow_down_time = 2.0
 var wheel_spinning = false
 
 
@@ -84,7 +84,8 @@ func _input(event):
 			$character/won6.visible = true
 			$character/character6/checkmark.visible = true
 		elif event.action == "Close":
-			reset_to_main()
+			if not Global.shoppette_hide():
+				reset_to_main()
 		elif event.action == "Coins":
 			open_shop()
 		elif event.action == "Friends":
@@ -93,6 +94,8 @@ func _input(event):
 			get_tree().change_scene_to_file("res://scenes/map.tscn")
 		elif event.action == "Play":
 			get_tree().change_scene_to_file("res://scenes/play.tscn")
+		elif event.action == "Reward_Back":
+			spin_wheel_rewards_hide()
 		elif event.action == "Scores":
 			$main.visible = false
 			$menu.visible = false
@@ -126,6 +129,7 @@ func _input(event):
 			$top_close.visible = true
 			$top_settings.visible = false
 			$wheel.visible = true
+			$wheel/spins_label.text = str(spins_left)
 
 
 # Clears the characters on the Character Select screen.
@@ -145,6 +149,7 @@ func clear_character_selection():
 
 
 func open_character_selection():
+	reset_to_main()
 	$character.visible = true
 	$main.visible = false
 	$menu.visible = false
@@ -157,6 +162,7 @@ func open_character_selection():
 
 # Opens the scene's "shop" view.
 func open_shop():
+	reset_to_main()
 	$main.visible = false
 	$menu.visible = false
 	$shop.visible = true
@@ -166,6 +172,7 @@ func open_shop():
 
 # Resets the scene's "main" view.
 func reset_to_main():
+	Global.shoppette_hide()
 	$boosters.visible = false
 	$character.visible = false
 	$main.visible = true
@@ -176,6 +183,30 @@ func reset_to_main():
 	$top_close.visible = false
 	$top_settings.visible = true
 	$wheel.visible = false
+	$wheel/reward.visible = false
+	$wheel/spinner.visible = true
+
+
+func spin_wheel_rewards_hide():
+	$wheel/reward.visible = false
+	$wheel/spinner.visible = true
+
+
+func spin_wheel_rewards_show(prize):
+	$wheel/reward.visible = true
+	$wheel/spinner.visible = false
+	var texture_path = "res://assets/wheel prize" + str(prize) + ".png"
+	$wheel/reward/item.texture = load(texture_path)
+	if prize == 1:
+		$wheel/reward/Label.text = "5 bombs"
+	elif prize == 2:
+		$wheel/reward/Label.text = "20 Coins"
+	elif prize == 3:
+		$wheel/reward/Label.text = "5 milks"
+	elif prize == 4:
+		$wheel/reward/Label.text = "5 switches"
+	elif prize == 5:
+		$wheel/reward/Label.text = "5 sugars"
 
 
 # Spins the wheel if able.
@@ -183,8 +214,10 @@ func spin_wheel_start():
 	if spins_left > 0:
 		spins_left -= 1
 		$wheel/spins_label.text = str(spins_left)
+		spin_slow_down_time = 2.0
 		spin_rotation_speed = randf_range(5, 10)
 		wheel_spinning = true
+		#$playful_casino_slot_machine_jackpot_1.play()
 
 
 # Stops the wheel and awards the prize.
@@ -200,20 +233,22 @@ func spin_wheel_stop():
 	for i in range(section_angles.size()):
 		if spinner_angle >= section_angles[i]:
 			section_index = i
-	# Print the section
-	if section_index == 0:		# 0
-		print("Coins")
-	elif section_index == 1:	#45
-		print("Bomb")
-	elif section_index == 2:	#90
-		print("Coins")
-	elif section_index == 3:	#135
-		print("Switch")
+	var prize = 0
+	if section_index == 0:
+		prize = 2 # "Coins"
+	elif section_index == 1:
+		prize = 1 # "Bomb")
+	elif section_index == 2:
+		prize = 2 # "Coins"
+	elif section_index == 3:
+		prize = 4 # ("Switch")
 	elif section_index == 4:
-		print("Coins")
+		prize = 2 # "Coins"
 	elif section_index == 5:
-		print("Sugar")
+		prize = 5 # ("Sugar")
 	elif section_index == 6:
-		print("Coins")
+		prize = 2 # "Coins"
 	elif section_index == 7:
-		print("Milk")
+		prize = 3 # ("Milk")
+	await get_tree().create_timer(0.5).timeout
+	spin_wheel_rewards_show(prize)

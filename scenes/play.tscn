@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=42 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -25,6 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="19_betnf"]
+[ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="19_nar05"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="20_8mydb"]
+[ext_resource type="Texture2D" uid="uid://v21xq6er4bk4" path="res://assets/button try again.png" id="21_2ixs5"]
+[ext_resource type="Texture2D" uid="uid://dpj51t35tjv1g" path="res://assets/button play.png" id="22_wl2lr"]
 [ext_resource type="AudioStream" uid="uid://b05v3mn134hg8" path="res://assets/multi-pop-6-188170.mp3" id="26_7lrum"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="26_tyxfa"]
 [ext_resource type="AudioStream" uid="uid://cn5cxy6veyb6g" path="res://assets/marimba-bloop-3-188151.mp3" id="28_k8jwo"]
@@ -46,6 +51,14 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abln1"]
 size = Vector2(500, 500)
 
+[sub_resource type="LabelSettings" id="LabelSettings_uno8e"]
+font_size = 128
+outline_size = 64
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kofx4"]
+size = Vector2(500, 180)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qloq"]
 size = Vector2(560, 560)
 
@@ -53,6 +66,18 @@ size = Vector2(560, 560)
 position = Vector2(251, 218)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_uupm5")
+
+[node name="marimba_bloop_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_k8jwo")
+
+[node name="multi_pop_6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_7lrum")
+
+[node name="simple_pleasures" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n0lt7")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_tyxfa")
 
 [node name="background1" type="Sprite2D" parent="."]
 position = Vector2(-120, -337.5)
@@ -241,15 +266,17 @@ offset_right = -457.0
 offset_bottom = 176.5
 text = "2:00"
 label_settings = SubResource("LabelSettings_g1d25")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="coin" type="Node2D" parent="."]
+[node name="coins" type="Node2D" parent="."]
 
-[node name="frame" type="Sprite2D" parent="coin"]
+[node name="frame" type="Sprite2D" parent="coins"]
 position = Vector2(292.5, 112.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_w7flf")
 
-[node name="coins_label" type="Label" parent="coin"]
+[node name="coins_label" type="Label" parent="coins"]
 offset_left = 242.5
 offset_top = 55.0
 offset_right = 340.5
@@ -258,13 +285,15 @@ text = "Coins"
 label_settings = SubResource("LabelSettings_3kv83")
 uppercase = true
 
-[node name="counter" type="Label" parent="coin"]
+[node name="counter" type="Label" parent="coins"]
 offset_left = 230.0
 offset_top = 77.5
 offset_right = 353.0
 offset_bottom = 176.5
-text = "250"
+text = "0"
 label_settings = SubResource("LabelSettings_g1d25")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="board" type="Sprite2D" parent="."]
 position = Vector2(-110, 635)
@@ -666,16 +695,61 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_abln1")
 action = "48"
 
-[node name="pause" type="Sprite2D" parent="."]
+[node name="pause" type="Node2D" parent="."]
+visible = false
+scale = Vector2(1, 1)
+script = ExtResource("19_betnf")
+
+[node name="background" type="Sprite2D" parent="pause"]
+position = Vector2(-110, 630)
+scale = Vector2(2, 2)
+texture = ExtResource("19_nar05")
+
+[node name="Label" type="Label" parent="pause"]
+offset_left = -335.0
+offset_top = 150.0
+offset_right = 116.0
+offset_bottom = 325.0
+text = "paused"
+label_settings = SubResource("LabelSettings_uno8e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Sprite2D" parent="pause"]
+position = Vector2(-110, 437.5)
+texture = ExtResource("22_wl2lr")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="pause/play"]
+shape = SubResource("RectangleShape2D_kofx4")
+action = "Play"
+
+[node name="try" type="Sprite2D" parent="pause"]
+position = Vector2(-110, 630)
+texture = ExtResource("21_2ixs5")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="pause/try"]
+shape = SubResource("RectangleShape2D_kofx4")
+action = "Try"
+
+[node name="quit" type="Sprite2D" parent="pause"]
+position = Vector2(-110, 822.5)
+texture = ExtResource("20_8mydb")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="pause/quit"]
+shape = SubResource("RectangleShape2D_kofx4")
+action = "Main"
+
+[node name="pause_button" type="Sprite2D" parent="."]
 position = Vector2(-527.5, 1195)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_8j2i1")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="pause"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="pause_button"]
 shape = SubResource("RectangleShape2D_6qloq")
-action = "Main"
+action = "Pause"
 
 [node name="bomb" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-195, 1190)
 texture = ExtResource("7_ewlxu")
 
@@ -684,6 +758,7 @@ position = Vector2(37.5, -42.5)
 texture = ExtResource("11_wadvv")
 
 [node name="sugar" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-42.5, 1194.5)
 texture = ExtResource("8_g6apj")
 
@@ -692,6 +767,7 @@ position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
 
 [node name="switch" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(117.5, 1194.5)
 texture = ExtResource("9_dckg0")
 
@@ -700,21 +776,10 @@ position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
 
 [node name="milk" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(277.5, 1194.5)
 texture = ExtResource("10_age8i")
 
 [node name="add" type="Sprite2D" parent="milk"]
 position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
-
-[node name="simple_pleasures" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_n0lt7")
-
-[node name="taps_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_tyxfa")
-
-[node name="multi_pop_6" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_7lrum")
-
-[node name="marimba_bloop_3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("28_k8jwo")

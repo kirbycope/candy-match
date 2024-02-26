@@ -1,0 +1,117 @@
+[
+    {
+        "id": 0,
+        "about" : "Tutorial level",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 6,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "bombs_allowed": false,
+        "sugars_allowed": false,
+        "switches_allowed": false,
+        "milks_allowed": false
+    },
+    {
+        "id": 1,
+        "about" : "Bombs away",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": false,
+        "switches_allowed": false,
+        "milks_allowed": false
+    },
+    {
+        "id": 2,
+        "about" : "Sugar rush",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": false,
+        "milks_allowed": false
+    },
+    {
+        "id": 3,
+        "about" : "Switch up",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 6,
+            "item_id": 6,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": false
+    },
+    {
+        "id": 4,
+        "about" : "Milkin' it",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 6,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    }
+]

@@ -1,17 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8g1sgfmh00qc"]
+[gd_scene load_steps=10 format=3 uid="uid://b8g1sgfmh00qc"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_dylxf"]
 [ext_resource type="AudioStream" uid="uid://dnixs1dk3ou7i" path="res://assets/all-that-glitters-aaron-paul-low-main-version-20400-01-32.mp3" id="2_40a5d"]
 [ext_resource type="Texture2D" uid="uid://dujvk7c3l7tky" path="res://assets/Map_Full_1.png" id="2_embme"]
-[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="3_rvva0"]
-[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="4_kdkag"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="5_xben3"]
 [ext_resource type="Texture2D" uid="uid://dqtbymcsjfc88" path="res://assets/map level grey.png" id="6_pef42"]
 [ext_resource type="Texture2D" uid="uid://brhgmh3g4ke8p" path="res://assets/map level blue.png" id="7_bgc2c"]
+[ext_resource type="PackedScene" uid="uid://di02cv324ap5j" path="res://scenes/top.tscn" id="8_6xw0d"]
 [ext_resource type="Texture2D" uid="uid://dhiylgc37jgqp" path="res://assets/map level pink.png" id="8_qt4qj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw67y"]
-size = Vector2(200, 200)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq0ni"]
 font_size = 64
@@ -28,28 +24,6 @@ stream = ExtResource("2_40a5d")
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xben3")
-
-[node name="top_close" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(60, 60)
-scale = Vector2(1, 1)
-texture = ExtResource("3_rvva0")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
-position = Vector2(-7.62939e-06, -7.62939e-06)
-shape = SubResource("RectangleShape2D_sw67y")
-action = "Close"
-
-[node name="top_coins" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(952.5, 70)
-scale = Vector2(1, 1)
-texture = ExtResource("4_kdkag")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
-position = Vector2(-7.62939e-06, -7.62939e-06)
-shape = SubResource("RectangleShape2D_sw67y")
-action = "Shoppette"
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(515, -1850)
@@ -173,3 +147,6 @@ text = "4"
 label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="top" parent="." instance=ExtResource("8_6xw0d")]
+scale = Vector2(1, 1)

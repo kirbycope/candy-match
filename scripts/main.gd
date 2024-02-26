@@ -1,7 +1,6 @@
 extends Node2D
 
 
-var spins_left = 1
 var spin_rotation_speed = 0.0
 var spin_slow_down_time = 2.0
 var wheel_spinning = false
@@ -43,69 +42,64 @@ func _input(event):
 			$boosters.visible = true
 			$main.visible = false
 			$menu.visible = false
-			$top_close.visible = true
+			$top/close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Character":
 			open_character_selection()
 		elif event.action == "Character1":
-			Global.character = 1
+			Global.player["character"] = 1
 			$character/name_label.text = "Foxy!"
 			clear_character_selection()
 			$character/won1.visible = true
 			$character/character1/checkmark.visible = true
 		elif event.action == "Character2":
-			Global.character = 2
+			Global.player["character"] = 2
 			$character/name_label.text = "George"
 			clear_character_selection()
 			$character/won2.visible = true
 			$character/character2/checkmark.visible = true
 		elif event.action == "Character3":
-			Global.character = 3
+			Global.player["character"] = 3
 			$character/name_label.text = "Kow!"
 			clear_character_selection()
 			$character/won3.visible = true
 			$character/character3/checkmark.visible = true
 		elif event.action == "Character4":
-			Global.character = 4
+			Global.player["character"] = 4
 			$character/name_label.text = "Bob!"
 			clear_character_selection()
 			$character/won4.visible = true
 			$character/character4/checkmark.visible = true
 		elif event.action == "Character5":
-			Global.character = 5
+			Global.player["character"] = 5
 			$character/name_label.text = "Rickon"
 			clear_character_selection()
 			$character/won5.visible = true
 			$character/character5/checkmark.visible = true
 		elif event.action == "Character6":
-			Global.character = 6
+			Global.player["character"] = 6
 			$character/name_label.text = "Beav!"
 			clear_character_selection()
 			$character/won6.visible = true
 			$character/character6/checkmark.visible = true
-		elif event.action == "Close":
-			if not Global.shoppette_hide():
-				reset_to_main()
-		elif event.action == "Coins":
-			open_shop()
 		elif event.action == "Friends":
 			pass
 		elif event.action == "Map":
 			get_tree().change_scene_to_file("res://scenes/map.tscn")
 		elif event.action == "Play":
-			get_tree().change_scene_to_file("res://scenes/play.tscn")
+			get_tree().change_scene_to_file("res://scenes/goal.tscn")
 		elif event.action == "Reward_Back":
 			spin_wheel_rewards_hide()
 		elif event.action == "Scores":
 			$main.visible = false
 			$menu.visible = false
 			$scores.visible = true
-			$top_close.visible = true
+			$top/close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Settings":
 			$main.visible = false
 			$settings.visible = true
-			$top_close.visible = true
+			$top/close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Shop":
 			open_shop()
@@ -126,10 +120,10 @@ func _input(event):
 		elif event.action == "Wheel":
 			$main.visible = false
 			$menu.visible = false
-			$top_close.visible = true
+			$top/close.visible = true
 			$top_settings.visible = false
 			$wheel.visible = true
-			$wheel/spins_label.text = str(spins_left)
+			$wheel/spins_label.text = str(Global.player["spins_remaining"])
 
 
 # Clears the characters on the Character Select screen.
@@ -153,9 +147,9 @@ func open_character_selection():
 	$character.visible = true
 	$main.visible = false
 	$menu.visible = false
-	$top_close.visible = true
+	$top/close.visible = true
 	$top_settings.visible = false
-	var node_path = "character/character" + str(Global.character) + "/checkmark"
+	var node_path = "character/character" + str(Global.player["character"]) + "/checkmark"
 	var node = get_node(node_path)
 	node.visible = true
 
@@ -166,13 +160,17 @@ func open_shop():
 	$main.visible = false
 	$menu.visible = false
 	$shop.visible = true
-	$top_close.visible = true
+	$top/close.visible = true
 	$top_settings.visible = false
 
 
 # Resets the scene's "main" view.
 func reset_to_main():
-	Global.shoppette_hide()
+	$top.shoppette_hide()
+	if Global.player["level_0_complete"] == false:
+		$main/play_button.texture = load("res://assets/main play button.png")
+	else:
+		$main/play_button.texture = load("res://assets/button play.png")
 	$boosters.visible = false
 	$character.visible = false
 	$main.visible = true
@@ -180,7 +178,7 @@ func reset_to_main():
 	$scores.visible = false
 	$settings.visible = false
 	$shop.visible = false
-	$top_close.visible = false
+	$top/close.visible = false
 	$top_settings.visible = true
 	$wheel.visible = false
 	$wheel/reward.visible = false
@@ -199,21 +197,26 @@ func spin_wheel_rewards_show(prize):
 	$wheel/reward/item.texture = load(texture_path)
 	if prize == 1:
 		$wheel/reward/Label.text = "5 bombs"
+		Global.player["bombs"] += 5
 	elif prize == 2:
 		$wheel/reward/Label.text = "20 Coins"
+		Global.player["coins"] += 20
 	elif prize == 3:
 		$wheel/reward/Label.text = "5 milks"
+		Global.player["milks"] += 5
 	elif prize == 4:
 		$wheel/reward/Label.text = "5 switches"
+		Global.player["switches"] += 5
 	elif prize == 5:
 		$wheel/reward/Label.text = "5 sugars"
+		Global.player["sugars"] += 5
 
 
 # Spins the wheel if able.
 func spin_wheel_start():
-	if spins_left > 0:
-		spins_left -= 1
-		$wheel/spins_label.text = str(spins_left)
+	if Global.player["spins_remaining"] > 0:
+		Global.player["spins_remaining"] -= 1
+		$wheel/spins_label.text = str(Global.player["spins_remaining"])
 		spin_slow_down_time = 2.0
 		spin_rotation_speed = randf_range(5, 10)
 		wheel_spinning = true

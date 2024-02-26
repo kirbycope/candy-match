@@ -1,0 +1,229 @@
+[gd_scene load_steps=22 format=3 uid="uid://cj6jdxqxpoa1q"]
+
+[ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="1_3dpmm"]
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_o7lft"]
+[ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="2_lm6jl"]
+[ext_resource type="PackedScene" uid="uid://di02cv324ap5j" path="res://scenes/top.tscn" id="4_rss1b"]
+[ext_resource type="Texture2D" uid="uid://cmyewu7kf3jq7" path="res://assets/level goal.png" id="5_fyhoo"]
+[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="6_0fs3a"]
+[ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="6_od8n3"]
+[ext_resource type="Texture2D" uid="uid://s4ahfsh1ii2" path="res://assets/game boost count.png" id="7_qpvy7"]
+[ext_resource type="Texture2D" uid="uid://jcgckqaakjl4" path="res://assets/candy1.png" id="8_17nls"]
+[ext_resource type="Texture2D" uid="uid://cqk4n01qg7rjq" path="res://assets/candy4.png" id="8_t0rsx"]
+[ext_resource type="Texture2D" uid="uid://cx4tm4irj0rxh" path="res://assets/candy3.png" id="9_c4h85"]
+[ext_resource type="Texture2D" uid="uid://cfablhcdjcfqc" path="res://assets/candy2.png" id="10_c8w44"]
+[ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="12_d7fg7"]
+[ext_resource type="Texture2D" uid="uid://dpj51t35tjv1g" path="res://assets/button play.png" id="12_mlani"]
+[ext_resource type="Texture2D" uid="uid://bf6187pa73ix1" path="res://assets/candy5.png" id="13_7w0m8"]
+[ext_resource type="Texture2D" uid="uid://b54oh0smr3htw" path="res://assets/game info.png" id="17_biups"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c47r8"]
+font_size = 96
+shadow_size = 12
+shadow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufxyd"]
+size = Vector2(480, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qshbu"]
+size = Vector2(480, 180)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f5dku"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcxvd"]
+font_size = 72
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[node name="goal" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_o7lft")
+
+[node name="taps_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3dpmm")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(472.5, 755)
+texture = ExtResource("2_lm6jl")
+
+[node name="top" parent="." instance=ExtResource("4_rss1b")]
+scale = Vector2(1, 1)
+
+[node name="character" type="Sprite2D" parent="."]
+position = Vector2(525, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_0fs3a")
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(515, 1030)
+texture = ExtResource("5_fyhoo")
+
+[node name="gummy_bears" type="Sprite2D" parent="."]
+position = Vector2(142.5, 1257.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_17nls")
+
+[node name="pass" type="Sprite2D" parent="gummy_bears"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="gummy_bears"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jellies" type="Sprite2D" parent="."]
+position = Vector2(380, 1257.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_c8w44")
+
+[node name="pass" type="Sprite2D" parent="jellies"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="jellies"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hard" type="Sprite2D" parent="."]
+position = Vector2(640, 1257.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_c4h85")
+
+[node name="pass" type="Sprite2D" parent="hard"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="hard"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="peppermint" type="Sprite2D" parent="."]
+position = Vector2(867.5, 1257.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_t0rsx")
+
+[node name="pass" type="Sprite2D" parent="peppermint"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="peppermint"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gummy_worms" type="Sprite2D" parent="."]
+position = Vector2(142.5, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_7w0m8")
+
+[node name="pass" type="Sprite2D" parent="gummy_worms"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="gummy_worms"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mashmallows" type="Sprite2D" parent="."]
+position = Vector2(862.5, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_od8n3")
+
+[node name="pass" type="Sprite2D" parent="mashmallows"]
+modulate = Color(0.172549, 0.262745, 0.286275, 1)
+position = Vector2(155, -170)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qpvy7")
+
+[node name="Label" type="Label" parent="mashmallows"]
+offset_left = 95.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = -100.0
+text = "0"
+label_settings = SubResource("LabelSettings_c47r8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Sprite2D" parent="."]
+position = Vector2(260, 1720)
+texture = ExtResource("12_mlani")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="play"]
+shape = SubResource("RectangleShape2D_ufxyd")
+action = "Play"
+
+[node name="quit" type="Sprite2D" parent="."]
+position = Vector2(765, 1720)
+texture = ExtResource("12_d7fg7")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="quit"]
+shape = SubResource("RectangleShape2D_qshbu")
+action = "Main"
+
+[node name="level" type="Node2D" parent="."]
+position = Vector2(1040, -40)
+
+[node name="frame" type="Sprite2D" parent="level"]
+position = Vector2(-527.5, 112.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_biups")
+
+[node name="level_label" type="Label" parent="level"]
+offset_left = -567.5
+offset_top = 55.0
+offset_right = -491.5
+offset_bottom = 100.0
+text = "Level"
+label_settings = SubResource("LabelSettings_f5dku")
+uppercase = true
+
+[node name="number" type="Label" parent="level"]
+offset_left = -600.0
+offset_top = 77.5
+offset_right = -457.0
+offset_bottom = 176.5
+text = "0"
+label_settings = SubResource("LabelSettings_bcxvd")
+horizontal_alignment = 1
+vertical_alignment = 1

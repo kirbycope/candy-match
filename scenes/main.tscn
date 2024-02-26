@@ -1,12 +1,11 @@
-[gd_scene load_steps=87 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=86 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
 [ext_resource type="Texture2D" uid="uid://b2csrcac65rds" path="res://assets/main hi.png" id="2_kaunq"]
 [ext_resource type="Texture2D" uid="uid://bqx23545tcl4w" path="res://assets/main logo.png" id="3_vvo8y"]
 [ext_resource type="Texture2D" uid="uid://cq717tuamfq1a" path="res://assets/top settings.png" id="4_lo632"]
-[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="4_o3gmd"]
-[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="5_x6sy3"]
+[ext_resource type="PackedScene" uid="uid://di02cv324ap5j" path="res://scenes/top.tscn" id="6_cxxs2"]
 [ext_resource type="Texture2D" uid="uid://cjv17ev7kh6qu" path="res://assets/main play button.png" id="6_isyfu"]
 [ext_resource type="Texture2D" uid="uid://cd87w6tqo3y8v" path="res://assets/main wheel.png" id="7_y6wj2"]
 [ext_resource type="Texture2D" uid="uid://22xwlamu37o2" path="res://assets/main characters.png" id="8_8y5o0"]
@@ -169,6 +168,9 @@ stream = ExtResource("18_1xjgl")
 position = Vector2(472.5, 755)
 texture = ExtResource("1_c48jg")
 
+[node name="top" parent="." instance=ExtResource("6_cxxs2")]
+scale = Vector2(1, 1)
+
 [node name="top_settings" type="Sprite2D" parent="."]
 position = Vector2(60, 60)
 texture = ExtResource("4_lo632")
@@ -177,25 +179,6 @@ texture = ExtResource("4_lo632")
 position = Vector2(-7.62939e-06, -7.62939e-06)
 shape = SubResource("RectangleShape2D_8k4xr")
 action = "Settings"
-
-[node name="top_close" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(60, 60)
-texture = ExtResource("4_o3gmd")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="top_close"]
-position = Vector2(-7.62939e-06, -7.62939e-06)
-shape = SubResource("RectangleShape2D_8k4xr")
-action = "Close"
-
-[node name="top_coins" type="Sprite2D" parent="."]
-position = Vector2(952.5, 70)
-texture = ExtResource("5_x6sy3")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="top_coins"]
-position = Vector2(-7.62939e-06, -7.62939e-06)
-shape = SubResource("RectangleShape2D_8k4xr")
-action = "Coins"
 
 [node name="main" type="Node2D" parent="."]
 

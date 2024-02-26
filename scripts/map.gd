@@ -1,21 +1,19 @@
 extends Node2D
 
+
 # Constants for swipe direction
 const SWIPE_UP = 1
 const SWIPE_DOWN = -1
-
 # Speed of scrolling (adjust as needed)
 var scroll_speed = 1000
-
 # Distance of scrolling (adjust as needed)
 var scroll_distance = 500
-
 # Easing factor (adjust as needed, higher values mean faster easing)
 var easing_factor = 6.0
-
 # Variables to track touch positions
 var initial_touch_position: Vector2
 var target_scroll_position: float = 0
+
 
 func _ready():
 	if Global.enabled_music:
@@ -23,13 +21,8 @@ func _ready():
 	# Initialize target_scroll_position to the initial position of the sprite
 	target_scroll_position = $background.position.y
 
+
 func _input(event):
-	if event is InputEventAction and event.pressed:
-		if event.action == "Coins":
-			pass
-		if event.action == "Close":
-			if not Global.shoppette_hide():
-				get_tree().change_scene_to_file("res://scenes/main.tscn")
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			# Store initial touch position

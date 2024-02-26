@@ -5,8 +5,8 @@ extends Node2D
 func _ready():
 	if Global.enabled_music:
 		$a_passing_interest.play()
-		var texture_path = "res://assets/lose" + str(Global.character) + ".png"
-		$character.texture = load(texture_path)
+	var texture_path = "res://assets/lose" + str(Global.player["character"]) + ".png"
+	$character.texture = load(texture_path)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

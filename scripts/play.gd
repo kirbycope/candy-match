@@ -7,14 +7,14 @@ var candy3_matches = 0
 var candy4_matches = 0
 var candy5_matches = 0
 var candy6_matches = 0
-var customer1_desires_candy = 6 # marshmallows
-var customer1_desires_quantity = 6
+var customer1_desires_candy = 0
+var customer1_desires_quantity = 0
 var customer1_fulfilled = false
-var customer2_desires_candy = 4 # peppermints
-var customer2_desires_quantity = 4
+var customer2_desires_candy = 0
+var customer2_desires_quantity = 0
 var customer2_fulfilled = false
-var customer3_desires_candy = 5 # gummy worms
-var customer3_desires_quantity = 3
+var customer3_desires_candy = 0
+var customer3_desires_quantity = 0
 var customer3_fulfilled = false
 @onready var board = [$board/slot0, $board/slot1, $board/slot2, $board/slot3,
 	$board/slot4,$board/slot5, $board/slot6, $board/slot7, $board/slot8,
@@ -37,8 +37,45 @@ var vertical_matches = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_input(true)
+	# Get level data
+	var level_data = Global.levels[Global.current_level]
+	# Customer 1
+	var character_1 = level_data["customer1"]["character_id"]
+	character_1 = "res://assets/won" + str(character_1) + ".png"
+	$customer1/character.texture = load(character_1)
+	customer1_desires_candy = level_data["customer1"]["item_id"]
+	var desired_1 = "res://assets/candy"+ str(customer1_desires_candy) + ".png"
+	$customer1/desired.texture = load(desired_1)
+	customer1_desires_quantity = level_data["customer1"]["quantity"]
+	# Customer 2
+	var character_2 = level_data["customer2"]["character_id"]
+	character_2 = "res://assets/won" + str(character_2) + ".png"
+	$customer2/character.texture = load(character_2)
+	customer2_desires_candy = level_data["customer2"]["item_id"]
+	var desired_2 = "res://assets/candy"+ str(customer2_desires_candy) + ".png"
+	$customer2/desired.texture = load(desired_2)
+	customer2_desires_quantity = level_data["customer2"]["quantity"]
+	# Customer 3
+	var character_3 = level_data["customer3"]["character_id"]
+	character_3 = "res://assets/won" + str(character_3) + ".png"
+	$customer3/character.texture = load(character_3)
+	customer3_desires_candy = level_data["customer3"]["item_id"]
+	var desired_3 = "res://assets/candy"+ str(customer3_desires_candy) + ".png"
+	$customer3/desired.texture = load(desired_3)
+	customer3_desires_quantity = level_data["customer3"]["quantity"]
+	# Bomb
+	$bomb.visible = level_data["bombs_allowed"]
+	# Sugar
+	$sugar.visible = level_data["sugars_allowed"]
+	# Switch
+	$switch.visible = level_data["switches_allowed"]
+	# Milk
+	$milk.visible = level_data["milks_allowed"]
+	# Fill the board with random pieces
 	populate_board()
+	# Start the game timer
 	Global.start_timer()
+	# Queue the music
 	if Global.enabled_music:
 		$simple_pleasures.play()
 
@@ -58,7 +95,9 @@ func _process(delta):
 
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
+	$coins/counter.text = str(Global.player["coins"])
 	if level_complete and matches_left_to_remove == 0:
+		Global.player["level_" + str(Global.current_level) + "_complete"] = true
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
 	if moves <= 0:
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
@@ -309,11 +348,6 @@ func check_matches_vertical():
 					candy5_matches += 3
 				if piece1 == 6:
 					candy6_matches += 3
-
-
-func customer_order_requests():
-	var desired1_texture = "res://assets/candy" + str(customer1_desires_candy) + ".png"
-	$customer1/desired.texture = load("desired1_texture")
 
 
 func customer_order_updates():

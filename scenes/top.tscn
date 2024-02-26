@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://di02cv324ap5j"]
+
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="1_64m85"]
+[ext_resource type="Script" path="res://scripts/top.gd" id="1_sui1e"]
+[ext_resource type="Texture2D" uid="uid://bfh01jfxtai4n" path="res://assets/top coins.png" id="2_wwmmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtvd0"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8esfe"]
+size = Vector2(200, 200)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wy1s3"]
+font_size = 64
+outline_size = 10
+
+[node name="top" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_sui1e")
+
+[node name="close" type="Sprite2D" parent="."]
+position = Vector2(60, 60)
+texture = ExtResource("1_64m85")
+
+[node name="action_close" type="TouchScreenButton" parent="close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_rtvd0")
+action = "Close"
+
+[node name="coins" type="Sprite2D" parent="."]
+position = Vector2(952.5, 70)
+texture = ExtResource("2_wwmmp")
+
+[node name="action_shoppette" type="TouchScreenButton" parent="coins"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_8esfe")
+action = "Shoppette"
+
+[node name="Label" type="Label" parent="coins"]
+offset_left = -200.0
+offset_top = -45.0
+offset_right = -89.0
+offset_bottom = 43.0
+text = "0"
+label_settings = SubResource("LabelSettings_wy1s3")
+horizontal_alignment = 2
+vertical_alignment = 1

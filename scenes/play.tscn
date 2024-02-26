@@ -1,30 +1,26 @@
-[gd_scene load_steps=42 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=38 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
-[ext_resource type="Texture2D" uid="uid://bgtxtd72nceg2" path="res://assets/character5_1.png" id="3_3b0w2"]
 [ext_resource type="Texture2D" uid="uid://c0vj0rnhmkdg7" path="res://assets/game top bar.png" id="3_dqwyt"]
 [ext_resource type="Texture2D" uid="uid://cvus8q0o01qxj" path="res://assets/game_bg1.png" id="3_igbfc"]
 [ext_resource type="Texture2D" uid="uid://dldchrh6octbk" path="res://assets/game_bg2.png" id="4_jk5a2"]
 [ext_resource type="Texture2D" uid="uid://dkh48u7qg4oy2" path="res://assets/game top star1.png" id="4_tjntt"]
 [ext_resource type="Texture2D" uid="uid://ckcj5peg82nd1" path="res://assets/bubble.png" id="4_vkc0a"]
-[ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="5_bbyw7"]
-[ext_resource type="Texture2D" uid="uid://bq52ury5vc2q5" path="res://assets/character4_1.png" id="5_kwfga"]
 [ext_resource type="Texture2D" uid="uid://s4ahfsh1ii2" path="res://assets/game boost count.png" id="6_0k2pw"]
 [ext_resource type="Texture2D" uid="uid://bxen0mydcdwdv" path="res://assets/game top star2.png" id="6_jq1to"]
 [ext_resource type="AudioStream" uid="uid://b5aaxnlfvd3pe" path="res://assets/simple-pleasures-aaron-paul-low-main-version-25191-02-06.mp3" id="6_n0lt7"]
-[ext_resource type="Texture2D" uid="uid://cqk4n01qg7rjq" path="res://assets/candy4.png" id="7_eomf2"]
 [ext_resource type="Texture2D" uid="uid://c4dowe1y7vxbu" path="res://assets/game boost1.png" id="7_ewlxu"]
 [ext_resource type="Texture2D" uid="uid://b54oh0smr3htw" path="res://assets/game info.png" id="7_w7flf"]
 [ext_resource type="Texture2D" uid="uid://cvaoyu5qt6uyu" path="res://assets/game eat.png" id="8_b2nf5"]
 [ext_resource type="Texture2D" uid="uid://ekpixf6sw2y4" path="res://assets/game boost2.png" id="8_g6apj"]
 [ext_resource type="Texture2D" uid="uid://d3w1sn1s8ohms" path="res://assets/game board.png" id="8_uhd27"]
-[ext_resource type="Texture2D" uid="uid://bf6187pa73ix1" path="res://assets/candy5.png" id="9_6pdwr"]
 [ext_resource type="Texture2D" uid="uid://b34hyed76610n" path="res://assets/game boost3.png" id="9_dckg0"]
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
+[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="11_4k785"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
-[ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="17_g1hc6"]
+[ext_resource type="Texture2D" uid="uid://jcgckqaakjl4" path="res://assets/candy1.png" id="13_c6aud"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="19_betnf"]
 [ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="19_nar05"]
@@ -131,7 +127,7 @@ texture = ExtResource("6_jq1to")
 [node name="character" type="Sprite2D" parent="customer1"]
 position = Vector2(-487.5, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3b0w2")
+texture = ExtResource("11_4k785")
 
 [node name="bubble1" type="Sprite2D" parent="customer1"]
 position = Vector2(-377.6, -349.6)
@@ -141,7 +137,7 @@ texture = ExtResource("4_vkc0a")
 [node name="desired" type="Sprite2D" parent="customer1"]
 position = Vector2(-377.6, -349.6)
 scale = Vector2(0.21, 0.21)
-texture = ExtResource("5_bbyw7")
+texture = ExtResource("13_c6aud")
 
 [node name="boost" type="Sprite2D" parent="customer1"]
 position = Vector2(-320, -350)
@@ -153,7 +149,7 @@ offset_left = -340.0
 offset_top = -373.0
 offset_right = -300.0
 offset_bottom = -328.0
-text = "6"
+text = "0"
 label_settings = SubResource("LabelSettings_jritl")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -163,7 +159,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer2"]
 position = Vector2(-122.5, -192.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_kwfga")
+texture = ExtResource("11_4k785")
 
 [node name="bubble2" type="Sprite2D" parent="customer2"]
 position = Vector2(-15.1, -349.6)
@@ -173,7 +169,7 @@ texture = ExtResource("4_vkc0a")
 [node name="desired" type="Sprite2D" parent="customer2"]
 position = Vector2(-15.1, -349.6)
 scale = Vector2(0.21, 0.21)
-texture = ExtResource("7_eomf2")
+texture = ExtResource("13_c6aud")
 
 [node name="boost" type="Sprite2D" parent="customer2"]
 position = Vector2(42.5, -350)
@@ -185,7 +181,7 @@ offset_left = 22.4999
 offset_top = -373.0
 offset_right = 62.4999
 offset_bottom = -328.0
-text = "4"
+text = "0"
 label_settings = SubResource("LabelSettings_jritl")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -195,7 +191,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer3"]
 position = Vector2(205, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_g1hc6")
+texture = ExtResource("11_4k785")
 
 [node name="bubble3" type="Sprite2D" parent="customer3"]
 position = Vector2(314.9, -349.6)
@@ -205,7 +201,7 @@ texture = ExtResource("4_vkc0a")
 [node name="desired" type="Sprite2D" parent="customer3"]
 position = Vector2(314.9, -349.6)
 scale = Vector2(0.21, 0.21)
-texture = ExtResource("9_6pdwr")
+texture = ExtResource("13_c6aud")
 
 [node name="boost" type="Sprite2D" parent="customer3"]
 position = Vector2(372.5, -350)
@@ -217,7 +213,7 @@ offset_left = 352.5
 offset_top = -373.0
 offset_right = 392.5
 offset_bottom = -328.0
-text = "3"
+text = "0"
 label_settings = SubResource("LabelSettings_jritl")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -288,7 +284,6 @@ offset_left = 230.0
 offset_top = 77.5
 offset_right = 353.0
 offset_bottom = 176.5
-text = "0"
 label_settings = SubResource("LabelSettings_g1d25")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -746,7 +741,6 @@ shape = SubResource("RectangleShape2D_6qloq")
 action = "Pause"
 
 [node name="bomb" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-195, 1190)
 texture = ExtResource("7_ewlxu")
 
@@ -755,7 +749,6 @@ position = Vector2(37.5, -42.5)
 texture = ExtResource("11_wadvv")
 
 [node name="sugar" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-42.5, 1194.5)
 texture = ExtResource("8_g6apj")
 
@@ -764,7 +757,6 @@ position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
 
 [node name="switch" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(117.5, 1194.5)
 texture = ExtResource("9_dckg0")
 
@@ -773,7 +765,6 @@ position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
 
 [node name="milk" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(277.5, 1194.5)
 texture = ExtResource("10_age8i")
 

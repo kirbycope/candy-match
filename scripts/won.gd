@@ -5,8 +5,8 @@ extends Node2D
 func _ready():
 	if Global.enabled_music:
 		$race_to_the_finish.play()
-		var texture_path = "res://assets/won" + str(Global.character) + ".png"
-		$character.texture = load(texture_path)
+	var texture_path = "res://assets/won" + str(Global.player["character"]) + ".png"
+	$character.texture = load(texture_path)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +18,5 @@ func _process(delta):
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Next":
-			get_tree().change_scene_to_file("res://scenes/play.tscn")
+			Global.current_level += 1
+			get_tree().change_scene_to_file("res://scenes/goal.tscn")

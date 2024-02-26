@@ -562,21 +562,17 @@ text = "shop"
 label_settings = SubResource("LabelSettings_0o5nr")
 
 [node name="promos" type="Node2D" parent="shop"]
-scale = Vector2(1, 1)
 
 [node name="offer1" type="Sprite2D" parent="shop/promos"]
 position = Vector2(237.5, 410)
-scale = Vector2(1, 1)
 texture = ExtResource("33_x54yh")
 
 [node name="hot" type="Sprite2D" parent="shop/promos"]
 position = Vector2(115, 252.5)
-scale = Vector2(1, 1)
 texture = ExtResource("34_6pbnv")
 
 [node name="offer1_price" type="Sprite2D" parent="shop/promos"]
 position = Vector2(272.5, 607.5)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="offer1_label" type="Label" parent="shop/promos"]
@@ -589,17 +585,14 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="offer2" type="Sprite2D" parent="shop/promos"]
 position = Vector2(775, 410)
-scale = Vector2(1, 1)
 texture = ExtResource("34_3dg33")
 
 [node name="best" type="Sprite2D" parent="shop/promos"]
 position = Vector2(615, 252.5)
-scale = Vector2(1, 1)
 texture = ExtResource("37_upbtj")
 
 [node name="offer2_price" type="Sprite2D" parent="shop/promos"]
 position = Vector2(782.5, 607.5)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="offer2_label" type="Label" parent="shop/promos"]
@@ -612,15 +605,12 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="shoppette" type="Node2D" parent="shop"]
 position = Vector2(515, 1272.5)
-scale = Vector2(1, 1)
 
 [node name="background" type="Sprite2D" parent="shop/shoppette"]
-scale = Vector2(1, 1)
 texture = ExtResource("38_hbuxt")
 
 [node name="coins1" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(-349.5, -162.5)
-scale = Vector2(1, 1)
 texture = ExtResource("39_g354n")
 
 [node name="250" type="Label" parent="shop/shoppette"]
@@ -642,7 +632,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price1" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(338, -157.5)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price1_label" type="Label" parent="shop/shoppette"]
@@ -655,7 +644,6 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="coins2" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(-352, 42.4999)
-scale = Vector2(1, 1)
 texture = ExtResource("40_kl4tx")
 
 [node name="500" type="Label" parent="shop/shoppette"]
@@ -677,7 +665,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price2" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(338, 44.9999)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price2_label" type="Label" parent="shop/shoppette"]
@@ -690,7 +677,6 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="coins3" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(-344.5, 245)
-scale = Vector2(1, 1)
 texture = ExtResource("41_qm6mw")
 
 [node name="700" type="Label" parent="shop/shoppette"]
@@ -712,7 +698,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price3" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(338, 245)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price3_label" type="Label" parent="shop/shoppette"]
@@ -725,12 +710,10 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="video" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(-339.5, 445)
-scale = Vector2(1, 1)
 texture = ExtResource("42_0fj4a")
 
 [node name="play" type="Sprite2D" parent="shop/shoppette"]
 position = Vector2(403, 447.5)
-scale = Vector2(1, 1)
 texture = ExtResource("43_hu6e3")
 
 [node name="watch" type="Label" parent="shop/shoppette"]

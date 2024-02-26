@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var spins_left = 7
+var spins_left = 1
 var spin_rotation_speed = 0.0
 var spin_slow_down_time = 2.0
 var wheel_spinning = false
@@ -231,7 +231,7 @@ func spin_wheel_stop():
 	# Determine the section based on the stopped angle
 	var section_index = -1
 	for i in range(section_angles.size()):
-		if spinner_angle >= section_angles[i]:
+		if spinner_angle + 30 >= section_angles[i]:
 			section_index = i
 	var prize = 0
 	if section_index == 0:

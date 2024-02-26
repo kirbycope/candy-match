@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
+[ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="17_g1hc6"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="19_betnf"]
 [ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="19_nar05"]
@@ -40,9 +41,6 @@ font_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jritl"]
 font_size = 32
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j67k8"]
-load_path = "res://.godot/imported/won5.png-d3561127ee760c27c9796f191d1530b1.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_3kv83"]
 font_size = 32
@@ -197,7 +195,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer3"]
 position = Vector2(205, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = SubResource("CompressedTexture2D_j67k8")
+texture = ExtResource("17_g1hc6")
 
 [node name="bubble3" type="Sprite2D" parent="customer3"]
 position = Vector2(314.9, -349.6)
@@ -697,7 +695,6 @@ action = "48"
 
 [node name="pause" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 script = ExtResource("19_betnf")
 
 [node name="background" type="Sprite2D" parent="pause"]

@@ -1,6 +1,10 @@
 extends Node2D
 
 
+var countdown_seconds = 30
+var timer_running = false
+var time_passed = 0.0
+var update_interval = 1.0
 var spin_rotation_speed = 0.0
 var spin_slow_down_time = 2.0
 var wheel_spinning = false
@@ -15,6 +19,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Ad Timer
+	if timer_running:
+		if $shop/shoppette/video_overlay.visible:
+			time_passed += delta
+			if time_passed >= update_interval:
+				update_countdown()
+				time_passed = 0.0
 	# Wheel
 	if wheel_spinning:
 		# Gradually slow down the spinner over time
@@ -103,6 +114,12 @@ func _input(event):
 			$top_settings.visible = false
 		elif event.action == "Shop":
 			open_shop()
+		elif event.action == "Shop_Ad_Close":
+			ad_close()
+		elif event.action == "Shop_Ad_Open":
+			ad_open()
+		elif event.action == "Shop_Ad_Play":
+			ad_play()
 		elif event.action == "Spin":
 			spin_wheel_start()
 		elif event.action == "ToggleMusic":
@@ -123,7 +140,24 @@ func _input(event):
 			$top/close.visible = true
 			$top_settings.visible = false
 			$wheel.visible = true
-			$wheel/spins_label.text = str(Global.player["spins_remaining"])
+			$wheel/spins_left/Label.text = str(Global.player["spins_remaining"])
+
+
+func ad_close():
+	$shop/shoppette/video_overlay.visible = false
+
+
+func ad_open():
+	OS.shell_open("https://timothycope.com/")
+
+
+func ad_play():
+	$shop/shoppette/video_overlay.visible = true
+	countdown_seconds = 30
+	timer_running = true
+	$shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer.play()
+	$shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer.loop = true # DEBUGGING clip is short
+	$shop/shoppette/video_overlay/Label.text = "reward in " + str(countdown_seconds) + "..."
 
 
 # Clears the characters on the Character Select screen.
@@ -216,11 +250,13 @@ func spin_wheel_rewards_show(prize):
 func spin_wheel_start():
 	if Global.player["spins_remaining"] > 0:
 		Global.player["spins_remaining"] -= 1
-		$wheel/spins_label.text = str(Global.player["spins_remaining"])
+		$wheel/spins_left/Label.text = str(Global.player["spins_remaining"])
 		spin_slow_down_time = 2.0
 		spin_rotation_speed = randf_range(5, 10)
 		wheel_spinning = true
 		#$playful_casino_slot_machine_jackpot_1.play()
+	else:
+		$wheel/come_back.visible = not $wheel/come_back.visible
 
 
 # Stops the wheel and awards the prize.
@@ -255,3 +291,13 @@ func spin_wheel_stop():
 		prize = 3 # ("Milk")
 	await get_tree().create_timer(0.5).timeout
 	spin_wheel_rewards_show(prize)
+
+
+func update_countdown():
+	if countdown_seconds > 0:
+		countdown_seconds -= 1
+		$shop/shoppette/video_overlay/Label.text = "reward in " + str(countdown_seconds) + "..."
+	else:
+		timer_running = false
+		$shop/shoppette/video_overlay/Label.text = "received 250 coins"
+		Global.player["coins"] += 250

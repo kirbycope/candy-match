@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=114 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bova6s57qe5yh" path="res://assets/won5.png" id="24_8wfcv"]
 [ext_resource type="Texture2D" uid="uid://chon6opwy7jwe" path="res://assets/character3.png" id="24_p0g74"]
 [ext_resource type="Texture2D" uid="uid://dxopbur6se2f2" path="res://assets/won6.png" id="25_j0wb1"]
+[ext_resource type="Texture2D" uid="uid://d1ijvhsg7vomk" path="res://assets/wheel sign2.png" id="25_mi4jg"]
 [ext_resource type="Texture2D" uid="uid://n2qo3fo2wiog" path="res://assets/character4.png" id="25_ndeb1"]
 [ext_resource type="Texture2D" uid="uid://b73ihffkf6tnv" path="res://assets/character5.png" id="26_ox0pj"]
 [ext_resource type="Texture2D" uid="uid://rnmyy2oq4mdo" path="res://assets/character6.png" id="27_s2rmg"]
@@ -58,10 +59,22 @@
 [ext_resource type="Texture2D" uid="uid://lb4dym8rib8h" path="res://assets/shop boosters2.png" id="47_i4f4e"]
 [ext_resource type="Texture2D" uid="uid://xlqc5vfbyhhy" path="res://assets/shop boosters3.png" id="48_arbfl"]
 [ext_resource type="Texture2D" uid="uid://c2wgnxyhs6gcl" path="res://assets/shop boosters price.png" id="49_0atex"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="49_4oyvi"]
 [ext_resource type="Texture2D" uid="uid://vb4b76cdyfhn" path="res://assets/scores title.png" id="50_fmuuj"]
+[ext_resource type="Texture2D" uid="uid://crrqk0e1ulmat" path="res://assets/empty box.png" id="51_8j181"]
 [ext_resource type="Texture2D" uid="uid://dhveuqjrqr630" path="res://assets/scores box first.png" id="51_kuecd"]
+[ext_resource type="Texture2D" uid="uid://b00yg2sv61obn" path="res://assets/button red.png" id="52_0hllr"]
 [ext_resource type="Texture2D" uid="uid://cw4hj1dqdh3ys" path="res://assets/scores box empty.png" id="52_4645u"]
+[ext_resource type="Texture2D" uid="uid://bosfprw0hokkl" path="res://assets/button green.png" id="53_vrsj2"]
+[ext_resource type="Texture2D" uid="uid://cd23tcydtx10s" path="res://assets/daily reward title.png" id="58_33y63"]
+[ext_resource type="Texture2D" uid="uid://76qy0hc883s5" path="res://assets/daily reward top.png" id="59_pte75"]
+[ext_resource type="Texture2D" uid="uid://csgv5nbv77t81" path="res://assets/daily reward coin.png" id="60_4lq3p"]
+[ext_resource type="Texture2D" uid="uid://bgox2ys6mcjip" path="res://assets/daily reward box.png" id="61_yddjp"]
+[ext_resource type="Texture2D" uid="uid://bvv45ravku7he" path="res://assets/daily reward 1.png" id="62_ntjln"]
+[ext_resource type="Texture2D" uid="uid://brdrlh0o166ej" path="res://assets/daily reward2.png" id="63_c25eg"]
 [ext_resource type="AudioStream" uid="uid://d0ack68d8d4y1" path="res://assets/playful-casino-slot-machine-jackpot-1-183922.mp3" id="64_b5ucs"]
+[ext_resource type="Texture2D" uid="uid://c4dowe1y7vxbu" path="res://assets/game boost1.png" id="64_o6yn6"]
+[ext_resource type="Texture2D" uid="uid://c5fc34wogcy5s" path="res://assets/daily reward button.png" id="65_7k2vp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4xr"]
 size = Vector2(200, 200)
@@ -78,7 +91,7 @@ font_size = 42
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a25oq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h0flw"]
-font_size = 82
+font_size = 54
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vibvt"]
@@ -100,6 +113,10 @@ shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
 font_size = 96
 outline_size = 32
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_skf0r"]
+font_size = 96
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uqbhl"]
 font_size = 64
@@ -132,10 +149,39 @@ font_size = 72
 outline_size = 24
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm7bb"]
+size = Vector2(240, 120)
+
 [sub_resource type="LabelSettings" id="LabelSettings_i8gf2"]
 font_size = 52
 outline_size = 24
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6x0"]
+size = Vector2(940, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td5o6"]
+size = Vector2(200, 200)
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_r2lvx"]
+file = "res://assets/320x240.ogg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50fbv"]
+size = Vector2(320, 240)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5f3on"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mh0d"]
+font_size = 96
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nyrac"]
+font_size = 32
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_shyfi"]
+font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_8cqfg"]
 font_size = 72
@@ -144,6 +190,31 @@ font_size = 72
 font_size = 64
 outline_size = 24
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqd7i"]
+font_size = 64
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+outline_size = 2
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4rvc"]
+font_size = 96
+shadow_size = 32
+shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xe34h"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_lf3dy"]
+font_size = 48
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+outline_size = 2
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wc4ok"]
+font_size = 64
+outline_size = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_reliw"]
 font_size = 24
@@ -373,17 +444,35 @@ position = Vector2(315, 1727.5)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("23_6tbsw")
 
-[node name="wheel_sign" type="Sprite2D" parent="wheel"]
+[node name="spins_left" type="Sprite2D" parent="wheel"]
 position = Vector2(770, 1557.5)
 texture = ExtResource("19_jac5e")
 
-[node name="spins_label" type="Label" parent="wheel"]
-offset_left = 750.0
-offset_top = 1505.0
-offset_right = 797.0
-offset_bottom = 1618.0
+[node name="Label" type="Label" parent="wheel/spins_left"]
+offset_left = -105.0
+offset_top = -62.0
+offset_right = 128.0
+offset_bottom = 70.0
 text = "#"
+label_settings = SubResource("LabelSettings_skf0r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="come_back" type="Sprite2D" parent="wheel"]
+visible = false
+position = Vector2(770, 1557.5)
+texture = ExtResource("25_mi4jg")
+
+[node name="Label" type="Label" parent="wheel/come_back"]
+offset_left = -170.0
+offset_top = -94.5
+offset_right = 171.0
+offset_bottom = 87.5
+text = "Try again,
+tomorrow!"
 label_settings = SubResource("LabelSettings_h0flw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="character" type="Node2D" parent="."]
 visible = false
@@ -592,32 +681,37 @@ position = Vector2(515, 1272.5)
 [node name="background" type="Sprite2D" parent="shop/shoppette"]
 texture = ExtResource("38_hbuxt")
 
-[node name="coins1" type="Sprite2D" parent="shop/shoppette"]
+[node name="offer1" type="Node2D" parent="shop/shoppette"]
+scale = Vector2(1, 1)
+
+[node name="coins1" type="Sprite2D" parent="shop/shoppette/offer1"]
 position = Vector2(-349.5, -162.5)
+scale = Vector2(1, 1)
 texture = ExtResource("39_g354n")
 
-[node name="250" type="Label" parent="shop/shoppette"]
+[node name="250" type="Label" parent="shop/shoppette/offer1"]
 z_index = 1
 offset_left = -129.5
 offset_top = -247.5
-offset_right = 35.4999
+offset_right = 35.5
 offset_bottom = -115.5
 text = "250"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins1_label" type="Label" parent="shop/shoppette"]
+[node name="coins1_label" type="Label" parent="shop/shoppette/offer1"]
 offset_left = -142.0
 offset_top = -172.5
-offset_right = 38.9999
-offset_bottom = -73.5002
+offset_right = 39.0
+offset_bottom = -73.5
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price1" type="Sprite2D" parent="shop/shoppette"]
+[node name="price1" type="Sprite2D" parent="shop/shoppette/offer1"]
 position = Vector2(338, -157.5)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price1_label" type="Label" parent="shop/shoppette"]
+[node name="price1_label" type="Label" parent="shop/shoppette/offer1"]
 offset_left = 253.0
 offset_top = -210.0
 offset_right = 419.0
@@ -625,32 +719,42 @@ offset_bottom = -122.0
 text = "$0.99"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="coins2" type="Sprite2D" parent="shop/shoppette"]
+[node name="99_button" type="TouchScreenButton" parent="shop/shoppette/offer1"]
+position = Vector2(340, -157.5)
+shape = SubResource("RectangleShape2D_hm7bb")
+action = "99"
+
+[node name="offer2" type="Node2D" parent="shop/shoppette"]
+scale = Vector2(1, 1)
+
+[node name="coins2" type="Sprite2D" parent="shop/shoppette/offer2"]
 position = Vector2(-352, 42.4999)
+scale = Vector2(1, 1)
 texture = ExtResource("40_kl4tx")
 
-[node name="500" type="Label" parent="shop/shoppette"]
+[node name="500" type="Label" parent="shop/shoppette/offer2"]
 z_index = 1
 offset_left = -129.5
 offset_top = -42.5002
-offset_right = 35.4999
+offset_right = 35.5
 offset_bottom = 89.4998
 text = "500"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins2_label" type="Label" parent="shop/shoppette"]
+[node name="coins2_label" type="Label" parent="shop/shoppette/offer2"]
 offset_left = -137.0
-offset_top = 34.9998
-offset_right = 43.9999
+offset_top = 34.9999
+offset_right = 44.0
 offset_bottom = 134.0
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price2" type="Sprite2D" parent="shop/shoppette"]
+[node name="price2" type="Sprite2D" parent="shop/shoppette/offer2"]
 position = Vector2(338, 44.9999)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price2_label" type="Label" parent="shop/shoppette"]
+[node name="price2_label" type="Label" parent="shop/shoppette/offer2"]
 offset_left = 253.0
 offset_top = -10.0002
 offset_right = 419.0
@@ -658,32 +762,42 @@ offset_bottom = 77.9998
 text = "$1.49"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="coins3" type="Sprite2D" parent="shop/shoppette"]
+[node name="149_button" type="TouchScreenButton" parent="shop/shoppette/offer2"]
+position = Vector2(340, 45)
+shape = SubResource("RectangleShape2D_hm7bb")
+action = "149"
+
+[node name="offer3" type="Node2D" parent="shop/shoppette"]
+scale = Vector2(1, 1)
+
+[node name="coins3" type="Sprite2D" parent="shop/shoppette/offer3"]
 position = Vector2(-344.5, 245)
+scale = Vector2(1, 1)
 texture = ExtResource("41_qm6mw")
 
-[node name="700" type="Label" parent="shop/shoppette"]
+[node name="700" type="Label" parent="shop/shoppette/offer3"]
 z_index = 1
 offset_left = -129.5
 offset_top = 157.5
-offset_right = 35.4999
+offset_right = 35.5
 offset_bottom = 289.5
 text = "700"
 label_settings = SubResource("LabelSettings_p6cs6")
 
-[node name="coins3_label" type="Label" parent="shop/shoppette"]
+[node name="coins3_label" type="Label" parent="shop/shoppette/offer3"]
 offset_left = -137.0
 offset_top = 235.0
-offset_right = 43.9999
+offset_right = 44.0
 offset_bottom = 334.0
 text = "coins"
 label_settings = SubResource("LabelSettings_lksm3")
 
-[node name="price3" type="Sprite2D" parent="shop/shoppette"]
+[node name="price3" type="Sprite2D" parent="shop/shoppette/offer3"]
 position = Vector2(338, 245)
+scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
-[node name="price3_label" type="Label" parent="shop/shoppette"]
+[node name="price3_label" type="Label" parent="shop/shoppette/offer3"]
 offset_left = 253.0
 offset_top = 190.0
 offset_right = 419.0
@@ -691,15 +805,25 @@ offset_bottom = 278.0
 text = "$1.99"
 label_settings = SubResource("LabelSettings_sq28q")
 
-[node name="video" type="Sprite2D" parent="shop/shoppette"]
+[node name="199_button" type="TouchScreenButton" parent="shop/shoppette/offer3"]
+position = Vector2(340, 245)
+shape = SubResource("RectangleShape2D_hm7bb")
+action = "199"
+
+[node name="offer4" type="Node2D" parent="shop/shoppette"]
+scale = Vector2(1, 1)
+
+[node name="video" type="Sprite2D" parent="shop/shoppette/offer4"]
 position = Vector2(-339.5, 445)
+scale = Vector2(1, 1)
 texture = ExtResource("42_0fj4a")
 
-[node name="play" type="Sprite2D" parent="shop/shoppette"]
+[node name="play" type="Sprite2D" parent="shop/shoppette/offer4"]
 position = Vector2(403, 447.5)
+scale = Vector2(1, 1)
 texture = ExtResource("43_hu6e3")
 
-[node name="watch" type="Label" parent="shop/shoppette"]
+[node name="watch" type="Label" parent="shop/shoppette/offer4"]
 offset_left = -222.0
 offset_top = 377.5
 offset_right = 333.0
@@ -707,13 +831,139 @@ offset_bottom = 449.5
 text = "Watch a video and get"
 label_settings = SubResource("LabelSettings_i8gf2")
 
-[node name="coins4_label" type="Label" parent="shop/shoppette"]
+[node name="coins4_label" type="Label" parent="shop/shoppette/offer4"]
 offset_left = -134.5
 offset_top = 420.0
 offset_right = 188.5
 offset_bottom = 519.0
 text = "250 coins"
 label_settings = SubResource("LabelSettings_lksm3")
+
+[node name="watch_button" type="TouchScreenButton" parent="shop/shoppette/offer4"]
+position = Vector2(12.5, 447.5)
+shape = SubResource("RectangleShape2D_vm6x0")
+action = "Shop_Ad_Play"
+
+[node name="video_overlay" type="CanvasLayer" parent="shop/shoppette"]
+visible = false
+
+[node name="background" type="ColorRect" parent="shop/shoppette/video_overlay"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="close" type="Sprite2D" parent="shop/shoppette/video_overlay"]
+position = Vector2(63, 228)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("49_4oyvi")
+
+[node name="action_close" type="TouchScreenButton" parent="shop/shoppette/video_overlay/close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_td5o6")
+action = "Shop_Ad_Close"
+
+[node name="CenterContainer" type="CenterContainer" parent="shop/shoppette/video_overlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="shop/shoppette/video_overlay/CenterContainer"]
+layout_mode = 2
+stream = SubResource("VideoStreamTheora_r2lvx")
+
+[node name="action_click_through" type="TouchScreenButton" parent="shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer"]
+position = Vector2(161, 120)
+shape = SubResource("RectangleShape2D_50fbv")
+action = "Shop_Ad_Open"
+
+[node name="Label" type="Label" parent="shop/shoppette/video_overlay"]
+offset_top = 595.0
+offset_right = 412.0
+offset_bottom = 642.0
+text = "reward in 30..."
+label_settings = SubResource("LabelSettings_5f3on")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="purchase_overlay" type="CanvasLayer" parent="shop/shoppette"]
+visible = false
+
+[node name="background" type="ColorRect" parent="shop/shoppette/purchase_overlay"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="CenterContainer" type="Node2D" parent="shop/shoppette/purchase_overlay"]
+position = Vector2(25, 267)
+scale = Vector2(0.4, 0.4)
+
+[node name="box" type="TextureRect" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+offset_top = -25.0
+offset_right = 897.0
+offset_bottom = 525.0
+texture = ExtResource("51_8j181")
+
+[node name="coins1" type="Sprite2D" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+position = Vector2(212.5, 150)
+texture = ExtResource("39_g354n")
+
+[node name="coins" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+offset_left = 365.0
+offset_top = 82.5001
+offset_right = 797.0
+offset_bottom = 214.5
+text = "250 coins"
+label_settings = SubResource("LabelSettings_8mh0d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="purchase" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+offset_left = 595.0
+offset_top = 302.5
+offset_right = 738.0
+offset_bottom = 347.5
+text = "purchase"
+label_settings = SubResource("LabelSettings_nyrac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="no_button" type="Sprite2D" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+position = Vector2(227.5, 415)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("52_0hllr")
+
+[node name="yes_button" type="Sprite2D" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+position = Vector2(667.5, 417.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("53_vrsj2")
+
+[node name="cancel" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+offset_left = 127.5
+offset_top = 360.0
+offset_right = 324.5
+offset_bottom = 448.0
+text = "cancel"
+label_settings = SubResource("LabelSettings_shyfi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="99" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+offset_left = 567.5
+offset_top = 362.5
+offset_right = 764.5
+offset_bottom = 450.5
+text = "$0.99"
+label_settings = SubResource("LabelSettings_shyfi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="boosters" type="Node2D" parent="."]
 visible = false
@@ -978,6 +1228,160 @@ texture = ExtResource("52_4645u")
 position = Vector2(19.5, -107.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_s2rmg")
+
+[node name="daily" type="Node2D" parent="."]
+visible = false
+scale = Vector2(1, 1)
+
+[node name="title" type="Sprite2D" parent="daily"]
+position = Vector2(505, 225)
+texture = ExtResource("58_33y63")
+
+[node name="top" type="Sprite2D" parent="daily"]
+position = Vector2(495, 490)
+texture = ExtResource("59_pte75")
+
+[node name="earned" type="Label" parent="daily"]
+offset_left = 310.0
+offset_top = 627.5
+offset_right = 722.0
+offset_bottom = 715.5
+text = "earned today"
+label_settings = SubResource("LabelSettings_uqd7i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="item_texture" type="Sprite2D" parent="daily"]
+position = Vector2(275, 812.5)
+texture = ExtResource("60_4lq3p")
+
+[node name="item_label" type="Label" parent="daily"]
+offset_left = 385.0
+offset_top = 750.0
+offset_right = 915.0
+offset_bottom = 882.0
+text = "0 coins"
+label_settings = SubResource("LabelSettings_s4rvc")
+vertical_alignment = 1
+
+[node name="box1" type="Sprite2D" parent="daily"]
+position = Vector2(228.5, 1060.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box1"]
+position = Vector2(0, -37.5)
+texture = ExtResource("60_4lq3p")
+
+[node name="day_label" type="Label" parent="daily/box1"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 1"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="box2" type="Sprite2D" parent="daily"]
+position = Vector2(508.5, 1060.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box2"]
+position = Vector2(0, -37.4999)
+texture = ExtResource("60_4lq3p")
+
+[node name="day_label" type="Label" parent="daily/box2"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 2"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="box3" type="Sprite2D" parent="daily"]
+position = Vector2(791, 1060.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box3"]
+position = Vector2(0, -37.4999)
+texture = ExtResource("62_ntjln")
+
+[node name="day_label" type="Label" parent="daily/box3"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 3"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="box4" type="Sprite2D" parent="daily"]
+position = Vector2(228.5, 1360.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box4"]
+position = Vector2(0, -37.5)
+texture = ExtResource("63_c25eg")
+
+[node name="day_label" type="Label" parent="daily/box4"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 4"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="box5" type="Sprite2D" parent="daily"]
+position = Vector2(508.5, 1360.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box5"]
+position = Vector2(0, -37.5)
+texture = ExtResource("60_4lq3p")
+
+[node name="day_label" type="Label" parent="daily/box5"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 5"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="box6" type="Sprite2D" parent="daily"]
+position = Vector2(791, 1360.5)
+texture = ExtResource("61_yddjp")
+
+[node name="item_texture" type="Sprite2D" parent="daily/box6"]
+position = Vector2(0, -37.5)
+texture = ExtResource("64_o6yn6")
+
+[node name="day_label" type="Label" parent="daily/box6"]
+offset_left = -81.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 120.0
+text = "day 6"
+label_settings = SubResource("LabelSettings_xe34h")
+
+[node name="come_back_label" type="Label" parent="daily"]
+offset_top = 1518.0
+offset_right = 1032.0
+offset_bottom = 1606.0
+text = "come back tomorrow to get 15 coins!"
+label_settings = SubResource("LabelSettings_lf3dy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button" type="Sprite2D" parent="daily"]
+position = Vector2(515, 1717.5)
+texture = ExtResource("65_7k2vp")
+
+[node name="Label" type="Label" parent="daily/button"]
+offset_left = -300.0
+offset_top = -65.0
+offset_right = 310.0
+offset_bottom = 33.0
+text = "next gift: 23:59:55"
+label_settings = SubResource("LabelSettings_wc4ok")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="menu" type="Node2D" parent="."]
 

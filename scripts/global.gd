@@ -38,6 +38,12 @@ func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Main":
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
+		elif event.action == "Watch":
+			pass # watch ad for 250 coins
+			print("play ad")
+		elif event.action == "Watch_Close":
+			pass # watch ad for 250 coins
+			print("close ad")
 		if Global.enabled_sound:
 			var current_scene = get_tree().get_current_scene()
 			if current_scene:

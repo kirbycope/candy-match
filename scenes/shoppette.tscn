@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlnm17r22j2wo"]
+[gd_scene load_steps=29 format=3 uid="uid://dlnm17r22j2wo"]
 
 [ext_resource type="Texture2D" uid="uid://dnb1xkav1rqig" path="res://assets/shop.png" id="1_kmvj0"]
 [ext_resource type="Texture2D" uid="uid://cs1l8my1csubo" path="res://assets/shop coins1.png" id="2_6fvm7"]
@@ -7,6 +7,112 @@
 [ext_resource type="Texture2D" uid="uid://cpwtjnnovpi4q" path="res://assets/shop coins3.png" id="5_at253"]
 [ext_resource type="Texture2D" uid="uid://tqw4x1bhkenq" path="res://assets/shop video.png" id="6_6qt27"]
 [ext_resource type="Texture2D" uid="uid://b2gpbtg0kb4dr" path="res://assets/shop play video.png" id="7_ddqtn"]
+[ext_resource type="Texture2D" uid="uid://clmyhox5qhf7m" path="res://assets/top close.png" id="8_0dk7c"]
+[ext_resource type="Texture2D" uid="uid://crrqk0e1ulmat" path="res://assets/empty box.png" id="9_ciqcr"]
+[ext_resource type="Texture2D" uid="uid://b00yg2sv61obn" path="res://assets/button red.png" id="10_yjg60"]
+[ext_resource type="Texture2D" uid="uid://bosfprw0hokkl" path="res://assets/button green.png" id="11_32hl1"]
+
+[sub_resource type="GDScript" id="GDScript_6iwxo"]
+script/source = "extends Node2D
+
+
+var countdown_seconds = 30
+var timer_running = false
+var time_passed = 0.0
+var update_interval = 1.0
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	set_process(true)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if timer_running:
+		if $video_overlay.visible:
+			time_passed += delta
+			if time_passed >= update_interval:
+				update_countdown()
+				time_passed = 0.0
+
+
+# Called once for every event before _unhandled_input(), allowing you to consume some events.
+func _input(event):
+	if event is InputEventAction and event.pressed:
+		if event.action == \"Shoppette_Purchase_99\":
+			purchase_99()
+		elif event.action == \"Shoppette_Purchase_149\":
+			purchase_149()
+		elif event.action == \"Shoppette_Purchase_199\":
+			purchase_199()
+		elif event.action == \"Shoppette_Purchase_Cancel\":
+			purchase_cancel()
+		elif event.action == \"Shoppette_Purchase_Confirm\":
+			purchase_confirm()
+		elif event.action == \"Shoppette_Ad_Close\":
+			ad_close()
+		elif event.action == \"Shoppette_Ad_Open\":
+			ad_open()
+		elif event.action == \"Shoppette_Ad_Play\":
+			ad_play()
+
+
+func ad_close():
+	$video_overlay.visible = false
+
+
+func ad_open():
+	OS.shell_open(\"https://timothycope.com/\")
+
+
+func ad_play():
+	$video_overlay.visible = true
+	countdown_seconds = 30
+	timer_running = true
+	$video_overlay/CenterContainer/VideoStreamPlayer.play()
+	$video_overlay/CenterContainer/VideoStreamPlayer.loop = true # DEBUGGING clip is short
+	$video_overlay/Label.text = \"reward in \" + str(countdown_seconds) + \"...\"
+
+
+func purchase_99():
+	$purchase_overlay.visible = true
+	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
+	$purchase_overlay/CenterContainer/coins.text = \"250 coins\"
+	$purchase_overlay/CenterContainer/confirm.text = \"$0.99\"
+
+
+func purchase_149():
+	$purchase_overlay.visible = true
+	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
+	$purchase_overlay/CenterContainer/coins.text = \"500 coins\"
+	$purchase_overlay/CenterContainer/confirm.text = \"$1.49\"
+
+
+func purchase_199():
+	$purchase_overlay.visible = true
+	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
+	$purchase_overlay/CenterContainer/coins.text = \"700 coins\"
+	$purchase_overlay/CenterContainer/confirm.text = \"$1.99\"
+
+
+func purchase_cancel():
+	$purchase_overlay.visible = false
+
+
+func purchase_confirm():
+	$purchase_overlay.visible = false
+
+
+func update_countdown():
+	if countdown_seconds > 0:
+		countdown_seconds -= 1
+		$video_overlay/Label.text = \"reward in \" + str(countdown_seconds) + \"...\"
+	else:
+		timer_running = false
+		$video_overlay/Label.text = \"received 250 coins\"
+		Global.player[\"coins\"] += 250
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_pqihv"]
 font_size = 96
@@ -21,24 +127,67 @@ outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_6c468"]
 font_size = 64
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvutb"]
+size = Vector2(240, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihipa"]
+size = Vector2(240, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_airyu"]
+size = Vector2(240, 120)
+
 [sub_resource type="LabelSettings" id="LabelSettings_5euk0"]
 font_size = 52
 outline_size = 24
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn771"]
+size = Vector2(940, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqp18"]
+size = Vector2(200, 200)
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_jiftd"]
+file = "res://assets/320x240.ogg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fold3"]
+size = Vector2(320, 240)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ank8d"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ek85i"]
+font_size = 96
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qr3py"]
+font_size = 32
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6yiqh"]
+font_size = 64
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w87ed"]
+size = Vector2(360, 140)
+
 [node name="shoppette" type="Node2D"]
 position = Vector2(0, 150)
 scale = Vector2(0.4, 0.4)
+script = SubResource("GDScript_6iwxo")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(515.5, 556)
 texture = ExtResource("1_kmvj0")
 
-[node name="coins1" type="Sprite2D" parent="."]
+[node name="offer1" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="coins1" type="Sprite2D" parent="offer1"]
 position = Vector2(166, 393.5)
+scale = Vector2(1, 1)
 texture = ExtResource("2_6fvm7")
 
-[node name="250" type="Label" parent="."]
+[node name="250" type="Label" parent="offer1"]
 z_index = 1
 offset_left = 386.0
 offset_top = 308.5
@@ -47,7 +196,7 @@ offset_bottom = 440.5
 text = "250"
 label_settings = SubResource("LabelSettings_pqihv")
 
-[node name="coins1_label" type="Label" parent="."]
+[node name="coins1_label" type="Label" parent="offer1"]
 offset_left = 373.5
 offset_top = 383.5
 offset_right = 554.5
@@ -55,11 +204,12 @@ offset_bottom = 482.5
 text = "coins"
 label_settings = SubResource("LabelSettings_jxlb5")
 
-[node name="price1" type="Sprite2D" parent="."]
+[node name="price1" type="Sprite2D" parent="offer1"]
 position = Vector2(853.5, 398.5)
+scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
-[node name="price1_label" type="Label" parent="."]
+[node name="price1_label" type="Label" parent="offer1"]
 offset_left = 768.5
 offset_top = 346.0
 offset_right = 934.5
@@ -67,11 +217,20 @@ offset_bottom = 434.0
 text = "$0.99"
 label_settings = SubResource("LabelSettings_6c468")
 
-[node name="coins2" type="Sprite2D" parent="."]
+[node name="99_button" type="TouchScreenButton" parent="offer1"]
+position = Vector2(855, 400)
+shape = SubResource("RectangleShape2D_gvutb")
+action = "Shoppette_Purchase_99"
+
+[node name="offer2" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="coins2" type="Sprite2D" parent="offer2"]
 position = Vector2(163.5, 598.5)
+scale = Vector2(1, 1)
 texture = ExtResource("4_v1ljm")
 
-[node name="500" type="Label" parent="."]
+[node name="500" type="Label" parent="offer2"]
 z_index = 1
 offset_left = 386.0
 offset_top = 513.5
@@ -80,7 +239,7 @@ offset_bottom = 645.5
 text = "500"
 label_settings = SubResource("LabelSettings_pqihv")
 
-[node name="coins2_label" type="Label" parent="."]
+[node name="coins2_label" type="Label" parent="offer2"]
 offset_left = 378.5
 offset_top = 591.0
 offset_right = 559.5
@@ -88,11 +247,12 @@ offset_bottom = 690.0
 text = "coins"
 label_settings = SubResource("LabelSettings_jxlb5")
 
-[node name="price2" type="Sprite2D" parent="."]
+[node name="price2" type="Sprite2D" parent="offer2"]
 position = Vector2(853.5, 601)
+scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
-[node name="price2_label" type="Label" parent="."]
+[node name="price2_label" type="Label" parent="offer2"]
 offset_left = 768.5
 offset_top = 546.0
 offset_right = 934.5
@@ -100,11 +260,20 @@ offset_bottom = 634.0
 text = "$1.49"
 label_settings = SubResource("LabelSettings_6c468")
 
-[node name="coins3" type="Sprite2D" parent="."]
+[node name="149_button" type="TouchScreenButton" parent="offer2"]
+position = Vector2(855, 600)
+shape = SubResource("RectangleShape2D_ihipa")
+action = "Shoppette_Purchase_149"
+
+[node name="offer3" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="coins3" type="Sprite2D" parent="offer3"]
 position = Vector2(171, 801)
+scale = Vector2(1, 1)
 texture = ExtResource("5_at253")
 
-[node name="700" type="Label" parent="."]
+[node name="700" type="Label" parent="offer3"]
 z_index = 1
 offset_left = 386.0
 offset_top = 713.5
@@ -113,7 +282,7 @@ offset_bottom = 845.5
 text = "700"
 label_settings = SubResource("LabelSettings_pqihv")
 
-[node name="coins3_label" type="Label" parent="."]
+[node name="coins3_label" type="Label" parent="offer3"]
 offset_left = 378.5
 offset_top = 791.0
 offset_right = 559.5
@@ -121,11 +290,12 @@ offset_bottom = 890.0
 text = "coins"
 label_settings = SubResource("LabelSettings_jxlb5")
 
-[node name="price3" type="Sprite2D" parent="."]
+[node name="price3" type="Sprite2D" parent="offer3"]
 position = Vector2(853.5, 801)
+scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
-[node name="price3_label" type="Label" parent="."]
+[node name="price3_label" type="Label" parent="offer3"]
 offset_left = 768.5
 offset_top = 746.0
 offset_right = 934.5
@@ -133,15 +303,25 @@ offset_bottom = 834.0
 text = "$1.99"
 label_settings = SubResource("LabelSettings_6c468")
 
-[node name="video" type="Sprite2D" parent="."]
+[node name="199_button" type="TouchScreenButton" parent="offer3"]
+position = Vector2(855, 800)
+shape = SubResource("RectangleShape2D_airyu")
+action = "Shoppette_Purchase_199"
+
+[node name="offer4" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="video" type="Sprite2D" parent="offer4"]
 position = Vector2(176, 1001)
+scale = Vector2(1, 1)
 texture = ExtResource("6_6qt27")
 
-[node name="play" type="Sprite2D" parent="."]
+[node name="play" type="Sprite2D" parent="offer4"]
 position = Vector2(918.5, 1003.5)
+scale = Vector2(1, 1)
 texture = ExtResource("7_ddqtn")
 
-[node name="watch" type="Label" parent="."]
+[node name="watch" type="Label" parent="offer4"]
 offset_left = 293.5
 offset_top = 933.5
 offset_right = 848.5
@@ -149,10 +329,147 @@ offset_bottom = 1005.5
 text = "Watch a video and get"
 label_settings = SubResource("LabelSettings_5euk0")
 
-[node name="coins4_label" type="Label" parent="."]
+[node name="coins4_label" type="Label" parent="offer4"]
 offset_left = 381.0
 offset_top = 976.0
 offset_right = 704.0
 offset_bottom = 1075.0
 text = "250 coins"
 label_settings = SubResource("LabelSettings_jxlb5")
+
+[node name="watch_button" type="TouchScreenButton" parent="offer4"]
+position = Vector2(530, 1002.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jn771")
+action = "Shoppette_Ad_Play"
+
+[node name="video_overlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="ColorRect" parent="video_overlay"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="close" type="Sprite2D" parent="video_overlay"]
+position = Vector2(63, 228)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_0dk7c")
+
+[node name="action_close" type="TouchScreenButton" parent="video_overlay/close"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+shape = SubResource("RectangleShape2D_bqp18")
+action = "Shoppette_Ad_Close"
+
+[node name="CenterContainer" type="CenterContainer" parent="video_overlay"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="video_overlay/CenterContainer"]
+layout_mode = 2
+stream = SubResource("VideoStreamTheora_jiftd")
+
+[node name="action_click_through" type="TouchScreenButton" parent="video_overlay/CenterContainer/VideoStreamPlayer"]
+position = Vector2(161, 120)
+shape = SubResource("RectangleShape2D_fold3")
+action = "Shoppette_Ad_Open"
+
+[node name="Label" type="Label" parent="video_overlay"]
+offset_top = 595.0
+offset_right = 412.0
+offset_bottom = 642.0
+text = "reward in 30..."
+label_settings = SubResource("LabelSettings_ank8d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="purchase_overlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="ColorRect" parent="purchase_overlay"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="CenterContainer" type="Node2D" parent="purchase_overlay"]
+position = Vector2(25, 267)
+scale = Vector2(0.4, 0.4)
+
+[node name="box" type="TextureRect" parent="purchase_overlay/CenterContainer"]
+offset_top = -25.0
+offset_right = 897.0
+offset_bottom = 525.0
+texture = ExtResource("9_ciqcr")
+
+[node name="item_texture" type="Sprite2D" parent="purchase_overlay/CenterContainer"]
+position = Vector2(212.5, 150)
+texture = ExtResource("2_6fvm7")
+
+[node name="coins" type="Label" parent="purchase_overlay/CenterContainer"]
+offset_left = 365.0
+offset_top = 82.5001
+offset_right = 797.0
+offset_bottom = 214.5
+text = "0 coins"
+label_settings = SubResource("LabelSettings_ek85i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="purchase" type="Label" parent="purchase_overlay/CenterContainer"]
+offset_left = 595.0
+offset_top = 302.5
+offset_right = 738.0
+offset_bottom = 347.5
+text = "purchase"
+label_settings = SubResource("LabelSettings_qr3py")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="no_button" type="Sprite2D" parent="purchase_overlay/CenterContainer"]
+position = Vector2(227.5, 415)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_yjg60")
+
+[node name="yes_button" type="Sprite2D" parent="purchase_overlay/CenterContainer"]
+position = Vector2(667.5, 417.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_32hl1")
+
+[node name="cancel" type="Label" parent="purchase_overlay/CenterContainer"]
+offset_left = 127.5
+offset_top = 360.0
+offset_right = 324.5
+offset_bottom = 448.0
+text = "cancel"
+label_settings = SubResource("LabelSettings_6yiqh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="purchase_overlay/CenterContainer/cancel"]
+position = Vector2(97.5, 52.5001)
+shape = SubResource("RectangleShape2D_w87ed")
+action = "Shoppette_Purchase_Cancel"
+
+[node name="confirm" type="Label" parent="purchase_overlay/CenterContainer"]
+offset_left = 567.5
+offset_top = 362.5
+offset_right = 764.5
+offset_bottom = 450.5
+text = "$0.00"
+label_settings = SubResource("LabelSettings_6yiqh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="purchase_overlay/CenterContainer/confirm"]
+position = Vector2(97.5, 52.5001)
+shape = SubResource("RectangleShape2D_w87ed")
+action = "Shoppette_Purchase_Confirm"

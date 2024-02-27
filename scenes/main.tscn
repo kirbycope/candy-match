@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=119 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -70,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://cd23tcydtx10s" path="res://assets/daily reward title.png" id="58_33y63"]
 [ext_resource type="Texture2D" uid="uid://76qy0hc883s5" path="res://assets/daily reward top.png" id="59_pte75"]
 [ext_resource type="Texture2D" uid="uid://csgv5nbv77t81" path="res://assets/daily reward coin.png" id="60_4lq3p"]
+[ext_resource type="Texture2D" uid="uid://byp3c4lte0f6s" path="res://assets/shop boosters5.png" id="61_2eyhh"]
 [ext_resource type="Texture2D" uid="uid://bgox2ys6mcjip" path="res://assets/daily reward box.png" id="61_yddjp"]
 [ext_resource type="Texture2D" uid="uid://bvv45ravku7he" path="res://assets/daily reward 1.png" id="62_ntjln"]
 [ext_resource type="Texture2D" uid="uid://brdrlh0o166ej" path="res://assets/daily reward2.png" id="63_c25eg"]
@@ -850,7 +851,7 @@ label_settings = SubResource("LabelSettings_lksm3")
 [node name="watch_button" type="TouchScreenButton" parent="shop/shoppette/offer4"]
 position = Vector2(12.5, 447.5)
 shape = SubResource("RectangleShape2D_vm6x0")
-action = "Shop_Ad_Play"
+action = "Shop_Ad_Open"
 
 [node name="video_overlay" type="CanvasLayer" parent="shop/shoppette"]
 visible = false
@@ -890,7 +891,7 @@ stream = SubResource("VideoStreamTheora_r2lvx")
 [node name="action_click_through" type="TouchScreenButton" parent="shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer"]
 position = Vector2(161, 120)
 shape = SubResource("RectangleShape2D_50fbv")
-action = "Shop_Ad_Open"
+action = "Shop_Ad_Click"
 
 [node name="Label" type="Label" parent="shop/shoppette/video_overlay"]
 offset_top = 595.0
@@ -1034,7 +1035,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_pack/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_Bundle_1"
+action = "Boosters_Purchase_Bundle_1"
 
 [node name="price_label" type="Label" parent="boosters/5_pack"]
 offset_left = 257.5
@@ -1080,7 +1081,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/10_pack/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_Bundle_2"
+action = "Boosters_Purchase_Bundle_2"
 
 [node name="price_label" type="Label" parent="boosters/10_pack"]
 offset_left = 762.5
@@ -1110,7 +1111,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_bombs/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_5_Bombs"
+action = "Boosters_Purchase_5_Bombs"
 
 [node name="price_label" type="Label" parent="boosters/5_bombs"]
 offset_left = 832.5
@@ -1140,7 +1141,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_sugars/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_5_Sugars"
+action = "Boosters_Purchase_5_Sugars"
 
 [node name="price_label" type="Label" parent="boosters/5_sugars"]
 offset_left = 832.5
@@ -1170,7 +1171,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_switches/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_5_Switches"
+action = "Boosters_Purchase_5_Switches"
 
 [node name="price_label" type="Label" parent="boosters/5_switches"]
 offset_left = 832.5
@@ -1200,7 +1201,7 @@ texture = ExtResource("49_0atex")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_milks/price"]
 shape = SubResource("RectangleShape2D_y2854")
-action = "Boost_Purchase_5_Milks"
+action = "Boosters_Purchase_5_Milks"
 
 [node name="price_label" type="Label" parent="boosters/5_milks"]
 offset_left = 832.5
@@ -1209,6 +1210,88 @@ offset_right = 943.5
 offset_bottom = 1740.5
 text = "250"
 label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="purchase_overlay" type="CanvasLayer" parent="boosters"]
+visible = false
+
+[node name="background" type="ColorRect" parent="boosters/purchase_overlay"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="CenterContainer" type="Node2D" parent="boosters/purchase_overlay"]
+position = Vector2(25, 267)
+scale = Vector2(0.4, 0.4)
+
+[node name="box" type="TextureRect" parent="boosters/purchase_overlay/CenterContainer"]
+offset_top = -25.0
+offset_right = 897.0
+offset_bottom = 525.0
+texture = ExtResource("51_8j181")
+
+[node name="item_texture" type="Sprite2D" parent="boosters/purchase_overlay/CenterContainer"]
+position = Vector2(222.5, 150)
+texture = ExtResource("61_2eyhh")
+
+[node name="items" type="Label" parent="boosters/purchase_overlay/CenterContainer"]
+offset_left = 405.0
+offset_top = 83.0
+offset_right = 848.0
+offset_bottom = 215.0
+text = "0 items"
+label_settings = SubResource("LabelSettings_8mh0d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exchange" type="Label" parent="boosters/purchase_overlay/CenterContainer"]
+offset_left = 595.0
+offset_top = 302.5
+offset_right = 738.0
+offset_bottom = 347.5
+text = "exchange"
+label_settings = SubResource("LabelSettings_nyrac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="no_button" type="Sprite2D" parent="boosters/purchase_overlay/CenterContainer"]
+position = Vector2(227.5, 415)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("52_0hllr")
+
+[node name="yes_button" type="Sprite2D" parent="boosters/purchase_overlay/CenterContainer"]
+position = Vector2(667.5, 417.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("53_vrsj2")
+
+[node name="cancel" type="Label" parent="boosters/purchase_overlay/CenterContainer"]
+offset_left = 127.5
+offset_top = 360.0
+offset_right = 324.5
+offset_bottom = 448.0
+text = "cancel"
+label_settings = SubResource("LabelSettings_shyfi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/purchase_overlay/CenterContainer/cancel"]
+position = Vector2(100, 55.0001)
+shape = SubResource("RectangleShape2D_1fojj")
+action = "Boosters_Purchase_Cancel"
+
+[node name="confirm" type="Label" parent="boosters/purchase_overlay/CenterContainer"]
+offset_left = 488.0
+offset_top = 363.0
+offset_right = 838.0
+offset_bottom = 451.0
+text = "0 coins"
+label_settings = SubResource("LabelSettings_shyfi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/purchase_overlay/CenterContainer/confirm"]
+position = Vector2(179.5, 54.5)
+shape = SubResource("RectangleShape2D_nv2mg")
+action = "Boosters_Purchase_Confirm"
 
 [node name="scores" type="Node2D" parent="."]
 visible = false

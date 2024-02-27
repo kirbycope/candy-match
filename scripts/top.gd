@@ -27,7 +27,7 @@ func _input(event):
 					get_tree().change_scene_to_file("res://scenes/main.tscn")
 		elif event.action == "Shoppette":
 			if str(scene.get_path()) == "/root/main":
-				scene.open_shop()
+				scene.shop_open()
 			else:
 				shoppette_display()
 

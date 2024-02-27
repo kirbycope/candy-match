@@ -1,6 +1,11 @@
 extends Node2D
 
 
+var booster_coins = 0
+var booster_bombs = 0
+var booster_milks = 0
+var booster_sugars = 0
+var booster_switches = 0
 var countdown_seconds = 30
 var purchase_coins = 0
 var purchase_cost = 0
@@ -57,72 +62,64 @@ func _input(event):
 			$menu.visible = false
 			$top/close.visible = true
 			$top_settings.visible = false
-		elif event.action == "Boost_Purchase_Bundle_1":
+		elif event.action == "Boosters_Purchase_Bundle_1":
 			if Global.player["coins"] >= 350:
-				Global.player["coins"] -= 350
-				Global.player["bombs"] += 5
-				Global.player["milks"] += 5
-				Global.player["sugars"] += 5
-				Global.player["switches"] += 5
-		elif event.action == "Boost_Purchase_Bundle_2":
+				boosters_present_offer(350, 5, 5, 5, 5)
+		elif event.action == "Boosters_Purchase_Bundle_2":
 			if Global.player["coins"] >= 500:
-				Global.player["coins"] -= 500
-				Global.player["bombs"] += 5
-				Global.player["milks"] += 5
-				Global.player["sugars"] += 5
-				Global.player["switches"] += 5
-		elif event.action == "Boost_Purchase_5_Bombs":
+				boosters_present_offer(500, 10, 10, 10, 10)
+		elif event.action == "Boosters_Purchase_5_Bombs":
 			if Global.player["coins"] >= 200:
-				Global.player["coins"] -= 200
-				Global.player["bombs"] += 5
-		elif event.action == "Boost_Purchase_5_Milks":
+				boosters_present_offer(200, 5, 0, 0, 0)
+		elif event.action == "Boosters_Purchase_5_Milks":
 			if Global.player["coins"] >= 250:
-				Global.player["coins"] -= 250
-				Global.player["milks"] += 5
-		elif event.action == "Boost_Purchase_5_Sugars":
+				boosters_present_offer(250, 0, 5, 0, 0)
+		elif event.action == "Boosters_Purchase_5_Sugars":
 			if Global.player["coins"] >= 150:
-				Global.player["coins"] -= 150
-				Global.player["sugars"] += 5
-		elif event.action == "Boost_Purchase_5_Switches":
+				boosters_present_offer(150, 0, 0, 5, 0)
+		elif event.action == "Boosters_Purchase_5_Switches":
 			if Global.player["coins"] >= 200:
-				Global.player["coins"] -= 200
-				Global.player["switches"] += 5
+				boosters_present_offer(200, 0, 0, 0, 5)
+		elif event.action == "Boosters_Purchase_Cancel":
+			boosters_retract_offer()
+		elif event.action == "Boosters_Purchase_Confirm":
+			boosters_confirm_offer()
 		elif event.action == "Character":
-			open_character_selection()
+			choose_character_open()
 		elif event.action == "Character1":
 			Global.player["character"] = 1
 			$character/name_label.text = "Foxy!"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character1/avatar.visible = true
 			$character/character1/checkmark.visible = true
 		elif event.action == "Character2":
 			Global.player["character"] = 2
 			$character/name_label.text = "George"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character2/avatar.visible = true
 			$character/character2/checkmark.visible = true
 		elif event.action == "Character3":
 			Global.player["character"] = 3
 			$character/name_label.text = "Kow!"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character3/avatar.visible = true
 			$character/character3/checkmark.visible = true
 		elif event.action == "Character4":
 			Global.player["character"] = 4
 			$character/name_label.text = "Bob!"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character4/avatar.visible = true
 			$character/character4/checkmark.visible = true
 		elif event.action == "Character5":
 			Global.player["character"] = 5
 			$character/name_label.text = "Rickon"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character5/avatar.visible = true
 			$character/character5/checkmark.visible = true
 		elif event.action == "Character6":
 			Global.player["character"] = 6
 			$character/name_label.text = "Beav!"
-			clear_character_selection()
+			choose_character_clear()
 			$character/character6/avatar.visible = true
 			$character/character6/checkmark.visible = true
 		elif event.action == "Close":
@@ -147,27 +144,27 @@ func _input(event):
 			$top/close.visible = true
 			$top_settings.visible = false
 		elif event.action == "Shop":
-			open_shop()
+			shop_open()
 		elif event.action == "Shop_Ad_Close":
 			ad_close()
+		elif event.action == "Shop_Ad_Click":
+			ad_click()
 		elif event.action == "Shop_Ad_Open":
 			ad_open()
-		elif event.action == "Shop_Ad_Play":
-			ad_play()
 		elif event.action == "Shop_Purchase_99":
-			prepare_offer(250, 0.99)
+			shop_present_offer(0.99, 250)
 		elif event.action == "Shop_Purchase_149":
-			prepare_offer(500, 1.49)
+			shop_present_offer(1.49, 500)
 		elif event.action == "Shop_Purchase_199":
-			prepare_offer(700, 1.99)
+			shop_present_offer(1.99, 700)
 		elif event.action == "Shop_Purchase_249":
-			prepare_offer(1000, 2.49)
+			shop_present_offer(2.49, 1000)
 		elif event.action == "Shop_Purchase_299":
-			prepare_offer(1500, 2.99)
+			shop_present_offer(2.99, 1500)
 		elif event.action == "Shop_Purchase_Cancel":
-			retract_offer()
+			shop_retract_offer()
 		elif event.action == "Shop_Purchase_Confirm":
-			purchase_confirm()
+			shop_confirm_offer()
 		elif event.action == "Spin":
 			spin_wheel_start()
 		elif event.action == "ToggleMusic":
@@ -191,15 +188,18 @@ func _input(event):
 			$wheel/spins_left/Label.text = str(Global.player["spins_remaining"])
 
 
+# Closes the "ad" view.
 func ad_close():
 	$shop/shoppette/video_overlay.visible = false
 
 
-func ad_open():
+# Opens the "ad" link in user's web broswer.
+func ad_click():
 	OS.shell_open("https://timothycope.com/")
 
 
-func ad_play():
+# Opens the "ad" view.
+func ad_open():
 	$shop/shoppette/video_overlay.visible = true
 	countdown_seconds = 30
 	timer_running = true
@@ -208,8 +208,8 @@ func ad_play():
 	$shop/shoppette/video_overlay/Label.text = "reward in " + str(countdown_seconds) + "..."
 
 
-# Clears the characters on the Character Select screen.
-func clear_character_selection():
+# Clears the selection on the "choose character" view.
+func choose_character_clear():
 	$character/character1/avatar.visible = false
 	$character/character1/checkmark.visible = false
 	$character/character2/avatar.visible = false
@@ -224,7 +224,8 @@ func clear_character_selection():
 	$character/character6/checkmark.visible = false
 
 
-func open_character_selection():
+# Opens the "choose character" view.
+func choose_character_open():
 	reset_to_main()
 	$character.visible = true
 	$main.visible = false
@@ -236,32 +237,66 @@ func open_character_selection():
 	node.visible = true
 
 
-# Opens the scene's "shop" view.
-func open_shop():
-	reset_to_main()
-	$main.visible = false
-	$menu.visible = false
-	$shop.visible = true
-	$top/close.visible = true
-	$top_settings.visible = false
+# Finalizes the transaction and return to "boosters" view.
+func boosters_confirm_offer():
+	# ToDo: Give item(s) and remove coins
+	Global.player["coins"] -= booster_coins
+	Global.player["bombs"] += booster_bombs
+	Global.player["milks"] += booster_milks
+	Global.player["sugars"] += booster_sugars
+	Global.player["switches"] += booster_switches
+	boosters_retract_offer()
 
 
-func prepare_offer(coins, cost):
-	if $shop/shoppette/purchase_overlay.visible == false:
-		purchase_coins = coins
-		purchase_cost = cost
-		$shop/shoppette/purchase_overlay.visible = true
-		$shop/shoppette/purchase_overlay/CenterContainer/item_texture.texture = load("res://assets/shop coins3.png")
-		$shop/shoppette/purchase_overlay/CenterContainer/coins.text = str(purchase_coins) + " coins"
-		$shop/shoppette/purchase_overlay/CenterContainer/confirm.text = "$" + str(purchase_cost)
+# Presents the selected "boosters" offer to the user for confirmation.
+func boosters_present_offer(coins, bombs, milks, sugars, switches):
+	if $boosters/purchase_overlay.visible == false:
+		booster_coins = coins
+		booster_bombs = bombs
+		booster_milks = milks
+		booster_sugars = sugars
+		booster_switches = switches
+		$boosters/purchase_overlay.visible = true
+		var item_texture = $boosters/purchase_overlay/CenterContainer/item_texture
+		var item_label = $boosters/purchase_overlay/CenterContainer/items
+		var confirm = $boosters/purchase_overlay/CenterContainer/confirm
+		if bombs == 5 and milks == 5 and sugars == 5 and switches == 5:
+			item_texture.texture = load("res://assets/shop boosters5.png")
+			item_label.text = "5 of each"
+			confirm.text = str(coins) + " coins"
+		elif bombs == 10 and milks == 10 and sugars == 10 and switches == 10:
+			item_texture.texture = load("res://assets/shop boosters5.png")
+			item_label.text = "10 of each"
+			confirm.text = str(coins) + " coins"
+		elif bombs == 5 and milks == 0 and sugars == 0 and switches == 0:
+			item_texture.texture = load("res://assets/shop boosters1.png")
+			item_label.text = "5 bombs"
+			confirm.text = str(coins) + " coins"
+		elif bombs == 0 and milks == 5 and sugars == 0 and switches == 0:
+			item_texture.texture = load("res://assets/shop boosters4.png")
+			item_label.text = "5 milks"
+			confirm.text = str(coins) + " coins"
+		elif bombs == 0 and milks == 0 and sugars == 5 and switches == 0:
+			item_texture.texture = load("res://assets/shop boosters2.png")
+			item_label.text = "5 sugars"
+			confirm.text = str(coins) + " coins"
+		elif bombs == 0 and milks == 0 and sugars == 0 and switches == 5:
+			item_texture.texture = load("res://assets/shop boosters3.png")
+			item_label.text = "5 switches"
+			confirm.text = str(coins) + " coins"
 
 
-func purchase_confirm():
-	Global.player["coins"] += purchase_coins
-	retract_offer()
+# Hides the "boosters" offer overlay.
+func boosters_retract_offer():
+	$boosters/purchase_overlay.visible = false
+	booster_coins = 0
+	booster_bombs = 0
+	booster_milks = 0
+	booster_sugars = 0
+	booster_switches = 0
 
 
-# Resets the scene's "main" view.
+# Resets to the "main" view.
 func reset_to_main():
 	$top.shoppette_hide()
 	if Global.player["level_0_complete"] == false:
@@ -282,17 +317,46 @@ func reset_to_main():
 	$wheel/spinner.visible = true
 
 
-func retract_offer():
+# Finalizes the transaction and return to "shop" view.
+func shop_confirm_offer():
+	Global.player["coins"] += purchase_coins
+	shop_retract_offer()
+
+
+# Opens the "shop" view.
+func shop_open():
+	reset_to_main()
+	$main.visible = false
+	$menu.visible = false
+	$shop.visible = true
+	$top/close.visible = true
+	$top_settings.visible = false
+
+
+# Presents the selected "shop" offer to the user for confirmation.
+func shop_present_offer(cost, coins):
+	if $shop/shoppette/purchase_overlay.visible == false:
+		purchase_coins = coins
+		purchase_cost = cost
+		$shop/shoppette/purchase_overlay.visible = true
+		$shop/shoppette/purchase_overlay/CenterContainer/item_texture.texture = load("res://assets/shop coins3.png")
+		$shop/shoppette/purchase_overlay/CenterContainer/coins.text = str(purchase_coins) + " coins"
+		$shop/shoppette/purchase_overlay/CenterContainer/confirm.text = "$" + str(purchase_cost)
+
+
+# Hides the "shop" offer overlay.
+func shop_retract_offer():
 	$shop/shoppette/purchase_overlay.visible = false
 	purchase_coins = 0
 	purchase_cost = 0.00
 
 
+# Hides the "wheel rewards" view.
 func spin_wheel_rewards_hide():
 	$wheel/reward.visible = false
 	$wheel/spinner.visible = true
 
-
+# Opens the "wheel rewards" view (with the given prize).
 func spin_wheel_rewards_show(prize):
 	$wheel/reward.visible = true
 	$wheel/spinner.visible = false
@@ -362,6 +426,7 @@ func spin_wheel_stop():
 	spin_wheel_rewards_show(prize)
 
 
+# Updates the countdown timer for the "ad" roll.
 func update_countdown():
 	if countdown_seconds > 0:
 		countdown_seconds -= 1

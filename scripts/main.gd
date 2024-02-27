@@ -57,6 +57,36 @@ func _input(event):
 			$menu.visible = false
 			$top/close.visible = true
 			$top_settings.visible = false
+		elif event.action == "Boost_Purchase_Bundle_1":
+			if Global.player["coins"] >= 350:
+				Global.player["coins"] -= 350
+				Global.player["bombs"] += 5
+				Global.player["milks"] += 5
+				Global.player["sugars"] += 5
+				Global.player["switches"] += 5
+		elif event.action == "Boost_Purchase_Bundle_2":
+			if Global.player["coins"] >= 500:
+				Global.player["coins"] -= 500
+				Global.player["bombs"] += 5
+				Global.player["milks"] += 5
+				Global.player["sugars"] += 5
+				Global.player["switches"] += 5
+		elif event.action == "Boost_Purchase_5_Bombs":
+			if Global.player["coins"] >= 200:
+				Global.player["coins"] -= 200
+				Global.player["bombs"] += 5
+		elif event.action == "Boost_Purchase_5_Milks":
+			if Global.player["coins"] >= 250:
+				Global.player["coins"] -= 250
+				Global.player["milks"] += 5
+		elif event.action == "Boost_Purchase_5_Sugars":
+			if Global.player["coins"] >= 150:
+				Global.player["coins"] -= 150
+				Global.player["sugars"] += 5
+		elif event.action == "Boost_Purchase_5_Switches":
+			if Global.player["coins"] >= 200:
+				Global.player["coins"] -= 200
+				Global.player["switches"] += 5
 		elif event.action == "Character":
 			open_character_selection()
 		elif event.action == "Character1":
@@ -254,6 +284,7 @@ func retract_offer():
 	$shop/shoppette/purchase_overlay.visible = false
 	purchase_coins = 0
 	purchase_cost = 0.00
+
 
 func spin_wheel_rewards_hide():
 	$wheel/reward.visible = false

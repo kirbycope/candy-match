@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=117 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -191,6 +191,9 @@ size = Vector2(360, 140)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8cqfg"]
 font_size = 72
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2854"]
+size = Vector2(220, 110)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kebvf"]
 font_size = 64
@@ -655,7 +658,6 @@ texture = ExtResource("35_b0cs0")
 
 [node name="249_button" type="TouchScreenButton" parent="shop/promos"]
 position = Vector2(272.5, 607.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hm7bb")
 action = "Shop_Purchase_249"
 
@@ -689,7 +691,6 @@ label_settings = SubResource("LabelSettings_sq28q")
 
 [node name="299_button2" type="TouchScreenButton" parent="shop/promos"]
 position = Vector2(782.5, 607.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hm7bb")
 action = "Shop_Purchase_299"
 
@@ -700,11 +701,9 @@ position = Vector2(515, 1272.5)
 texture = ExtResource("38_hbuxt")
 
 [node name="offer1" type="Node2D" parent="shop/shoppette"]
-scale = Vector2(1, 1)
 
 [node name="coins1" type="Sprite2D" parent="shop/shoppette/offer1"]
 position = Vector2(-349.5, -162.5)
-scale = Vector2(1, 1)
 texture = ExtResource("39_g354n")
 
 [node name="250" type="Label" parent="shop/shoppette/offer1"]
@@ -726,7 +725,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price1" type="Sprite2D" parent="shop/shoppette/offer1"]
 position = Vector2(338, -157.5)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price1_label" type="Label" parent="shop/shoppette/offer1"]
@@ -743,11 +741,9 @@ shape = SubResource("RectangleShape2D_hm7bb")
 action = "Shop_Purchase_99"
 
 [node name="offer2" type="Node2D" parent="shop/shoppette"]
-scale = Vector2(1, 1)
 
 [node name="coins2" type="Sprite2D" parent="shop/shoppette/offer2"]
 position = Vector2(-352, 42.4999)
-scale = Vector2(1, 1)
 texture = ExtResource("40_kl4tx")
 
 [node name="500" type="Label" parent="shop/shoppette/offer2"]
@@ -769,7 +765,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price2" type="Sprite2D" parent="shop/shoppette/offer2"]
 position = Vector2(338, 44.9999)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price2_label" type="Label" parent="shop/shoppette/offer2"]
@@ -786,11 +781,9 @@ shape = SubResource("RectangleShape2D_hm7bb")
 action = "Shop_Purchase_149"
 
 [node name="offer3" type="Node2D" parent="shop/shoppette"]
-scale = Vector2(1, 1)
 
 [node name="coins3" type="Sprite2D" parent="shop/shoppette/offer3"]
 position = Vector2(-344.5, 245)
-scale = Vector2(1, 1)
 texture = ExtResource("41_qm6mw")
 
 [node name="700" type="Label" parent="shop/shoppette/offer3"]
@@ -812,7 +805,6 @@ label_settings = SubResource("LabelSettings_lksm3")
 
 [node name="price3" type="Sprite2D" parent="shop/shoppette/offer3"]
 position = Vector2(338, 245)
-scale = Vector2(1, 1)
 texture = ExtResource("35_b0cs0")
 
 [node name="price3_label" type="Label" parent="shop/shoppette/offer3"]
@@ -829,16 +821,13 @@ shape = SubResource("RectangleShape2D_hm7bb")
 action = "Shop_Purchase_199"
 
 [node name="offer4" type="Node2D" parent="shop/shoppette"]
-scale = Vector2(1, 1)
 
 [node name="video" type="Sprite2D" parent="shop/shoppette/offer4"]
 position = Vector2(-339.5, 445)
-scale = Vector2(1, 1)
 texture = ExtResource("42_0fj4a")
 
 [node name="play" type="Sprite2D" parent="shop/shoppette/offer4"]
 position = Vector2(403, 447.5)
-scale = Vector2(1, 1)
 texture = ExtResource("43_hu6e3")
 
 [node name="watch" type="Label" parent="shop/shoppette/offer4"]
@@ -1042,6 +1031,10 @@ texture = ExtResource("48_arbfl")
 position = Vector2(285, 897.5)
 texture = ExtResource("49_0atex")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_pack/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_Bundle_1"
+
 [node name="price_label" type="Label" parent="boosters/5_pack"]
 offset_left = 257.5
 offset_top = 837.5
@@ -1084,6 +1077,10 @@ texture = ExtResource("46_nbg2j")
 position = Vector2(790, 895)
 texture = ExtResource("49_0atex")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/10_pack/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_Bundle_2"
+
 [node name="price_label" type="Label" parent="boosters/10_pack"]
 offset_left = 762.5
 offset_top = 837.5
@@ -1109,6 +1106,10 @@ texture = ExtResource("45_r7ya2")
 [node name="price" type="Sprite2D" parent="boosters/5_bombs"]
 position = Vector2(860, 1100)
 texture = ExtResource("49_0atex")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_bombs/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_5_Bombs"
 
 [node name="price_label" type="Label" parent="boosters/5_bombs"]
 offset_left = 832.5
@@ -1136,6 +1137,10 @@ texture = ExtResource("47_i4f4e")
 position = Vector2(860, 1307.5)
 texture = ExtResource("49_0atex")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_sugars/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_5_Sugars"
+
 [node name="price_label" type="Label" parent="boosters/5_sugars"]
 offset_left = 832.5
 offset_top = 1250.0
@@ -1162,6 +1167,10 @@ texture = ExtResource("48_arbfl")
 position = Vector2(860, 1507.5)
 texture = ExtResource("49_0atex")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_switches/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_5_Switches"
+
 [node name="price_label" type="Label" parent="boosters/5_switches"]
 offset_left = 832.5
 offset_top = 1450.0
@@ -1187,6 +1196,10 @@ texture = ExtResource("46_nbg2j")
 [node name="price" type="Sprite2D" parent="boosters/5_milks"]
 position = Vector2(860, 1710)
 texture = ExtResource("49_0atex")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="boosters/5_milks/price"]
+shape = SubResource("RectangleShape2D_y2854")
+action = "Boost_Purchase_5_Milks"
 
 [node name="price_label" type="Label" parent="boosters/5_milks"]
 offset_left = 832.5
@@ -1259,7 +1272,6 @@ texture = ExtResource("27_s2rmg")
 
 [node name="daily" type="Node2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="title" type="Sprite2D" parent="daily"]
 position = Vector2(505, 225)

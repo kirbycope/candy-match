@@ -174,11 +174,9 @@ position = Vector2(515.5, 556)
 texture = ExtResource("1_kmvj0")
 
 [node name="offer1" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="coins1" type="Sprite2D" parent="offer1"]
 position = Vector2(166, 393.5)
-scale = Vector2(1, 1)
 texture = ExtResource("2_6fvm7")
 
 [node name="250" type="Label" parent="offer1"]
@@ -200,7 +198,6 @@ label_settings = SubResource("LabelSettings_jxlb5")
 
 [node name="price1" type="Sprite2D" parent="offer1"]
 position = Vector2(853.5, 398.5)
-scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
 [node name="price1_label" type="Label" parent="offer1"]
@@ -217,11 +214,9 @@ shape = SubResource("RectangleShape2D_gvutb")
 action = "Shoppette_Purchase_99"
 
 [node name="offer2" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="coins2" type="Sprite2D" parent="offer2"]
 position = Vector2(163.5, 598.5)
-scale = Vector2(1, 1)
 texture = ExtResource("4_v1ljm")
 
 [node name="500" type="Label" parent="offer2"]
@@ -243,7 +238,6 @@ label_settings = SubResource("LabelSettings_jxlb5")
 
 [node name="price2" type="Sprite2D" parent="offer2"]
 position = Vector2(853.5, 601)
-scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
 [node name="price2_label" type="Label" parent="offer2"]
@@ -260,11 +254,9 @@ shape = SubResource("RectangleShape2D_ihipa")
 action = "Shoppette_Purchase_149"
 
 [node name="offer3" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="coins3" type="Sprite2D" parent="offer3"]
 position = Vector2(171, 801)
-scale = Vector2(1, 1)
 texture = ExtResource("5_at253")
 
 [node name="700" type="Label" parent="offer3"]
@@ -286,7 +278,6 @@ label_settings = SubResource("LabelSettings_jxlb5")
 
 [node name="price3" type="Sprite2D" parent="offer3"]
 position = Vector2(853.5, 801)
-scale = Vector2(1, 1)
 texture = ExtResource("3_bmxka")
 
 [node name="price3_label" type="Label" parent="offer3"]
@@ -303,16 +294,13 @@ shape = SubResource("RectangleShape2D_airyu")
 action = "Shoppette_Purchase_199"
 
 [node name="offer4" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="video" type="Sprite2D" parent="offer4"]
 position = Vector2(176, 1001)
-scale = Vector2(1, 1)
 texture = ExtResource("6_6qt27")
 
 [node name="play" type="Sprite2D" parent="offer4"]
 position = Vector2(918.5, 1003.5)
-scale = Vector2(1, 1)
 texture = ExtResource("7_ddqtn")
 
 [node name="watch" type="Label" parent="offer4"]
@@ -333,7 +321,6 @@ label_settings = SubResource("LabelSettings_jxlb5")
 
 [node name="watch_button" type="TouchScreenButton" parent="offer4"]
 position = Vector2(530, 1002.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jn771")
 action = "Shoppette_Ad_Play"
 

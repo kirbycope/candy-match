@@ -2,11 +2,13 @@ extends Node2D
 
 
 var countdown_seconds = 30
+var purchase_coins = 0
+var purchase_cost = 0
+var spin_rotation_speed = 0.0
+var spin_slow_down_time = 2.0
 var timer_running = false
 var time_passed = 0.0
 var update_interval = 1.0
-var spin_rotation_speed = 0.0
-var spin_slow_down_time = 2.0
 var wheel_spinning = false
 
 
@@ -120,6 +122,20 @@ func _input(event):
 			ad_open()
 		elif event.action == "Shop_Ad_Play":
 			ad_play()
+		elif event.action == "Shop_Purchase_99":
+			prepare_offer(250, 0.99)
+		elif event.action == "Shop_Purchase_149":
+			prepare_offer(500, 1.49)
+		elif event.action == "Shop_Purchase_199":
+			prepare_offer(700, 1.99)
+		elif event.action == "Shop_Purchase_249":
+			prepare_offer(1000, 2.49)
+		elif event.action == "Shop_Purchase_299":
+			prepare_offer(1500, 2.99)
+		elif event.action == "Shop_Purchase_Cancel":
+			retract_offer()
+		elif event.action == "Shop_Purchase_Confirm":
+			purchase_confirm()
 		elif event.action == "Spin":
 			spin_wheel_start()
 		elif event.action == "ToggleMusic":
@@ -198,6 +214,21 @@ func open_shop():
 	$top_settings.visible = false
 
 
+func prepare_offer(coins, cost):
+	if $shop/shoppette/purchase_overlay.visible == false:
+		purchase_coins = coins
+		purchase_cost = cost
+		$shop/shoppette/purchase_overlay.visible = true
+		$shop/shoppette/purchase_overlay/CenterContainer/item_texture.texture = load("res://assets/shop coins3.png")
+		$shop/shoppette/purchase_overlay/CenterContainer/coins.text = str(purchase_coins) + " coins"
+		$shop/shoppette/purchase_overlay/CenterContainer/confirm.text = "$" + str(purchase_cost)
+
+
+func purchase_confirm():
+	Global.player["coins"] += purchase_coins
+	retract_offer()
+
+
 # Resets the scene's "main" view.
 func reset_to_main():
 	$top.shoppette_hide()
@@ -218,6 +249,11 @@ func reset_to_main():
 	$wheel/reward.visible = false
 	$wheel/spinner.visible = true
 
+
+func retract_offer():
+	$shop/shoppette/purchase_overlay.visible = false
+	purchase_coins = 0
+	purchase_cost = 0.00
 
 func spin_wheel_rewards_hide():
 	$wheel/reward.visible = false

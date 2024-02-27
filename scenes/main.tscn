@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=116 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -136,6 +136,9 @@ radius = 300.0
 font_size = 64
 font_color = Color(0.207843, 0.207843, 0.207843, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm7bb"]
+size = Vector2(240, 120)
+
 [sub_resource type="LabelSettings" id="LabelSettings_sq28q"]
 font_size = 64
 
@@ -148,9 +151,6 @@ outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 font_size = 72
 outline_size = 24
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm7bb"]
-size = Vector2(240, 120)
 
 [sub_resource type="LabelSettings" id="LabelSettings_i8gf2"]
 font_size = 52
@@ -182,6 +182,12 @@ font_color = Color(0.207843, 0.207843, 0.207843, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_shyfi"]
 font_size = 64
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fojj"]
+size = Vector2(360, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv2mg"]
+size = Vector2(360, 140)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8cqfg"]
 font_size = 72
@@ -647,6 +653,12 @@ texture = ExtResource("34_6pbnv")
 position = Vector2(272.5, 607.5)
 texture = ExtResource("35_b0cs0")
 
+[node name="249_button" type="TouchScreenButton" parent="shop/promos"]
+position = Vector2(272.5, 607.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hm7bb")
+action = "Shop_Purchase_249"
+
 [node name="offer1_label" type="Label" parent="shop/promos"]
 offset_left = 190.0
 offset_top = 552.5
@@ -674,6 +686,12 @@ offset_right = 863.5
 offset_bottom = 640.5
 text = "$2.99"
 label_settings = SubResource("LabelSettings_sq28q")
+
+[node name="299_button2" type="TouchScreenButton" parent="shop/promos"]
+position = Vector2(782.5, 607.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hm7bb")
+action = "Shop_Purchase_299"
 
 [node name="shoppette" type="Node2D" parent="shop"]
 position = Vector2(515, 1272.5)
@@ -722,7 +740,7 @@ label_settings = SubResource("LabelSettings_sq28q")
 [node name="99_button" type="TouchScreenButton" parent="shop/shoppette/offer1"]
 position = Vector2(340, -157.5)
 shape = SubResource("RectangleShape2D_hm7bb")
-action = "99"
+action = "Shop_Purchase_99"
 
 [node name="offer2" type="Node2D" parent="shop/shoppette"]
 scale = Vector2(1, 1)
@@ -765,7 +783,7 @@ label_settings = SubResource("LabelSettings_sq28q")
 [node name="149_button" type="TouchScreenButton" parent="shop/shoppette/offer2"]
 position = Vector2(340, 45)
 shape = SubResource("RectangleShape2D_hm7bb")
-action = "149"
+action = "Shop_Purchase_149"
 
 [node name="offer3" type="Node2D" parent="shop/shoppette"]
 scale = Vector2(1, 1)
@@ -808,7 +826,7 @@ label_settings = SubResource("LabelSettings_sq28q")
 [node name="199_button" type="TouchScreenButton" parent="shop/shoppette/offer3"]
 position = Vector2(340, 245)
 shape = SubResource("RectangleShape2D_hm7bb")
-action = "199"
+action = "Shop_Purchase_199"
 
 [node name="offer4" type="Node2D" parent="shop/shoppette"]
 scale = Vector2(1, 1)
@@ -911,7 +929,7 @@ offset_right = 897.0
 offset_bottom = 525.0
 texture = ExtResource("51_8j181")
 
-[node name="coins1" type="Sprite2D" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+[node name="item_texture" type="Sprite2D" parent="shop/shoppette/purchase_overlay/CenterContainer"]
 position = Vector2(212.5, 150)
 texture = ExtResource("39_g354n")
 
@@ -920,7 +938,7 @@ offset_left = 365.0
 offset_top = 82.5001
 offset_right = 797.0
 offset_bottom = 214.5
-text = "250 coins"
+text = "0 coins"
 label_settings = SubResource("LabelSettings_8mh0d")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -955,15 +973,25 @@ label_settings = SubResource("LabelSettings_shyfi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="99" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="shop/shoppette/purchase_overlay/CenterContainer/cancel"]
+position = Vector2(97.5, 52.5001)
+shape = SubResource("RectangleShape2D_1fojj")
+action = "Shop_Purchase_Cancel"
+
+[node name="confirm" type="Label" parent="shop/shoppette/purchase_overlay/CenterContainer"]
 offset_left = 567.5
 offset_top = 362.5
 offset_right = 764.5
 offset_bottom = 450.5
-text = "$0.99"
+text = "$0.00"
 label_settings = SubResource("LabelSettings_shyfi")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="shop/shoppette/purchase_overlay/CenterContainer/confirm"]
+position = Vector2(97.5, 52.5001)
+shape = SubResource("RectangleShape2D_nv2mg")
+action = "Shop_Purchase_Confirm"
 
 [node name="boosters" type="Node2D" parent="."]
 visible = false

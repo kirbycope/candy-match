@@ -17,6 +17,8 @@ script/source = "extends Node2D
 
 
 var countdown_seconds = 30
+var purchase_coins = 0
+var purchase_cost = 0
 var timer_running = false
 var time_passed = 0.0
 var update_interval = 1.0
@@ -41,13 +43,13 @@ func _process(delta):
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == \"Shoppette_Purchase_99\":
-			purchase_99()
+			prepare_offer(250, 0.99)
 		elif event.action == \"Shoppette_Purchase_149\":
-			purchase_149()
+			prepare_offer(500, 1.49)
 		elif event.action == \"Shoppette_Purchase_199\":
-			purchase_199()
+			prepare_offer(700, 1.99)
 		elif event.action == \"Shoppette_Purchase_Cancel\":
-			purchase_cancel()
+			retract_offer()
 		elif event.action == \"Shoppette_Purchase_Confirm\":
 			purchase_confirm()
 		elif event.action == \"Shoppette_Ad_Close\":
@@ -75,33 +77,25 @@ func ad_play():
 	$video_overlay/Label.text = \"reward in \" + str(countdown_seconds) + \"...\"
 
 
-func purchase_99():
-	$purchase_overlay.visible = true
-	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
-	$purchase_overlay/CenterContainer/coins.text = \"250 coins\"
-	$purchase_overlay/CenterContainer/confirm.text = \"$0.99\"
-
-
-func purchase_149():
-	$purchase_overlay.visible = true
-	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
-	$purchase_overlay/CenterContainer/coins.text = \"500 coins\"
-	$purchase_overlay/CenterContainer/confirm.text = \"$1.49\"
-
-
-func purchase_199():
-	$purchase_overlay.visible = true
-	$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins1.png\")
-	$purchase_overlay/CenterContainer/coins.text = \"700 coins\"
-	$purchase_overlay/CenterContainer/confirm.text = \"$1.99\"
-
-
-func purchase_cancel():
-	$purchase_overlay.visible = false
+func prepare_offer(coins, cost):
+	if $purchase_overlay.visible == false:
+		purchase_coins = coins
+		purchase_cost = cost
+		$purchase_overlay.visible = true
+		$purchase_overlay/CenterContainer/item_texture.texture = load(\"res://assets/shop coins3.png\")
+		$purchase_overlay/CenterContainer/coins.text = str(purchase_coins) + \" coins\"
+		$purchase_overlay/CenterContainer/confirm.text = \"$\" + str(purchase_cost)
 
 
 func purchase_confirm():
+	Global.player[\"coins\"] += purchase_coins
+	retract_offer()
+
+
+func retract_offer():
 	$purchase_overlay.visible = false
+	purchase_coins = 0
+	purchase_cost = 0.00
 
 
 func update_countdown():
@@ -398,7 +392,7 @@ visible = false
 [node name="background" type="ColorRect" parent="purchase_overlay"]
 offset_right = 412.0
 offset_bottom = 732.0
-color = Color(0, 0, 0, 0.784314)
+color = Color(0, 0, 0, 0.862745)
 
 [node name="CenterContainer" type="Node2D" parent="purchase_overlay"]
 position = Vector2(25, 267)

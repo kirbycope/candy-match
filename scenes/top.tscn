@@ -37,7 +37,7 @@ shape = SubResource("RectangleShape2D_8esfe")
 action = "Shoppette"
 
 [node name="Label" type="Label" parent="coins"]
-offset_left = -200.0
+offset_left = -790.0
 offset_top = -45.0
 offset_right = -89.0
 offset_bottom = 43.0

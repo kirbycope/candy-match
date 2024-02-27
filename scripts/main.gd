@@ -125,6 +125,8 @@ func _input(event):
 			clear_character_selection()
 			$character/character6/avatar.visible = true
 			$character/character6/checkmark.visible = true
+		elif event.action == "Close":
+			reset_to_main()
 		elif event.action == "Friends":
 			pass
 		elif event.action == "Map":

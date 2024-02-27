@@ -460,6 +460,9 @@ func get_piece_id(index):
 
 # Remove matching pieces from the board using a tween.
 func remove_matches():
+	var customer1_excited = false
+	var customer2_excited = false
+	var customer3_excited = false
 	# Check both sets of matches
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
@@ -485,18 +488,47 @@ func remove_matches():
 						if get_piece_id(matches[i]) == customer1_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer1_id) + ".png"
 							$customer1/character.texture = load(texture_path)
+							customer1_excited = true
 						if get_piece_id(matches[i]) == customer2_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer2_id) + ".png"
 							$customer2/character.texture = load(texture_path)
+							customer2_excited = true
 						if get_piece_id(matches[i]) == customer3_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer3_id) + ".png"
 							$customer3/character.texture = load(texture_path)
+							customer3_excited = true
 	# Play sound only on first match
 	if (matches_left_to_remove == 9
 	or matches_left_to_remove == 12
 	or matches_left_to_remove == 15):
 		if not $multi_pop_6.is_playing():
 			$multi_pop_6.play()
+	if customer1_excited:
+		random_excited_effect()
+	if customer2_excited:
+		random_excited_effect()
+	if customer3_excited:
+		random_excited_effect()
+
+
+func random_excited_effect():
+	# Assign a random sound (1-5)
+	var randomNumber = randi() % 5 + 1
+	if randomNumber == 1:
+		if not $cute_animal_squeak_1.is_playing():
+			$cute_animal_squeak_1.play()
+	if randomNumber == 2:
+		if not $cute_animal_squeak_2.is_playing():
+			$cute_animal_squeak_2.play()
+	if randomNumber == 3:
+		if not $cute_animal_squeak_3.is_playing():
+			$cute_animal_squeak_3.play()
+	if randomNumber == 4:
+		if not $cute_animal_squeak_4.is_playing():
+			$cute_animal_squeak_4.play()
+	if randomNumber == 5:
+		if not $cute_animal_squeak_5.is_playing():
+			$cute_animal_squeak_5.play()
 
 
 # The callback function for the remove_matches() tween.

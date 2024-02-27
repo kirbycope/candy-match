@@ -22,7 +22,9 @@ func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Close":
 			if not shoppette_hide():
-				get_tree().change_scene_to_file("res://scenes/main.tscn")
+				var path = str(get_tree().current_scene.get_path())
+				if path != "/root/main":
+					get_tree().change_scene_to_file("res://scenes/main.tscn")
 		elif event.action == "Shoppette":
 			if str(scene.get_path()) == "/root/main":
 				scene.open_shop()

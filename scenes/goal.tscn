@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/goal.gd" id="1_o7lft"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="2_lm6jl"]
 [ext_resource type="PackedScene" uid="uid://di02cv324ap5j" path="res://scenes/top.tscn" id="4_rss1b"]
+[ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="5_5dist"]
 [ext_resource type="Texture2D" uid="uid://cmyewu7kf3jq7" path="res://assets/level goal.png" id="5_fyhoo"]
-[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="6_0fs3a"]
 [ext_resource type="Texture2D" uid="uid://cs4afug5fqmsp" path="res://assets/candy6.png" id="6_od8n3"]
 [ext_resource type="Texture2D" uid="uid://s4ahfsh1ii2" path="res://assets/game boost count.png" id="7_qpvy7"]
 [ext_resource type="Texture2D" uid="uid://jcgckqaakjl4" path="res://assets/candy1.png" id="8_17nls"]
@@ -53,7 +53,7 @@ scale = Vector2(1, 1)
 [node name="character" type="Sprite2D" parent="."]
 position = Vector2(525, 540)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_0fs3a")
+texture = ExtResource("5_5dist")
 
 [node name="title" type="Sprite2D" parent="."]
 position = Vector2(515, 1030)

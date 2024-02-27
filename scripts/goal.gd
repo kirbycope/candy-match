@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Character texture
-	var texture_path = "res://assets/won" + str(Global.player["character"]) + ".png"
+	var texture_path = "res://assets/character" + str(Global.player["character"]) + "_1.png"
 	$character.texture = load(texture_path)
 	# Get level data
 	var current_level = Global.current_level

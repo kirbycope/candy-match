@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=118 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -27,27 +27,28 @@
 [ext_resource type="Texture2D" uid="uid://dkkhexenistfb" path="res://assets/wheel needle.png" id="19_adfi2"]
 [ext_resource type="Texture2D" uid="uid://rsjqmv8sem28" path="res://assets/wheel sign1.png" id="19_jac5e"]
 [ext_resource type="Texture2D" uid="uid://bydl4ykg45083" path="res://assets/buton next.png" id="20_2djr6"]
-[ext_resource type="Texture2D" uid="uid://cckumw878ckpu" path="res://assets/won2.png" id="21_bho1w"]
 [ext_resource type="Texture2D" uid="uid://c6rkwf6uucp53" path="res://assets/button quit.png" id="21_rnm3e"]
-[ext_resource type="Texture2D" uid="uid://crahb5cltxiwr" path="res://assets/won3.png" id="22_7mnru"]
-[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="22_iq15d"]
 [ext_resource type="Texture2D" uid="uid://ditjg452qvohn" path="res://assets/character1.png" id="22_mx33c"]
 [ext_resource type="Texture2D" uid="uid://cshpti5566xnv" path="res://assets/won4.png" id="23_6tbsw"]
 [ext_resource type="Texture2D" uid="uid://b5ynkke3incdx" path="res://assets/character2.png" id="23_ah5vk"]
 [ext_resource type="Texture2D" uid="uid://3tdjaqn4gm2b" path="res://assets/profile checkmark.png" id="23_vu7b1"]
-[ext_resource type="Texture2D" uid="uid://bova6s57qe5yh" path="res://assets/won5.png" id="24_8wfcv"]
 [ext_resource type="Texture2D" uid="uid://chon6opwy7jwe" path="res://assets/character3.png" id="24_p0g74"]
-[ext_resource type="Texture2D" uid="uid://dxopbur6se2f2" path="res://assets/won6.png" id="25_j0wb1"]
 [ext_resource type="Texture2D" uid="uid://d1ijvhsg7vomk" path="res://assets/wheel sign2.png" id="25_mi4jg"]
 [ext_resource type="Texture2D" uid="uid://n2qo3fo2wiog" path="res://assets/character4.png" id="25_ndeb1"]
 [ext_resource type="Texture2D" uid="uid://b73ihffkf6tnv" path="res://assets/character5.png" id="26_ox0pj"]
 [ext_resource type="Texture2D" uid="uid://rnmyy2oq4mdo" path="res://assets/character6.png" id="27_s2rmg"]
+[ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="28_4ugj5"]
+[ext_resource type="Texture2D" uid="uid://b6tx2w6dumyu8" path="res://assets/character2_1.png" id="31_i7dyy"]
+[ext_resource type="Texture2D" uid="uid://c3yj6dsxl8osj" path="res://assets/character3_1.png" id="33_gx454"]
 [ext_resource type="Texture2D" uid="uid://bfm7bplw4w8bb" path="res://assets/shop offer1.png" id="33_x54yh"]
 [ext_resource type="Texture2D" uid="uid://d0is1kiro3jms" path="res://assets/shop offer2.png" id="34_3dg33"]
 [ext_resource type="Texture2D" uid="uid://d18dgf5bgjsl7" path="res://assets/shop hot deal.png" id="34_6pbnv"]
 [ext_resource type="Texture2D" uid="uid://b2lq6axvqpt1o" path="res://assets/shop price box.png" id="35_b0cs0"]
+[ext_resource type="Texture2D" uid="uid://bq52ury5vc2q5" path="res://assets/character4_1.png" id="35_bjibo"]
+[ext_resource type="Texture2D" uid="uid://bgtxtd72nceg2" path="res://assets/character5_1.png" id="37_k5wdq"]
 [ext_resource type="Texture2D" uid="uid://h3at6bpgp5hl" path="res://assets/shop best deal.png" id="37_upbtj"]
 [ext_resource type="Texture2D" uid="uid://dnb1xkav1rqig" path="res://assets/shop.png" id="38_hbuxt"]
+[ext_resource type="Texture2D" uid="uid://di28lbp3w74el" path="res://assets/character6_1.png" id="39_48cfd"]
 [ext_resource type="Texture2D" uid="uid://cs1l8my1csubo" path="res://assets/shop coins1.png" id="39_g354n"]
 [ext_resource type="Texture2D" uid="uid://vi4d2m5g5d2c" path="res://assets/shop coins2.png" id="40_kl4tx"]
 [ext_resource type="Texture2D" uid="uid://cpwtjnnovpi4q" path="res://assets/shop coins3.png" id="41_qm6mw"]
@@ -503,41 +504,6 @@ text = "Foxy!"
 label_settings = SubResource("LabelSettings_fdrvr")
 horizontal_alignment = 1
 
-[node name="won1" type="Sprite2D" parent="character"]
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("22_iq15d")
-
-[node name="won2" type="Sprite2D" parent="character"]
-visible = false
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("21_bho1w")
-
-[node name="won3" type="Sprite2D" parent="character"]
-visible = false
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("22_7mnru")
-
-[node name="won4" type="Sprite2D" parent="character"]
-visible = false
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_6tbsw")
-
-[node name="won5" type="Sprite2D" parent="character"]
-visible = false
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("24_8wfcv")
-
-[node name="won6" type="Sprite2D" parent="character"]
-visible = false
-position = Vector2(525, 865)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("25_j0wb1")
-
 [node name="menu_background" type="Sprite2D" parent="character"]
 position = Vector2(502.5, 1720)
 texture = ExtResource("10_xr2ln")
@@ -546,6 +512,11 @@ texture = ExtResource("10_xr2ln")
 position = Vector2(102.25, 1722.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("22_mx33c")
+
+[node name="avatar" type="Sprite2D" parent="character/character1"]
+position = Vector2(1691, -3430)
+scale = Vector2(6, 6)
+texture = ExtResource("28_4ugj5")
 
 [node name="checkmark" type="Sprite2D" parent="character/character1"]
 position = Vector2(160, -240.001)
@@ -560,6 +531,12 @@ action = "Character1"
 position = Vector2(264.75, 1722.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("23_ah5vk")
+
+[node name="avatar" type="Sprite2D" parent="character/character2"]
+visible = false
+position = Vector2(1041, -3430)
+scale = Vector2(6, 6)
+texture = ExtResource("31_i7dyy")
 
 [node name="checkmark" type="Sprite2D" parent="character/character2"]
 visible = false
@@ -576,6 +553,12 @@ position = Vector2(427.25, 1722.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("24_p0g74")
 
+[node name="avatar" type="Sprite2D" parent="character/character3"]
+visible = false
+position = Vector2(391, -3430)
+scale = Vector2(6, 6)
+texture = ExtResource("33_gx454")
+
 [node name="checkmark" type="Sprite2D" parent="character/character3"]
 visible = false
 position = Vector2(160, -240.001)
@@ -590,6 +573,12 @@ action = "Character3"
 position = Vector2(589.5, 1722)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("25_ndeb1")
+
+[node name="avatar" type="Sprite2D" parent="character/character4"]
+visible = false
+position = Vector2(-258, -3428)
+scale = Vector2(6, 6)
+texture = ExtResource("35_bjibo")
 
 [node name="checkmark" type="Sprite2D" parent="character/character4"]
 visible = false
@@ -606,6 +595,12 @@ position = Vector2(752, 1722)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("26_ox0pj")
 
+[node name="avatar" type="Sprite2D" parent="character/character5"]
+visible = false
+position = Vector2(-908, -3428)
+scale = Vector2(6, 6)
+texture = ExtResource("37_k5wdq")
+
 [node name="checkmark" type="Sprite2D" parent="character/character5"]
 visible = false
 position = Vector2(160, -240.001)
@@ -620,6 +615,12 @@ action = "Character5"
 position = Vector2(914.5, 1722)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("27_s2rmg")
+
+[node name="avatar" type="Sprite2D" parent="character/character6"]
+visible = false
+position = Vector2(-1558, -3428)
+scale = Vector2(6, 6)
+texture = ExtResource("39_48cfd")
 
 [node name="checkmark" type="Sprite2D" parent="character/character6"]
 visible = false

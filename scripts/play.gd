@@ -7,12 +7,15 @@ var candy3_matches = 0
 var candy4_matches = 0
 var candy5_matches = 0
 var candy6_matches = 0
+var customer1_id = 0
 var customer1_desires_candy = 0
 var customer1_desires_quantity = 0
 var customer1_fulfilled = false
+var customer2_id = 0
 var customer2_desires_candy = 0
 var customer2_desires_quantity = 0
 var customer2_fulfilled = false
+var customer3_id = 0
 var customer3_desires_candy = 0
 var customer3_desires_quantity = 0
 var customer3_fulfilled = false
@@ -28,6 +31,7 @@ var customer3_fulfilled = false
 	$board/slot44, $board/slot45, $board/slot46, $board/slot47, $board/slot48]
 var horizontal_matches = []
 var level_complete = false
+var matches_being_tweened = []
 var matches_left_to_remove = 0
 var moves = 20
 var touch_start_position
@@ -40,24 +44,24 @@ func _ready():
 	# Get level data
 	var level_data = Global.levels[Global.current_level]
 	# Customer 1
-	var character_1 = level_data["customer1"]["character_id"]
-	character_1 = "res://assets/won" + str(character_1) + ".png"
+	customer1_id = level_data["customer1"]["character_id"]
+	var character_1 = "res://assets/character" + str(customer1_id) + "_1.png"
 	$customer1/character.texture = load(character_1)
 	customer1_desires_candy = level_data["customer1"]["item_id"]
 	var desired_1 = "res://assets/candy"+ str(customer1_desires_candy) + ".png"
 	$customer1/desired.texture = load(desired_1)
 	customer1_desires_quantity = level_data["customer1"]["quantity"]
 	# Customer 2
-	var character_2 = level_data["customer2"]["character_id"]
-	character_2 = "res://assets/won" + str(character_2) + ".png"
+	customer2_id = level_data["customer2"]["character_id"]
+	var character_2 = "res://assets/character" + str(customer2_id) + "_1.png"
 	$customer2/character.texture = load(character_2)
 	customer2_desires_candy = level_data["customer2"]["item_id"]
 	var desired_2 = "res://assets/candy"+ str(customer2_desires_candy) + ".png"
 	$customer2/desired.texture = load(desired_2)
 	customer2_desires_quantity = level_data["customer2"]["quantity"]
 	# Customer 3
-	var character_3 = level_data["customer3"]["character_id"]
-	character_3 = "res://assets/won" + str(character_3) + ".png"
+	customer3_id = level_data["customer3"]["character_id"]
+	var character_3 = "res://assets/character" + str(customer3_id) + "_1.png"
 	$customer3/character.texture = load(character_3)
 	customer3_desires_candy = level_data["customer3"]["item_id"]
 	var desired_3 = "res://assets/candy"+ str(customer3_desires_candy) + ".png"
@@ -456,19 +460,37 @@ func get_piece_id(index):
 
 # Remove matching pieces from the board using a tween.
 func remove_matches():
+	# Check both sets of matches
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
+		# Check that the match is in range of the board
 		if matches[i] < len(board):
-			var node_path = "board/slot" + str(matches[i])
-			var node = get_node(node_path)
-			if node:
-				var tree = get_tree()
-				if tree:
-					var tween = tree.create_tween()
-					tween.tween_property(node, "modulate", Color.RED, 0.75)
-					tween.tween_property(node, "scale", Vector2(), 0.75)
-					tween.tween_callback(remove_matches_callback)
-					matches_left_to_remove += 1
+			# Check that we aren't in the process of removing the piece
+			if matches[i] not in matches_being_tweened:
+				var node_path = "board/slot" + str(matches[i])
+				var node = get_node(node_path)
+				# Check a piece exists
+				if node:
+					# Check we aren't chaning scenes
+					var tree = get_tree()
+					if tree:
+						# Animate removing the piece
+						var tween = tree.create_tween()
+						tween.tween_property(node, "modulate", Color.RED, 0.75)
+						tween.tween_property(node, "scale", Vector2(), 0.75)
+						tween.tween_callback(remove_matches_callback)
+						matches_being_tweened += [matches[i]]
+						matches_left_to_remove += 1
+						# The customer is excited
+						if get_piece_id(matches[i]) == customer1_desires_candy:
+							var texture_path = "res://assets/won"+ str(customer1_id) + ".png"
+							$customer1/character.texture = load(texture_path)
+						if get_piece_id(matches[i]) == customer2_desires_candy:
+							var texture_path = "res://assets/won"+ str(customer2_id) + ".png"
+							$customer2/character.texture = load(texture_path)
+						if get_piece_id(matches[i]) == customer3_desires_candy:
+							var texture_path = "res://assets/won"+ str(customer3_id) + ".png"
+							$customer3/character.texture = load(texture_path)
 	# Play sound only on first match
 	if (matches_left_to_remove == 9
 	or matches_left_to_remove == 12
@@ -479,6 +501,7 @@ func remove_matches():
 
 # The callback function for the remove_matches() tween.
 func remove_matches_callback():
+	# Reset each board position that was tweened
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches)):
 		if matches[i] < len(board):
@@ -486,6 +509,23 @@ func remove_matches_callback():
 			board[matches[i]].modulate = $background1.modulate
 			board[matches[i]].scale = Vector2(0.2, 0.2)
 	matches_left_to_remove -= 1
+	remove_tween_tracker()
+	# Settle the customer(s)
+	var texture_path = "res://assets/character"+ str(customer1_id) + "_1.png"
+	$customer1/character.texture = load(texture_path)
+	texture_path = "res://assets/character"+ str(customer2_id) + "_1.png"
+	$customer2/character.texture = load(texture_path)
+	texture_path = "res://assets/character"+ str(customer3_id) + "_1.png"
+	$customer3/character.texture = load(texture_path)
+
+
+func remove_tween_tracker():
+	var matches = horizontal_matches + vertical_matches
+	for i in range(len(matches_being_tweened)):
+		for j in range(len(matches)):
+			if len(matches_being_tweened) > i:
+				if matches_being_tweened[i] == matches[j]:
+					matches_being_tweened.remove_at(i)
 
 
 # Swap the selected piece with the adjacent one basedon swipe direction.

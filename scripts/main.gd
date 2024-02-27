@@ -93,37 +93,37 @@ func _input(event):
 			Global.player["character"] = 1
 			$character/name_label.text = "Foxy!"
 			clear_character_selection()
-			$character/won1.visible = true
+			$character/character1/avatar.visible = true
 			$character/character1/checkmark.visible = true
 		elif event.action == "Character2":
 			Global.player["character"] = 2
 			$character/name_label.text = "George"
 			clear_character_selection()
-			$character/won2.visible = true
+			$character/character2/avatar.visible = true
 			$character/character2/checkmark.visible = true
 		elif event.action == "Character3":
 			Global.player["character"] = 3
 			$character/name_label.text = "Kow!"
 			clear_character_selection()
-			$character/won3.visible = true
+			$character/character3/avatar.visible = true
 			$character/character3/checkmark.visible = true
 		elif event.action == "Character4":
 			Global.player["character"] = 4
 			$character/name_label.text = "Bob!"
 			clear_character_selection()
-			$character/won4.visible = true
+			$character/character4/avatar.visible = true
 			$character/character4/checkmark.visible = true
 		elif event.action == "Character5":
 			Global.player["character"] = 5
 			$character/name_label.text = "Rickon"
 			clear_character_selection()
-			$character/won5.visible = true
+			$character/character5/avatar.visible = true
 			$character/character5/checkmark.visible = true
 		elif event.action == "Character6":
 			Global.player["character"] = 6
 			$character/name_label.text = "Beav!"
 			clear_character_selection()
-			$character/won6.visible = true
+			$character/character6/avatar.visible = true
 			$character/character6/checkmark.visible = true
 		elif event.action == "Friends":
 			pass
@@ -208,17 +208,17 @@ func ad_play():
 
 # Clears the characters on the Character Select screen.
 func clear_character_selection():
-	$character/won1.visible = false
+	$character/character1/avatar.visible = false
 	$character/character1/checkmark.visible = false
-	$character/won2.visible = false
+	$character/character2/avatar.visible = false
 	$character/character2/checkmark.visible = false
-	$character/won3.visible = false
+	$character/character3/avatar.visible = false
 	$character/character3/checkmark.visible = false
-	$character/won4.visible = false
+	$character/character4/avatar.visible = false
 	$character/character4/checkmark.visible = false
-	$character/won5.visible = false
+	$character/character5/avatar.visible = false
 	$character/character5/checkmark.visible = false
-	$character/won6.visible = false
+	$character/character6/avatar.visible = false
 	$character/character6/checkmark.visible = false
 
 

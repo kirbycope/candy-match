@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://d3w1sn1s8ohms" path="res://assets/game board.png" id="8_uhd27"]
 [ext_resource type="Texture2D" uid="uid://b34hyed76610n" path="res://assets/game boost3.png" id="9_dckg0"]
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
-[ext_resource type="Texture2D" uid="uid://ddhm1hh25wqvf" path="res://assets/won1.png" id="11_4k785"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
+[ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="11_i5w8k"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
 [ext_resource type="Texture2D" uid="uid://jcgckqaakjl4" path="res://assets/candy1.png" id="13_c6aud"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
@@ -127,7 +127,7 @@ texture = ExtResource("6_jq1to")
 [node name="character" type="Sprite2D" parent="customer1"]
 position = Vector2(-487.5, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_4k785")
+texture = ExtResource("11_i5w8k")
 
 [node name="bubble1" type="Sprite2D" parent="customer1"]
 position = Vector2(-377.6, -349.6)
@@ -159,7 +159,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer2"]
 position = Vector2(-122.5, -192.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_4k785")
+texture = ExtResource("11_i5w8k")
 
 [node name="bubble2" type="Sprite2D" parent="customer2"]
 position = Vector2(-15.1, -349.6)
@@ -191,7 +191,7 @@ vertical_alignment = 1
 [node name="character" type="Sprite2D" parent="customer3"]
 position = Vector2(205, -172.5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_4k785")
+texture = ExtResource("11_i5w8k")
 
 [node name="bubble3" type="Sprite2D" parent="customer3"]
 position = Vector2(314.9, -349.6)

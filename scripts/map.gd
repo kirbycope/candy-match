@@ -57,9 +57,9 @@ func _input(event):
 			if abs(swipe_vector.y) > abs(swipe_vector.x):
 				if swipe_vector.y > 0:
 					#target_scroll_position = min($background.position.y + scroll_distance, $background.texture.get_size().y - $background.get_viewport_rect().size.y)
-					target_scroll_position = min($background.position.y + scroll_distance, 3680)
+					target_scroll_position = min($background.position.y + scroll_distance, 0)
 				else:
-					target_scroll_position = max($background.position.y - scroll_distance, -1850)
+					target_scroll_position = max($background.position.y - scroll_distance, -5525)
 
 
 func _process(delta):

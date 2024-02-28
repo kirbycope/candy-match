@@ -28,12 +28,15 @@ stream = ExtResource("2_40a5d")
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xben3")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(515, -1850)
+[node name="background" type="TextureRect" parent="."]
+offset_left = -2.49994
+offset_top = -5532.5
+offset_right = 1032.5
+offset_bottom = 1827.5
 texture = ExtResource("4_eqeuu")
 
 [node name="levels" type="Node2D" parent="background"]
-position = Vector2(0, -0.000976563)
+position = Vector2(517.5, 3682.5)
 scale = Vector2(0.23, 0.23)
 
 [node name="level1" type="Node2D" parent="background/levels"]

@@ -827,6 +827,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="character" type="TextureRect" parent="help/bottom"]
+layout_mode = 0
 offset_top = 572.0
 offset_right = 476.0
 offset_bottom = 1008.0
@@ -834,6 +835,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("36_r7wf5")
 
 [node name="bubble" type="TextureRect" parent="help/bottom"]
+layout_mode = 0
 offset_left = 207.0
 offset_top = 470.0
 offset_right = 623.0
@@ -860,6 +862,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="character" type="TextureRect" parent="help/left"]
+layout_mode = 0
 offset_left = 159.0
 offset_top = 434.0
 offset_right = 635.0
@@ -869,6 +872,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("36_r7wf5")
 
 [node name="bubble" type="TextureRect" parent="help/left"]
+layout_mode = 0
 offset_left = 174.0
 offset_top = 386.0
 offset_right = 590.0

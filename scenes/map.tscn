@@ -35,7 +35,6 @@ texture = ExtResource("4_2ip5i")
 
 [node name="levels" type="Node2D" parent="background"]
 position = Vector2(-0.000244141, -9847.83)
-scale = Vector2(1, 1)
 
 [node name="level1" type="Node2D" parent="background/levels"]
 position = Vector2(543.477, 14869.6)
@@ -102,6 +101,11 @@ label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level2"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_2"
+
 [node name="level3" type="Node2D" parent="background/levels"]
 position = Vector2(-795, 13717.4)
 scale = Vector2(4.34783, 4.34783)
@@ -132,6 +136,11 @@ label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level3"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_3"
+
 [node name="level4" type="Node2D" parent="background/levels"]
 position = Vector2(57, 13250)
 scale = Vector2(4.34783, 4.34783)
@@ -161,6 +170,11 @@ text = "4"
 label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level4"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_4"
 
 [node name="top" parent="." instance=ExtResource("8_6xw0d")]
 scale = Vector2(1, 1)

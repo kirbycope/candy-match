@@ -9,6 +9,7 @@ func _ready():
 	$character.texture = load(texture_path)
 	var level_complete = "level_" + str(Global.current_level) + "_complete"
 	Global.player[level_complete] = true
+	Global.current_level += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,5 +20,4 @@ func _process(delta):
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Next":
-			Global.current_level += 1
 			get_tree().change_scene_to_file("res://scenes/goal.tscn")

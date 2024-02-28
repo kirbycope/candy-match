@@ -127,9 +127,10 @@ func _input(event):
 		elif event.action == "Friends":
 			pass
 		elif event.action == "Map":
-			get_tree().change_scene_to_file("res://scenes/map.tscn")
+			if Global.player["level_0_complete"]:
+				get_tree().change_scene_to_file("res://scenes/map.tscn")
 		elif event.action == "Play":
-			get_tree().change_scene_to_file("res://scenes/goal.tscn")
+			get_tree().change_scene_to_file("res://scenes/play.tscn")
 		elif event.action == "Reward_Back":
 			spin_wheel_rewards_hide()
 		elif event.action == "Scores":
@@ -301,6 +302,7 @@ func reset_to_main():
 	$top.shoppette_hide()
 	if Global.player["level_0_complete"] == false:
 		$main/play_button.texture = load("res://assets/main play button.png")
+		$menu/game_map.self_modulate = $menu/menu_no_ads.self_modulate
 	else:
 		$main/play_button.texture = load("res://assets/button play.png")
 	$boosters.visible = false

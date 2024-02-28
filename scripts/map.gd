@@ -39,9 +39,13 @@ func _ready():
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Level_1":
-			Global.current_level = 1
-			await get_tree().create_timer(0.5).timeout 
-			get_tree().change_scene_to_file("res://scenes/goal.tscn")
+			open_level_goal(1)
+		elif event.action == "Level_2":
+			open_level_goal(2)
+		elif event.action == "Level_3":
+			open_level_goal(3)
+		elif event.action == "Level_4":
+			open_level_goal(4)
 	elif event is InputEventScreenTouch:
 		if event.is_pressed():
 			# Store initial touch position
@@ -66,3 +70,9 @@ func _process(delta):
 		$background.position.y += easing_amount
 	else:
 		$background.position.y = target_scroll_position
+
+
+func open_level_goal(level_id):
+	Global.current_level = level_id
+	await get_tree().create_timer(0.5).timeout 
+	get_tree().change_scene_to_file("res://scenes/goal.tscn")

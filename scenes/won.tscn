@@ -44,7 +44,6 @@ texture = ExtResource("1_6fvuv")
 
 [node name="effect" type="Sprite2D" parent="."]
 position = Vector2(515, 207.5)
-scale = Vector2(1, 1)
 texture = ExtResource("4_cmju7")
 
 [node name="top" parent="." instance=ExtResource("5_f5qa0")]

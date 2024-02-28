@@ -57,9 +57,9 @@ func _input(event):
 			if abs(swipe_vector.y) > abs(swipe_vector.x):
 				if swipe_vector.y > 0:
 					#target_scroll_position = min($background.position.y + scroll_distance, $background.texture.get_size().y - $background.get_viewport_rect().size.y)
-					target_scroll_position = min($background.position.y + scroll_distance, 1420)
+					target_scroll_position = min($background.position.y + scroll_distance, 3680)
 				else:
-					target_scroll_position = max($background.position.y - scroll_distance, 420)
+					target_scroll_position = max($background.position.y - scroll_distance, -1850)
 
 
 func _process(delta):
@@ -73,6 +73,9 @@ func _process(delta):
 
 
 func open_level_goal(level_id):
-	Global.current_level = level_id
-	await get_tree().create_timer(0.5).timeout 
-	get_tree().change_scene_to_file("res://scenes/goal.tscn")
+	var level_prior = level_id - 1
+	level_prior = "level_" + str(level_prior) + "_complete"
+	if Global.player[level_prior]:
+		Global.current_level = level_id
+		await get_tree().create_timer(0.5).timeout 
+		get_tree().change_scene_to_file("res://scenes/goal.tscn")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_dylxf"]
 [ext_resource type="AudioStream" uid="uid://dnixs1dk3ou7i" path="res://assets/all-that-glitters-aaron-paul-low-main-version-20400-01-32.mp3" id="2_40a5d"]
-[ext_resource type="Texture2D" uid="uid://btjb8fe1ju8ft" path="res://assets/Map_01_20.png" id="4_2ip5i"]
+[ext_resource type="Texture2D" uid="uid://dkvu3f6bu12op" path="res://assets/Map_Full.png" id="4_eqeuu"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="5_xben3"]
 [ext_resource type="Texture2D" uid="uid://dqtbymcsjfc88" path="res://assets/map level grey.png" id="6_pef42"]
 [ext_resource type="Texture2D" uid="uid://brhgmh3g4ke8p" path="res://assets/map level blue.png" id="7_bgc2c"]
@@ -29,12 +29,12 @@ stream = ExtResource("2_40a5d")
 stream = ExtResource("5_xben3")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(515, 415)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_2ip5i")
+position = Vector2(515, -1850)
+texture = ExtResource("4_eqeuu")
 
 [node name="levels" type="Node2D" parent="background"]
-position = Vector2(-0.000244141, -9847.83)
+position = Vector2(0, -0.000976563)
+scale = Vector2(0.23, 0.23)
 
 [node name="level1" type="Node2D" parent="background/levels"]
 position = Vector2(543.477, 14869.6)

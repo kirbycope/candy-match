@@ -43,12 +43,13 @@ stream = ExtResource("15_wjd6v")
 position = Vector2(472.5, 755)
 texture = ExtResource("1_an2mo")
 
-[node name="top" parent="." instance=ExtResource("5_fns0i")]
-scale = Vector2(1, 1)
-
 [node name="effect" type="Sprite2D" parent="."]
 position = Vector2(515, 205)
+scale = Vector2(1, 1)
 texture = ExtResource("4_6a1bh")
+
+[node name="top" parent="." instance=ExtResource("5_fns0i")]
+scale = Vector2(1, 1)
 
 [node name="character" type="Sprite2D" parent="."]
 position = Vector2(525, 540)

@@ -35,6 +35,7 @@ var matches_being_tweened = []
 var matches_left_to_remove = 0
 var moves = 20
 var touch_start_position
+var tutorial = 0
 var vertical_matches = []
 
 
@@ -79,6 +80,13 @@ func _ready():
 	populate_board()
 	# Start the game timer
 	Global.start_timer()
+	# Show the tutorial if player is on level 0
+	if Global.current_level == 0:
+		tutorial = 1
+		show_tutorial()
+	elif Global.current_level == 1:
+		tutorial = 2
+		show_tutorial()
 	# Queue the music
 	if Global.enabled_music:
 		$simple_pleasures.play()
@@ -105,16 +113,20 @@ func _physics_process(delta):
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
 	if moves <= 0:
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
-	swap_pieces()
-	drop_pieces()
-	if check_for_empty_positions() == false:
-		check_matches()
-		remove_matches()
+	if tutorial == 0:
+		swap_pieces()
+		drop_pieces()
+		if check_for_empty_positions() == false:
+			check_matches()
+			remove_matches()
 	customer_order_updates()
 
 
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
+	# Tutorial
+	if event is InputEventAction and event.pressed:
+		show_tutorial()
 	# Set the last touched piece
 	if event is InputEventAction and event.pressed == false:
 		var action = str(event.action)
@@ -122,22 +134,6 @@ func _input(event):
 		# Handle `moves` count
 		moves -= 1
 		$top_moves/moves.text = str(moves)
-
-
-# Returns a path to a random candy texture.
-func get_random_candy():
-	# Assign a random candy (1-6)
-	var randomNumber = randi() % 6 + 1
-	# Set the texture for the candy at the current index of the board array.
-	return "res://assets/candy" + str(randomNumber) + ".png"
-
-
-# Populates the board, randomly.
-func populate_board():
-	for i in range(49): # (slot0-slot48)
-		# Assign a random candy
-		var texture_path = get_random_candy()
-		board[i].texture = load(texture_path)
 
 
 # Returns true if there are empty board positions.
@@ -354,6 +350,7 @@ func check_matches_vertical():
 					candy6_matches += 3
 
 
+# Updates each customer request quantity in the UI.
 func customer_order_updates():
 	# Customer 1
 	var customer1_remaining = customer1_desires_quantity
@@ -458,6 +455,58 @@ func get_piece_id(index):
 	return id
 
 
+# Returns a path to a random candy texture.
+func get_random_candy():
+	# Assign a random candy (1-6)
+	var randomNumber = randi() % 6 + 1
+	# Set the texture for the candy at the current index of the board array.
+	return "res://assets/candy" + str(randomNumber) + ".png"
+
+
+# Populates the board, randomly.
+func populate_board():
+	for i in range(49): # (slot0-slot48)
+		# Assign a random candy
+		var texture_path = get_random_candy()
+		board[i].texture = load(texture_path)
+
+
+# Plays a random "happy pop" (if it is not already playing).
+func random_match_effect():
+	 #Assign a random sound (1-3)
+	var randomNumber = randi() % 3 + 1
+	if randomNumber == 1:
+		if not $happy_pop_1.is_playing():
+			$happy_pop_1.play()
+	if randomNumber == 2:
+		if not $happy_pop_2.is_playing():
+			$happy_pop_2.play()
+	if randomNumber == 3:
+		if not $happy_pop_3.is_playing():
+			$happy_pop_3.play()
+
+
+# Plays a random "cute animal squeak" (if it is not already playing).
+func random_excited_effect():
+	# Assign a random sound (1-5)
+	var randomNumber = randi() % 5 + 1
+	if randomNumber == 1:
+		if not $cute_animal_squeak_1.is_playing():
+			$cute_animal_squeak_1.play()
+	if randomNumber == 2:
+		if not $cute_animal_squeak_2.is_playing():
+			$cute_animal_squeak_2.play()
+	if randomNumber == 3:
+		if not $cute_animal_squeak_3.is_playing():
+			$cute_animal_squeak_3.play()
+	if randomNumber == 4:
+		if not $cute_animal_squeak_4.is_playing():
+			$cute_animal_squeak_4.play()
+	if randomNumber == 5:
+		if not $cute_animal_squeak_5.is_playing():
+			$cute_animal_squeak_5.play()
+
+
 # Remove matching pieces from the board using a tween.
 func remove_matches():
 	var customer1_excited = false
@@ -474,7 +523,7 @@ func remove_matches():
 				var node = get_node(node_path)
 				# Check a piece exists
 				if node:
-					# Check we aren't chaning scenes
+					# Check we aren't changing scenes
 					var tree = get_tree()
 					if tree:
 						# Animate removing the piece
@@ -497,38 +546,15 @@ func remove_matches():
 							var texture_path = "res://assets/won"+ str(customer3_id) + ".png"
 							$customer3/character.texture = load(texture_path)
 							customer3_excited = true
-	# Play sound only on first match
-	if (matches_left_to_remove == 9
-	or matches_left_to_remove == 12
-	or matches_left_to_remove == 15):
-		if not $multi_pop_6.is_playing():
-			$multi_pop_6.play()
+						# Play clear candy sound
+						if not $multi_pop_6.is_playing():
+							$multi_pop_6.play()
 	if customer1_excited:
 		random_excited_effect()
 	if customer2_excited:
 		random_excited_effect()
 	if customer3_excited:
 		random_excited_effect()
-
-
-func random_excited_effect():
-	# Assign a random sound (1-5)
-	var randomNumber = randi() % 5 + 1
-	if randomNumber == 1:
-		if not $cute_animal_squeak_1.is_playing():
-			$cute_animal_squeak_1.play()
-	if randomNumber == 2:
-		if not $cute_animal_squeak_2.is_playing():
-			$cute_animal_squeak_2.play()
-	if randomNumber == 3:
-		if not $cute_animal_squeak_3.is_playing():
-			$cute_animal_squeak_3.play()
-	if randomNumber == 4:
-		if not $cute_animal_squeak_4.is_playing():
-			$cute_animal_squeak_4.play()
-	if randomNumber == 5:
-		if not $cute_animal_squeak_5.is_playing():
-			$cute_animal_squeak_5.play()
 
 
 # The callback function for the remove_matches() tween.
@@ -551,6 +577,7 @@ func remove_matches_callback():
 	$customer3/character.texture = load(texture_path)
 
 
+# Resets the Tween tracker if there are no matches being tweened.
 func remove_tween_tracker():
 	var matches = horizontal_matches + vertical_matches
 	for i in range(len(matches_being_tweened)):
@@ -558,6 +585,29 @@ func remove_tween_tracker():
 			if len(matches_being_tweened) > i:
 				if matches_being_tweened[i] == matches[j]:
 					matches_being_tweened.remove_at(i)
+
+
+# Shows the tutorial for the current level.
+func show_tutorial():
+	if tutorial == 1:
+		Global.timer_running = false
+		$help.visible = true
+		$help/bottom.visible = true
+		$help/bottom/bubble/content.text = "match 3 or more candies to feed the animals!"
+		tutorial = -1
+	elif tutorial == 2:
+		Global.timer_running = false
+		$help.visible = true
+		$help/bottom.visible = false
+		$help/left.visible = true
+		$help/left/bubble/content.text = "use boosters to CHEAT the game!"
+		tutorial = -2
+	else:
+		Global.timer_running = true
+		$help.visible = false
+		$help/bottom.visible = false
+		$help/left.visible = false
+		tutorial = 0
 
 
 # Swap the selected piece with the adjacent one basedon swipe direction.

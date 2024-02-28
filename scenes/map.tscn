@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8g1sgfmh00qc"]
+[gd_scene load_steps=11 format=3 uid="uid://b8g1sgfmh00qc"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_dylxf"]
 [ext_resource type="AudioStream" uid="uid://dnixs1dk3ou7i" path="res://assets/all-that-glitters-aaron-paul-low-main-version-20400-01-32.mp3" id="2_40a5d"]
-[ext_resource type="Texture2D" uid="uid://dujvk7c3l7tky" path="res://assets/Map_Full_1.png" id="2_embme"]
+[ext_resource type="Texture2D" uid="uid://btjb8fe1ju8ft" path="res://assets/Map_01_20.png" id="4_2ip5i"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="5_xben3"]
 [ext_resource type="Texture2D" uid="uid://dqtbymcsjfc88" path="res://assets/map level grey.png" id="6_pef42"]
 [ext_resource type="Texture2D" uid="uid://brhgmh3g4ke8p" path="res://assets/map level blue.png" id="7_bgc2c"]
@@ -15,6 +15,9 @@ font_color = Color(0.545098, 0.552941, 0.564706, 1)
 shadow_size = 8
 shadow_color = Color(0.545098, 0.552941, 0.564706, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kifqh"]
+size = Vector2(160, 128)
+
 [node name="map" type="Node2D"]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_dylxf")
@@ -26,30 +29,36 @@ stream = ExtResource("2_40a5d")
 stream = ExtResource("5_xben3")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(515, -1850)
+position = Vector2(515, 415)
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("2_embme")
+texture = ExtResource("4_2ip5i")
 
-[node name="level1" type="Node2D" parent="background"]
+[node name="levels" type="Node2D" parent="background"]
+position = Vector2(-0.000244141, -9847.83)
+scale = Vector2(1, 1)
+
+[node name="level1" type="Node2D" parent="background/levels"]
 position = Vector2(543.477, 14869.6)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="grey" type="Sprite2D" parent="background/level1"]
+[node name="grey" type="Sprite2D" parent="background/levels/level1"]
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("6_pef42")
 
-[node name="blue" type="Sprite2D" parent="background/level1"]
+[node name="blue" type="Sprite2D" parent="background/levels/level1"]
+visible = false
 position = Vector2(77.5, 40.0002)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("7_bgc2c")
 
-[node name="pink" type="Sprite2D" parent="background/level1"]
+[node name="pink" type="Sprite2D" parent="background/levels/level1"]
+visible = false
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("8_qt4qj")
 
-[node name="Label" type="Label" parent="background/level1"]
+[node name="Label" type="Label" parent="background/levels/level1"]
 offset_top = -24.0
 offset_right = 155.0
 offset_bottom = 66.0
@@ -58,28 +67,33 @@ label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level2" type="Node2D" parent="background"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level1"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_1"
+
+[node name="level2" type="Node2D" parent="background/levels"]
 position = Vector2(-275, 14445.7)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="grey" type="Sprite2D" parent="background/level2"]
+[node name="grey" type="Sprite2D" parent="background/levels/level2"]
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("6_pef42")
 
-[node name="blue" type="Sprite2D" parent="background/level2"]
+[node name="blue" type="Sprite2D" parent="background/levels/level2"]
 visible = false
 position = Vector2(77.5, 40.0002)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("7_bgc2c")
 
-[node name="pink" type="Sprite2D" parent="background/level2"]
+[node name="pink" type="Sprite2D" parent="background/levels/level2"]
 visible = false
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("8_qt4qj")
 
-[node name="Label" type="Label" parent="background/level2"]
+[node name="Label" type="Label" parent="background/levels/level2"]
 offset_top = -24.0
 offset_right = 155.0
 offset_bottom = 66.0
@@ -88,28 +102,28 @@ label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level3" type="Node2D" parent="background"]
+[node name="level3" type="Node2D" parent="background/levels"]
 position = Vector2(-795, 13717.4)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="grey" type="Sprite2D" parent="background/level3"]
+[node name="grey" type="Sprite2D" parent="background/levels/level3"]
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("6_pef42")
 
-[node name="blue" type="Sprite2D" parent="background/level3"]
+[node name="blue" type="Sprite2D" parent="background/levels/level3"]
 visible = false
 position = Vector2(77.5, 40.0002)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("7_bgc2c")
 
-[node name="pink" type="Sprite2D" parent="background/level3"]
+[node name="pink" type="Sprite2D" parent="background/levels/level3"]
 visible = false
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("8_qt4qj")
 
-[node name="Label" type="Label" parent="background/level3"]
+[node name="Label" type="Label" parent="background/levels/level3"]
 offset_top = -24.0
 offset_right = 155.0
 offset_bottom = 66.0
@@ -118,28 +132,28 @@ label_settings = SubResource("LabelSettings_gq0ni")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="level4" type="Node2D" parent="background"]
+[node name="level4" type="Node2D" parent="background/levels"]
 position = Vector2(57, 13250)
 scale = Vector2(4.34783, 4.34783)
 
-[node name="grey" type="Sprite2D" parent="background/level4"]
+[node name="grey" type="Sprite2D" parent="background/levels/level4"]
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("6_pef42")
 
-[node name="blue" type="Sprite2D" parent="background/level4"]
+[node name="blue" type="Sprite2D" parent="background/levels/level4"]
 visible = false
 position = Vector2(77.5, 40.0002)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("7_bgc2c")
 
-[node name="pink" type="Sprite2D" parent="background/level4"]
+[node name="pink" type="Sprite2D" parent="background/levels/level4"]
 visible = false
 position = Vector2(77.5001, 40.0001)
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("8_qt4qj")
 
-[node name="Label" type="Label" parent="background/level4"]
+[node name="Label" type="Label" parent="background/levels/level4"]
 offset_top = -24.0
 offset_right = 155.0
 offset_bottom = 66.0

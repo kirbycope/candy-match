@@ -14,5 +14,17 @@
     
     "level_1_complete": false,
     "level_1_score": 0,
-    "level_1_stars": 0
+    "level_1_stars": 0,
+
+    "level_2_complete": false,
+    "level_2_score": 0,
+    "level_2_stars": 0,
+
+    "level_3_complete": false,
+    "level_3_score": 0,
+    "level_3_stars": 0,
+
+    "level_4_complete": false,
+    "level_4_score": 0,
+    "level_4_stars": 0
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=118 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
@@ -74,7 +74,6 @@
 [ext_resource type="Texture2D" uid="uid://bgox2ys6mcjip" path="res://assets/daily reward box.png" id="61_yddjp"]
 [ext_resource type="Texture2D" uid="uid://bvv45ravku7he" path="res://assets/daily reward 1.png" id="62_ntjln"]
 [ext_resource type="Texture2D" uid="uid://brdrlh0o166ej" path="res://assets/daily reward2.png" id="63_c25eg"]
-[ext_resource type="AudioStream" uid="uid://d0ack68d8d4y1" path="res://assets/playful-casino-slot-machine-jackpot-1-183922.mp3" id="64_b5ucs"]
 [ext_resource type="Texture2D" uid="uid://c4dowe1y7vxbu" path="res://assets/game boost1.png" id="64_o6yn6"]
 [ext_resource type="Texture2D" uid="uid://c5fc34wogcy5s" path="res://assets/daily reward button.png" id="65_7k2vp"]
 
@@ -239,9 +238,6 @@ script = ExtResource("1_55csr")
 
 [node name="open_fields" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_i1dt1")
-
-[node name="playful_casino_slot_machine_jackpot_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("64_b5ucs")
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1xjgl")

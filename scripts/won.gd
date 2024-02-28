@@ -7,7 +7,8 @@ func _ready():
 		$race_to_the_finish.play()
 	var texture_path = "res://assets/won" + str(Global.player["character"]) + ".png"
 	$character.texture = load(texture_path)
-
+	var level_complete = "level_" + str(Global.current_level) + "_complete"
+	Global.player[level_complete] = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

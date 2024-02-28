@@ -20,10 +20,29 @@ func _ready():
 		$all_that_glitters.play()
 	# Initialize target_scroll_position to the initial position of the sprite
 	target_scroll_position = $background.position.y
+	# Levels
+	if Global.player["level_1_complete"]:
+		$background/levels/level1/blue.visible = true
+	if Global.player["level_2_complete"]:
+		$background/levels/level2/blue.visible = true
+	if Global.player["level_3_complete"]:
+		$background/levels/level3/blue.visible = true
+	if Global.player["level_4_complete"]:
+		$background/levels/level4/blue.visible = true
+	# Highlight current level
+	var node_path = "background/levels/level" + str(Global.current_level) + "/pink"
+	var node = get_node(node_path)
+	if node:
+		node.visible = true
 
 
 func _input(event):
-	if event is InputEventScreenTouch:
+	if event is InputEventAction and event.pressed:
+		if event.action == "Level_1":
+			Global.current_level = 1
+			await get_tree().create_timer(0.5).timeout 
+			get_tree().change_scene_to_file("res://scenes/goal.tscn")
+	elif event is InputEventScreenTouch:
 		if event.is_pressed():
 			# Store initial touch position
 			initial_touch_position = event.position
@@ -33,9 +52,10 @@ func _input(event):
 			var swipe_vector = final_touch_position - initial_touch_position
 			if abs(swipe_vector.y) > abs(swipe_vector.x):
 				if swipe_vector.y > 0:
-					target_scroll_position = min($background.position.y + scroll_distance, $background.texture.get_size().y - $background.get_viewport_rect().size.y)
+					#target_scroll_position = min($background.position.y + scroll_distance, $background.texture.get_size().y - $background.get_viewport_rect().size.y)
+					target_scroll_position = min($background.position.y + scroll_distance, 1420)
 				else:
-					target_scroll_position = max($background.position.y - scroll_distance, -1850)
+					target_scroll_position = max($background.position.y - scroll_distance, 420)
 
 
 func _process(delta):

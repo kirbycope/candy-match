@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=49 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -17,10 +17,13 @@
 [ext_resource type="AudioStream" uid="uid://b5aaxnlfvd3pe" path="res://assets/simple-pleasures-aaron-paul-low-main-version-25191-02-06.mp3" id="6_n0lt7"]
 [ext_resource type="Texture2D" uid="uid://c4dowe1y7vxbu" path="res://assets/game boost1.png" id="7_ewlxu"]
 [ext_resource type="Texture2D" uid="uid://b54oh0smr3htw" path="res://assets/game info.png" id="7_w7flf"]
+[ext_resource type="AudioStream" uid="uid://cgljruxye3ma" path="res://assets/happy-pop-1-185286.mp3" id="7_yrtk8"]
+[ext_resource type="AudioStream" uid="uid://q7su8s3ajvqg" path="res://assets/happy-pop-2-185287.mp3" id="8_85000"]
 [ext_resource type="Texture2D" uid="uid://cvaoyu5qt6uyu" path="res://assets/game eat.png" id="8_b2nf5"]
 [ext_resource type="Texture2D" uid="uid://ekpixf6sw2y4" path="res://assets/game boost2.png" id="8_g6apj"]
 [ext_resource type="Texture2D" uid="uid://d3w1sn1s8ohms" path="res://assets/game board.png" id="8_uhd27"]
 [ext_resource type="Texture2D" uid="uid://b34hyed76610n" path="res://assets/game boost3.png" id="9_dckg0"]
+[ext_resource type="AudioStream" uid="uid://dcglt1b40yjn" path="res://assets/happy-pop-3-185288.mp3" id="9_oo3ob"]
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="11_i5w8k"]
@@ -35,6 +38,8 @@
 [ext_resource type="AudioStream" uid="uid://b05v3mn134hg8" path="res://assets/multi-pop-6-188170.mp3" id="26_7lrum"]
 [ext_resource type="AudioStream" uid="uid://lu081hekjief" path="res://assets/punchy-taps-ui-1-183897.mp3" id="26_tyxfa"]
 [ext_resource type="AudioStream" uid="uid://cn5cxy6veyb6g" path="res://assets/marimba-bloop-3-188151.mp3" id="28_k8jwo"]
+[ext_resource type="Texture2D" uid="uid://cshpti5566xnv" path="res://assets/won4.png" id="36_r7wf5"]
+[ext_resource type="Texture2D" uid="uid://dj7t5bjkm6mx0" path="res://assets/help.png" id="37_7haax"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1d25"]
 font_size = 72
@@ -61,6 +66,12 @@ size = Vector2(500, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qloq"]
 size = Vector2(560, 560)
 
+[sub_resource type="LabelSettings" id="LabelSettings_b3kbs"]
+font_size = 42
+font_color = Color(0.207843, 0.207843, 0.207843, 1)
+outline_size = 8
+outline_color = Color(0.207843, 0.207843, 0.207843, 1)
+
 [node name="play" type="Node2D"]
 position = Vector2(251, 218)
 scale = Vector2(0.4, 0.4)
@@ -80,6 +91,15 @@ stream = ExtResource("5_5d38r")
 
 [node name="cute_animal_squeak_5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_262vn")
+
+[node name="happy_pop_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yrtk8")
+
+[node name="happy_pop_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_85000")
+
+[node name="happy_pop_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_oo3ob")
 
 [node name="marimba_bloop_3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_k8jwo")
@@ -791,3 +811,78 @@ texture = ExtResource("10_age8i")
 [node name="add" type="Sprite2D" parent="milk"]
 position = Vector2(37.5, -47.5)
 texture = ExtResource("11_wadvv")
+
+[node name="help" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="background" type="ColorRect" parent="help"]
+offset_right = 412.0
+offset_bottom = 732.0
+color = Color(0.392157, 0.831373, 0.427451, 0.666667)
+
+[node name="bottom" type="Control" parent="help"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="character" type="TextureRect" parent="help/bottom"]
+offset_top = 572.0
+offset_right = 476.0
+offset_bottom = 1008.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("36_r7wf5")
+
+[node name="bubble" type="TextureRect" parent="help/bottom"]
+offset_left = 207.0
+offset_top = 470.0
+offset_right = 623.0
+offset_bottom = 906.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("37_7haax")
+
+[node name="content" type="Label" parent="help/bottom/bubble"]
+layout_mode = 0
+offset_left = 30.5
+offset_top = 145.0
+offset_right = 385.5
+offset_bottom = 300.0
+label_settings = SubResource("LabelSettings_b3kbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="left" type="Control" parent="help"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="character" type="TextureRect" parent="help/left"]
+offset_left = 159.0
+offset_top = 434.0
+offset_right = 635.0
+offset_bottom = 870.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("36_r7wf5")
+
+[node name="bubble" type="TextureRect" parent="help/left"]
+offset_left = 174.0
+offset_top = 386.0
+offset_right = 590.0
+offset_bottom = 822.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("37_7haax")
+
+[node name="content" type="Label" parent="help/left/bubble"]
+layout_mode = 0
+offset_left = 30.5
+offset_top = 145.0
+offset_right = 385.5
+offset_bottom = 300.0
+label_settings = SubResource("LabelSettings_b3kbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

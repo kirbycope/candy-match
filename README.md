@@ -112,7 +112,8 @@ If there isn't already a `debug.keystore` in the repo's root directory (or it ex
     - Select "Fix Import" when prompted
 1. For "Package" > "Unique Name", enter `com.{domain}.{repo}`
     - I would use `timothycope` for "domain"
-    - I would use this repo's name for "repo", replacing spaces and hypens with dots (ex., `repo-name` -> `repo.name` )
+    - I would use this repo's name for "repo", replacing spaces and hypens with dots (ex., `repo-name` -> `repo.name`)
+1. For "Signed", check `On`
 
 ### Exporting to Android
 1. Select "Project" > "Export..."

@@ -27,11 +27,21 @@ Note: This only needs to be done once.
 1. Select "Use your GitHub Pages website", then select "Save changes"
 
 ## Building for Web Using Godot GUI
+
+### Prerequisites
+1. Download and install [NodeJS LTS](https://nodejs.org/en/)
+
+### Setting Up Godot
+The following in needed to work with GitHub Pages.
 1. Select "Project" > "Export..."
     - If you see errors, click the link for "Manage Export Templates" and then click "Download and Install"
 1. Select the preset "Web (Runnable)"
-1. (One Time Setup) Download [coi.js](https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js) and add it to the `/docs` directory
-1. (One Time Setup) Enter "Head Include" `<script src="coi-serviceworker.js"></script>`
+1. For "Head Include", enter `<script src="coi-serviceworker.js"></script>`
+1. Download [coi.js](https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js) and add it to the `/docs` directory
+
+### Exporting to Web
+1. Select "Project" > "Export..."
+1. Select the preset "Web (Runnable)"
 1. Select "Export Project..."
 1. Select the "docs" folder
     - The GitHub Pages config points to the `main` branch and `/docs` directory
@@ -49,35 +59,37 @@ Note: This only needs to be done once.
 1. In terminal press [Ctrl]+[C] to stop the web process
     1. Enter `y` if prompted
 
-## Building for Web Using Godot GUI
+## Building for Android Using Godot GUI
 
 ### Prerequisites
 1. Download and install [OpenJDK 17](https://adoptium.net/temurin/releases/?variant=openjdk17).
+    - Run `java --version` to confirm
 1. Download and install [Android Studio](https://developer.android.com/studio/).
-    1. Launch Android Studio
-    1. Select "Customize"
-    1. Select "All settings..."
-    1. Select "Languages & Frameworks" > "Android SDK"
-    1. Next to "Android SDK Location", select "Edit"
-    1. Select "Next"
-    1. Select "Next"
-    1. Select "Finish"
-    1. Select the "SDK Tools" tab
-    1. Select the following:
-        - Android SDK Build-Tools
-        - NDK
-        - Android SDK Command-line Tools
-        - CMake
-        - (Optionally) Android Emulator
-        - Android SDK Platform-Tools
-    1. Select "Apply"
-    1. Select "OK"
-    1. Select "Finish"
-    1. Select "OK"
-    1. Close Android Studio
+1. Start Android Studio
+1. Select "Customize"
+1. Select "All settings..."
+1. Select "Languages & Frameworks" > "Android SDK"
+1. Next to "Android SDK Location", select "Edit"
+1. For "SDK Components Setup", select "Next"
+1. For "Verify Settings", select "Next"
+1. Select "Finish"
+1. Select the "SDK Tools" tab
+1. Select the following:
+    - Android SDK Build-Tools
+    - NDK
+    - Android SDK Command-line Tools
+    - CMake
+    - (Optionally) Android Emulator
+    - Android SDK Platform-Tools
+1. Select "Apply"
+1. To confrim, select "OK"
+    - Accept the License Agreement if prompted
+1. Select "Finish"
+1. Select "OK"
+1. Close Android Studio
 
 ### Create a debug keystore
-If you haven't built the [Hello World](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app#1) app (or anything, really), then you'll need to generate a debug keystore file.
+If there isn't already a `debug.keystore` in the repo's root directory (or it expired), then you'll need to generate a new one.
 1. Open the root folder using [VS Code](https://code.visualstudio.com/)
    * If you use [GitHub Desktop](https://desktop.github.com/), select the "Open in Visual Studio" button
 1. Open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
@@ -91,6 +103,15 @@ If you haven't built the [Hello World](https://developer.android.com/codelabs/ba
     - It should match [open] Android Studio > "Customize" > "All Settings..." > "Languages & Frameworks" > "Android SDK" > "Android SDK Location"
 1. Select the folder icon next to "Debug Keystore"
 1. Navigate to the path of the debug keystore (above)
-    - You can type the repo folder name in the address bar to navigate to it
+1. Select "Project" > "Export..."
+    - If you see errors, click the link for "Manage Export Templates" and then click "Download and Install"
+1. Select "Add..."
+1. Select "Android"
+    - Select "Fix Import" when prompted
+1. For "Package" > "Unique Name", enter `com.timothycope.candy.match`
 
-    WIP: https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html#providing-launcher-icons
+### Exporting to Android
+1. Select "Project" > "Export..."
+1. Select the preset "Android (Runnable)"
+1. Select "Export Project..."
+1. 

@@ -114,4 +114,5 @@ If there isn't already a `debug.keystore` in the repo's root directory (or it ex
 1. Select "Project" > "Export..."
 1. Select the preset "Android (Runnable)"
 1. Select "Export Project..."
-1. 
+1. For "File", enter `candy-match.apk`
+1. Select "Save"

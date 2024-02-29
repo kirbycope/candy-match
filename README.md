@@ -30,9 +30,6 @@ Note: This only needs to be done once.
 
 ## Building for Web Using Godot GUI
 
-### Prerequisites
-1. Download and install [NodeJS LTS](https://nodejs.org/en/)
-
 ### Setting Up Godot
 The following in needed to work with GitHub Pages.
 1. Select "Project" > "Export..."

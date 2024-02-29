@@ -1,6 +1,8 @@
 ![Candy Match](/candy-match.png)
 
 # candy-match
+A vibrant and addictive match 3 puzzle game.
+</br>
 "Candy Match" is a vibrant and addictive match 3 puzzle game that immerses players in a sugary sweet world filled with colorful candies and exciting challenges. In this delightful game, the candies aren't just for matching; they're also used to feed hungry, adorable critters who eagerly await their favorite treats.
 </br>
 [Godot](https://godotengine.org/) is a cross-platform, free and open-source game engine released under the permissive MIT license.
@@ -65,28 +67,28 @@ The following in needed to work with GitHub Pages.
 1. Download and install [OpenJDK 17](https://adoptium.net/temurin/releases/?variant=openjdk17).
     - Run `java --version` to confirm
 1. Download and install [Android Studio](https://developer.android.com/studio/).
-1. Start Android Studio
-1. Select "Customize"
-1. Select "All settings..."
-1. Select "Languages & Frameworks" > "Android SDK"
-1. Next to "Android SDK Location", select "Edit"
-1. For "SDK Components Setup", select "Next"
-1. For "Verify Settings", select "Next"
-1. Select "Finish"
-1. Select the "SDK Tools" tab
-1. Select the following:
-    - Android SDK Build-Tools
-    - NDK
-    - Android SDK Command-line Tools
-    - CMake
-    - (Optionally) Android Emulator
-    - Android SDK Platform-Tools
-1. Select "Apply"
-1. To confrim, select "OK"
-    - Accept the License Agreement if prompted
-1. Select "Finish"
-1. Select "OK"
-1. Close Android Studio
+    1. Start Android Studio
+    1. Select "Customize"
+    1. Select "All settings..."
+    1. Select "Languages & Frameworks" > "Android SDK"
+    1. Next to "Android SDK Location", select "Edit"
+    1. For "SDK Components Setup", select "Next"
+    1. For "Verify Settings", select "Next"
+    1. Select "Finish"
+    1. Select the "SDK Tools" tab
+    1. Select the following:
+        - Android SDK Build-Tools
+        - NDK
+        - Android SDK Command-line Tools
+        - CMake
+        - (Optionally) Android Emulator
+        - Android SDK Platform-Tools
+    1. Select "Apply"
+    1. To confrim, select "OK"
+        - Accept the License Agreement if prompted
+    1. Select "Finish"
+    1. Select "OK"
+    1. Close Android Studio
 
 ### Create a debug keystore
 If there isn't already a `debug.keystore` in the repo's root directory (or it expired), then you'll need to generate a new one.
@@ -100,7 +102,7 @@ If there isn't already a `debug.keystore` in the repo's root directory (or it ex
 1. Select "Editor" > "Editor Settings"
 1. Select "Export" > "Android"
 1. Double-check "Android SDK Location"
-    - It should match [open] Android Studio > "Customize" > "All Settings..." > "Languages & Frameworks" > "Android SDK" > "Android SDK Location"
+    - It should match [ Android Studio] > "Customize" > "All Settings..." > "Languages & Frameworks" > "Android SDK" > "Android SDK Location"
 1. Select the folder icon next to "Debug Keystore"
 1. Navigate to the path of the debug keystore (above)
 1. Select "Project" > "Export..."
@@ -108,11 +110,13 @@ If there isn't already a `debug.keystore` in the repo's root directory (or it ex
 1. Select "Add..."
 1. Select "Android"
     - Select "Fix Import" when prompted
-1. For "Package" > "Unique Name", enter `com.timothycope.candy.match`
+1. For "Package" > "Unique Name", enter `com.{domain}.{repo}`
+    - I would use `timothycope` for "domain"
+    - I would use this repo's name for "repo", replacing spaces and hypens with dots (ex., `repo-name` -> `repo.name` )
 
 ### Exporting to Android
 1. Select "Project" > "Export..."
 1. Select the preset "Android (Runnable)"
 1. Select "Export Project..."
-1. For "File", enter `candy-match.apk`
+1. For "File", enter `{repo}.apk`
 1. Select "Save"

@@ -3,8 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.enabled_music:
-		$a_passing_interest.play()
+	if Global.enabled_sound: $a_passing_interest.play()
 	var texture_path = "res://assets/lose" + str(Global.player["character"]) + ".png"
 	$character.texture = load(texture_path)
 

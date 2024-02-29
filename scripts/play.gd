@@ -88,8 +88,7 @@ func _ready():
 		tutorial = 2
 		show_tutorial()
 	# Queue the music
-	if Global.enabled_music:
-		$simple_pleasures.play()
+	if Global.enabled_sound: $simple_pleasures.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -408,13 +407,13 @@ func customer_order_updates():
 		$customer3/count.text = "0"
 	if customer1_fulfilled == false and customer1_remaining <= 0:
 		customer1_fulfilled = true
-		$marimba_bloop_3.play()
+		if Global.enabled_sound: $marimba_bloop_3.play()
 	if customer2_fulfilled == false and customer2_remaining <= 0:
 		customer2_fulfilled = true
-		$marimba_bloop_3.play()
+		if Global.enabled_sound: $marimba_bloop_3.play()
 	if customer3_fulfilled == false and customer3_remaining <= 0:
 		customer3_fulfilled = true
-		$marimba_bloop_3.play()
+		if Global.enabled_sound: $marimba_bloop_3.play()
 	if (customer1_fulfilled
 	and customer2_fulfilled
 	and customer3_fulfilled):
@@ -473,38 +472,40 @@ func populate_board():
 
 # Plays a random "happy pop" (if it is not already playing).
 func random_match_effect():
-	 #Assign a random sound (1-3)
-	var randomNumber = randi() % 3 + 1
-	if randomNumber == 1:
-		if not $happy_pop_1.is_playing():
-			$happy_pop_1.play()
-	if randomNumber == 2:
-		if not $happy_pop_2.is_playing():
-			$happy_pop_2.play()
-	if randomNumber == 3:
-		if not $happy_pop_3.is_playing():
-			$happy_pop_3.play()
+	if Global.enabled_sound:
+		 #Assign a random sound (1-3)
+		var randomNumber = randi() % 3 + 1
+		if randomNumber == 1:
+			if not $happy_pop_1.is_playing():
+				$happy_pop_1.play()
+		if randomNumber == 2:
+			if not $happy_pop_2.is_playing():
+				$happy_pop_2.play()
+		if randomNumber == 3:
+			if not $happy_pop_3.is_playing():
+				$happy_pop_3.play()
 
 
 # Plays a random "cute animal squeak" (if it is not already playing).
 func random_excited_effect():
-	# Assign a random sound (1-5)
-	var randomNumber = randi() % 5 + 1
-	if randomNumber == 1:
-		if not $cute_animal_squeak_1.is_playing():
-			$cute_animal_squeak_1.play()
-	if randomNumber == 2:
-		if not $cute_animal_squeak_2.is_playing():
-			$cute_animal_squeak_2.play()
-	if randomNumber == 3:
-		if not $cute_animal_squeak_3.is_playing():
-			$cute_animal_squeak_3.play()
-	if randomNumber == 4:
-		if not $cute_animal_squeak_4.is_playing():
-			$cute_animal_squeak_4.play()
-	if randomNumber == 5:
-		if not $cute_animal_squeak_5.is_playing():
-			$cute_animal_squeak_5.play()
+	if Global.enabled_sound:
+		# Assign a random sound (1-5)
+		var randomNumber = randi() % 5 + 1
+		if randomNumber == 1:
+			if not $cute_animal_squeak_1.is_playing():
+				$cute_animal_squeak_1.play()
+		if randomNumber == 2:
+			if not $cute_animal_squeak_2.is_playing():
+				$cute_animal_squeak_2.play()
+		if randomNumber == 3:
+			if not $cute_animal_squeak_3.is_playing():
+				$cute_animal_squeak_3.play()
+		if randomNumber == 4:
+			if not $cute_animal_squeak_4.is_playing():
+				$cute_animal_squeak_4.play()
+		if randomNumber == 5:
+			if not $cute_animal_squeak_5.is_playing():
+				$cute_animal_squeak_5.play()
 
 
 # Remove matching pieces from the board using a tween.
@@ -548,7 +549,7 @@ func remove_matches():
 							customer3_excited = true
 						# Play clear candy sound
 						if not $multi_pop_6.is_playing():
-							$multi_pop_6.play()
+							if Global.enabled_sound: $multi_pop_6.play()
 	if customer1_excited:
 		random_excited_effect()
 	if customer2_excited:

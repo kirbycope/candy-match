@@ -1,9 +1,10 @@
-[gd_scene load_steps=118 format=3 uid="uid://dpoweh1wdh2pt"]
+[gd_scene load_steps=119 format=3 uid="uid://dpoweh1wdh2pt"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_55csr"]
 [ext_resource type="Texture2D" uid="uid://gipc4tfkc7tx" path="res://assets/main bg.png" id="1_c48jg"]
 [ext_resource type="Texture2D" uid="uid://b2csrcac65rds" path="res://assets/main hi.png" id="2_kaunq"]
 [ext_resource type="Texture2D" uid="uid://bqx23545tcl4w" path="res://assets/main logo.png" id="3_vvo8y"]
+[ext_resource type="AudioStream" uid="uid://dypvlimit0eyw" path="res://assets/wheel-spin-click-slow-down-101152.mp3" id="4_56u0e"]
 [ext_resource type="Texture2D" uid="uid://cq717tuamfq1a" path="res://assets/top settings.png" id="4_lo632"]
 [ext_resource type="PackedScene" uid="uid://di02cv324ap5j" path="res://scenes/top.tscn" id="6_cxxs2"]
 [ext_resource type="Texture2D" uid="uid://cjv17ev7kh6qu" path="res://assets/main play button.png" id="6_isyfu"]
@@ -241,6 +242,9 @@ stream = ExtResource("16_i1dt1")
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1xjgl")
+
+[node name="wheel_spin_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_56u0e")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(472.5, 755)

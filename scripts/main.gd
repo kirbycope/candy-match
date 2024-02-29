@@ -20,8 +20,7 @@ var wheel_spinning = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_to_main()
-	if Global.enabled_music:
-		$open_fields.play()
+	if Global.enabled_sound: $open_fields.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -388,10 +387,10 @@ func spin_wheel_start():
 	if Global.player["spins_remaining"] > 0:
 		Global.player["spins_remaining"] -= 1
 		$wheel/spins_left/Label.text = str(Global.player["spins_remaining"])
-		spin_slow_down_time = 2.0
+		spin_slow_down_time = 2.5
 		spin_rotation_speed = randf_range(5, 10)
 		wheel_spinning = true
-		#$playful_casino_slot_machine_jackpot_1.play()
+		if Global.enabled_sound: $wheel_spin_click.play()
 	else:
 		$wheel/come_back.visible = not $wheel/come_back.visible
 

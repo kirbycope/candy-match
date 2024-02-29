@@ -128,8 +128,10 @@ func _input(event):
 			pass
 		elif event.action == "Map":
 			if Global.player["level_0_complete"]:
+				await get_tree().create_timer(0.2).timeout # Godot to sleep
 				get_tree().change_scene_to_file("res://scenes/map.tscn")
 		elif event.action == "Play":
+			await get_tree().create_timer(0.2).timeout # Godot to sleep
 			get_tree().change_scene_to_file("res://scenes/play.tscn")
 		elif event.action == "Reward_Back":
 			spin_wheel_rewards_hide()
@@ -424,7 +426,7 @@ func spin_wheel_stop():
 		prize = 2 # "Coins"
 	elif section_index == 7:
 		prize = 3 # ("Milk")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout # Godot to sleep
 	spin_wheel_rewards_show(prize)
 
 

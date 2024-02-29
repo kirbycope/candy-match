@@ -4,12 +4,10 @@ extends Node2D
 # Constants for swipe direction
 const SWIPE_UP = 1
 const SWIPE_DOWN = -1
-# Speed of scrolling (adjust as needed)
-var scroll_speed = 1000
 # Distance of scrolling (adjust as needed)
-var scroll_distance = 500
+var scroll_distance = 1000
 # Easing factor (adjust as needed, higher values mean faster easing)
-var easing_factor = 6.0
+var easing_factor = 5.0
 # Variables to track touch positions
 var initial_touch_position: Vector2
 var target_scroll_position: float = 0
@@ -77,5 +75,5 @@ func open_level_goal(level_id):
 	level_prior = "level_" + str(level_prior) + "_complete"
 	if Global.player[level_prior]:
 		Global.current_level = level_id
-		await get_tree().create_timer(0.5).timeout 
+		await get_tree().create_timer(0.2).timeout 
 		get_tree().change_scene_to_file("res://scenes/goal.tscn")

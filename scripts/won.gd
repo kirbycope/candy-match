@@ -11,6 +11,7 @@ func _ready():
 	Global.player[level_complete] = true
 	Global.current_level += 1
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -20,4 +21,5 @@ func _process(delta):
 func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Next":
+			await get_tree().create_timer(0.2).timeout # Godot to sleep
 			get_tree().change_scene_to_file("res://scenes/goal.tscn")

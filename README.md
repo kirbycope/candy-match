@@ -48,3 +48,49 @@ Note: This only needs to be done once.
 1. In your browser navigate to [https://127.0.0.1:8000/](https://127.0.0.1:8000/)
 1. In terminal press [Ctrl]+[C] to stop the web process
     1. Enter `y` if prompted
+
+## Building for Web Using Godot GUI
+
+### Prerequisites
+1. Download and install [OpenJDK 17](https://adoptium.net/temurin/releases/?variant=openjdk17).
+1. Download and install [Android Studio](https://developer.android.com/studio/).
+    1. Launch Android Studio
+    1. Select "Customize"
+    1. Select "All settings..."
+    1. Select "Languages & Frameworks" > "Android SDK"
+    1. Next to "Android SDK Location", select "Edit"
+    1. Select "Next"
+    1. Select "Next"
+    1. Select "Finish"
+    1. Select the "SDK Tools" tab
+    1. Select the following:
+        - Android SDK Build-Tools
+        - NDK
+        - Android SDK Command-line Tools
+        - CMake
+        - (Optionally) Android Emulator
+        - Android SDK Platform-Tools
+    1. Select "Apply"
+    1. Select "OK"
+    1. Select "Finish"
+    1. Select "OK"
+    1. Close Android Studio
+
+### Create a debug keystore
+If you haven't built the [Hello World](https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app#1) app (or anything, really), then you'll need to generate a debug keystore file.
+1. Open the root folder using [VS Code](https://code.visualstudio.com/)
+   * If you use [GitHub Desktop](https://desktop.github.com/), select the "Open in Visual Studio" button
+1. Open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
+1. Run `keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12`
+
+### Setting Up Godot
+1. Open the project in Godot
+1. Select "Editor" > "Editor Settings"
+1. Select "Export" > "Android"
+1. Double-check "Android SDK Location"
+    - It should match [open] Android Studio > "Customize" > "All Settings..." > "Languages & Frameworks" > "Android SDK" > "Android SDK Location"
+1. Select the folder icon next to "Debug Keystore"
+1. Navigate to the path of the debug keystore (above)
+    - You can type the repo folder name in the address bar to navigate to it
+
+    WIP: https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html#providing-launcher-icons

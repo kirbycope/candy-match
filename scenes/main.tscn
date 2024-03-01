@@ -239,6 +239,7 @@ script = ExtResource("1_55csr")
 
 [node name="open_fields" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_i1dt1")
+volume_db = -5.0
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_1xjgl")

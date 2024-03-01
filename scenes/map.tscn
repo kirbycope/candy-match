@@ -24,6 +24,7 @@ script = ExtResource("1_dylxf")
 
 [node name="all_that_glitters" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_40a5d")
+volume_db = -5.0
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xben3")

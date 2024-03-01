@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=52 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
 [ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="11_i5w8k"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
+[ext_resource type="AudioStream" uid="uid://bsh4p2610vt03" path="res://assets/oddworld_bomb-94173.mp3" id="12_bj033"]
 [ext_resource type="Texture2D" uid="uid://jcgckqaakjl4" path="res://assets/candy1.png" id="13_c6aud"]
 [ext_resource type="Script" path="res://scripts/board.gd" id="18_25ybd"]
 [ext_resource type="Script" path="res://scripts/pause.gd" id="19_betnf"]
@@ -113,8 +114,13 @@ stream = ExtResource("28_k8jwo")
 [node name="multi_pop_6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_7lrum")
 
+[node name="oddworld_bomb" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_bj033")
+volume_db = 10.0
+
 [node name="simple_pleasures" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n0lt7")
+volume_db = -5.0
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_tyxfa")

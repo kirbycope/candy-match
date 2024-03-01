@@ -1,6 +1,7 @@
 extends Node2D
 
 
+var bomb_positions = []
 var candy1_matches = 0
 var candy2_matches = 0
 var candy3_matches = 0
@@ -38,6 +39,7 @@ var level_complete = false
 var matches_being_tweened = []
 var matches_left_to_remove = 0
 var moves = 20
+var pieces_to_remove = 0
 var touch_start_position
 var tutorial = 0
 var vertical_matches = []
@@ -119,7 +121,9 @@ func _physics_process(delta):
 	$switch/count.visible = Global.player["switches"] > 0
 	$milk/count/Label.text = str(Global.player["milks"])
 	$milk/count.visible = Global.player["milks"] > 0
-	if level_complete and matches_left_to_remove == 0:
+	if (level_complete
+	and matches_left_to_remove == 0
+	and pieces_to_remove == 0):
 		Global.player["level_" + str(Global.current_level) + "_complete"] = true
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
 	if moves <= 0:
@@ -135,9 +139,10 @@ func _physics_process(delta):
 
 # Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event):
-	# Tutorial
 	if event is InputEventAction and event.pressed:
+		# Advance tutorial
 		show_tutorial()
+		# Cheat items
 		if event.action == "Bomb":
 			cheat_item_bomb()
 		elif event.action == "Milk":
@@ -150,7 +155,9 @@ func _input(event):
 	if event is InputEventAction and event.pressed == false:
 		var action = str(event.action)
 		Global.piece_selected = int(action)
-		if cheat_item_bomb_active and Global.piece_selected > 0:
+		# Activate the bomb
+		if (action != "Bomb" and cheat_item_bomb_active 
+		and Global.piece_selected >= 0 and Global.player["bombs"] > 0):
 			cheat_item_bomb_activate(Global.piece_selected)
 
 
@@ -165,18 +172,27 @@ func cheat_item_bomb():
 
 
 func cheat_item_bomb_activate(piece_selected):
-	print("boom!", piece_selected)
-	# ToDo: Clear bombs in a radius
-	# piece_selected
-	# piece_selected + 7 # down
-	# piece_selected - 1 # left
-	# piece_selected + 1 # right
-	# piece_selected - 7 # up
+	Global.player["bombs"] -= 1
+	$oddworld_bomb.play()
+	# Get the selected position and the surrounding postions
+	add_bomb_position(piece_selected)
+	# Toggle the cheat item in the UI
+	cheat_item_bomb()
+	# Animate the piece being removed from the board
+	for index in len(bomb_positions):
+		var node_path = "board/slot" + str(bomb_positions[index])
+		var node = get_node(node_path)
+		var tween = get_tree().create_tween()
+		tween.tween_property(node, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(node, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_callback(remove_piece_callback)
+		pieces_to_remove += 1
 
 
 func cheat_item_milk():
 	if Global.player["milks"] > 0:
 		print("milk")
+
 
 func cheat_item_sugar():
 	if Global.player["sugars"] > 0:
@@ -186,6 +202,43 @@ func cheat_item_sugar():
 func cheat_item_switch():
 	if Global.player["switches"] > 0:
 		print("switch")
+
+
+# Function to add bomb positions to the array
+func add_bomb_position(index):
+	var grid_size = 7
+	var grid_length = grid_size * grid_size
+	if index not in bomb_positions and index >= 0 and index < grid_length:
+		# Add the bomb position
+		bomb_positions.append(index)
+		# Determine the row and column of the selected position
+		var row = index / grid_size
+		var col = index % grid_size
+		# Check neighboring positions and add them to the bomb positions array
+		add_neighbor(row - 1, col)  # Top
+		add_neighbor(row + 1, col)  # Bottom
+		add_neighbor(row, col - 1)  # Left
+		add_neighbor(row, col + 1)  # Right
+
+
+# Function to add neighboring positions
+func add_neighbor(row, col):
+	var grid_size = 7
+	var grid_length = grid_size * grid_size
+	if row >= 0 and row < grid_size and col >= 0 and col < grid_size:
+		var neighbor_position = row * grid_size + col
+		if neighbor_position not in bomb_positions and neighbor_position >= 0 and neighbor_position < grid_length:
+			bomb_positions.append(neighbor_position)
+
+
+# The callback function for when a piece is removed (via Tween).
+func remove_piece_callback():
+	for i in len(bomb_positions):
+		if bomb_positions[i] < len(board):
+			board[bomb_positions[i]].texture = null
+			board[bomb_positions[i]].modulate = $background1.modulate
+			board[bomb_positions[i]].scale = Vector2(0.2, 0.2)
+	pieces_to_remove -= 1
 
 
 # Returns true if there are empty board positions.
@@ -486,7 +539,8 @@ func customer_order_updates():
 
 # Drop pieces into empty positions.
 func drop_pieces():
-	if matches_left_to_remove == 0:
+	if matches_left_to_remove == 0 and pieces_to_remove == 0:
+		bomb_positions = []
 		horizontal_matches = []
 		vertical_matches = []
 		for i in range(48, -1, -1):
@@ -626,7 +680,7 @@ func remove_matches():
 func remove_matches_callback():
 	# Reset each board position that was tweened
 	var matches = horizontal_matches + vertical_matches
-	for i in range(len(matches)):
+	for i in len(matches):
 		if matches[i] < len(board):
 			board[matches[i]].texture = null
 			board[matches[i]].modulate = $background1.modulate
@@ -681,7 +735,6 @@ func swap_pieces():
 	if Global.piece_selected != null and Global.swipe_direction != null:
 		var next_node_path = null
 		var next_node = null
-		var swap_node = null
 		# Get the swiped on piece
 		var selected_node_path = "board/slot" + str(Global.piece_selected)
 		var selected_node = get_node(selected_node_path)

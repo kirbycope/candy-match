@@ -34,6 +34,7 @@ script = ExtResource("1_gun5a")
 
 [node name="race_to_the_finish" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ditdv")
+volume_db = -5.0
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_7abuy")

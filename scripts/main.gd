@@ -19,6 +19,8 @@ var wheel_spinning = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.current_level == 0:
+		get_latest_level_completed()
 	reset_to_main()
 	if Global.enabled_music: $open_fields.play()
 
@@ -296,6 +298,15 @@ func boosters_retract_offer():
 	booster_milks = 0
 	booster_sugars = 0
 	booster_switches = 0
+
+
+func get_latest_level_completed():
+	var levels = len(Global.levels)
+	var player_data = Global.player
+	for i in range(levels):
+		var key = "level_" + str(i) + "_complete"
+		if player_data.has(key) and player_data[key]:
+			Global.current_level = i + 1
 
 
 # Resets to the "main" view.

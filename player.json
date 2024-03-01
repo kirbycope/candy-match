@@ -1,14 +1,14 @@
 {
     "_about": "This file holds all player save data.",
     "character": 1,
-    "coins": 0,
-    "bombs": 0,
-    "milks": 0,
-    "sugars": 0,
-    "switches": 0,
+    "coins": 1000,
+    "bombs": 5,
+    "milks": 5,
+    "sugars": 5,
+    "switches": 5,
     "spins_remaining": 1,
 
-    "level_0_complete": false,
+    "level_0_complete": true,
     "level_0_score": 0,
     "level_0_stars": 0,
     

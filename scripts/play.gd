@@ -88,7 +88,7 @@ func _ready():
 		tutorial = 2
 		show_tutorial()
 	# Queue the music
-	if Global.enabled_sound: $simple_pleasures.play()
+	if Global.enabled_music: $simple_pleasures.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

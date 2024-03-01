@@ -14,7 +14,7 @@ var target_scroll_position: float = 0
 
 
 func _ready():
-	if Global.enabled_sound: $all_that_glitters.play()
+	if Global.enabled_music: $all_that_glitters.play()
 	# Initialize target_scroll_position to the initial position of the sprite
 	target_scroll_position = $background.position.y
 	# Levels

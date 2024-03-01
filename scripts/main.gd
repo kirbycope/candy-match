@@ -20,7 +20,7 @@ var wheel_spinning = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_to_main()
-	if Global.enabled_sound: $open_fields.play()
+	if Global.enabled_music: $open_fields.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

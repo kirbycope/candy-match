@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.enabled_sound: $race_to_the_finish.play()
+	if Global.enabled_music: $race_to_the_finish.play()
 	var texture_path = "res://assets/won" + str(Global.player["character"]) + ".png"
 	$character.texture = load(texture_path)
 	var level_complete = "level_" + str(Global.current_level) + "_complete"

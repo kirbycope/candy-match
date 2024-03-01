@@ -17,6 +17,7 @@ func _input(event):
 	if event is InputEventAction and event.pressed:
 		if event.action == "Main":
 			get_tree().paused = false
+			$simple_pleasures.stop()
 			await get_tree().create_timer(0.2).timeout # Godot to sleep
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		if event.action == "Pause":

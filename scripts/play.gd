@@ -137,7 +137,7 @@ func _physics_process(delta):
 func _input(event):
 	# Tutorial
 	if event is InputEventAction and event.pressed:
-		show_tutorial() # TODO: only if a tutorail flag in json?
+		show_tutorial()
 		if event.action == "Bomb":
 			cheat_item_bomb()
 		elif event.action == "Milk":
@@ -166,6 +166,12 @@ func cheat_item_bomb():
 
 func cheat_item_bomb_activate(piece_selected):
 	print("boom!", piece_selected)
+	# ToDo: Clear bombs in a radius
+	# piece_selected
+	# piece_selected + 7 # down
+	# piece_selected - 1 # left
+	# piece_selected + 1 # right
+	# piece_selected - 7 # up
 
 
 func cheat_item_milk():
@@ -201,7 +207,9 @@ func check_matches():
 # Checks each row for matches.
 func check_matches_horizontal():
 	var index = 0
+	# For each row
 	for x in range(7):
+		# Each column
 		for y in range(7):
 			var piece1 = 0; var piece2 = 0; var piece3 = 0; var piece4 = 0; var piece5 = 0; var piece6 = 0; var piece7 = 0
 			# Get the Piece ID for the given index of the board array
@@ -219,7 +227,7 @@ func check_matches_horizontal():
 				piece6 = get_piece_id(index+5)
 			if y < 1:
 				piece7 = get_piece_id(index+6)
-			# Check match permutations
+			# Check for 7 match
 			if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5, index+6]
@@ -235,6 +243,7 @@ func check_matches_horizontal():
 						candy5_matches += 7
 					if piece1 == 6:
 						candy6_matches += 7
+			# Check for 6 match
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4, index+5]
@@ -250,6 +259,7 @@ func check_matches_horizontal():
 						candy5_matches += 6
 					if piece1 == 6:
 						candy6_matches += 6
+			# Check for 5 match
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3, index+4]
@@ -265,6 +275,7 @@ func check_matches_horizontal():
 						candy5_matches += 5
 					if piece1 == 6:
 						candy6_matches += 5
+			# Check for 4 match
 			elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2, index+3]
@@ -280,6 +291,7 @@ func check_matches_horizontal():
 						candy5_matches += 4
 					if piece1 == 6:
 						candy6_matches += 4
+			# Check for 3 match
 			elif piece1 == piece2 && piece2 == piece3:
 				if index not in horizontal_matches:
 					horizontal_matches += [index, index+1, index+2]
@@ -295,13 +307,14 @@ func check_matches_horizontal():
 						candy5_matches += 3
 					if piece1 == 6:
 						candy6_matches += 3
+			# Increment the index
 			index += 1
 
 
 # Checks each column for matches.
 func check_matches_vertical():
+	# Check each of the 49 positions
 	for index in range(49):
-		# Get the Piece ID for the given index of the board array
 		var piece1 = 0; var piece2 = 0; var piece3 = 0; var piece4 = 0; var piece5 = 0; var piece6 = 0; var piece7 = 0
 		# Get the Piece ID for the given index of the board array
 		piece1 = get_piece_id(index)
@@ -318,7 +331,7 @@ func check_matches_vertical():
 			piece6 = get_piece_id(index+35)
 		if index + 42 < 49:
 			piece7 = get_piece_id(index+42)
-		# Check match permutations
+		# Check for 7 match
 		if piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6 && piece6 == piece7:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35, index+42]
@@ -334,6 +347,7 @@ func check_matches_vertical():
 					candy5_matches += 7
 				if piece1 == 6:
 					candy6_matches += 7
+		# Check for 6 match
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5 && piece5 == piece6:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28, index+35]
@@ -349,6 +363,7 @@ func check_matches_vertical():
 					candy5_matches += 6
 				if piece1 == 6:
 					candy6_matches += 6
+		# Check for 5 match
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4 && piece4 == piece5:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21, index+28]
@@ -364,6 +379,7 @@ func check_matches_vertical():
 					candy5_matches += 5
 				if piece1 == 6:
 					candy6_matches += 5
+		# Check for 4 match
 		elif piece1 == piece2 && piece2 == piece3 && piece3 == piece4:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14, index+21]
@@ -379,6 +395,7 @@ func check_matches_vertical():
 					candy5_matches += 4
 				if piece1 == 6:
 					candy6_matches += 4
+		# Check for 3 match
 		elif piece1 == piece2 && piece2 == piece3:
 			if index not in vertical_matches:
 				vertical_matches += [index, index+7, index+14]

@@ -658,7 +658,6 @@ func show_tutorial():
 		tutorial = 0
 
 
-# Swap the selected piece with the adjacent one basedon swipe direction.
 # Swap the selected piece with the adjacent one based on swipe direction.
 func swap_pieces():
 	# Ensure a piece has been swiped on

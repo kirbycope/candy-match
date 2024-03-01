@@ -113,5 +113,28 @@
         "sugars_allowed": true,
         "switches_allowed": true,
         "milks_allowed": true
+    },
+    {
+        "id": 5,
+        "about" : "Joey 1",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 6,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
     }
 ]

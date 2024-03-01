@@ -7,6 +7,10 @@ var candy3_matches = 0
 var candy4_matches = 0
 var candy5_matches = 0
 var candy6_matches = 0
+var cheat_item_bomb_active = false
+var cheat_item_milk_active = false
+var cheat_item_sugar_active = false
+var cheat_item_switch_active = false
 var customer1_id = 0
 var customer1_desires_candy = 0
 var customer1_desires_quantity = 0
@@ -107,6 +111,14 @@ func _process(delta):
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
 	$coins/counter.text = str(Global.player["coins"])
+	$bomb/count/Label.text = str(Global.player["bombs"])
+	$bomb/count.visible = Global.player["bombs"] > 0
+	$sugar/count/Label.text = str(Global.player["sugars"])
+	$sugar/count.visible = Global.player["sugars"] > 0
+	$switch/count/Label.text = str(Global.player["switches"])
+	$switch/count.visible = Global.player["switches"] > 0
+	$milk/count/Label.text = str(Global.player["milks"])
+	$milk/count.visible = Global.player["milks"] > 0
 	if level_complete and matches_left_to_remove == 0:
 		Global.player["level_" + str(Global.current_level) + "_complete"] = true
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
@@ -125,14 +137,49 @@ func _physics_process(delta):
 func _input(event):
 	# Tutorial
 	if event is InputEventAction and event.pressed:
-		show_tutorial()
+		show_tutorial() # TODO: only if a tutorail flag in json?
+		if event.action == "Bomb":
+			cheat_item_bomb()
+		elif event.action == "Milk":
+			cheat_item_milk()
+		elif event.action == "Sugar":
+			cheat_item_sugar()
+		elif event.action == "Switch":
+			cheat_item_switch()
 	# Set the last touched piece
 	if event is InputEventAction and event.pressed == false:
 		var action = str(event.action)
 		Global.piece_selected = int(action)
-		# Handle `moves` count
-		moves -= 1
-		$top_moves/moves.text = str(moves)
+		if cheat_item_bomb_active and Global.piece_selected > 0:
+			cheat_item_bomb_activate(Global.piece_selected)
+
+
+func cheat_item_bomb():
+	if Global.player["bombs"] > 0:
+		if cheat_item_bomb_active:
+			cheat_item_bomb_active = false
+			$bomb.scale = Vector2(1.0, 1.0)
+		else:
+			cheat_item_bomb_active = true
+			$bomb.scale = Vector2(1.2, 1.2)
+
+
+func cheat_item_bomb_activate(piece_selected):
+	print("boom!", piece_selected)
+
+
+func cheat_item_milk():
+	if Global.player["milks"] > 0:
+		print("milk")
+
+func cheat_item_sugar():
+	if Global.player["sugars"] > 0:
+		print("sugar")
+
+
+func cheat_item_switch():
+	if Global.player["switches"] > 0:
+		print("switch")
 
 
 # Returns true if there are empty board positions.
@@ -473,7 +520,7 @@ func populate_board():
 # Plays a random "happy pop" (if it is not already playing).
 func random_match_effect():
 	if Global.enabled_sound:
-		 #Assign a random sound (1-3)
+		 # Assign a random sound (1-3)
 		var randomNumber = randi() % 3 + 1
 		if randomNumber == 1:
 			if not $happy_pop_1.is_playing():
@@ -612,6 +659,7 @@ func show_tutorial():
 
 
 # Swap the selected piece with the adjacent one basedon swipe direction.
+# Swap the selected piece with the adjacent one based on swipe direction.
 func swap_pieces():
 	# Ensure a piece has been swiped on
 	if Global.piece_selected != null and Global.swipe_direction != null:
@@ -648,3 +696,6 @@ func swap_pieces():
 		# Clear so this only runs once
 		Global.piece_selected = null
 		Global.swipe_direction = null
+		# Handle `moves` count
+		moves -= 1
+		$top_moves/moves.text = str(moves)

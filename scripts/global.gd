@@ -39,6 +39,9 @@ func _input(event):
 		if event.action == "Main":
 			await get_tree().create_timer(0.2).timeout # Godot to sleep
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
+		elif event.action == "Map":
+			await get_tree().create_timer(0.2).timeout # Godot to sleep
+			get_tree().change_scene_to_file("res://scenes/map.tscn")
 		if Global.enabled_sound:
 			var current_scene = get_tree().get_current_scene()
 			if current_scene:

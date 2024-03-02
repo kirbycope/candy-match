@@ -199,7 +199,7 @@ texture = ExtResource("12_d7fg7")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="quit"]
 shape = SubResource("RectangleShape2D_qshbu")
-action = "Main"
+action = "Map"
 
 [node name="level" type="Node2D" parent="."]
 position = Vector2(1040, -40)

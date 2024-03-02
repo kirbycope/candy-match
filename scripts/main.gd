@@ -195,6 +195,8 @@ func _input(event):
 # Closes the "ad" view.
 func ad_close():
 	$shop/shoppette/video_overlay.visible = false
+	if Global.enabled_music: $open_fields.set_volume_db(-5)
+	$shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer.stop()
 
 
 # Opens the "ad" link in user's web broswer.
@@ -205,6 +207,7 @@ func ad_click():
 # Opens the "ad" view.
 func ad_open():
 	$shop/shoppette/video_overlay.visible = true
+	if Global.enabled_music: $open_fields.set_volume_db(-100)
 	countdown_seconds = 30
 	timer_running = true
 	$shop/shoppette/video_overlay/CenterContainer/VideoStreamPlayer.play()

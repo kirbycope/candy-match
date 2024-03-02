@@ -136,5 +136,2167 @@
         "sugars_allowed": true,
         "switches_allowed": true,
         "milks_allowed": true
+    },
+    {
+        "id": 6,
+        "about": "Level 6",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 7,
+        "about": "Level 7",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 8,
+        "about": "Level 8",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 9,
+        "about": "Level 9",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 10,
+        "about": "Level 10",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 11,
+        "about": "Level 11",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 12,
+        "about": "Level 12",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 13,
+        "about": "Level 13",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 14,
+        "about": "Level 14",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 15,
+        "about": "Level 15",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 16,
+        "about": "Level 16",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 10
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 7
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 17,
+        "about": "Level 17",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 18,
+        "about": "Level 18",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 19,
+        "about": "Level 19",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 20,
+        "about": "Level 20",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 21,
+        "about": "Level 21",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 22,
+        "about": "Level 22",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 23,
+        "about": "Level 23",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 24,
+        "about": "Level 24",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 25,
+        "about": "Level 25",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 26,
+        "about": "Level 26",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 27,
+        "about": "Level 27",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 28,
+        "about": "Level 28",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 29,
+        "about": "Level 29",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 30,
+        "about": "Level 30",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 31,
+        "about": "Level 31",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 32,
+        "about": "Level 32",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 33,
+        "about": "Level 33",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 34,
+        "about": "Level 34",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 35,
+        "about": "Level 35",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 36,
+        "about": "Level 36",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 37,
+        "about": "Level 37",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 38,
+        "about": "Level 38",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 39,
+        "about": "Level 39",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 7
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 40,
+        "about": "Level 40",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 41,
+        "about": "Level 41",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 42,
+        "about": "Level 42",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 43,
+        "about": "Level 43",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 44,
+        "about": "Level 44",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 6
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 45,
+        "about": "Level 45",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 46,
+        "about": "Level 46",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 47,
+        "about": "Level 47",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 6
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 48,
+        "about": "Level 48",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 49,
+        "about": "Level 49",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 50,
+        "about": "Level 50",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 51,
+        "about": "Level 51",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 52,
+        "about": "Level 52",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 53,
+        "about": "Level 53",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 54,
+        "about": "Level 54",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 55,
+        "about": "Level 55",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 56,
+        "about": "Level 56",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 57,
+        "about": "Level 57",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 58,
+        "about": "Level 58",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 59,
+        "about": "Level 59",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 60,
+        "about": "Level 60",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 61,
+        "about": "Level 61",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 62,
+        "about": "Level 62",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 63,
+        "about": "Level 63",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 64,
+        "about": "Level 64",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 65,
+        "about": "Level 65",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 66,
+        "about": "Level 66",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 67,
+        "about": "Level 67",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 68,
+        "about": "Level 68",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 69,
+        "about": "Level 69",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 70,
+        "about": "Level 70",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 71,
+        "about": "Level 71",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 2,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 72,
+        "about": "Level 72",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 5
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 73,
+        "about": "Level 73",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 74,
+        "about": "Level 74",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 75,
+        "about": "Level 75",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 76,
+        "about": "Level 76",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 5
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 77,
+        "about": "Level 77",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 6
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 78,
+        "about": "Level 78",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 79,
+        "about": "Level 79",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 80,
+        "about": "Level 80",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 5
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 81,
+        "about": "Level 81",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 82,
+        "about": "Level 82",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 83,
+        "about": "Level 83",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 84,
+        "about": "Level 84",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 85,
+        "about": "Level 85",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 86,
+        "about": "Level 86",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 5,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 87,
+        "about": "Level 87",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 8
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 2,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 88,
+        "about": "Level 88",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 2,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 89,
+        "about": "Level 89",
+        "customer1": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 90,
+        "about": "Level 90",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 5,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 91,
+        "about": "Level 91",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 3,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 4,
+            "quantity": 8
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 92,
+        "about": "Level 92",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 7
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 93,
+        "about": "Level 93",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 3
+        },
+        "customer2": {
+            "character_id": 5,
+            "item_id": 5,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 94,
+        "about": "Level 94",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 9
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 5,
+            "quantity": 7
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 7
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 95,
+        "about": "Level 95",
+        "customer1": {
+            "character_id": 5,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 11
+        },
+        "customer3": {
+            "character_id": 5,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 96,
+        "about": "Level 96",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 2,
+            "quantity": 11
+        },
+        "customer2": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 8
+        },
+        "customer3": {
+            "character_id": 3,
+            "item_id": 1,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 97,
+        "about": "Level 97",
+        "customer1": {
+            "character_id": 2,
+            "item_id": 1,
+            "quantity": 12
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 1,
+            "quantity": 9
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 98,
+        "about": "Level 98",
+        "customer1": {
+            "character_id": 4,
+            "item_id": 4,
+            "quantity": 4
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 3,
+            "quantity": 12
+        },
+        "customer3": {
+            "character_id": 4,
+            "item_id": 3,
+            "quantity": 10
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
+    },
+    {
+        "id": 99,
+        "about": "Level 99",
+        "customer1": {
+            "character_id": 1,
+            "item_id": 3,
+            "quantity": 6
+        },
+        "customer2": {
+            "character_id": 2,
+            "item_id": 4,
+            "quantity": 9
+        },
+        "customer3": {
+            "character_id": 1,
+            "item_id": 5,
+            "quantity": 4
+        },
+        "bombs_allowed": true,
+        "sugars_allowed": true,
+        "switches_allowed": true,
+        "milks_allowed": true
     }
 ]

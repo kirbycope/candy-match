@@ -380,8 +380,8 @@ func spin_wheel_rewards_show(prize):
 		$wheel/reward/Label.text = "5 bombs"
 		Global.player["bombs"] += 5
 	elif prize == 2:
-		$wheel/reward/Label.text = "20 Coins"
-		Global.player["coins"] += 20
+		$wheel/reward/Label.text = "120 Coins"
+		Global.player["coins"] += 120
 	elif prize == 3:
 		$wheel/reward/Label.text = "5 milks"
 		Global.player["milks"] += 5

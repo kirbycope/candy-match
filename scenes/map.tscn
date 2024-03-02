@@ -180,5 +180,1825 @@ position = Vector2(80, 40)
 shape = SubResource("RectangleShape2D_kifqh")
 action = "Level_4"
 
+[node name="level5" type="Node2D" parent="background/levels"]
+position = Vector2(-728.261, 12815.2)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level5"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level5"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level5"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level5"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "5"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level5"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_5"
+
+[node name="level6" type="Node2D" parent="background/levels"]
+position = Vector2(54.3475, 12337)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level6"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level6"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level6"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level6"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "6"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level6"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_6"
+
+[node name="level7" type="Node2D" parent="background/levels"]
+position = Vector2(-793.479, 11902.2)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level7"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level7"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level7"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level7"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "7"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level7"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_7"
+
+[node name="level8" type="Node2D" parent="background/levels"]
+position = Vector2(-989.131, 11184.8)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level8"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level8"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level8"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level8"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "8"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level8"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_8"
+
+[node name="level9" type="Node2D" parent="background/levels"]
+position = Vector2(-195.652, 10706.5)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level9"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level9"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level9"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level9"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "9"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level9"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_9"
+
+[node name="level10" type="Node2D" parent="background/levels"]
+position = Vector2(-695.652, 10108.7)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level10"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level10"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level10"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level10"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "10"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level10"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_10"
+
+[node name="level11" type="Node2D" parent="background/levels"]
+position = Vector2(217.391, 9695.64)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level11"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level11"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level11"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level11"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "11"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level11"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_11"
+
+[node name="level12" type="Node2D" parent="background/levels"]
+position = Vector2(1130.43, 9163.03)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level12"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level12"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level12"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level12"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "12"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level12"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_12"
+
+[node name="level13" type="Node2D" parent="background/levels"]
+position = Vector2(413.043, 8652.17)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level13"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level13"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level13"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level13"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "13"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level13"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_13"
+
+[node name="level14" type="Node2D" parent="background/levels"]
+position = Vector2(65.2164, 7934.79)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level14"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level14"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level14"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level14"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "14"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level14"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_14"
+
+[node name="level15" type="Node2D" parent="background/levels"]
+position = Vector2(543.478, 6597.83)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level15"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level15"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level15"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level15"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "15"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level15"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_15"
+
+[node name="level16" type="Node2D" parent="background/levels"]
+position = Vector2(-271.739, 6076.09)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level16"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level16"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level16"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level16"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "16"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level16"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_16"
+
+[node name="level17" type="Node2D" parent="background/levels"]
+position = Vector2(-271.739, 5358.7)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level17"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level17"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level17"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level17"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "17"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level17"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_17"
+
+[node name="level18" type="Node2D" parent="background/levels"]
+position = Vector2(543.478, 4934.78)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level18"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level18"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level18"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level18"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "18"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level18"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_18"
+
+[node name="level19" type="Node2D" parent="background/levels"]
+position = Vector2(54.3475, 4369.57)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level19"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level19"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level19"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level19"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "19"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level19"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_19"
+
+[node name="level20" type="Node2D" parent="background/levels"]
+position = Vector2(793.479, 3956.52)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level20"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level20"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level20"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level20"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "20"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level20"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_20"
+
+[node name="level21" type="Node2D" parent="background/levels"]
+position = Vector2(-76.0867, 3456.52)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level21"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level21"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level21"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level21"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "21"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level21"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_21"
+
+[node name="level22" type="Node2D" parent="background/levels"]
+position = Vector2(739.131, 3043.48)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level22"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level22"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level22"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level22"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "22"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level22"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_22"
+
+[node name="level23" type="Node2D" parent="background/levels"]
+position = Vector2(43.4774, 2576.09)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level23"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level23"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level23"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level23"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "23"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level23"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_23"
+
+[node name="level24" type="Node2D" parent="background/levels"]
+position = Vector2(836.955, 2163.04)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level24"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level24"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level24"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level24"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "24"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level24"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_24"
+
+[node name="level25" type="Node2D" parent="background/levels"]
+position = Vector2(-0.000244141, 1684.78)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level25"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level25"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level25"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level25"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "25"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level25"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_25"
+
+[node name="level26" type="Node2D" parent="background/levels"]
+position = Vector2(771.74, 1271.74)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level26"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level26"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level26"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level26"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "26"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level26"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_26"
+
+[node name="level27" type="Node2D" parent="background/levels"]
+position = Vector2(326.087, 597.826)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level27"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level27"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level27"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level27"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "27"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level27"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_27"
+
+[node name="level28" type="Node2D" parent="background/levels"]
+position = Vector2(-0.000274658, -76.0871)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level28"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level28"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level28"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level28"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "28"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level28"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_28"
+
+[node name="level29" type="Node2D" parent="background/levels"]
+position = Vector2(-456.522, -793.479)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level29"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level29"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level29"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level29"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "29"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level29"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_29"
+
+[node name="level30" type="Node2D" parent="background/levels"]
+position = Vector2(358.696, -1282.61)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level30"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level30"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level30"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level30"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "30"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level30"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_30"
+
+[node name="level31" type="Node2D" parent="background/levels"]
+position = Vector2(-0.000610352, -1902.17)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level31"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level31"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level31"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level31"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "31"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level31"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_31"
+
+[node name="level32" type="Node2D" parent="background/levels"]
+position = Vector2(739.13, -2380.43)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level32"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level32"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level32"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level32"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "32"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level32"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_32"
+
+[node name="level33" type="Node2D" parent="background/levels"]
+position = Vector2(-130.435, -2804.35)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level33"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level33"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level33"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level33"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "33"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level33"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_33"
+
+[node name="level34" type="Node2D" parent="background/levels"]
+position = Vector2(-923.913, -3391.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level34"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level34"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level34"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level34"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "34"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level34"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_34"
+
+[node name="level35" type="Node2D" parent="background/levels"]
+position = Vector2(-76.0873, -3782.61)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level35"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level35"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level35"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level35"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "35"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level35"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_35"
+
+[node name="level36" type="Node2D" parent="background/levels"]
+position = Vector2(739.13, -4141.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level36"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level36"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level36"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level36"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "36"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level36"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_36"
+
+[node name="level37" type="Node2D" parent="background/levels"]
+position = Vector2(-195.653, -4608.7)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level37"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level37"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level37"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level37"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "37"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level37"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_37"
+
+[node name="level38" type="Node2D" parent="background/levels"]
+position = Vector2(597.826, -5021.74)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level38"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level38"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level38"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level38"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "38"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level38"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_38"
+
+[node name="level39" type="Node2D" parent="background/levels"]
+position = Vector2(-163.044, -5500)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level39"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level39"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level39"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level39"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "39"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level39"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_39"
+
+[node name="level40" type="Node2D" parent="background/levels"]
+position = Vector2(673.913, -5902.17)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level40"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level40"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level40"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level40"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "40"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level40"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_40"
+
+[node name="level41" type="Node2D" parent="background/levels"]
+position = Vector2(-163.044, -6391.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level41"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level41"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level41"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level41"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "41"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level41"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_41"
+
+[node name="level42" type="Node2D" parent="background/levels"]
+position = Vector2(619.564, -6804.35)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level42"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level42"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level42"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level42"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "42"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level42"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_42"
+
+[node name="level43" type="Node2D" parent="background/levels"]
+position = Vector2(-271.739, -7293.48)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level43"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level43"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level43"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level43"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "43"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level43"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_43"
+
+[node name="level44" type="Node2D" parent="background/levels"]
+position = Vector2(-1054.35, -7706.52)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level44"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level44"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level44"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level44"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "44"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level44"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_44"
+
+[node name="level45" type="Node2D" parent="background/levels"]
+position = Vector2(-271.739, -8184.78)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level45"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level45"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level45"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level45"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "45"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level45"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_45"
+
+[node name="level46" type="Node2D" parent="background/levels"]
+position = Vector2(543.478, -8641.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level46"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level46"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level46"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level46"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "46"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level46"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_46"
+
+[node name="level47" type="Node2D" parent="background/levels"]
+position = Vector2(293.478, -9391.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level47"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level47"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level47"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level47"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "47"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level47"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_47"
+
+[node name="level48" type="Node2D" parent="background/levels"]
+position = Vector2(-326.087, -10010.9)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level48"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level48"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level48"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level48"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "48"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level48"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_48"
+
+[node name="level49" type="Node2D" parent="background/levels"]
+position = Vector2(-1130.44, -10326.1)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level49"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level49"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level49"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level49"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "49"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level49"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_49"
+
+[node name="level50" type="Node2D" parent="background/levels"]
+position = Vector2(-336.957, -10804.3)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level50"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level50"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level50"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level50"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "50"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level50"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_50"
+
+[node name="level51" type="Node2D" parent="background/levels"]
+position = Vector2(543.478, -11250)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level51"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level51"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level51"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level51"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "51"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level51"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_51"
+
+[node name="level52" type="Node2D" parent="background/levels"]
+position = Vector2(141.304, -11945.7)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level52"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level52"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level52"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level52"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "52"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level52"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_52"
+
+[node name="level53" type="Node2D" parent="background/levels"]
+position = Vector2(-239.131, -12587)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level53"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level53"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level53"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level53"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "53"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level53"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_53"
+
+[node name="level54" type="Node2D" parent="background/levels"]
+position = Vector2(-847.826, -13250)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level54"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level54"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level54"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level54"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "54"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level54"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_54"
+
+[node name="level55" type="Node2D" parent="background/levels"]
+position = Vector2(97.8262, -13739.1)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level55"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level55"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level55"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level55"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "55"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level55"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_55"
+
+[node name="level56" type="Node2D" parent="background/levels"]
+position = Vector2(-76.0872, -14456.5)
+scale = Vector2(4.34783, 4.34783)
+
+[node name="grey" type="Sprite2D" parent="background/levels/level56"]
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("6_pef42")
+
+[node name="blue" type="Sprite2D" parent="background/levels/level56"]
+visible = false
+position = Vector2(77.5, 40.0002)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_bgc2c")
+
+[node name="pink" type="Sprite2D" parent="background/levels/level56"]
+visible = false
+position = Vector2(77.5001, 40.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("8_qt4qj")
+
+[node name="Label" type="Label" parent="background/levels/level56"]
+offset_top = -24.0
+offset_right = 155.0
+offset_bottom = 66.0
+text = "56"
+label_settings = SubResource("LabelSettings_gq0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="background/levels/level56"]
+position = Vector2(80, 40)
+shape = SubResource("RectangleShape2D_kifqh")
+action = "Level_56"
+
 [node name="top" parent="." instance=ExtResource("8_6xw0d")]
 scale = Vector2(1, 1)

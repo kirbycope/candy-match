@@ -373,8 +373,10 @@ func spin_wheel_rewards_hide():
 	$wheel/reward.visible = false
 	$wheel/spinner.visible = true
 
+
 # Opens the "wheel rewards" view (with the given prize).
 func spin_wheel_rewards_show(prize):
+	if Global.enabled_sound: $bonus.play()
 	$wheel/reward.visible = true
 	$wheel/spinner.visible = false
 	var texture_path = "res://assets/wheel prize" + str(prize) + ".png"

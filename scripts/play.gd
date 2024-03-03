@@ -216,6 +216,9 @@ func add_neighbor(row, col):
 
 # Toggles the bomb cheat item in the UI.
 func cheat_item_bomb():
+	if cheat_item_milk_active: cheat_item_milk()
+	if cheat_item_sugar_active: cheat_item_sugar()
+	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["bombs"] > 0:
 		cheat_item_bomb_active = not cheat_item_bomb_active
 		if cheat_item_bomb_active:
@@ -229,7 +232,7 @@ func cheat_item_bomb():
 # Activate the bomb cheat item at the selected piece's position.
 func cheat_item_bomb_activate(piece_selected):
 	Global.player["bombs"] -= 1
-	$oddworld_bomb.play()
+	if Global.enabled_sound: $oddworld_bomb.play()
 	# Get the selected position and the surrounding postions
 	add_bomb_position(piece_selected)
 	# Toggle the cheat item in the UI
@@ -247,6 +250,9 @@ func cheat_item_bomb_activate(piece_selected):
 
 # Toggles the bomb cheat item in the UI.
 func cheat_item_milk():
+	if cheat_item_bomb_active: cheat_item_bomb()
+	if cheat_item_sugar_active: cheat_item_sugar()
+	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["milks"] > 0:
 		cheat_item_milk_active = not cheat_item_milk_active
 		if cheat_item_milk_active:
@@ -260,11 +266,14 @@ func cheat_item_milk():
 # Activate the milk cheat item at the selected piece's position.
 func cheat_item_milk_activate(piece_selected):
 	Global.player["milks"] -= 1
-	$splattt.play()
+	if Global.enabled_sound: $splattt.play()
 
 
 # Toggles the sugar cheat item in the UI.
 func cheat_item_sugar():
+	if cheat_item_bomb_active: cheat_item_bomb()
+	if cheat_item_milk_active: cheat_item_milk()
+	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["sugars"] > 0:
 		cheat_item_sugar_active = not cheat_item_sugar_active
 		if cheat_item_sugar_active:
@@ -278,10 +287,14 @@ func cheat_item_sugar():
 # Activate the sugar cheat item at the selected piece's position.
 func cheat_item_sugar_activate(piece_selected):
 	Global.player["sugars"] -= 1
+	if Global.enabled_sound: pass
 
 
 # Toggles the switch cheat item in the UI.
 func cheat_item_switch():
+	if cheat_item_bomb_active: cheat_item_bomb()
+	if cheat_item_milk_active: cheat_item_milk()
+	if cheat_item_sugar_active: cheat_item_sugar()
 	if Global.player["switches"] > 0:
 		cheat_item_switch_active = not cheat_item_switch_active
 		if cheat_item_switch_active:
@@ -295,6 +308,7 @@ func cheat_item_switch():
 # Activate the switch cheat item at the selected piece's position.
 func cheat_item_switch_activate(piece_selected):
 	Global.player["switches"] -= 1
+	if Global.enabled_sound: $swinging_staff_whoosh_strong.play()
 
 
 # Returns true if there are empty board positions.

@@ -2,6 +2,7 @@ extends Node2D
 
 
 var bomb_positions = []
+var candies_to_serve = 0
 var candy1_matches = 0
 var candy2_matches = 0
 var candy3_matches = 0
@@ -122,17 +123,22 @@ func _physics_process(delta):
 	$milk/count/Label.text = str(Global.player["milks"])
 	$milk/count.visible = Global.player["milks"] > 0
 	if (level_complete
+	and candies_to_serve == 0
 	and matches_left_to_remove == 0
 	and pieces_to_remove == 0):
 		Global.player["level_" + str(Global.current_level) + "_complete"] = true
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
-	if moves <= 0:
+	if (moves <= 0
+	and candies_to_serve == 0
+	and matches_left_to_remove == 0
+	and pieces_to_remove == 0):
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 	if tutorial == 0:
 		swap_pieces()
 		drop_pieces()
 		if check_for_empty_positions() == false:
-			check_matches()
+			check_matches_horizontal()
+			check_matches_vertical()
 			remove_matches()
 	customer_order_updates()
 
@@ -159,49 +165,6 @@ func _input(event):
 		if (action != "Bomb" and cheat_item_bomb_active 
 		and Global.piece_selected >= 0 and Global.player["bombs"] > 0):
 			cheat_item_bomb_activate(Global.piece_selected)
-
-
-func cheat_item_bomb():
-	if Global.player["bombs"] > 0:
-		if cheat_item_bomb_active:
-			cheat_item_bomb_active = false
-			$bomb.scale = Vector2(1.0, 1.0)
-		else:
-			cheat_item_bomb_active = true
-			$bomb.scale = Vector2(1.2, 1.2)
-
-
-func cheat_item_bomb_activate(piece_selected):
-	Global.player["bombs"] -= 1
-	$oddworld_bomb.play()
-	# Get the selected position and the surrounding postions
-	add_bomb_position(piece_selected)
-	# Toggle the cheat item in the UI
-	cheat_item_bomb()
-	# Animate the piece being removed from the board
-	for index in len(bomb_positions):
-		var node_path = "board/slot" + str(bomb_positions[index])
-		var node = get_node(node_path)
-		var tween = get_tree().create_tween()
-		tween.tween_property(node, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
-		tween.tween_property(node, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
-		tween.tween_callback(remove_piece_callback)
-		pieces_to_remove += 1
-
-
-func cheat_item_milk():
-	if Global.player["milks"] > 0:
-		print("milk")
-
-
-func cheat_item_sugar():
-	if Global.player["sugars"] > 0:
-		print("sugar")
-
-
-func cheat_item_switch():
-	if Global.player["switches"] > 0:
-		print("switch")
 
 
 # Function to add bomb positions to the array
@@ -231,14 +194,52 @@ func add_neighbor(row, col):
 			bomb_positions.append(neighbor_position)
 
 
-# The callback function for when a piece is removed (via Tween).
-func remove_piece_callback():
-	for i in len(bomb_positions):
-		if bomb_positions[i] < len(board):
-			board[bomb_positions[i]].texture = null
-			board[bomb_positions[i]].modulate = $background1.modulate
-			board[bomb_positions[i]].scale = Vector2(0.2, 0.2)
-	pieces_to_remove -= 1
+# Toggles the bomb cheat item in the UI.
+func cheat_item_bomb():
+	if Global.player["bombs"] > 0:
+		if cheat_item_bomb_active:
+			cheat_item_bomb_active = false
+			$bomb.scale = Vector2(1.0, 1.0)
+		else:
+			cheat_item_bomb_active = true
+			$bomb.scale = Vector2(1.2, 1.2)
+
+
+# Activate the bomb cheat item at the selected piece's position.
+func cheat_item_bomb_activate(piece_selected):
+	Global.player["bombs"] -= 1
+	$oddworld_bomb.play()
+	# Get the selected position and the surrounding postions
+	add_bomb_position(piece_selected)
+	# Toggle the cheat item in the UI
+	cheat_item_bomb()
+	# Animate the piece being removed from the board
+	for index in len(bomb_positions):
+		var node_path = "board/slot" + str(bomb_positions[index])
+		var node = get_node(node_path)
+		var tween = get_tree().create_tween()
+		tween.tween_property(node, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(node, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_callback(remove_piece_callback)
+		pieces_to_remove += 1
+
+
+# Toggles the bomb cheat item in the UI.
+func cheat_item_milk():
+	if Global.player["milks"] > 0:
+		print("milk")
+
+
+# Toggles the bomb cheat item in the UI.
+func cheat_item_sugar():
+	if Global.player["sugars"] > 0:
+		print("sugar")
+
+
+# Toggles the bomb cheat item in the UI.
+func cheat_item_switch():
+	if Global.player["switches"] > 0:
+		print("switch")
 
 
 # Returns true if there are empty board positions.
@@ -249,12 +250,6 @@ func check_for_empty_positions():
 		if node.texture == null:
 			return true
 	return false
-
-
-# Adds any/all new matches to the `matches` array.
-func check_matches():
-	check_matches_horizontal()
-	check_matches_vertical()
 
 
 # Checks each row for matches.
@@ -588,22 +583,6 @@ func populate_board():
 		board[i].texture = load(texture_path)
 
 
-# Plays a random "happy pop" (if it is not already playing).
-func random_match_effect():
-	if Global.enabled_sound:
-		 # Assign a random sound (1-3)
-		var randomNumber = randi() % 3 + 1
-		if randomNumber == 1:
-			if not $happy_pop_1.is_playing():
-				$happy_pop_1.play()
-		if randomNumber == 2:
-			if not $happy_pop_2.is_playing():
-				$happy_pop_2.play()
-		if randomNumber == 3:
-			if not $happy_pop_3.is_playing():
-				$happy_pop_3.play()
-
-
 # Plays a random "cute animal squeak" (if it is not already playing).
 func random_excited_effect():
 	if Global.enabled_sound:
@@ -689,6 +668,16 @@ func remove_matches():
 		random_excited_effect()
 
 
+# The callback function for when a piece is removed (via Tween).
+func remove_piece_callback():
+	for i in len(bomb_positions):
+		if bomb_positions[i] < len(board):
+			board[bomb_positions[i]].texture = null
+			board[bomb_positions[i]].modulate = $background1.modulate
+			board[bomb_positions[i]].scale = Vector2(0.2, 0.2)
+	pieces_to_remove -= 1
+
+
 # Moves matched candy to the customer's bowl.
 func serve_candy(matched_piece, piece_id, bowl):
 	# Create a copy at the current piece's position
@@ -702,6 +691,12 @@ func serve_candy(matched_piece, piece_id, bowl):
 	var bowl_position = bowl.global_position + Vector2(0, -10)
 	tween.tween_property(sprite, "scale", Vector2(0.05, 0.05), 0.75)
 	tween.tween_property(sprite, "position", bowl_position, 0.75)
+	tween.tween_callback(serve_candy_callback)
+	candies_to_serve += 1
+
+
+func serve_candy_callback():
+	candies_to_serve -= 1
 
 
 # The callback function for the remove_matches() tween.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=50 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b34hyed76610n" path="res://assets/game boost3.png" id="9_dckg0"]
 [ext_resource type="Texture2D" uid="uid://cidhrk362ngp8" path="res://assets/game boost4.png" id="10_age8i"]
 [ext_resource type="Texture2D" uid="uid://i1d4xkc54mlc" path="res://assets/game pause.png" id="11_8j2i1"]
+[ext_resource type="AudioStream" uid="uid://m6b1c2ys4rkw" path="res://assets/splattt-6295.mp3" id="11_hug60"]
 [ext_resource type="Texture2D" uid="uid://ct5sdvnrr3g45" path="res://assets/character1_1.png" id="11_i5w8k"]
 [ext_resource type="Texture2D" uid="uid://dilm0djsuv13s" path="res://assets/game boost add.png" id="11_wadvv"]
 [ext_resource type="AudioStream" uid="uid://bsh4p2610vt03" path="res://assets/oddworld_bomb-94173.mp3" id="12_bj033"]
@@ -109,6 +110,9 @@ volume_db = 10.0
 [node name="simple_pleasures" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n0lt7")
 volume_db = -5.0
+
+[node name="splattt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hug60")
 
 [node name="taps_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_tyxfa")

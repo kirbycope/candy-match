@@ -162,9 +162,29 @@ func _input(event):
 		var action = str(event.action)
 		Global.piece_selected = int(action)
 		# Activate the bomb
-		if (action != "Bomb" and cheat_item_bomb_active 
-		and Global.piece_selected >= 0 and Global.player["bombs"] > 0):
+		if (action != "Bomb" and action !="Milk"
+		and action != "Sugar" and action !="Switch"
+		and cheat_item_bomb_active
+		and Global.player["bombs"] > 0):
 			cheat_item_bomb_activate(Global.piece_selected)
+		# Activate the milk
+		if (action != "Bomb" and action !="Milk"
+		and action != "Sugar" and action !="Switch"
+		and cheat_item_milk_active
+		and Global.player["milks"] > 0):
+			cheat_item_milk_activate(Global.piece_selected)
+		# Activate the sugar
+		if (action != "Bomb" and action !="Milk"
+		and action != "Sugar" and action !="Switch"
+		and cheat_item_sugar_active
+		and Global.player["sugars"] > 0):
+			cheat_item_sugar_activate(Global.piece_selected)
+		# Activate the switch
+		if (action != "Bomb" and action !="Milk"
+		and action != "Sugar" and action !="Switch"
+		and cheat_item_switch_active
+		and Global.player["switches"] > 0):
+			cheat_item_switch_activate(Global.piece_selected)
 
 
 # Function to add bomb positions to the array
@@ -197,12 +217,13 @@ func add_neighbor(row, col):
 # Toggles the bomb cheat item in the UI.
 func cheat_item_bomb():
 	if Global.player["bombs"] > 0:
+		cheat_item_bomb_active = not cheat_item_bomb_active
 		if cheat_item_bomb_active:
-			cheat_item_bomb_active = false
-			$bomb.scale = Vector2(1.0, 1.0)
-		else:
-			cheat_item_bomb_active = true
 			$bomb.scale = Vector2(1.2, 1.2)
+		else:
+			$bomb.scale = Vector2(1.0, 1.0)
+	else:
+		$bomb.scale = Vector2(1.0, 1.0)
 
 
 # Activate the bomb cheat item at the selected piece's position.
@@ -227,19 +248,53 @@ func cheat_item_bomb_activate(piece_selected):
 # Toggles the bomb cheat item in the UI.
 func cheat_item_milk():
 	if Global.player["milks"] > 0:
-		print("milk")
+		cheat_item_milk_active = not cheat_item_milk_active
+		if cheat_item_milk_active:
+			$milk.scale = Vector2(1.2, 1.2)
+		else:
+			$milk.scale = Vector2(1.0, 1.0)
+	else:
+		$milk.scale = Vector2(1.0, 1.0)
 
 
-# Toggles the bomb cheat item in the UI.
+# Activate the milk cheat item at the selected piece's position.
+func cheat_item_milk_activate(piece_selected):
+	Global.player["milks"] -= 1
+	$splattt.play()
+
+
+# Toggles the sugar cheat item in the UI.
 func cheat_item_sugar():
 	if Global.player["sugars"] > 0:
-		print("sugar")
+		cheat_item_sugar_active = not cheat_item_sugar_active
+		if cheat_item_sugar_active:
+			$sugar.scale = Vector2(1.2, 1.2)
+		else:
+			$sugar.scale = Vector2(1.0, 1.0)
+	else:
+		$sugar.scale = Vector2(1.0, 1.0)
 
 
-# Toggles the bomb cheat item in the UI.
+# Activate the sugar cheat item at the selected piece's position.
+func cheat_item_sugar_activate(piece_selected):
+	Global.player["sugars"] -= 1
+
+
+# Toggles the switch cheat item in the UI.
 func cheat_item_switch():
 	if Global.player["switches"] > 0:
-		print("switch")
+		cheat_item_switch_active = not cheat_item_switch_active
+		if cheat_item_switch_active:
+			$switch.scale = Vector2(1.2, 1.2)
+		else:
+			$switch.scale = Vector2(1.0, 1.0)
+	else:
+		$switch.scale = Vector2(1.0, 1.0)
+
+
+# Activate the switch cheat item at the selected piece's position.
+func cheat_item_switch_activate(piece_selected):
+	Global.player["switches"] -= 1
 
 
 # Returns true if there are empty board positions.

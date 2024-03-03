@@ -645,26 +645,39 @@ func remove_matches():
 					# Check we aren't changing scenes
 					var tree = get_tree()
 					if tree:
-						# Animate removing the piece
 						var tween = tree.create_tween()
-						tween.tween_property(node, "modulate", Color.RED, 0.75)
-						tween.tween_property(node, "scale", Vector2(), 0.75)
-						tween.tween_callback(remove_matches_callback)
-						matches_being_tweened += [matches[i]]
-						matches_left_to_remove += 1
 						# The customer is excited
 						if get_piece_id(matches[i]) == customer1_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer1_id) + ".png"
 							$customer1/character.texture = load(texture_path)
 							customer1_excited = true
-						if get_piece_id(matches[i]) == customer2_desires_candy:
+							serve_candy(node, customer1_desires_candy, $bowl1)
+							# Animate removing the piece
+							tween.tween_property(node, "visible", false, 0.0)
+							tween.tween_property(node, "visible", false, 0.75) # creates a slight delay
+						elif get_piece_id(matches[i]) == customer2_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer2_id) + ".png"
 							$customer2/character.texture = load(texture_path)
 							customer2_excited = true
-						if get_piece_id(matches[i]) == customer3_desires_candy:
+							serve_candy(node, customer2_desires_candy, $bowl2)
+							# Animate removing the piece
+							tween.tween_property(node, "visible", false, 0.0)
+							tween.tween_property(node, "visible", false, 0.75) # creates a slight delay
+						elif get_piece_id(matches[i]) == customer3_desires_candy:
 							var texture_path = "res://assets/won"+ str(customer3_id) + ".png"
 							$customer3/character.texture = load(texture_path)
 							customer3_excited = true
+							serve_candy(node, customer3_desires_candy, $bowl3)
+							# Animate removing the piece
+							tween.tween_property(node, "visible", false, 0.0)
+							tween.tween_property(node, "visible", false, 0.75) # creates a slight delay
+						else:
+							# Animate removing the piece
+							tween.tween_property(node, "modulate", Color.RED, 0.75)
+							tween.tween_property(node, "scale", Vector2(), 0.75)
+						tween.tween_callback(remove_matches_callback)
+						matches_being_tweened += [matches[i]]
+						matches_left_to_remove += 1
 						# Play clear candy sound
 						if not $multi_pop_6.is_playing():
 							if Global.enabled_sound: $multi_pop_6.play()
@@ -676,6 +689,21 @@ func remove_matches():
 		random_excited_effect()
 
 
+# Moves matched candy to the customer's bowl.
+func serve_candy(matched_piece, piece_id, bowl):
+	# Create a copy at the current piece's position
+	var sprite = Sprite2D.new()
+	sprite.position = matched_piece.global_position
+	sprite.scale = Vector2(0.08, 0.08)
+	sprite.texture = load("res://assets/candy" + str(piece_id) + ".png")
+	get_parent().add_child(sprite)
+	# Animate moving the piece
+	var tween = get_tree().create_tween()
+	var bowl_position = bowl.global_position + Vector2(0, -10)
+	tween.tween_property(sprite, "scale", Vector2(0.05, 0.05), 0.75)
+	tween.tween_property(sprite, "position", bowl_position, 0.75)
+
+
 # The callback function for the remove_matches() tween.
 func remove_matches_callback():
 	# Reset each board position that was tweened
@@ -685,6 +713,7 @@ func remove_matches_callback():
 			board[matches[i]].texture = null
 			board[matches[i]].modulate = $background1.modulate
 			board[matches[i]].scale = Vector2(0.2, 0.2)
+			board[matches[i]].visible = true
 	matches_left_to_remove -= 1
 	remove_tween_tracker()
 	# Settle the customer(s)

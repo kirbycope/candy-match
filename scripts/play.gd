@@ -39,6 +39,7 @@ var horizontal_matches = []
 var level_complete = false
 var matches_being_tweened = []
 var matches_left_to_remove = 0
+var milk_positions = []
 var moves = 20
 var pieces_to_remove = 0
 var touch_start_position
@@ -107,12 +108,16 @@ func _process(delta):
 	var actual_string = format_string % [minutes, seconds]
 	$time/timer.text = actual_string
 	# Handle timeout
-	if Global.timer_time == 0:
+	if (Global.timer_time == 0
+	and candies_to_serve == 0
+	and matches_left_to_remove == 0
+	and pieces_to_remove == 0):
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
 
 
 # Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 func _physics_process(delta):
+	# Update UI
 	$coins/counter.text = str(Global.player["coins"])
 	$bomb/count/Label.text = str(Global.player["bombs"])
 	$bomb/count.visible = Global.player["bombs"] > 0
@@ -122,17 +127,20 @@ func _physics_process(delta):
 	$switch/count.visible = Global.player["switches"] > 0
 	$milk/count/Label.text = str(Global.player["milks"])
 	$milk/count.visible = Global.player["milks"] > 0
+	# Handle game won
 	if (level_complete
 	and candies_to_serve == 0
 	and matches_left_to_remove == 0
 	and pieces_to_remove == 0):
 		Global.player["level_" + str(Global.current_level) + "_complete"] = true
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
+	# Handle game lose
 	if (moves <= 0
 	and candies_to_serve == 0
 	and matches_left_to_remove == 0
 	and pieces_to_remove == 0):
 		get_tree().change_scene_to_file("res://scenes/lose.tscn")
+	# Move pieces if a tutorial is not active
 	if tutorial == 0:
 		swap_pieces()
 		drop_pieces()
@@ -187,38 +195,67 @@ func _input(event):
 			cheat_item_switch_activate(Global.piece_selected)
 
 
-# Function to add bomb positions to the array
-func add_bomb_position(index):
+# Function to add bomb positions to the array.
+func add_bomb_position(piece_selected):
 	var grid_size = 7
-	var grid_length = grid_size * grid_size
-	if index not in bomb_positions and index >= 0 and index < grid_length:
+	if piece_selected not in bomb_positions:
 		# Add the bomb position
-		bomb_positions.append(index)
+		bomb_positions.append(piece_selected)
 		# Determine the row and column of the selected position
-		var row = index / grid_size
-		var col = index % grid_size
+		var row = piece_selected / grid_size
+		var col = piece_selected % grid_size
 		# Check neighboring positions and add them to the bomb positions array
-		add_neighbor(row - 1, col)  # Top
-		add_neighbor(row + 1, col)  # Bottom
-		add_neighbor(row, col - 1)  # Left
-		add_neighbor(row, col + 1)  # Right
+		add_neighbor_bomb(row - 1, col)  # Top
+		add_neighbor_bomb(row + 1, col)  # Bottom
+		add_neighbor_bomb(row, col - 1)  # Left
+		add_neighbor_bomb(row, col + 1)  # Right
 
 
-# Function to add neighboring positions
-func add_neighbor(row, col):
+# Function to add bomb positions to the array.
+func add_milk_position(piece_selected):
+	var grid_size = 7
+	if piece_selected not in milk_positions:
+		# Add the milk position
+		milk_positions.append(piece_selected)
+		# Determine the row and column of the selected piece
+		var row = piece_selected / grid_size
+		var col = piece_selected % grid_size
+		# Check neighboring positions and add them to the bomb positions array
+		add_neighbor_milk(piece_selected + 7) # 1 Row Below
+		add_neighbor_milk(piece_selected + 14) # 2 Rows Below
+		add_neighbor_milk(piece_selected + 21) # 3 Rows Below
+		add_neighbor_milk(piece_selected + 28) # 4 Rows Below
+		add_neighbor_milk(piece_selected + 35) # 5 Rows Below
+		add_neighbor_milk(piece_selected + 42) # 6 Rows Below
+
+
+# Add neighboring positions to the bomb positions array.
+func add_neighbor_bomb(row, col):
 	var grid_size = 7
 	var grid_length = grid_size * grid_size
-	if row >= 0 and row < grid_size and col >= 0 and col < grid_size:
+	if (row >= 0
+	and row < grid_size 
+	and col >= 0
+	and col < grid_size):
 		var neighbor_position = row * grid_size + col
-		if neighbor_position not in bomb_positions and neighbor_position >= 0 and neighbor_position < grid_length:
+		if (neighbor_position not in bomb_positions
+		and neighbor_position >= 0
+		and neighbor_position < grid_length):
 			bomb_positions.append(neighbor_position)
+
+
+# Add neighboring positions to the milk positions array.
+func add_neighbor_milk(neighbor_position):
+	var grid_size = 7
+	var grid_length = grid_size * grid_size
+	if (neighbor_position not in milk_positions
+	and neighbor_position >= 0
+	and neighbor_position < grid_length):
+		milk_positions.append(neighbor_position)
 
 
 # Toggles the bomb cheat item in the UI.
 func cheat_item_bomb():
-	if cheat_item_milk_active: cheat_item_milk()
-	if cheat_item_sugar_active: cheat_item_sugar()
-	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["bombs"] > 0:
 		cheat_item_bomb_active = not cheat_item_bomb_active
 		if cheat_item_bomb_active:
@@ -242,7 +279,7 @@ func cheat_item_bomb_activate(piece_selected):
 		var node_path = "board/slot" + str(bomb_positions[index])
 		var node = get_node(node_path)
 		var tween = get_tree().create_tween()
-		tween.tween_property(node, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(node, "modulate", Color.DIM_GRAY, 1).set_trans(Tween.TRANS_SINE)
 		tween.tween_property(node, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
 		tween.tween_callback(remove_piece_callback)
 		pieces_to_remove += 1
@@ -250,9 +287,6 @@ func cheat_item_bomb_activate(piece_selected):
 
 # Toggles the bomb cheat item in the UI.
 func cheat_item_milk():
-	if cheat_item_bomb_active: cheat_item_bomb()
-	if cheat_item_sugar_active: cheat_item_sugar()
-	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["milks"] > 0:
 		cheat_item_milk_active = not cheat_item_milk_active
 		if cheat_item_milk_active:
@@ -267,13 +301,23 @@ func cheat_item_milk():
 func cheat_item_milk_activate(piece_selected):
 	Global.player["milks"] -= 1
 	if Global.enabled_sound: $splattt.play()
+	# Get the selected position and the surrounding postions
+	add_milk_position(piece_selected)
+	# Toggle the cheat item in the UI
+	cheat_item_milk()
+	# Animate the piece being removed from the board
+	for index in len(milk_positions):
+		var node_path = "board/slot" + str(milk_positions[index])
+		var node = get_node(node_path)
+		var tween = get_tree().create_tween()
+		tween.tween_property(node, "modulate:v", 1, 0.75).from(15)
+		tween.tween_property(node, "scale", Vector2(), 0.75).set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_callback(remove_piece_callback)
+		pieces_to_remove += 1
 
 
 # Toggles the sugar cheat item in the UI.
 func cheat_item_sugar():
-	if cheat_item_bomb_active: cheat_item_bomb()
-	if cheat_item_milk_active: cheat_item_milk()
-	if cheat_item_switch_active: cheat_item_switch()
 	if Global.player["sugars"] > 0:
 		cheat_item_sugar_active = not cheat_item_sugar_active
 		if cheat_item_sugar_active:
@@ -287,14 +331,13 @@ func cheat_item_sugar():
 # Activate the sugar cheat item at the selected piece's position.
 func cheat_item_sugar_activate(piece_selected):
 	Global.player["sugars"] -= 1
-	if Global.enabled_sound: pass
+	if Global.enabled_sound: $crackle.play()
+	# Toggle the cheat item in the UI
+	cheat_item_sugar()
 
 
 # Toggles the switch cheat item in the UI.
 func cheat_item_switch():
-	if cheat_item_bomb_active: cheat_item_bomb()
-	if cheat_item_milk_active: cheat_item_milk()
-	if cheat_item_sugar_active: cheat_item_sugar()
 	if Global.player["switches"] > 0:
 		cheat_item_switch_active = not cheat_item_switch_active
 		if cheat_item_switch_active:
@@ -309,6 +352,8 @@ func cheat_item_switch():
 func cheat_item_switch_activate(piece_selected):
 	Global.player["switches"] -= 1
 	if Global.enabled_sound: $swinging_staff_whoosh_strong.play()
+	# Toggle the cheat item in the UI
+	cheat_item_switch()
 
 
 # Returns true if there are empty board positions.
@@ -568,7 +613,7 @@ func customer_order_updates():
 		$customer2/count.text = str(customer2_remaining)
 	else:
 		$customer2/count.text = "0"
-	# Cusommer 3
+	# Customer 3
 	var customer3_remaining = customer3_desires_quantity
 	if customer3_desires_candy == 1:
 		customer3_remaining -= candy1_matches
@@ -605,6 +650,7 @@ func customer_order_updates():
 func drop_pieces():
 	if matches_left_to_remove == 0 and pieces_to_remove == 0:
 		bomb_positions = []
+		milk_positions = []
 		horizontal_matches = []
 		vertical_matches = []
 		for i in range(48, -1, -1):
@@ -694,8 +740,9 @@ func remove_matches():
 					var tree = get_tree()
 					if tree:
 						var tween = tree.create_tween()
+						var piece_id = get_piece_id(matches[i])
 						# The customer is excited
-						if get_piece_id(matches[i]) == customer1_desires_candy:
+						if piece_id == customer1_desires_candy and customer1_fulfilled == false:
 							var texture_path = "res://assets/won"+ str(customer1_id) + ".png"
 							$customer1/character.texture = load(texture_path)
 							customer1_excited = true
@@ -703,7 +750,7 @@ func remove_matches():
 							# Animate removing the piece
 							tween.tween_property(node, "visible", false, 0.0)
 							tween.tween_property(node, "visible", false, 0.75) # creates a slight delay
-						elif get_piece_id(matches[i]) == customer2_desires_candy:
+						elif piece_id == customer2_desires_candy and customer2_fulfilled == false:
 							var texture_path = "res://assets/won"+ str(customer2_id) + ".png"
 							$customer2/character.texture = load(texture_path)
 							customer2_excited = true
@@ -711,7 +758,7 @@ func remove_matches():
 							# Animate removing the piece
 							tween.tween_property(node, "visible", false, 0.0)
 							tween.tween_property(node, "visible", false, 0.75) # creates a slight delay
-						elif get_piece_id(matches[i]) == customer3_desires_candy:
+						elif piece_id == customer3_desires_candy and customer3_fulfilled == false:
 							var texture_path = "res://assets/won"+ str(customer3_id) + ".png"
 							$customer3/character.texture = load(texture_path)
 							customer3_excited = true
@@ -744,28 +791,12 @@ func remove_piece_callback():
 			board[bomb_positions[i]].texture = null
 			board[bomb_positions[i]].modulate = $background1.modulate
 			board[bomb_positions[i]].scale = Vector2(0.2, 0.2)
+	for i in len(milk_positions):
+		if milk_positions[i] < len(board):
+			board[milk_positions[i]].texture = null
+			board[milk_positions[i]].modulate = $background1.modulate
+			board[milk_positions[i]].scale = Vector2(0.2, 0.2)
 	pieces_to_remove -= 1
-
-
-# Moves matched candy to the customer's bowl.
-func serve_candy(matched_piece, piece_id, bowl):
-	# Create a copy at the current piece's position
-	var sprite = Sprite2D.new()
-	sprite.position = matched_piece.global_position
-	sprite.scale = Vector2(0.08, 0.08)
-	sprite.texture = load("res://assets/candy" + str(piece_id) + ".png")
-	get_parent().add_child(sprite)
-	# Animate moving the piece
-	var tween = get_tree().create_tween()
-	var bowl_position = bowl.global_position + Vector2(0, -10)
-	tween.tween_property(sprite, "scale", Vector2(0.05, 0.05), 0.75)
-	tween.tween_property(sprite, "position", bowl_position, 0.75)
-	tween.tween_callback(serve_candy_callback)
-	candies_to_serve += 1
-
-
-func serve_candy_callback():
-	candies_to_serve -= 1
 
 
 # The callback function for the remove_matches() tween.
@@ -797,6 +828,27 @@ func remove_tween_tracker():
 			if len(matches_being_tweened) > i:
 				if matches_being_tweened[i] == matches[j]:
 					matches_being_tweened.remove_at(i)
+
+
+# Moves matched candy to the customer's bowl.
+func serve_candy(matched_piece, piece_id, bowl):
+	# Create a copy at the current piece's position
+	var sprite = Sprite2D.new()
+	sprite.position = matched_piece.global_position
+	sprite.scale = Vector2(0.08, 0.08)
+	sprite.texture = load("res://assets/candy" + str(piece_id) + ".png")
+	get_parent().add_child(sprite)
+	# Animate moving the piece
+	var tween = get_tree().create_tween()
+	var bowl_position = bowl.global_position + Vector2(randi_range(-10, 10), -10)
+	tween.tween_property(sprite, "scale", Vector2(0.025, 0.025), 0.75)
+	tween.tween_property(sprite, "position", bowl_position, 0.75)
+	tween.tween_callback(serve_candy_callback)
+	candies_to_serve += 1
+
+
+func serve_candy_callback():
+	candies_to_serve -= 1
 
 
 # Shows the tutorial for the current level.

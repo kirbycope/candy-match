@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=3 uid="uid://cmea7t50ge8gr"]
+[gd_scene load_steps=52 format=3 uid="uid://cmea7t50ge8gr"]
 
 [ext_resource type="Script" path="res://scripts/play.gd" id="1_uupm5"]
 [ext_resource type="Texture2D" uid="uid://c7aclfhs6dn6q" path="res://assets/game top moves.png" id="2_jpgjl"]
 [ext_resource type="AudioStream" uid="uid://dsi4epnjl5fn4" path="res://assets/cute-animal-squeak-1-188097.mp3" id="2_vdkoe"]
+[ext_resource type="AudioStream" uid="uid://t8kdm1ffftpv" path="res://assets/crackle-104531.mp3" id="2_w6pfc"]
 [ext_resource type="Texture2D" uid="uid://c0vj0rnhmkdg7" path="res://assets/game top bar.png" id="3_dqwyt"]
 [ext_resource type="AudioStream" uid="uid://nou4a4jenirf" path="res://assets/cute-animal-squeak-2-188095.mp3" id="3_dypp0"]
 [ext_resource type="Texture2D" uid="uid://cvus8q0o01qxj" path="res://assets/game_bg1.png" id="3_igbfc"]
@@ -82,6 +83,9 @@ outline_color = Color(0.207843, 0.207843, 0.207843, 1)
 position = Vector2(251, 218)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_uupm5")
+
+[node name="crackle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w6pfc")
 
 [node name="cute_animal_squeak_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vdkoe")

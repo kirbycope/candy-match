@@ -31,7 +31,7 @@ Note: This only needs to be done once.
 ## Building for Web Using Godot GUI
 
 ### Setting Up Godot
-The following in needed to work with GitHub Pages.
+The following is needed to work with GitHub Pages.
 1. Select "Project" > "Export..."
     - If you see errors, click the link for "Manage Export Templates" and then click "Download and Install"
 1. Select the preset "Web (Runnable)"
@@ -81,7 +81,7 @@ The following in needed to work with GitHub Pages.
         - (Optionally) Android Emulator
         - Android SDK Platform-Tools
     1. Select "Apply"
-    1. To confrim, select "OK"
+    1. To confirm, select "OK"
         - Accept the License Agreement if prompted
     1. Select "Finish"
     1. Select "OK"
@@ -109,7 +109,7 @@ If there isn't already a `debug.keystore` in the repo's root directory (or it ex
     - Select "Fix Import" when prompted
 1. For "Package" > "Unique Name", enter `com.{domain}.{repo}`
     - I would use `timothycope` for "domain"
-    - I would use this repo's name for "repo", replacing spaces and hypens with dots (ex., `repo-name` -> `repo.name`)
+    - I would use this repo's name for "repo", replacing spaces and hyphens with dots (ex., `repo-name` -> `repo.name`)
 1. For "Signed", check `On`
 
 ### Exporting to Android
